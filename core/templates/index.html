@@ -31,16 +31,26 @@
     <!-- </div> -->
 	
 {% load static %}
-	<script src="static/assets/potree/three.min.js"></script>
-	<script src="static/assets/potree/OrbitControls.js"></script>
-	<script src="static/assets/potree/potree.js"></script>
-	<script type="module" src="/static/assets/fbx/FBXLoader.js"></script>
+	<!-- <script src="static/assets/potree/three.min.js"></script> -->
+	<!--<script src="/static/assets/fbx/three.js"></script> -->
+	<!--<script src="static/assets/potree/OrbitControls.js"></script> -->
+	<!--<script src="static/assets/potree/potree.js"></script>-->
+	<!--<script type="module" src="/static/assets/fbx/FBXLoader.js"></script>-->
+	
 	<script type="module">
-		import { FBXLoader } from '/static/assets/fbx/FBXLoader.js';
 
+		//
+		import '/static/assets/fbx/three.js';
+		import '/static/assets/fbx/three.module.js';
+		import '/static/assets/potree/three.min.js';
+		import '/static/assets/potree/OrbitControls.js';
+		import '/static/assets/potree/potree.js';
+		//import '/static/assets/fbx/FBXLoader.js';
+		
 		document.body.onload = function()
 			{
 				//three.js
+				
 				var scene = new THREE.Scene();
 
 				//var canvas = document.createElement("canvas");
@@ -184,6 +194,30 @@
 					//counter = counter+1;
 				}
 				
+
+				const loader = new THREE.ObjectLoader();
+				loader.load(
+					// resource URL
+					"/static/assets/fbx/scene.json",
+
+					// onLoad callback
+					// Here the loaded data is assumed to be an object
+					function ( obj ) {
+						// Add the loaded object to the scene
+						scene.add( obj );
+						},
+
+					// onProgress callback
+					function ( xhr ) {
+						console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+					},
+
+					// onError callback
+					function ( err ) {
+						console.error( 'An error happened' );
+					}
+				);
+
 				//var previous_value = -1;
 				var count1 = 0;
 				var count2 = 0;
@@ -295,27 +329,27 @@
 					
 				};
 
+
 				// Webkit/Blink will fire this on load, but Gecko doesn't.
 				//window.onresize = resizeCanvas;
 
 				// So we fire it manually...
 				resizeCanvas();
 				loadCanvas2();		
-				
+
 				document.body.onresize = function()
 				{
 					resizeCanvas();
-					resizeCanvas2();
+					//loadCanvas2();
+					resizeCanvas2(renderer_side, camera_side, timeline);
 
 				}
-
-
-				
 			};
-		</script>
 
-<script>
-	function loadCanvas2()
+			var camera_side;
+			var renderer_side;
+
+			function loadCanvas2()
 		{
 
 				var scene = new THREE.Scene();
@@ -387,7 +421,6 @@
 				const cube1 = new THREE.Mesh( geometry1, material1 );
 				scene.add( cube1 );
 				
-				
 
 				
 				function loop()
@@ -401,11 +434,17 @@
 				};
 				loop();
 
+				// Webkit/Blink will fire this on load, but Gecko doesn't.
+				//window.onresize = resizeCanvas2;
 
+				// So we fire it manually...
+				renderer_side = renderer;
+				camera_side = camera;
+				resizeCanvas2(renderer, camera, timeline);	
 
+		};
 
-				
-				function resizeCanvas2() {
+		function resizeCanvas2(renderer, camera, timeline) {
 					var width = 400;
 					var height = 300;
 					// if (window.innerWidth >765){
@@ -435,18 +474,8 @@
 					
 				};
 
-				// Webkit/Blink will fire this on load, but Gecko doesn't.
-				//window.onresize = resizeCanvas2;
+		</script>
 
-				// So we fire it manually...
-				resizeCanvas2();	
-				
-
-
-
-
-		};
-	</script>
 {% endblock content %}
 
 
