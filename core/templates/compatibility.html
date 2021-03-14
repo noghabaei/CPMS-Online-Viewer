@@ -12,9 +12,9 @@
 	
 	<!-- <section style= "height:500px;"> -->
 		
-	<canvas id="canvas1" style="background: gray;left: 0px;position: absolute; z-index: -1;cursor: grab;tabindex="0"; border:1px solid;">
+	<canvas id="canvas1" style="background: gray;left: 0px;position: absolute; z-index: -1;cursor: grab;tabindex=0; border:1px solid;">
 	</canvas>
-	<canvas id="canvas2" style="background: gray;left: 0px;position: absolute; z-index: -2;cursor: grab;tabindex="0"; border:1px solid;">
+	<canvas id="canvas2" style="background: gray;left: 0px;position: absolute; left: 10px; z-index: -2;cursor: grab;tabindex=0; border:1px solid;">
 	</canvas>
 	<input id="timeline" type="range" style=" width: 99%;background: transparent; position:relative; left:5px;" value="0">
     </input>
@@ -245,8 +245,14 @@
 
 				// So we fire it manually...
 				resizeCanvas1();
-				loadCanvas2();				
-				
+				loadCanvas2();			
+
+				window.onresize = function()
+				{
+					resizeCanvas1();
+					//resizeCanvas2();
+
+				}
 			};
 		</script>
 
@@ -431,16 +437,16 @@
 
 
 
-				document.body.onresize = function()
-				{
-					var width = window.innerWidth;
-					var height = window.innerHeight;
+				// document.body.onresize = function()
+				// {
+				// 	var width = window.innerWidth;
+				// 	var height = window.innerHeight;
 					
-					<!-- renderer.setSize(width, height); -->
-					<!-- camera.aspect = width / height; -->
-					<!-- camera.updateProjectionMatrix(); -->
-				}
-				<!-- document.body.onresize(); -->
+				// 	<!-- renderer.setSize(width, height); -->
+				// 	<!-- camera.aspect = width / height; -->
+				// 	<!-- camera.updateProjectionMatrix(); -->
+				// }
+				// <!-- document.body.onresize(); -->
 				
 				function resizeCanvas2() {
 					var width = 0;
@@ -477,13 +483,13 @@
 
 				// So we fire it manually...
 				resizeCanvas2();	
-				
 				window.onresize = function()
 				{
-					resizeCanvas1();
 					resizeCanvas2();
+					//resizeCanvas2();
 
 				}
+
 				
 			};
 		</script>

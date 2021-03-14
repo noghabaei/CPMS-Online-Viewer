@@ -301,7 +301,13 @@
 				// So we fire it manually...
 				resizeCanvas();
 				loadCanvas2();		
+				
+				document.body.onresize = function()
+				{
+					resizeCanvas();
+					resizeCanvas2();
 
+				}
 
 
 				
@@ -435,12 +441,7 @@
 				// So we fire it manually...
 				resizeCanvas2();	
 				
-				document.body.onresize = function()
-				{
-					resizeCanvas();
-					resizeCanvas2();
 
-				}
 
 
 
