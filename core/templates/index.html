@@ -12,16 +12,18 @@
 	
 	<!-- <section style= "height:500px;"> -->
 		
-	<canvas id="potreecanvas" style="background: gray;left: 0px;position: absolute; z-index: -1;cursor: grab;tabindex=0; border:1px solid;">
+	<!--<canvas id="potreecanvas" style="background: gray;left: 0px;position: absolute; z-index: -1;cursor: grab;tabindex=0; border:1px solid;">-->
+	<!--</canvas>-->
+	<canvas id="potreecanvas" style="background: gray; position: fixed; width: 100%; height: 100%; left: 0; top:0; z-index: -1;cursor: grab; border:1px solid; display: block;">
 	</canvas>
 
-	<canvas id="bimcanvas" style=" background: gray; height: 300px; width: 400px; position:absolute; left: 20px; top:550px; z-index: 0; border:1px black solid;">
+	<canvas id="bimcanvas" style=" background: gray; height: 300px; width: 400px; position:relative; left: 20px; top:20px; z-index: 0; border:1px black solid;">
 	</canvas>
 
-	<button type="button" class="btn btn-secondary" style="position: relative; top:70px; left: 20px;">BIM</button>
-	<button type="button" class="btn btn-secondary" style="position: relative; top:120px; left: -65px;">Scan</button>
+	<!--<button type="button" class="btn btn-secondary" style="position: relative; top:70px; left: 20px;">BIM</button>-->
+	<!--<button type="button" class="btn btn-secondary" style="position: relative; top:120px; left: -65px;">Scan</button>-->
 
-	<input id="timeline" type="range" style="width: 50%;background: transparent; position:relative; left:50%; transform: translateX(-20%);" value="0">
+	<input id="timeline" type="range" style="width: 50%;background: transparent; position:relative; left:30%; top:500px; transform: translateX(-40%); transform: translateZ(-50%);" value="0">
     </input>
 	<!-- </section> -->
 
@@ -73,9 +75,7 @@
 				
 				var width = canvas.width;
 				var height = canvas.height;
-				
-				console.log(width);
-				console.log(height);
+
 				
 				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100000);
 				camera.position.set(-200, 150, -200 );
@@ -92,9 +92,7 @@
 					preserveDrawingBuffer: false,
 					powerPreference: "high-performance"
 				});
-				
-				console.log(sidenav.style.width);
-				console.log(canvas.height);
+
 				//<!-- renderer.setSize(canvas.width, canvas.height); -->
 
 				//var geometry = new THREE.BoxBufferGeometry(25, 1, 25);
@@ -296,41 +294,36 @@
 				//renderer.setSize(width, height);
 				//camera.aspect = width / height;
 				//camera.updateProjectionMatrix();
-
-				document.body.onresize = function()
-				{
-					var width = window.innerWidth;
-					var height = window.innerHeight;
-					
-					//<!-- renderer.setSize(width, height); -->
-					//<!-- camera.aspect = width / height; -->
-					//<!-- camera.updateProjectionMatrix(); -->
-				}
-				//<!-- document.body.onresize(); -->
 				
 				function resizeCanvas() {
-					var width = 0;
-					var height = 0;
-					if (window.innerWidth >765){
-					canvas.style.width = window.innerWidth -250 + "px";
-					width = window.innerWidth -250;
-					}else{
-					canvas.style.width = window.innerWidth  + "px";
-					width = window.innerWidth;
-					}
+					var width = canvas.clientWidth;
+					var height = canvas.clientHeight;
+					renderer.setSize(window.innerWidth, window.innerHeight);
+					
+					// if (window.innerWidth >765){
+					// canvas.style.width = window.innerWidth -250 + "px";
+					// width = window.innerWidth -250;
+					// }else{
+					// canvas.style.width = window.innerWidth  + "px";
+					// width = window.innerWidth;
+					// }
 					// artifical delay so innerHeight is correct
-					setTimeout(function() {
-						canvas.style.height = window.innerHeight  + "px";
-						height =  window.innerHeight;
-						renderer.setSize(width, height);
-						camera.aspect = width / height;
-						camera.updateProjectionMatrix();
-						timeline.style.top = window.innerHeight -50  + "px";
-					}, 0);
+					// setTimeout(function() {
+					// 	//canvas.style.height = window.innerHeight  + "px";
+					// 	//height =  window.innerHeight;
+					// 	renderer.setSize(width, height);
+					// 	camera.aspect = width / height;
+					// 	camera.updateProjectionMatrix();
+					// 	//timeline.style.top = window.innerHeight -50  + "px";
+					// }, 0);
 					
 
+					
 					console.log(width);
 					console.log(height);
+
+					//canvas.style.width = "100%";
+					//canvas.style.height = "100%";
 					
 				};
 
@@ -368,8 +361,6 @@
 				var width = canvas2.width;
 				var height = canvas2.height;
 				
-				console.log(width);
-				console.log(height);
 				
 				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100000);
 				camera.position.set(-2, 1.5, -2 );
@@ -470,12 +461,10 @@
 						renderer.setSize(width, height);
 						camera.aspect = width / height;
 						camera.updateProjectionMatrix();
-						timeline.style.top = window.innerHeight -50  + "px";
+						//timeline.style.top = window.innerHeight -50  + "px";
 					}, 0);
 					
 
-					console.log(width);
-					console.log(height);
 					
 				};
 
