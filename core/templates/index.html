@@ -18,6 +18,9 @@
 	<canvas id="bimcanvas" style=" background: gray; height: 300px; width: 400px; position:absolute; left: 20px; top:550px; z-index: 0; border:1px black solid;">
 	</canvas>
 
+	<button type="button" class="btn btn-secondary" style="position: relative; top:70px; left: 20px;">BIM</button>
+	<button type="button" class="btn btn-secondary" style="position: relative; top:120px; left: -65px;">Scan</button>
+
 	<input id="timeline" type="range" style="width: 50%;background: transparent; position:relative; left:50%; transform: translateX(-20%);" value="0">
     </input>
 	<!-- </section> -->
@@ -100,7 +103,7 @@
 				//cube.position.y = -2;
 				//scene.add(cube);
 
-				scene.add(new THREE.AmbientLight(0x404040));
+				scene.add(new THREE.AmbientLight(0x222222,5));
 
 				var controls = new THREE.OrbitControls(camera, canvas);
 				controls.autoRotate = true;
@@ -204,6 +207,8 @@
 					// Here the loaded data is assumed to be an object
 					function ( obj ) {
 						// Add the loaded object to the scene
+						obj.position.set(-180, -100, 120);
+						obj.name = "BIM";
 						scene.add( obj );
 						},
 
