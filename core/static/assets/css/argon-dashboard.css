@@ -20683,6 +20683,8 @@ pre>code.highlight {
 }
 
 .control{
+  margin-left: 3px;
+  margin-top: 3px;
   float: left;
   position: fixed;
   border-radius: 5px;
@@ -20692,12 +20694,13 @@ pre>code.highlight {
   font-weight: bold;
 }
 .information{
+  margin-top: 3px;
   float: right;
   position: fixed;
   border-radius: 5px;
   z-index: 10;  
-  right: 0px;
-  top: 60px;
+  right: 550px;
+  top: 0px;
   background-color: #3b3a3a;
   color: #FFFFFF;
   font-weight: bold;  
@@ -20713,7 +20716,23 @@ pre>code.highlight {
   color: #FFFFFF; 
   font-size: 8px; 
   width:100%; 
-  border-radius:5%;
+  border-radius:5px;
+  padding-bottom: 1px;
+}
+
+#schedule{
+  background-color: #3b3a3a ;
+  color: #FFFFFF; 
+  width: 30%; 
+  position:fixed; 
+  right: 20%; bottom:20px; 
+  text-align: center; 
+  font-weight: bold; 
+  border-radius: 5px;
+}
+
+.bimdiv{
+  padding-top: 5px;
 }
 
 .switch {
@@ -20775,4 +20794,38 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+@media screen and (max-width: 765px) {
+  .information {
+    margin-top: 3px;
+    margin-right: 3px;
+    float: right;
+    position: fixed;
+    border-radius: 5px;
+    z-index: 10;  
+    right: 0px;
+    top: 76px;
+    background-color: #3b3a3a;
+    color: #FFFFFF;
+    font-weight: bold;  
+  }
+}
+
+@media screen and (min-width:766px) and (max-width: 1036px) {
+  .information {
+    margin-top: 3px;
+    margin-right: 3px;
+    float: right;
+    position: fixed;
+    border-radius: 5px;
+    z-index: 10;  
+    right: 0px;
+    top: 70px;
+    background-color: #3b3a3a;
+    color: #FFFFFF;
+    font-weight: bold;  
+  }
+}
+
+
 /*# sourceMappingURL=dashboard-free.css.map */
