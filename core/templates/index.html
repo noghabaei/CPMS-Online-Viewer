@@ -14,12 +14,57 @@
 		
 	<!--<canvas id="potreecanvas" style="background: gray;left: 0px;position: absolute; z-index: -1;cursor: grab;tabindex=0; border:1px solid;">-->
 	<!--</canvas>-->
+	<div class="control small" >
+		<div class ="text-center ">CONTROL</div>
+		<div id = "controlInputs">
+			<select class="custom-select-sm" id="day" data-size="4">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+			</select>
+			<div>
+				<label class="switch">
+					<input type="checkbox" id ="bim" checked>
+					<span class="slider round"></span>
+				  </label>
+				  <label>BIM</label>
+			</div>
+			<div>
+				<label class="switch">
+					<input type="checkbox">
+					<span class="slider round"></span>
+				  </label>
+				  <label>Image</label>
+			</div>
+			<div>
+				<label class="switch">
+					<input type="checkbox">
+					<span class="slider round"></span>
+				  </label>
+				  <label>UV / Laser</label>
+			</div> 
+		</div>
+	</div>
 
 	<canvas id="potreecanvas" style="background: gray; position: fixed; width: 100%; height: 100%; left: 0; top:0; z-index: -1;cursor: grab; border:1px solid; display: block;">
 	</canvas>
 
 	<canvas id="bimcanvas" style=" background: gray; height: 20%; width: 300px; position:fixed; margin-left: 1em;; bottom:20px; z-index: 0; border:1px black solid;">
 	</canvas>
+
+	<div class="information small">
+		<div class ="text-center">INFORMATION</div>
+		<div id = "controlInputs">
+			<div>
+				<label>Frame rate:</label>
+				<span id ="frameRate"></span>
+			</div>
+			<div>
+				<label>Points rendered:</label>
+			</div>
+		</div>
+	</div>
 
 	<!--<button type="button" class="btn btn-secondary" style="position: relative; top:70px; left: 20px;">BIM</button>-->
 	<!--<button type="button" class="btn btn-secondary" style="position: relative; top:120px; left: -65px;">Scan</button>-->
@@ -52,12 +97,12 @@
 		import '/static/assets/potree/OrbitControls.js';
 		import '/static/assets/potree/potree.js';
 		//import '/static/assets/fbx/FBXLoader.js';
-		
+		var scene;
 		document.body.onload = function()
 			{
 				//three.js
 				
-				var scene = new THREE.Scene();
+				scene = new THREE.Scene();
 
 				//var canvas = document.createElement("canvas");
 				var canvas = document.getElementById("potreecanvas");
@@ -348,7 +393,6 @@
 			var camera_side;
 			var renderer_side;
 			var canvas_side;
-
 			function loadCanvas2()
 		{
 
@@ -419,14 +463,26 @@
 				const cube1 = new THREE.Mesh( geometry1, material1 );
 				scene.add( cube1 );
 				
-
+				var lastTime = ( performance || Date ).now();
+				var count = 0;
+				function fpsUpdate() { 
+					var currentTime = ( performance || Date ).now();
+					// currentTime - lastTime is the number of milliseconds passed from last loop 
+					var fps = 1000 / (currentTime - lastTime);
+					lastTime = currentTime;
+					count += 1;
+					if(count == 30){
+						count = 0;
+						document.getElementById("frameRate").textContent = fps.toFixed(0);
+					}
+				}
 				
 				function loop()
 				{
 					//cube.rotation.y += 0.01;
 					controls.update();
 					renderer.render(scene, camera);
-
+					fpsUpdate();
 					requestAnimationFrame(loop);
 
 				};
@@ -470,6 +526,11 @@
 
 					
 				};
+
+		var bim = document.getElementById("bim");
+        bim.addEventListener('change',function() {
+            scene.getObjectByName("BIM").visible = !scene.getObjectByName("BIM").visible;
+        });
 
 		</script>
 
