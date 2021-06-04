@@ -156,7 +156,7 @@
 				scene.add(new THREE.AmbientLight(0x222222,5));
 
 				var controls = new THREE.OrbitControls(camera, canvas);
-				controls.autoRotate = true;
+				controls.autoRotate = false;
 				controls.update();
 
 				var raycaster = new THREE.Raycaster();
