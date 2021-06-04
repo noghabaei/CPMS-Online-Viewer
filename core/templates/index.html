@@ -73,6 +73,49 @@
 		</div>
 	</div>
 
+	<div class="modal custom-modal" id="element-modal" tabindex="-1" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<label class="modal-title w-100" id="element-modal-title">ELEMENT VIEW</label>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							  </button>
+				</div>
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="row justify-content-center">
+							<button id="element-modal-compat-btn" class="btn btn-light btn-element-modal btn-sm">Compatibility Check</button>
+							<button id="element-modal-viewmode-btn" class="btn btn-light btn-element-modal btn-sm">View Mode</button>
+						</div>
+						<div class="row">
+							<div class="dropdown" id="element-dropdown" style="position: relative;">
+								<button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="element-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												  Select Element
+												</button>
+								<div class="dropdown-menu" id="element-dropdown-menu" aria-labelledby="element-dropdown">
+									<button class="dropdown-item" type="button">No Elements Loaded</button>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="element-info">
+								<div class="container-fluid info-span-parent">
+									<span id="element-info-span">Info:</span>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<canvas class="subcanvas" id="element-canvas"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!--<button type="button" class="btn btn-secondary" style="position: relative; top:70px; left: 20px;">BIM</button>-->
 	<!--<button type="button" class="btn btn-secondary" style="position: relative; top:120px; left: -65px;">Scan</button>-->
 	
@@ -102,6 +145,7 @@
 		import '/static/assets/potree/three.min.js';
 		import '/static/assets/potree/OrbitControls.js';
 		import '/static/assets/potree/potree.js';
+		import * as EV from "/static/assets/js/element-view.js";
 		//import '/static/assets/fbx/FBXLoader.js';
 		var scene;
 		document.body.onload = function()
@@ -260,6 +304,17 @@
 						obj.position.set(-180, -100, 120);
 						obj.name = "BIM";
 						scene.add( obj );
+						EV.populateElementsDropdown(obj);
+						$(document.body).on('click', '#element-dropdown-menu button', function() {
+							const elementId = $(this).text();
+							const elementTypeString = $(this).attr('elementType');
+
+							$('#element-dropdown-btn').text(elementId);
+							$('#element-info-span').text(EV.getElementInfoFromTypeString(elementTypeString, true));
+							
+							let elementViewCanvas = document.getElementById('element-canvas');
+							// EV.loadElementObject(elementId, obj, elementViewCanvas);
+						});
 						},
 
 					// onProgress callback
