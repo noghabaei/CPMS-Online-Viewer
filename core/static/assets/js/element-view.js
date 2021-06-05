@@ -78,47 +78,60 @@ function populateElementsDropdown(mainObj) {
 
 function loadElementObject(elementId, mainObj, canvasElement) {
     // Create scene
-    let elementViewScene = new THREE.Scene();
+    var elementViewScene = new THREE.Scene();
 
     //TODO: setup background texture
 
     // Create camera
-    let elementViewCanvas = canvasElement;
-    let elementViewCamera = getElementViewCamera(elementViewCanvas);
+    var elementViewCanvas = canvasElement;
+    var elementViewCamera = getElementViewCamera(elementViewCanvas);
 
     // Create lights
-    let sceneLight = getElementViewLights();
+    var sceneLight = getElementViewLights();
     elementViewScene.add(sceneLight);
 
     // Create renderer
-    let elementViewRenderer = new THREE.WebGLRenderer({
+    var elementViewRenderer = new THREE.WebGLRenderer({
         canvas: elementViewCanvas,
         antialias: true
     });
 
     // Setup Orbit Controls
-    let elementViewOrbitControls = getOrbitControls(elementViewCamera, elementViewCanvas, true, {
+    var elementViewOrbitControls = getOrbitControls(elementViewCamera, elementViewCanvas, true, {
         'x': 0,
         'y': 1,
         'z': 0
     });
 
     // Find and display the child element with given element id
-    if (mainObj != null) {
-        mainObj.traverse(function (child) {
-            if (child.isMesh) {
-                if (getElementId(child) == elementId) {
-
-                    var childWorldCenter = getCenterPoint(child);
-                    child.position.set(-1 * childWorldCenter.x, -1 * childWorldCenter.y, -1 * childWorldCenter.z);
-                    elementViewScene.add(child);
-
-                    animate(elementViewScene, elementViewCamera, elementViewRenderer, elementViewOrbitControls);
+    var loader = new THREE.ObjectLoader();
+    loader.load(
+        "/static/assets/fbx/scene.json",
+        function (obj) {
+            mainObj.traverse(function (child) {
+                if (child.isMesh) {
+                    if (getElementId(child) == elementId) {
+    
+                        var childWorldCenter = getCenterPoint(child);
+                        child.position.set(-1 * childWorldCenter.x, -1 * childWorldCenter.y, -1 * childWorldCenter.z);
+                        elementViewScene.add(child);
+    
+                        animate();
+                    }
                 }
-            }
+            });
         });
-    } else {
-        console.log('Main object is null');
+
+    function animate() {
+        requestAnimationFrame(animate);
+        if (elementViewOrbitControls != null) elementViewOrbitControls.update();
+        // if (stats != null) stats.update();
+
+        render();
+    }
+
+    function render() {
+        elementViewRenderer.render(elementViewScene, elementViewCamera);
     }
 }
 
@@ -129,22 +142,8 @@ function getCenterPoint(mesh) {
     var center = new THREE.Vector3();
     geometry.boundingBox.getCenter(center);
     mesh.localToWorld(center);
-    
+
     return center;
-}
-
-// Move this to a util module
-function animate(scene, camera, renderer, controls = null, stats = null) {
-    requestAnimationFrame(animate);
-    if (controls != null) controls.update();
-    if (stats != null) stats.update();
-
-    render(scene, camera, renderer);
-}
-
-// Move this to a util module
-function render(scene, camera, renderer) {
-    renderer.render(scene, camera);
 }
 
 // Move this to a util module

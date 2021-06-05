@@ -52,7 +52,7 @@ $(document.body).on('click', '#compat-dropdown-menu button', function () {
     const pointCloudInfo = $(this).text();
 
     $('#compat-dropdown-btn').text(pointCloudId);
-    $('#compat-info-span').text(getElementInfoFromTypeString(pointCloudId));
+    // $('#compat-info-span').text(getElementInfoFromTypeString(pointCloudId));
 });
 
 // Compat modal logic end

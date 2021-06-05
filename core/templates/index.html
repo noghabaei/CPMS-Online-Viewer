@@ -47,6 +47,54 @@
 		</div>
 	</div>
 
+	<!-- Element View Panel -->
+	<div id="element-view-panel" class="panel small">
+		<div class="panel-header">
+			<div class ="text-center">ELEMENT VIEW</div>
+		</div>
+		<div class="panel-content" id="element-panel-content">
+			<div id="element-panel-buttons">
+				<button id="element-modal-compat-btn" class="btn btn-light btn-element-modal btn-sm">Compatibility Check</button>
+				<button id="element-modal-viewmode-btn" class="btn btn-light btn-element-modal btn-sm">View Mode</button>
+			</div>
+			<div id="element-panel-dropdown">
+				<select class="custom-select-sm" id="day" data-size="4">
+					<option>No Elements Loaded</option>
+				</select>
+			</div>
+			<div class="dropdown-element-info-div" id="element-panel-info">
+				<span id="element-info-span">Info: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat obcaecati praesentium possimus impedit, hic tempora? Aperiam asperiores nulla facere obcaecati mollitia iure veniam necessitatibus culpa minus eius, explicabo nihil omnis? </span>
+			</div> 
+			<div id="element-panel-canvas">
+				<canvas class="subcanvas" id="element-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+
+	<!-- Compatibility Panel -->
+	<div id="compat-panel" class="panel small">
+		<div class="panel-header">
+			<div class ="text-center">COMPATIBILITY VIEW</div>
+		</div>
+		<div class="panel-content" id="compat-panel-content">
+			<div id="compat-panel-buttons">
+				<button id="compat-modal-bring-btn" class="btn btn-light btn-sm">Bring Element</button>
+				<button id="compat-modal-symbol-btn" class="btn btn-light btn-sm">></button>
+			</div>
+			<div id="compat-panel-dropdown">
+				<select class="custom-select-sm" id="day" data-size="4">
+					<option>No Point Clouds Loaded</option>
+				</select>
+			</div>
+			<div class="dropdown-element-info-div" id="compat-panel-info">
+				<span id="element-info-span">Info: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dolore reiciendis itaque eos, quia, aspernatur quisquam totam voluptates enim minima vitae dignissimos facere, ipsam ipsum eaque explicabo. Ipsum, enim. </span>
+			</div>
+			<div id="compat-panel-canvas">
+				<canvas class="subcanvas" id="compat-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+
 	<canvas id="potreecanvas" style="background: gray; position: fixed; width: 100%; height: 100%; left: 0; top:0; z-index: -1;cursor: grab; border:1px solid; display: block;">
 	</canvas>
 
@@ -69,49 +117,6 @@
 			</div>
 			<div>
 				<label>Points rendered:</label>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal custom-modal" id="element-modal" tabindex="-1" data-backdrop="static" data-keyboard="false">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header text-center">
-					<label class="modal-title w-100" id="element-modal-title">ELEMENT VIEW</label>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							  </button>
-				</div>
-				<div class="modal-body">
-					<div class="container-fluid">
-						<div class="row justify-content-center">
-							<button id="element-modal-compat-btn" class="btn btn-light btn-element-modal btn-sm">Compatibility Check</button>
-							<button id="element-modal-viewmode-btn" class="btn btn-light btn-element-modal btn-sm">View Mode</button>
-						</div>
-						<div class="row">
-							<div class="dropdown" id="element-dropdown" style="position: relative;">
-								<button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="element-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												  Select Element
-												</button>
-								<div class="dropdown-menu" id="element-dropdown-menu" aria-labelledby="element-dropdown">
-									<button class="dropdown-item" type="button">No Elements Loaded</button>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="element-info">
-								<div class="container-fluid info-span-parent">
-									<span id="element-info-span">Info:</span>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-12">
-								<canvas class="subcanvas" id="element-canvas"></canvas>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
@@ -303,7 +308,7 @@
 						// Add the loaded object to the scene
 						obj.position.set(-180, -100, 120);
 						obj.name = "BIM";
-						scene.add( obj );
+						// scene.add( obj );
 						EV.populateElementsDropdown(obj);
 						$(document.body).on('click', '#element-dropdown-menu button', function() {
 							const elementId = $(this).text();
@@ -311,9 +316,9 @@
 
 							$('#element-dropdown-btn').text(elementId);
 							$('#element-info-span').text(EV.getElementInfoFromTypeString(elementTypeString, true));
-							
+
 							let elementViewCanvas = document.getElementById('element-canvas');
-							// EV.loadElementObject(elementId, obj, elementViewCanvas);
+							EV.loadElementObject(elementId, obj, elementViewCanvas);
 						});
 						},
 

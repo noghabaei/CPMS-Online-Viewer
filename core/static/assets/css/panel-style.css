@@ -1,103 +1,76 @@
+/* General panel properties start */
 
-/* General modal properties start */
-
-.modal .modal-body,
-.modal .modal-content {
-    background-color: #232528;
-}
-
-.modal-header {
-    padding: 0;
-    background-color: #5A646B;
-    color: #ffffff;
-}
-
-.modal-dialog {
-    margin: 0;
-    overflow-y: initial !important
-}
-
-.dropdown-item {
-    /* padding: 0em 0.4em; */
-    padding: 0em 0.4rem;
-}
-
-.modal-body {
-    background-color: #232528;
-}
-
-.info-span-parent {
-    line-height: 1.5rem;
-    font-size: smaller;
-    max-width: 10rem;
-    /* max-width: 50%; */
-    overflow: hidden;
-}
-
-
-/* General modal properties end */
-
-
-/* Element Modal properties start*/
-
-.modal-container {
-    width: 100%;
-    height: 100%;
-}
-
-#element-modal .row,
-#compat-modal .row {
-    /* margin-top: 0.5em; */
-    margin-bottom: 0.5rem;
-}
-
-#element-modal .modal-body,
-#compat-modal .modal-body {
-    padding: 0.5rem;
-}
-
-#element-modal .close,
-#compat-modal .close {
-    display: none;
-}
-
-.element-info {
-    height: 3rem;
-    overflow-y: auto;
-    color: #ffffff;
-}
-
-#element-dropdown,
-.btn-element-modal,
-#compat-dropdown {
-    margin: 0% auto;
-}
-
-#element-dropdown-menu,
-#compat-dropdown-menu {
-    max-height: 100px;
-    overflow-y: auto;
-    min-width: 100%;
-    font-size: smaller;
-}
-
-#element-modal {
+.panel {
     position: fixed;
-    /* display: inline-block; */
-    top: unset;
-    bottom: 2%;
-    left: 2%;
-    /* transform: translate(-50%, -50%); */
-    width: fit-content;
-    /* height: 20em; */
-    height: fit-content;
-    padding: 0 !important;
+    border-radius: 5px;
+    z-index: 11;
+    background-color: #3b3a3a;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.panel .btn {
+    margin-right: 0;
+}
+
+.panel-content div:not(:first-child) {
+    margin-top: 5px;
+}
+
+.panel-content {
+    background-color: #000000;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 
-/* Element Modal properties end*/
+/* General panel properties end */
 
-/* Canvas properties */
+
+/* Element panel properties start */
+
+#element-view-panel {
+    margin-left: 5px;
+    /* margin-bottom: 10px; */
+    bottom: 10px;
+    float: left;
+}
+
+#element-panel-content *:not(#element-panel-info) {
+    text-align: center;
+}
+
+#element-panel-info,
+#compat-panel-info {
+    max-width: 150px;
+    max-height: 50px;
+    overflow-y: auto;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+
+/* Element panel properties end */
+
+
+/* Compat panel properties start */
+
+#compat-panel {
+    /* margin-right: 135px; */
+    right: 5px;
+    bottom: 10px;
+    float: right;
+}
+
+#compat-panel-content *:not(#compat-panel-info) {
+    text-align: center;
+}
+
+
+/* Compat panel properties end */
+
+
+/* Canvas properties start */
 
 .subcanvas {
     /* position: fixed; */
@@ -110,8 +83,5 @@
     background-image: url('../img/canvas-bg.jpg');
 }
 
-@media screen and (max-width: 768px) {
-    html {
-        font-size: 8px;
-    }
-}
+
+/* Canvas properties end */
