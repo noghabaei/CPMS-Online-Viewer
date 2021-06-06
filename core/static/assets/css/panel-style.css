@@ -23,6 +23,15 @@
     padding: 5px;
 }
 
+#element-panel-select , #compat-panel-select {
+    background-color: #3b3a3a;
+    color: #FFFFFF;
+    font-size: 8px;
+    width: 100%;
+    border-radius: 5px;
+    padding-bottom: 1px;
+}
+
 
 /* General panel properties end */
 
@@ -85,6 +94,7 @@
 
 
 /* Canvas properties end */
+
 
 /* Media queries */
 
