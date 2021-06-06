@@ -17,11 +17,3 @@ $(document.body).on("click", "#element-modal-viewmode-btn", () => {
     $('#element-modal-compat-btn').show();
     $('#element-modal-viewmode-btn').hide();
 });
-
-$(document.body).on('click', '#compat-panel-select option', function () {
-    const pointCloudId = $(this).text();
-    const pointCloudInfo = $(this).text();
-
-    let prefixText = $('#compat-info-span').text();
-    $('#compat-info-span').text(prefixText + pointCloudInfo);
-});

@@ -83,9 +83,10 @@
 			</div>
 			<div id="compat-panel-dropdown">
 				<select class="custom-select-sm" id="compat-panel-select" data-size="4">
-					<option>Sphere</option>
-					<option>Cube</option>
-					<option>Cylinder</option>
+					<option value="">No Option Selected</option>
+					<option value="sphere">Sphere</option>
+					<option value="cube">Cube</option>
+					<option value="cylinder">Cylinder</option>
 				</select>
 			</div>
 			<div class="dropdown-element-info-div" id="compat-panel-info">
@@ -310,7 +311,7 @@
 						// Add the loaded object to the scene
 						obj.position.set(-180, -100, 120);
 						obj.name = "BIM";
-						// scene.add( obj );
+						scene.add( obj );
 						EV.populateElementsDropdown(obj);
 						$(document.body).on('click', '#element-dropdown-menu button', function() {
 							const elementId = $(this).text();
