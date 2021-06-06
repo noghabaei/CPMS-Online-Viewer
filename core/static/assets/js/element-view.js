@@ -65,13 +65,11 @@ function populateElementsDropdown(mainObj) {
         let childType = obj.type;
         let childId = obj.id;
 
-        let dropdownOption = $('<button></button>')
-            .addClass("dropdown-item")
-            .attr('type', 'button')
-            .attr('elementType', escape(childType))
-            .text(childId);
+        let dropdownOption = $('<option></option>')
+                                .attr('value', childType)
+                                .text(childId);
 
-        $('#element-dropdown-menu').append(dropdownOption);
+        $('#element-panel-select').append(dropdownOption);
     });
 
 }
