@@ -30,6 +30,11 @@ function validateElementName(nameString) {
     return nameStringRegex.test(nameString);
 }
 
+function setElementInfo(elementTypeString) {
+    let infoString = getElementInfoFromTypeString(elementTypeString, true);
+    $('#element-info-span').text(infoString);
+}
+
 function getElementInfoFromTypeString(elementTypeString, prefixInfo) {
     if (elementTypeString == null) return null;
 
@@ -44,11 +49,13 @@ function populateElementsDropdown(mainObj) {
         if (child.isMesh) {
             let childId = getElementId(child);
             let childType = getElementType(child);
+            let childName = child.name;
 
             if (childId != null && childType != null) {
                 elementIdTypeMapList.push({
                     'id': childId,
-                    'type': childType
+                    'type': childType, 
+                    'name': childName
                 });
             }
         }
@@ -64,9 +71,11 @@ function populateElementsDropdown(mainObj) {
     $.each(elementIdTypeMapList, function (index, obj) {
         let childType = obj.type;
         let childId = obj.id;
+        let childName = obj.name;
 
         let dropdownOption = $('<option></option>')
                                 .attr('value', childType)
+                                .attr('name', childName)
                                 .text(childId);
 
         $('#element-panel-select').append(dropdownOption);
@@ -173,5 +182,6 @@ function getElementViewLights() {
 export {
     populateElementsDropdown,
     getElementInfoFromTypeString,
-    loadElementObject
+    loadElementObject, 
+    setElementInfo
 };

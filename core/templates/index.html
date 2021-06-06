@@ -313,15 +313,17 @@
 						obj.name = "BIM";
 						scene.add( obj );
 						EV.populateElementsDropdown(obj);
-						$(document.body).on('click', '#element-dropdown-menu button', function() {
-							const elementId = $(this).text();
-							const elementTypeString = $(this).attr('elementType');
+						
+						$("#element-panel-select").change(() => {
+							let selectedOptionIndex = $("#element-panel-select").prop('selectedIndex');
+							let selectedOptionName = $("#element-panel-select")[0].options[selectedOptionIndex].getAttribute('name');
+							console.log('Selected option name: '+ selectedOptionName);
 
-							$('#element-dropdown-btn').text(elementId);
-							$('#element-info-span').text(EV.getElementInfoFromTypeString(elementTypeString, true));
+							let selectedchildObj = obj.getObjectByName(selectedOptionName);
+							console.log(selectedchildObj);
 
-							let elementViewCanvas = document.getElementById('element-canvas');
-							EV.loadElementObject(elementId, obj, elementViewCanvas);
+							let selectedElementTypeString = $("#element-panel-select").val();
+							EV.setElementInfo(selectedElementTypeString);
 						});
 						},
 
