@@ -27,24 +27,24 @@ function loadCompatibilityCanvas(shapeToLoad) {
     let sceneLight = hemisphereLight;
     compatScene.add(sceneLight);
 
-    const gridHelper = new THREE.GridHelper(10, 10);
-    compatScene.add(gridHelper);
+    // const gridHelper = new THREE.GridHelper(10, 10);
+    // compatScene.add(gridHelper);
 
-    const axesHelper = new THREE.AxesHelper(5);
-    compatScene.add(axesHelper);
+    // const axesHelper = new THREE.AxesHelper(5);
+    // compatScene.add(axesHelper);
 
     const compatObjRenderer = new THREE.WebGLRenderer({
         canvas: compatCanvas,
         antialias: true
     });
 
-    // const compatControls = new OrbitControls(compatCamera, compatObjRenderer.domElement);
-    // compatControls.screenSpacePanning = true;
-    // compatControls.target.set(0, 1, 0);
+    const compatControls = new THREE.OrbitControls(compatCamera, compatObjRenderer.domElement);
+    compatControls.screenSpacePanning = true;
+    compatControls.target.set(0, 1, 0);
 
     var animateCompatScene = function () {
         requestAnimationFrame(animateCompatScene);
-        // compatControls.update();
+        compatControls.update();
         renderCompatScene();
         // stats.update();
     };
