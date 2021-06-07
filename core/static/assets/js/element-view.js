@@ -30,6 +30,11 @@ function validateElementName(nameString) {
     return nameStringRegex.test(nameString);
 }
 
+function setElementInfo(elementTypeString) {
+    let infoString = getElementInfoFromTypeString(elementTypeString, true);
+    $('#element-info-span').text(infoString);
+}
+
 function getElementInfoFromTypeString(elementTypeString, prefixInfo) {
     if (elementTypeString == null) return null;
 
@@ -44,11 +49,13 @@ function populateElementsDropdown(mainObj) {
         if (child.isMesh) {
             let childId = getElementId(child);
             let childType = getElementType(child);
+            let childName = child.name;
 
             if (childId != null && childType != null) {
                 elementIdTypeMapList.push({
                     'id': childId,
-                    'type': childType
+                    'type': childType, 
+                    'name': childName
                 });
             }
         }
@@ -64,30 +71,35 @@ function populateElementsDropdown(mainObj) {
     $.each(elementIdTypeMapList, function (index, obj) {
         let childType = obj.type;
         let childId = obj.id;
+        let childName = obj.name;
 
-        let dropdownOption = $('<button></button>')
-            .addClass("dropdown-item")
-            .attr('type', 'button')
-            .attr('elementType', escape(childType))
-            .text(childId);
+        let dropdownOption = $('<option></option>')
+                                .attr('value', childType)
+                                .attr('name', childName)
+                                .text(childId);
 
-        $('#element-dropdown-menu').append(dropdownOption);
+        $('#element-panel-select').append(dropdownOption);
     });
 
 }
 
-function loadElementObject(elementId, mainObj, canvasElement) {
+function loadElementObject(objectTotLoad) {
     // Create scene
     let elementViewScene = new THREE.Scene();
 
-    //TODO: setup background texture
+    // Setup background texture
+    let loader = new THREE.TextureLoader();
+    let backgroundTexture = loader.load('/static/assets/img/canvas-bg.jpg');
+    elementViewScene.background = backgroundTexture;
 
     // Create camera
-    let elementViewCanvas = canvasElement;
-    let elementViewCamera = getElementViewCamera(elementViewCanvas);
+    let elementViewCanvas = document.getElementById('element-canvas');
+    let elementViewCamera = new THREE.PerspectiveCamera(
+        60, $(elementViewCanvas).width() / $(elementViewCanvas).height(), 0.00001, 2000);
+    elementViewCamera.translateZ(5);
 
     // Create lights
-    let sceneLight = getElementViewLights();
+    let sceneLight = new THREE.HemisphereLight('white', 'brown', 1);;
     elementViewScene.add(sceneLight);
 
     // Create renderer
@@ -97,29 +109,34 @@ function loadElementObject(elementId, mainObj, canvasElement) {
     });
 
     // Setup Orbit Controls
-    let elementViewOrbitControls = getOrbitControls(elementViewCamera, elementViewCanvas, true, {
-        'x': 0,
-        'y': 1,
-        'z': 0
-    });
+    let elementViewOrbitControls = new THREE.OrbitControls(elementViewCamera, elementViewCanvas);
+    elementViewOrbitControls.screenSpacePanning = true;
+    elementViewOrbitControls.target.set(0, 1, 0);
 
-    // Find and display the child element with given element id
-    if (mainObj != null) {
-        mainObj.traverse(function (child) {
-            if (child.isMesh) {
-                if (getElementId(child) == elementId) {
+    // Add object to load to scene
+    let childWorldCenter = getCenterPoint(objectTotLoad);
+    objectTotLoad.position.set(-1 * childWorldCenter.x, -1 * childWorldCenter.y, -1 * childWorldCenter.z);
+    elementViewScene.add(objectTotLoad);
+    
+    const gridHelper = new THREE.GridHelper(10, 10);
+    elementViewScene.add(gridHelper);
 
-                    var childWorldCenter = getCenterPoint(child);
-                    child.position.set(-1 * childWorldCenter.x, -1 * childWorldCenter.y, -1 * childWorldCenter.z);
-                    elementViewScene.add(child);
+    const axesHelper = new THREE.AxesHelper(5);
+    elementViewScene.add(axesHelper);
 
-                    animate(elementViewScene, elementViewCamera, elementViewRenderer, elementViewOrbitControls);
-                }
-            }
-        });
-    } else {
-        console.log('Main object is null');
+    function animate() {
+        requestAnimationFrame(animate);
+        if (elementViewOrbitControls != null) elementViewOrbitControls.update();
+        // if (stats != null) stats.update();
+
+        render();
     }
+
+    function render() {
+        elementViewRenderer.render(elementViewScene, elementViewCamera);
+    }
+
+    animate();
 }
 
 // Move this to a util module
@@ -129,52 +146,13 @@ function getCenterPoint(mesh) {
     var center = new THREE.Vector3();
     geometry.boundingBox.getCenter(center);
     mesh.localToWorld(center);
-    
+
     return center;
-}
-
-// Move this to a util module
-function animate(scene, camera, renderer, controls = null, stats = null) {
-    requestAnimationFrame(animate);
-    if (controls != null) controls.update();
-    if (stats != null) stats.update();
-
-    render(scene, camera, renderer);
-}
-
-// Move this to a util module
-function render(scene, camera, renderer) {
-    renderer.render(scene, camera);
-}
-
-// Move this to a util module
-function getOrbitControls(camera, canvas, screenSpacePanning = true, target = {
-    'x': 0,
-    'y': 0,
-    'z': 0
-}) {
-    let oc = new THREE.OrbitControls(camera, canvas);
-    oc.screenSpacePanning = screenSpacePanning;
-    oc.target.set(target.x, target.y, target.z);
-
-    return oc;
-}
-
-function getElementViewCamera(elementViewCanvas) {
-    let camera = new THREE.PerspectiveCamera(
-        60, $(elementViewCanvas).width() / $(elementViewCanvas).height(), 0.00001, 2000);
-
-    camera.translateZ(5);
-
-    return camera;
-}
-
-function getElementViewLights() {
-    return new THREE.HemisphereLight('white', 'brown', 1);
 }
 
 export {
     populateElementsDropdown,
     getElementInfoFromTypeString,
-    loadElementObject
+    loadElementObject, 
+    setElementInfo
 };
