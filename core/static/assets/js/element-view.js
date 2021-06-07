@@ -83,18 +83,25 @@ function populateElementsDropdown(mainObj) {
 
 }
 
-function loadElementObject(elementId, mainObj, canvasElement) {
+function loadElementObject(objectTotLoad) {
     // Create scene
     var elementViewScene = new THREE.Scene();
 
-    //TODO: setup background texture
+    // Setup background texture
+    let loader = new THREE.TextureLoader();
+    let backgroundTexture = loader.load('/static/assets/img/canvas-bg.jpg');
+    elementViewScene.background = backgroundTexture;
 
     // Create camera
-    var elementViewCanvas = canvasElement;
-    var elementViewCamera = getElementViewCamera(elementViewCanvas);
+    var elementViewCanvas = document.getElementById('element-canvas');
+    // var elementViewCamera = getElementViewCamera(elementViewCanvas);
+    let elementViewCamera = new THREE.PerspectiveCamera(
+        60, $(elementViewCanvas).width() / $(elementViewCanvas).height(), 0.00001, 2000);
+
+    elementViewCamera.translateZ(5);
 
     // Create lights
-    var sceneLight = getElementViewLights();
+    var sceneLight = new THREE.HemisphereLight('white', 'brown', 1);;
     elementViewScene.add(sceneLight);
 
     // Create renderer
@@ -104,30 +111,20 @@ function loadElementObject(elementId, mainObj, canvasElement) {
     });
 
     // Setup Orbit Controls
-    var elementViewOrbitControls = getOrbitControls(elementViewCamera, elementViewCanvas, true, {
-        'x': 0,
-        'y': 1,
-        'z': 0
-    });
+    let elementViewOrbitControls = new THREE.OrbitControls(elementViewCamera, elementViewCanvas);
+    elementViewOrbitControls.screenSpacePanning = true;
+    elementViewOrbitControls.target.set(0, 1, 0);
 
-    // Find and display the child element with given element id
-    var loader = new THREE.ObjectLoader();
-    loader.load(
-        "/static/assets/fbx/scene.json",
-        function (obj) {
-            mainObj.traverse(function (child) {
-                if (child.isMesh) {
-                    if (getElementId(child) == elementId) {
+    // Add object to load to scene
+    var childWorldCenter = getCenterPoint(objectTotLoad);
+    elementViewScene.add(objectTotLoad);
+    objectTotLoad.position.set(-1 * childWorldCenter.x, -1 * childWorldCenter.y, -1 * childWorldCenter.z);
     
-                        var childWorldCenter = getCenterPoint(child);
-                        child.position.set(-1 * childWorldCenter.x, -1 * childWorldCenter.y, -1 * childWorldCenter.z);
-                        elementViewScene.add(child);
-    
-                        animate();
-                    }
-                }
-            });
-        });
+    const gridHelper = new THREE.GridHelper(10, 10);
+    elementViewScene.add(gridHelper);
+
+    const axesHelper = new THREE.AxesHelper(5);
+    elementViewScene.add(axesHelper);
 
     function animate() {
         requestAnimationFrame(animate);
@@ -140,6 +137,8 @@ function loadElementObject(elementId, mainObj, canvasElement) {
     function render() {
         elementViewRenderer.render(elementViewScene, elementViewCamera);
     }
+
+    animate();
 }
 
 // Move this to a util module

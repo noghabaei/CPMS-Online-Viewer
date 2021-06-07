@@ -319,11 +319,12 @@
 							let selectedOptionName = $("#element-panel-select")[0].options[selectedOptionIndex].getAttribute('name');
 							console.log('Selected option name: '+ selectedOptionName);
 
-							let selectedchildObj = obj.getObjectByName(selectedOptionName);
-							console.log(selectedchildObj);
-
 							let selectedElementTypeString = $("#element-panel-select").val();
 							EV.setElementInfo(selectedElementTypeString);
+
+							let selectedchildObj = obj.getObjectByName(selectedOptionName);
+							console.log(selectedchildObj);
+							EV.loadElementObject(selectedchildObj);
 						});
 						},
 
