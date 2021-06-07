@@ -154,6 +154,8 @@
 		import '/static/assets/potree/OrbitControls.js';
 		import '/static/assets/potree/potree.js';
 		import * as EV from "/static/assets/js/element-view.js";
+		import * as CV from "/static/assets/js/compat-view.js";
+
 		//import '/static/assets/fbx/FBXLoader.js';
 		var scene;
 		document.body.onload = function()
@@ -322,9 +324,30 @@
 							let selectedElementTypeString = $("#element-panel-select").val();
 							EV.setElementInfo(selectedElementTypeString);
 
-							let selectedchildObj = obj.getObjectByName(selectedOptionName);
+							var selectedchildObj = obj.getObjectByName(selectedOptionName);
 							console.log(selectedchildObj);
 							EV.loadElementObject(selectedchildObj);
+						});
+
+						$(document.body).on('click', '#compat-modal-bring-btn',  () => {
+							let selectedOptionVal = $("#compat-panel-select").val();
+							if (selectedOptionVal != null && selectedOptionVal.length > 0) {
+								let shapeToLoad = CV.getCompatObjectToLoad(selectedOptionVal, 'main');
+								
+								const loadedShapeAxesHelper = new THREE.AxesHelper(5);
+								shapeToLoad.add(loadedShapeAxesHelper);
+
+								// const dragControls = new DragControls([shapeToLoad], camera, renderer.domElement);
+								// dragControls.addEventListener('dragstart', function () {
+								// 	controls.enabled = false;
+								// });
+								// dragControls.addEventListener('dragend', function () {
+								// 	controls.enabled = true;
+								// });
+
+								shapeToLoad.position.set(-100, 100, 100);
+								scene.add(shapeToLoad);
+							}
 						});
 						},
 

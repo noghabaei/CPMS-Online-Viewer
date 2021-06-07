@@ -53,7 +53,7 @@ function loadCompatibilityCanvas(shapeToLoad) {
         compatObjRenderer.render(compatScene, compatCamera);
     }
 
-    var compatObj = getCompatObjectToLoad(shapeToLoad)
+    var compatObj = getCompatObjectToLoad(shapeToLoad);
     compatScene.add(compatObj);
 
     animateCompatScene();
@@ -88,3 +88,7 @@ function getCompatObjectToLoad(shapeToLoad, forScene = 'compat') {
     var mesh = new THREE.Mesh(shapeGeometry, material);
     return mesh;
 }
+
+export {
+    getCompatObjectToLoad
+};
