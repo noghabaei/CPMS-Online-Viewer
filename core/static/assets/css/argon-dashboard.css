@@ -20795,6 +20795,14 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+#timeline {
+  width: 10rem;
+}
+
+#schedule {
+  z-index: 100;
+}
+
 @media screen and (max-width: 765px) {
   .information {
     margin-top: 3px;
@@ -20808,6 +20816,14 @@ input:checked + .slider:before {
     background-color: #3b3a3a;
     color: #FFFFFF;
     font-weight: bold;  
+  }
+
+  #schedule {
+    transform: translateX(-90%);
+  }
+
+  #timeline {
+    width: 5rem;
   }
 }
 
@@ -20825,6 +20841,7 @@ input:checked + .slider:before {
     color: #FFFFFF;
     font-weight: bold;  
   }
+
 }
 
 

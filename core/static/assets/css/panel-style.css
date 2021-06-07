@@ -94,12 +94,3 @@
 
 
 /* Canvas properties end */
-
-
-/* Media queries */
-
-@media screen and (max-width: 765px) {
-    #compat-panel {
-        bottom: 70px;
-    }
-}
