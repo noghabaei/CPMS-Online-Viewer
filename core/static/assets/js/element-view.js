@@ -85,7 +85,7 @@ function populateElementsDropdown(mainObj) {
 
 function loadElementObject(objectTotLoad) {
     // Create scene
-    var elementViewScene = new THREE.Scene();
+    let elementViewScene = new THREE.Scene();
 
     // Setup background texture
     let loader = new THREE.TextureLoader();
@@ -93,19 +93,17 @@ function loadElementObject(objectTotLoad) {
     elementViewScene.background = backgroundTexture;
 
     // Create camera
-    var elementViewCanvas = document.getElementById('element-canvas');
-    // var elementViewCamera = getElementViewCamera(elementViewCanvas);
+    let elementViewCanvas = document.getElementById('element-canvas');
     let elementViewCamera = new THREE.PerspectiveCamera(
         60, $(elementViewCanvas).width() / $(elementViewCanvas).height(), 0.00001, 2000);
-
     elementViewCamera.translateZ(5);
 
     // Create lights
-    var sceneLight = new THREE.HemisphereLight('white', 'brown', 1);;
+    let sceneLight = new THREE.HemisphereLight('white', 'brown', 1);;
     elementViewScene.add(sceneLight);
 
     // Create renderer
-    var elementViewRenderer = new THREE.WebGLRenderer({
+    let elementViewRenderer = new THREE.WebGLRenderer({
         canvas: elementViewCanvas,
         antialias: true
     });
@@ -116,9 +114,9 @@ function loadElementObject(objectTotLoad) {
     elementViewOrbitControls.target.set(0, 1, 0);
 
     // Add object to load to scene
-    var childWorldCenter = getCenterPoint(objectTotLoad);
-    elementViewScene.add(objectTotLoad);
+    let childWorldCenter = getCenterPoint(objectTotLoad);
     objectTotLoad.position.set(-1 * childWorldCenter.x, -1 * childWorldCenter.y, -1 * childWorldCenter.z);
+    elementViewScene.add(objectTotLoad);
     
     const gridHelper = new THREE.GridHelper(10, 10);
     elementViewScene.add(gridHelper);
@@ -150,32 +148,6 @@ function getCenterPoint(mesh) {
     mesh.localToWorld(center);
 
     return center;
-}
-
-// Move this to a util module
-function getOrbitControls(camera, canvas, screenSpacePanning = true, target = {
-    'x': 0,
-    'y': 0,
-    'z': 0
-}) {
-    let oc = new THREE.OrbitControls(camera, canvas);
-    oc.screenSpacePanning = screenSpacePanning;
-    oc.target.set(target.x, target.y, target.z);
-
-    return oc;
-}
-
-function getElementViewCamera(elementViewCanvas) {
-    let camera = new THREE.PerspectiveCamera(
-        60, $(elementViewCanvas).width() / $(elementViewCanvas).height(), 0.00001, 2000);
-
-    camera.translateZ(5);
-
-    return camera;
-}
-
-function getElementViewLights() {
-    return new THREE.HemisphereLight('white', 'brown', 1);
 }
 
 export {
