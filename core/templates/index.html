@@ -151,10 +151,12 @@
 		import '/static/assets/fbx/three.js';
 		import '/static/assets/fbx/three.module.js';
 		import '/static/assets/potree/three.min.js';
-		import '/static/assets/potree/OrbitControls.js';
+		// import '/static/assets/potree/OrbitControls.js';
+		import * as OC from '/static/assets/fbx/OrbitControls.js';
 		import '/static/assets/potree/potree.js';
 		import * as EV from "/static/assets/js/element-view.js";
 		import * as CV from "/static/assets/js/compat-view.js";
+		import * as DC from '/static/assets/fbx/DragControls.js';
 
 		//import '/static/assets/fbx/FBXLoader.js';
 		var scene;
@@ -209,7 +211,8 @@
 
 				scene.add(new THREE.AmbientLight(0x222222,5));
 
-				var controls = new THREE.OrbitControls(camera, canvas);
+				// var controls = new THREE.OrbitControls(camera, canvas);
+				var controls = new OC.OrbitControls(camera, canvas);
 				controls.autoRotate = false;
 				controls.update();
 
@@ -313,7 +316,9 @@
 						// Add the loaded object to the scene
 						obj.position.set(-180, -100, 120);
 						obj.name = "BIM";
+						
 						scene.add( obj );
+
 						EV.populateElementsDropdown(obj);
 						
 						$("#element-panel-select").change(() => {
@@ -337,13 +342,13 @@
 								const loadedShapeAxesHelper = new THREE.AxesHelper(5);
 								shapeToLoad.add(loadedShapeAxesHelper);
 
-								// const dragControls = new DragControls([shapeToLoad], camera, renderer.domElement);
-								// dragControls.addEventListener('dragstart', function () {
-								// 	controls.enabled = false;
-								// });
-								// dragControls.addEventListener('dragend', function () {
-								// 	controls.enabled = true;
-								// });
+								const dragControls = new DC.DragControls([shapeToLoad], camera, renderer.domElement);
+								dragControls.addEventListener('dragstart', function () {
+									controls.enabled = false;
+								});
+								dragControls.addEventListener('dragend', function () {
+									controls.enabled = true;
+								});
 
 								shapeToLoad.position.set(-100, 100, 100);
 								scene.add(shapeToLoad);
@@ -521,7 +526,8 @@
 
 				scene.add(new THREE.AmbientLight(0x404040));
 
-				var controls = new THREE.OrbitControls(camera, canvas2);
+				// var controls = new THREE.OrbitControls(camera, canvas2);
+				var controls = new OC.OrbitControls(camera, canvas2);
 				controls.autoRotate = true;
 				controls.update();
 
