@@ -104,10 +104,10 @@
 	<canvas id="bimcanvas" style=" background: gray; height: 20%; width: 300px; position:fixed; margin-left: 1em;; bottom:20px; z-index: 0; border:1px black solid;">
 	</canvas>
 
-	<div id = "schedule" class ="small">
+	<div id = "schedule" class ="small" style="width: fit-content;">
 		<span>SCHEDULE</span>
 		<div style="background-color: #000000 !important; border-radius: 5px;">
-			<input id="timeline" type="range" style="transform: translateX(0%); width: 70%" value="0">
+			<input id="timeline" type="range" style="transform: translateX(0%);" value="0">
 		</div>
 	</div>
 
@@ -151,9 +151,13 @@
 		import '/static/assets/fbx/three.js';
 		import '/static/assets/fbx/three.module.js';
 		import '/static/assets/potree/three.min.js';
-		import '/static/assets/potree/OrbitControls.js';
+		// import '/static/assets/potree/OrbitControls.js';
+		import * as OC from '/static/assets/fbx/OrbitControls.js';
 		import '/static/assets/potree/potree.js';
 		import * as EV from "/static/assets/js/element-view.js";
+		import * as CV from "/static/assets/js/compat-view.js";
+		import * as DC from '/static/assets/fbx/DragControls.js';
+
 		//import '/static/assets/fbx/FBXLoader.js';
 		var scene;
 		document.body.onload = function()
@@ -207,7 +211,8 @@
 
 				scene.add(new THREE.AmbientLight(0x222222,5));
 
-				var controls = new THREE.OrbitControls(camera, canvas);
+				// var controls = new THREE.OrbitControls(camera, canvas);
+				var controls = new OC.OrbitControls(camera, canvas);
 				controls.autoRotate = false;
 				controls.update();
 
@@ -311,7 +316,9 @@
 						// Add the loaded object to the scene
 						obj.position.set(-180, -100, 120);
 						obj.name = "BIM";
+						
 						scene.add( obj );
+
 						EV.populateElementsDropdown(obj);
 						
 						$("#element-panel-select").change(() => {
@@ -322,9 +329,30 @@
 							let selectedElementTypeString = $("#element-panel-select").val();
 							EV.setElementInfo(selectedElementTypeString);
 
-							let selectedchildObj = obj.getObjectByName(selectedOptionName);
+							var selectedchildObj = obj.getObjectByName(selectedOptionName);
 							console.log(selectedchildObj);
 							EV.loadElementObject(selectedchildObj);
+						});
+
+						$(document.body).on('click', '#compat-modal-bring-btn',  () => {
+							let selectedOptionVal = $("#compat-panel-select").val();
+							if (selectedOptionVal != null && selectedOptionVal.length > 0) {
+								let shapeToLoad = CV.getCompatObjectToLoad(selectedOptionVal, 'main');
+								
+								const loadedShapeAxesHelper = new THREE.AxesHelper(5);
+								shapeToLoad.add(loadedShapeAxesHelper);
+
+								const dragControls = new DC.DragControls([shapeToLoad], camera, renderer.domElement);
+								dragControls.addEventListener('dragstart', function () {
+									controls.enabled = false;
+								});
+								dragControls.addEventListener('dragend', function () {
+									controls.enabled = true;
+								});
+
+								shapeToLoad.position.set(-100, 100, 100);
+								scene.add(shapeToLoad);
+							}
 						});
 						},
 
@@ -498,7 +526,8 @@
 
 				scene.add(new THREE.AmbientLight(0x404040));
 
-				var controls = new THREE.OrbitControls(camera, canvas2);
+				// var controls = new THREE.OrbitControls(camera, canvas2);
+				var controls = new OC.OrbitControls(camera, canvas2);
 				controls.autoRotate = true;
 				controls.update();
 

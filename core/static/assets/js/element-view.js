@@ -1,3 +1,5 @@
+import * as OC from '/static/assets/fbx/OrbitControls.js';
+
 function getElementType(element) {
     if (element == null || element.name == null || !validateElementName(element.name)) return null;
 
@@ -109,13 +111,15 @@ function loadElementObject(objectTotLoad) {
     });
 
     // Setup Orbit Controls
-    let elementViewOrbitControls = new THREE.OrbitControls(elementViewCamera, elementViewCanvas);
+    let elementViewOrbitControls = new OC.OrbitControls(elementViewCamera, elementViewCanvas);
     elementViewOrbitControls.screenSpacePanning = true;
     elementViewOrbitControls.target.set(0, 1, 0);
 
     // Add object to load to scene
     let childWorldCenter = getCenterPoint(objectTotLoad);
-    objectTotLoad.position.set(-1 * childWorldCenter.x, -1 * childWorldCenter.y, -1 * childWorldCenter.z);
+    objectTotLoad.position.set(-2 * childWorldCenter.x
+        ,  -2 * childWorldCenter.y
+        ,  -2 * childWorldCenter.z);
     elementViewScene.add(objectTotLoad);
     
     const gridHelper = new THREE.GridHelper(10, 10);

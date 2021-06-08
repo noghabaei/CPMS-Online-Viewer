@@ -1,3 +1,5 @@
+import * as OC from '/static/assets/fbx/OrbitControls.js';
+
 $("#compat-panel-select").change(() => {
     let selectedOptionVal = $("#compat-panel-select").val();
 
@@ -38,7 +40,7 @@ function loadCompatibilityCanvas(shapeToLoad) {
         antialias: true
     });
 
-    const compatControls = new THREE.OrbitControls(compatCamera, compatObjRenderer.domElement);
+    const compatControls = new OC.OrbitControls(compatCamera, compatObjRenderer.domElement);
     compatControls.screenSpacePanning = true;
     compatControls.target.set(0, 1, 0);
 
@@ -53,7 +55,7 @@ function loadCompatibilityCanvas(shapeToLoad) {
         compatObjRenderer.render(compatScene, compatCamera);
     }
 
-    var compatObj = getCompatObjectToLoad(shapeToLoad)
+    var compatObj = getCompatObjectToLoad(shapeToLoad);
     compatScene.add(compatObj);
 
     animateCompatScene();
@@ -88,3 +90,7 @@ function getCompatObjectToLoad(shapeToLoad, forScene = 'compat') {
     var mesh = new THREE.Mesh(shapeGeometry, material);
     return mesh;
 }
+
+export {
+    getCompatObjectToLoad
+};
