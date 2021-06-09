@@ -20870,16 +20870,6 @@ input:checked + .slider:before {
     /* position: absolute; */
     width: 12rem;
   }
-
-  #chart_wrapper{
-    position:fixed;
-    left:0px; 
-    bottom:0px; 
-    overflow-y: scroll; 
-    overflow-x: scroll; 
-    height:30%;
-    width:100%;
-  }
   
 }
 

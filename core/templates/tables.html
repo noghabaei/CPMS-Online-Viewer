@@ -111,10 +111,18 @@
 		function daysToMilliseconds(days) {
 			return days * 24 * 60 * 60 * 1000;
 		}
-	
+		function getWidth(){
+			var windowWidth = document.getElementById("chart_div").offsetWidth;
+			if(windowWidth <= 750){
+				return windowWidth;
+			}else{
+				return windowWidth - 250;
+			}
+		}
+		var data;
 		function drawChart() {
 	
-			var data = new google.visualization.DataTable();
+			data = new google.visualization.DataTable();
 			data.addColumn('string', 'Task ID');
 			data.addColumn('string', 'Task Name');
 			data.addColumn('date', 'Start Date');
@@ -138,7 +146,7 @@
 
 			var options = {
 				height: elementIdTypeMapList.length * 30 + 40 ,
-				width: 1187,
+				width: getWidth(),
 				gantt: {
 					trackHeight: 30
 				},
@@ -360,14 +368,8 @@
 
 				document.body.onresize = function()
 				{
-					renderer.setPixelRatio(window.devicePixelRatio);
+					renderer.setPixelRatio(window.devicePixelRatio +8);
 					drawChart(data);
-					// var container = document.getElementById('potreeContainer');
-					// var width = $(container).width();
-					// var height = $(container).height();
-					// renderer.setSize(width, height);
-					// camera.aspect = width / height;
-					// camera.updateProjectionMatrix();
 				}
 				document.body.onresize();
 			};
