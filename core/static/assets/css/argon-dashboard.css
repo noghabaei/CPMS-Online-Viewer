@@ -20816,18 +20816,6 @@ input:checked + .slider:before {
   z-index: 100;
 }
 
-@media screen and (max-width: 749px) {
-  #timeline {
-    /* position: absolute; */
-    width: 5rem;
-  }
-
-  #schedule {
-    transform: translateX(-90%);
-  }
-}
-
-@media screen and (min-width: 550px) and (max-width: 765px) {
 #chart_wrapper{
   position:fixed;
   left:250px ; 
@@ -20838,7 +20826,28 @@ input:checked + .slider:before {
   width:100%;
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 749px) {
+  #timeline {
+    /* position: absolute; */
+    width: 5rem;
+  }
+
+  #schedule {
+    transform: translateX(-90%);
+  }
+
+#chart_wrapper{
+  position:fixed;
+    left:0px; 
+    bottom:0px; 
+    overflow-y: scroll; 
+    overflow-x: scroll; 
+    height:30%;
+    width:100%;
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 765px) {
   .information {
     margin-top: 3px;
     margin-right: 3px;
@@ -20861,16 +20870,17 @@ input:checked + .slider:before {
     /* position: absolute; */
     width: 12rem;
   }
-  
+
   #chart_wrapper{
     position:fixed;
-    left:0px ; 
+    left:0px; 
     bottom:0px; 
     overflow-y: scroll; 
     overflow-x: scroll; 
     height:30%;
     width:100%;
   }
+  
 }
 
 @media screen and (min-width:766px) and (max-width: 1036px) {
