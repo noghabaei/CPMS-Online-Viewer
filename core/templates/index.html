@@ -304,6 +304,15 @@
 					//counter = counter+1;
 				}
 				
+				function getCenterPoint(mesh) {
+					var geometry = mesh.geometry;
+					geometry.computeBoundingBox();
+					var center = new THREE.Vector3();
+					geometry.boundingBox.getCenter(center);
+					mesh.localToWorld(center);
+
+					return center;
+				}
 
 				const loader = new THREE.ObjectLoader();
 				loader.load(

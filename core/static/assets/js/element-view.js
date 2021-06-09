@@ -115,18 +115,22 @@ function loadElementObject(objectTotLoad) {
     elementViewOrbitControls.screenSpacePanning = true;
     elementViewOrbitControls.target.set(0, 1, 0);
 
-    // Add object to load to scene
-    let childWorldCenter = getCenterPoint(objectTotLoad);
-    objectTotLoad.position.set(-2 * childWorldCenter.x
-        ,  -2 * childWorldCenter.y
-        ,  -2 * childWorldCenter.z);
-    elementViewScene.add(objectTotLoad);
-    
-    const gridHelper = new THREE.GridHelper(10, 10);
-    elementViewScene.add(gridHelper);
+    // const gridHelper = new THREE.GridHelper(10, 5);
+    // elementViewScene.add(gridHelper);
 
-    const axesHelper = new THREE.AxesHelper(5);
-    elementViewScene.add(axesHelper);
+    // const axesHelper = new THREE.AxesHelper(50);
+    // elementViewScene.add(axesHelper);
+
+    // Position and add object
+    let objectCenter = getCenterPoint(objectTotLoad);
+    objectTotLoad.position.setX(-1*objectCenter.x);
+    objectTotLoad.position.setZ(-1*objectCenter.y);
+    objectTotLoad.position.setY(1*objectCenter.z);
+    objectTotLoad.translateX(-180);
+    objectTotLoad.translateY(-120);
+    objectTotLoad.translateZ(-100);
+
+    elementViewScene.add(objectTotLoad);
 
     function animate() {
         requestAnimationFrame(animate);
