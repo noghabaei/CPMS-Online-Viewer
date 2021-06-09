@@ -20725,7 +20725,20 @@ pre>code.highlight {
   color: #FFFFFF; 
   width: 30%; 
   position:fixed; 
-  right: 20%; bottom:20px; 
+  right: 20%; 
+  bottom:20px; 
+  text-align: center; 
+  font-weight: bold; 
+  border-radius: 5px;
+}
+
+#scheduleInTable{
+  background-color: #3b3a3a ;
+  color: #FFFFFF; 
+  width: 30%; 
+  position:fixed; 
+  right: 20%; 
+  bottom: 31%; 
   text-align: center; 
   font-weight: bold; 
   border-radius: 5px;
@@ -20795,6 +20808,7 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+<<<<<<< HEAD
 #timeline {
   width: 25rem;
 }
@@ -20815,6 +20829,19 @@ input:checked + .slider:before {
 }
 
 @media screen and (min-width: 550px) and (max-width: 765px) {
+=======
+#chart_wrapper{
+  position:fixed;
+  left:250px ; 
+  bottom:0px; 
+  overflow-y: scroll; 
+  overflow-x: scroll; 
+  height:30%;
+  width:100%;
+}
+
+@media screen and (max-width: 765px) {
+>>>>>>> arpitha-dev
   .information {
     margin-top: 3px;
     margin-right: 3px;
@@ -20828,6 +20855,7 @@ input:checked + .slider:before {
     color: #FFFFFF;
     font-weight: bold;  
   }
+<<<<<<< HEAD
 
   #schedule {
     transform: translateX(-50%);
@@ -20836,6 +20864,16 @@ input:checked + .slider:before {
   #timeline {
     /* position: absolute; */
     width: 12rem;
+=======
+  #chart_wrapper{
+    position:fixed;
+    left:0px ; 
+    bottom:0px; 
+    overflow-y: scroll; 
+    overflow-x: scroll; 
+    height:30%;
+    width:100%;
+>>>>>>> arpitha-dev
   }
 }
 
