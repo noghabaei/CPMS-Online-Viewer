@@ -1,0 +1,649 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} View {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- Header -->
+    <!-- <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8"> -->
+	
+	<!-- <section style= "height:500px;"> -->
+		
+	<!--<canvas id="potreecanvas" style="background: gray;left: 0px;position: absolute; z-index: -1;cursor: grab;tabindex=0; border:1px solid;">-->
+	<!--</canvas>-->
+	<div class="control small" >
+		<div class ="text-center ">CONTROL</div>
+		<div id = "controlInputs">
+			<select class="custom-select-sm" id="day" data-size="4">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+			</select>
+			<div class ="bimdiv">
+				<label class="switch">
+					<input type="checkbox" id ="bim" checked>
+					<span class="slider round"></span>
+				  </label>
+				  <label>BIM</label>
+			</div>
+			<div>
+				<label class="switch">
+					<input type="checkbox">
+					<span class="slider round"></span>
+				  </label>
+				  <label>Image</label>
+			</div>
+			<div>
+				<label class="switch">
+					<input type="checkbox">
+					<span class="slider round"></span>
+				  </label>
+				  <label>UV / Laser</label>
+			</div> 
+		</div>
+	</div>
+
+	<!-- Element View Panel -->
+	<div id="element-view-panel" class="panel small">
+		<div class="panel-header">
+			<div class ="text-center">ELEMENT VIEW</div>
+		</div>
+		<div class="panel-content" id="element-panel-content">
+			<div id="element-panel-buttons">
+				<button id="element-modal-compat-btn" class="btn btn-light btn-element-modal btn-sm">Compatibility Check</button>
+				<button id="element-modal-viewmode-btn" class="btn btn-light btn-element-modal btn-sm">View Mode</button>
+			</div>
+			<div id="element-panel-dropdown">
+				<select class="custom-select-sm" id="element-panel-select" data-size="4">
+					<option>No Elements Loaded</option>
+				</select>
+			</div>
+			<div class="dropdown-element-info-div" id="element-panel-info">
+				<span id="element-info-span">Info: </span>
+			</div> 
+			<div id="element-panel-canvas">
+				<canvas class="subcanvas" id="element-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+
+	<!-- Compatibility Panel -->
+	<div id="compat-panel" class="panel small">
+		<div class="panel-header">
+			<div class ="text-center">COMPATIBILITY VIEW</div>
+		</div>
+		<div class="panel-content" id="compat-panel-content">
+			<div id="compat-panel-buttons">
+				<button id="compat-modal-bring-btn" class="btn btn-light btn-sm">Bring Element</button>
+				<button id="compat-modal-symbol-btn" class="btn btn-light btn-sm">></button>
+			</div>
+			<div id="compat-panel-dropdown">
+				<select class="custom-select-sm" id="compat-panel-select" data-size="4">
+					<option value="">No Option Selected</option>
+					<option value="sphere">Sphere</option>
+					<option value="cube">Cube</option>
+					<option value="cylinder">Cylinder</option>
+				</select>
+			</div>
+			<div class="dropdown-element-info-div" id="compat-panel-info">
+				<span id="compat-info-span">Info: </span>
+			</div>
+			<div id="compat-panel-canvas">
+				<canvas class="subcanvas" id="compat-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+
+	<canvas id="potreecanvas" style="background: gray; position: fixed; width: 100%; height: 100%; left: 0; top:0; z-index: -1;cursor: grab; border:1px solid; display: block;">
+	</canvas>
+
+	<canvas id="bimcanvas" style=" background: gray; height: 20%; width: 300px; position:fixed; margin-left: 1em;; bottom:20px; z-index: 0; border:1px black solid;">
+	</canvas>
+
+	<div id = "schedule" class ="small" style="width: fit-content;">
+		<span>SCHEDULE</span>
+		<div style="background-color: #000000 !important; border-radius: 5px;">
+			<input id="timeline" type="range" style="transform: translateX(0%);" value="0">
+		</div>
+	</div>
+
+	<div class="information small">
+		<div class ="text-center">INFORMATION</div>
+		<div id = "controlInputs">
+			<div>
+				<label>Frame rate:</label>
+				<span id ="frameRate"></span>
+			</div>
+			<div>
+				<label>Points rendered:</label>
+			</div>
+		</div>
+	</div>
+
+	<!--<button type="button" class="btn btn-secondary" style="position: relative; top:70px; left: 20px;">BIM</button>-->
+	<!--<button type="button" class="btn btn-secondary" style="position: relative; top:120px; left: -65px;">Scan</button>-->
+	
+    
+	<!-- </section> -->
+
+	<!-- </div> -->
+
+
+    <!-- <div class="container-fluid mt--7"> -->
+
+
+    <!-- </div> -->
+	
+{% load static %}
+	<!-- <script src="static/assets/potree/three.min.js"></script> -->
+	<!--<script src="/static/assets/fbx/three.js"></script> -->
+	<!--<script src="static/assets/potree/OrbitControls.js"></script> -->
+	<!--<script src="static/assets/potree/potree.js"></script>-->
+	<!--<script type="module" src="/static/assets/fbx/FBXLoader.js"></script>-->
+	
+	<script type="module">
+
+		//
+		import '/static/assets/fbx/three.js';
+		import '/static/assets/fbx/three.module.js';
+		import '/static/assets/potree/three.min.js';
+		// import '/static/assets/potree/OrbitControls.js';
+		import * as OC from '/static/assets/fbx/OrbitControls.js';
+		import '/static/assets/potree/potree.js';
+		import * as EV from "/static/assets/js/element-view.js";
+		import * as CV from "/static/assets/js/compat-view.js";
+		import * as DC from '/static/assets/fbx/DragControls.js';
+
+		//import '/static/assets/fbx/FBXLoader.js';
+		var scene;
+		document.body.onload = function()
+			{
+				//three.js
+				
+				scene = new THREE.Scene();
+
+				//var canvas = document.createElement("canvas");
+				var canvas = document.getElementById("potreecanvas");
+				var sidenav = document.getElementById("sidenav");
+				var timeline = document.getElementById("timeline");
+				
+				//canvas.style.position = "absolute";
+				//canvas.style.top = "0px";
+				//canvas.style.left = "0px";
+				//canvas.style.width = "100%";
+				//canvas.style.height = "100%";
+				//document.body.appendChild(canvas);
+				
+				//var width = window.innerWidth;
+				//var height = window.innerHeight;
+				
+				var width = canvas.width;
+				var height = canvas.height;
+
+				
+				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100000);
+				camera.position.set(-200, 150, -200 );
+
+				var renderer = new THREE.WebGLRenderer(
+				{
+					canvas: canvas,
+					alpha: true,
+					logarithmicDepthBuffer: true,
+					context: null,
+					precision: "highp",
+					premultipliedAlpha: true,
+					antialias: true,
+					preserveDrawingBuffer: false,
+					powerPreference: "high-performance"
+				});
+
+				//<!-- renderer.setSize(canvas.width, canvas.height); -->
+
+				//var geometry = new THREE.BoxBufferGeometry(25, 1, 25);
+				//var material = new THREE.MeshBasicMaterial({color: 0x44AA44});
+				//var cube = new THREE.Mesh(geometry, material);
+				//cube.position.y = -2;
+				//scene.add(cube);
+
+				scene.add(new THREE.AmbientLight(0x222222,5));
+
+				// var controls = new THREE.OrbitControls(camera, canvas);
+				var controls = new OC.OrbitControls(camera, canvas);
+				controls.autoRotate = false;
+				controls.update();
+
+				var raycaster = new THREE.Raycaster();
+				raycaster.params.Points.threshold = 1e-2;
+				var normalized = new THREE.Vector2();
+
+				canvas.onmousemove = function(event)
+				{
+					normalized.set((event.clientX / canvas.width) * 2 - 1, -(event.clientY / canvas.height) * 2 + 1);
+					raycaster.setFromCamera(normalized, camera);
+				}
+
+				canvas.ondblclick = function(event)
+				{
+					var intesects = raycaster.intersectObject(scene, true);
+					
+					
+					if(intesects.length > 0)
+					{
+						var geometry = new THREE.SphereBufferGeometry(0.1, 32, 32);
+						var material = new THREE.MeshBasicMaterial({color: 0xAA4444});
+						var sphere = new THREE.Mesh(geometry, material);
+						sphere.position.copy(intesects[0].point);
+						scene.add(sphere);
+					}
+				}
+
+				Potree.Global.workerPath = "./static/assets/source";
+				
+
+
+
+				//loadPointCloud("data/lion_takanawa_ept_laz/ept.json", new THREE.Vector3(-4, -4, 3.0));
+				//loadPointCloud("data/lion_takanawa_ept_bin/ept.json", new THREE.Vector3(-11, -4, 3.0));
+				//loadPointCloud("data/lion_takanawa/cloud.js", new THREE.Vector3(-2, -3, 0.0));
+				//loadPointCloud("data/lion_takanawa_las/cloud.js", new THREE.Vector3(3, -3, 0.0));
+				//loadPointCloud("data/lion_takanawa_laz/cloud.js", new THREE.Vector3(8, -3, 0.0));
+				//loadPointCloud("http://arena4d.uksouth.cloudapp.azure.com:8080/4e5059c4-f701-4a8f-8830-59e78a2c0816/BLK360 Sample.vpc");
+				//"http://5.9.65.151/mschuetz/potree/resources/pointclouds/faro/skatepark/cloud.js"
+				//"http://5.9.65.151/mschuetz/potree/resources/pointclouds/weiss/subseamanifold2/cloud.js"
+				
+				var counter = 1;
+				
+				function loadPointCloud(url, position)
+				{
+
+					Potree.loadPointCloud(url, "pointcloud", function(e)
+					{
+						var points = new Potree.Group();
+						points.setPointBudget(500000);
+						points.name = "objectName" + String(counter);
+						//points.material.opacity = 0.0;
+						//points.material.wireframe = false;
+						
+						scene.add(points);
+	
+						var pointcloud = e.pointcloud;
+
+						if(position !== undefined)
+						{
+							pointcloud.position.copy(position);
+						}
+
+						var material = pointcloud.material;
+						material.size = 2;
+						material.pointColorType = Potree.PointColorType.RGB; //RGB | DEPTH | HEIGHT | POINT_INDEX | LOD | CLASSIFICATION
+						material.pointSizeType = Potree.PointSizeType.ADAPTIVE; //ADAPTIVE | FIXED
+						material.shape = Potree.PointShape.SQUARE; //CIRCLE | SQUARE
+
+						points.add(pointcloud);
+					});
+				}
+				
+				
+				
+				function loadPC(s){
+					
+					var points = new Potree.Group();
+					points.name = "objectName" + String(counter);
+					points.setPointBudget(10000000)
+					scene.add(points);
+
+					Potree.loadPointCloud(s, name, function(data)
+					{
+						var pointcloud = data.pointcloud;
+						points.add(pointcloud);
+					});
+					//counter = counter+1;
+				}
+				
+				function getCenterPoint(mesh) {
+					var geometry = mesh.geometry;
+					geometry.computeBoundingBox();
+					var center = new THREE.Vector3();
+					geometry.boundingBox.getCenter(center);
+					mesh.localToWorld(center);
+
+					return center;
+				}
+
+				const loader = new THREE.ObjectLoader();
+				loader.load(
+					// resource URL
+					"/static/assets/fbx/scene.json",
+
+					// onLoad callback
+					// Here the loaded data is assumed to be an object
+					function ( obj ) {
+						// Add the loaded object to the scene
+						obj.position.set(-180, -100, 120);
+						obj.name = "BIM";
+						
+						scene.add( obj );
+
+						EV.populateElementsDropdown(obj);
+						
+						$("#element-panel-select").change(() => {
+							let selectedOptionIndex = $("#element-panel-select").prop('selectedIndex');
+							let selectedOptionName = $("#element-panel-select")[0].options[selectedOptionIndex].getAttribute('name');
+							console.log('Selected option name: '+ selectedOptionName);
+
+							let selectedElementTypeString = $("#element-panel-select").val();
+							EV.setElementInfo(selectedElementTypeString);
+
+							var selectedchildObj = obj.getObjectByName(selectedOptionName);
+							console.log(selectedchildObj);
+							EV.loadElementObject(selectedchildObj);
+						});
+
+						$(document.body).on('click', '#compat-modal-bring-btn',  () => {
+							let selectedOptionVal = $("#compat-panel-select").val();
+							if (selectedOptionVal != null && selectedOptionVal.length > 0) {
+								let shapeToLoad = CV.getCompatObjectToLoad(selectedOptionVal, 'main');
+								
+								const loadedShapeAxesHelper = new THREE.AxesHelper(5);
+								shapeToLoad.add(loadedShapeAxesHelper);
+
+								const dragControls = new DC.DragControls([shapeToLoad], camera, renderer.domElement);
+								dragControls.addEventListener('dragstart', function () {
+									controls.enabled = false;
+								});
+								dragControls.addEventListener('dragend', function () {
+									controls.enabled = true;
+								});
+
+								shapeToLoad.position.set(-100, 100, 100);
+								scene.add(shapeToLoad);
+							}
+						});
+						},
+
+					// onProgress callback
+					function ( xhr ) {
+						console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+					},
+
+					// onError callback
+					function ( err ) {
+						console.error( 'An error happened' );
+					}
+				);
+
+				//var previous_value = -1;
+				var count1 = 0;
+				var count2 = 0;
+				var count3 = 0;
+
+				// const geometry = new THREE.BoxGeometry( 0, 0, 0 );
+				// const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+				// const cube = new THREE.Mesh( geometry, material );
+				// scene.add( cube );
+				
+				function loop()
+				{
+					//cube.rotation.y += 0.01;
+					controls.update();
+					renderer.render(scene, camera);
+
+					requestAnimationFrame(loop);
+					
+
+					if(timeline.value<=34){
+						count3 = 0
+						count2 = 0;
+						count1 = count1 + 1;
+						if(count1 == 1){
+							var object = scene.getObjectByName("objectName" + String(counter));
+							scene.remove(object); 
+							//loadPC("clouds/cloud1/cloud.js");
+							//console.log("log");
+							loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-198, -154, -16));
+						}
+						//
+					}
+					if(timeline.value>34 && timeline.value<=67){
+						count3 = 0
+						count1 = 0;
+						count2 = count2 + 1;
+						if(count2 == 1){
+							var object = scene.getObjectByName("objectName" + String(counter));
+							scene.remove(object); 
+							//console.log("log");
+							//loadPC("clouds/cloud2/cloud.js");
+							loadPointCloud("https://mojtaba1995.github.io//clouds/cloud2/cloud.js", new THREE.Vector3(-210, -150, -17));
+						}
+						//
+					}
+					if(timeline.value>67){
+						count1 = 0;
+						count2 = 0
+						count3 = count3 + 1;
+						if(count3 == 1){
+							var object = scene.getObjectByName("objectName" + String(counter));
+							scene.remove(object); 
+							//console.log("log");
+							//loadPC("clouds/cloud2/cloud.js");
+							loadPointCloud("https://mojtaba1995.github.io//clouds/cloud3/cloud.js", new THREE.Vector3(-196.6, -159, -24));
+						}
+						//
+					}
+					
+					//console.log(previous_value);
+					//console.log(timeline.value);
+					
+					//previous_value = timeline.value;
+					//console.log(timeline.value);
+				};
+				loop();
+
+				//var width = window.innerWidth;
+				//var height = window.innerHeight;
+					
+				//renderer.setSize(width, height);
+				//camera.aspect = width / height;
+				//camera.updateProjectionMatrix();
+				
+				function resizeCanvas() {
+					var width = canvas.clientWidth;
+					var height = canvas.clientHeight;
+					renderer.setSize(window.innerWidth, window.innerHeight);
+					
+					// if (window.innerWidth >765){
+					// canvas.style.width = window.innerWidth -250 + "px";
+					// width = window.innerWidth -250;
+					// }else{
+					// canvas.style.width = window.innerWidth  + "px";
+					// width = window.innerWidth;
+					// }
+					// artifical delay so innerHeight is correct
+					// setTimeout(function() {
+					// 	//canvas.style.height = window.innerHeight  + "px";
+					// 	//height =  window.innerHeight;
+					// 	renderer.setSize(width, height);
+					// 	camera.aspect = width / height;
+					// 	camera.updateProjectionMatrix();
+					// 	//timeline.style.top = window.innerHeight -50  + "px";
+					// }, 0);
+					
+
+					
+					console.log(width);
+					console.log(height);
+
+					//canvas.style.width = "100%";
+					//canvas.style.height = "100%";
+					
+				};
+
+
+				// Webkit/Blink will fire this on load, but Gecko doesn't.
+				//window.onresize = resizeCanvas;
+
+				// So we fire it manually...
+				resizeCanvas();
+				loadCanvas2();		
+
+				document.body.onresize = function()
+				{
+					resizeCanvas();
+					//loadCanvas2();
+					resizeCanvas2(canvas_side, renderer_side, camera_side, timeline);
+
+				}
+			};
+
+			var camera_side;
+			var renderer_side;
+			var canvas_side;
+			function loadCanvas2()
+		{
+
+				var scene = new THREE.Scene();
+
+				//var canvas = document.createElement("canvas");
+				var canvas2 = document.getElementById("bimcanvas");
+				var sidenav = document.getElementById("sidenav");
+				var timeline = document.getElementById("timeline");
+				
+				
+				var width = canvas2.width;
+				var height = canvas2.height;
+				
+				
+				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100000);
+				camera.position.set(-2, 1.5, -2 );
+
+				var renderer = new THREE.WebGLRenderer(
+				{
+					canvas: canvas2,
+					alpha: true,
+					logarithmicDepthBuffer: true,
+					context: null,
+					precision: "highp",
+					premultipliedAlpha: true,
+					antialias: true,
+					preserveDrawingBuffer: false,
+					powerPreference: "high-performance"
+				});
+
+				scene.add(new THREE.AmbientLight(0x404040));
+
+				// var controls = new THREE.OrbitControls(camera, canvas2);
+				var controls = new OC.OrbitControls(camera, canvas2);
+				controls.autoRotate = true;
+				controls.update();
+
+				var raycaster = new THREE.Raycaster();
+				raycaster.params.Points.threshold = 1e-2;
+				var normalized = new THREE.Vector2();
+
+				canvas2.onmousemove = function(event)
+				{
+					normalized.set((event.clientX / canvas2.width) * 2 - 1, -(event.clientY / canvas2.height) * 2 + 1);
+					raycaster.setFromCamera(normalized, camera);
+				}
+
+				canvas2.ondblclick = function(event)
+				{
+					var intesects = raycaster.intersectObject(scene, true);
+					
+					
+					if(intesects.length > 0)
+					{
+						var geometry = new THREE.SphereBufferGeometry(0.1, 32, 32);
+						var material = new THREE.MeshBasicMaterial({color: 0xAA4444});
+						var sphere = new THREE.Mesh(geometry, material);
+						sphere.position.copy(intesects[0].point);
+						scene.add(sphere);
+					}
+				}
+		
+				
+				const geometry1 = new THREE.BoxGeometry( 0, 0, 0 );
+				const material1 = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+				
+				geometry1.parameters.width = 100;
+				const cube1 = new THREE.Mesh( geometry1, material1 );
+				scene.add( cube1 );
+				
+				var lastTime = ( performance || Date ).now();
+				var count = 0;
+				function fpsUpdate() { 
+					var currentTime = ( performance || Date ).now();
+					// currentTime - lastTime is the number of milliseconds passed from last loop 
+					var fps = 1000 / (currentTime - lastTime);
+					lastTime = currentTime;
+					count += 1;
+					if(count == 30){
+						count = 0;
+						document.getElementById("frameRate").textContent = fps.toFixed(0);
+					}
+				}
+				
+				function loop()
+				{
+					//cube.rotation.y += 0.01;
+					controls.update();
+					renderer.render(scene, camera);
+					fpsUpdate();
+					requestAnimationFrame(loop);
+
+				};
+				loop();
+
+				// Webkit/Blink will fire this on load, but Gecko doesn't.
+				//window.onresize = resizeCanvas2;
+
+				// So we fire it manually...
+				renderer_side = renderer;
+				camera_side = camera;
+				canvas_side = canvas2;
+				resizeCanvas2(canvas2, renderer, camera, timeline);	
+
+		};
+
+		function resizeCanvas2(canvas, renderer, camera, timeline) {
+					var width =0;
+					var height = 0;
+					// if (window.innerWidth >765){
+					// canvas2.style.width = (window.innerWidth -250) + "px";
+					// width = window.innerWidth -250;
+					// width = width/2;
+					// canvas2.style.left = width+"px";
+					// }else{
+					// canvas2.style.width = window.innerWidth  + "px";
+					// width = window.innerWidth;
+					// width = width/2;
+					// canvas2.style.left = width+"px";
+					//}
+					// artifical delay so innerHeight is correct
+					setTimeout(function() {
+						//canvas2.style.height = window.innerHeight  + "px";
+						//height =  window.innerHeight;
+						renderer.setSize(width, height);
+						camera.aspect = width / height;
+						camera.updateProjectionMatrix();
+						//timeline.style.top = window.innerHeight -50  + "px";
+					}, 0);
+					
+
+					
+				};
+
+		var bim = document.getElementById("bim");
+        bim.addEventListener('change',function() {
+            scene.getObjectByName("BIM").visible = !scene.getObjectByName("BIM").visible;
+        });
+
+		</script>
+
+{% endblock content %}
+
+
