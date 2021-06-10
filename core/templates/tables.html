@@ -47,12 +47,11 @@
 		</div>
 	</div>
 
-	<div id="potreeContainer" style="height: 70%;">
-		<canvas id="potreecanvas" style="background: gray; position: fixed; width: 100%; height: 70%; left: 0; top:0; z-index: -1;cursor: grab; border:1px solid; display: block;">
-		</canvas>
+	<div id="potreeContainer" style="height:60%;">
+		<canvas id="potreecanvasTable"></canvas>
 	</div>
 	<div id="chart_wrapper">
-		<div id="chart_div"></div>
+		<div id="chart_div">Grantt Chart will be loaded here...</div>
 	</div>
 	<div id = "scheduleInTable" class ="small">
 		<span>SCHEDULE</span>
@@ -121,6 +120,9 @@
 		}
 		var data;
 		function drawChart() {
+			if (elementIdTypeMapList.length ==0){
+				return;
+			}
 	
 			data = new google.visualization.DataTable();
 			data.addColumn('string', 'Task ID');
@@ -143,12 +145,13 @@
 					]);
 			}
 			//data.addRows([result]);
-
 			var options = {
-				height: elementIdTypeMapList.length * 30 + 40 ,
+				height: elementIdTypeMapList.length * 15 + 40 ,
 				width: getWidth(),
 				gantt: {
-					trackHeight: 30
+					trackHeight: 15,
+					barCornerRadius: 10,
+					barHeight: 10
 				},
 			};
 	
@@ -160,7 +163,7 @@
 		document.body.onload = function()
 			{
 				scene = new THREE.Scene();
-				var canvas = document.getElementById("potreecanvas");
+				var canvas = document.getElementById("potreecanvasTable");
 				var timeline = document.getElementById("timeline");
 				var width = canvas.width;
 				var height = canvas.height;
@@ -199,8 +202,6 @@
 						var points = new Potree.Group();
 						points.setPointBudget(500000);
 						points.name = "objectName" + String(counter);
-						//points.material.opacity = 0.0;
-						//points.material.wireframe = false;
 						
 						scene.add(points);
 	
@@ -210,12 +211,6 @@
 						{
 							pointcloud.position.copy(position);
 						}
-
-						// var material = pointcloud.material;
-						// material.size = 2;
-						// material.pointColorType = Potree.PointColorType.RGB; //RGB | DEPTH | HEIGHT | POINT_INDEX | LOD | CLASSIFICATION
-						// material.pointSizeType = Potree.PointSizeType.ADAPTIVE; //ADAPTIVE | FIXED
-						// material.shape = Potree.PointShape.SQUARE; //CIRCLE | SQUARE
 
 						points.add(pointcloud);
 					});
@@ -256,14 +251,14 @@
 				}
 				
 				function populateElements(mainObj) {
+					var temp =[];
 					mainObj.traverse(function (child) {
 						if (child.isMesh) {
 							let childId = getElementId(child);
 							let childType = getElementType(child);
 							let childName = child.name;
-
 							if (childId != null && childType != null) {
-								elementIdTypeMapList.push({
+								temp.push({
 									'id': childId,
 									'type': childType, 
 									'name': childName
@@ -271,6 +266,12 @@
 							}
 						}
 					});
+					var flags = [], l = temp.length, i;
+					for( i=0; i<l; i++) {
+						if( flags[temp[i].name]) continue;
+						flags[temp[i].name] = true;
+						elementIdTypeMapList.push(temp[i]);
+					}
 				}
 
 
@@ -374,16 +375,6 @@
 				document.body.onresize();
 			};
 
-		// window.addEventListener( 'resize', onWindowResize, false );
-
-		// function onWindowResize(){
-
-		// 	camera.aspect = window.innerWidth / window.innerHeight;
-		// 	camera.updateProjectionMatrix();
-
-		// 	renderer.setSize( window.innerWidth, window.innerHeight );
-
-		// }
 		var bim = document.getElementById("bim");
         bim.addEventListener('change',function() {
             scene.getObjectByName("BIM").visible = !scene.getObjectByName("BIM").visible;
