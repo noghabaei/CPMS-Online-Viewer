@@ -9,31 +9,33 @@
 		<link rel="shortcut icon" href="/static/favicon.ico" />
 	</head>
 	<body>
-		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="/static/assets/css/main.css">
 
-		<script src="https://unpkg.com/@ffmpeg/ffmpeg@0.9.6/dist/ffmpeg.min.js" defer></script>
+		<!-- <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.9.6/dist/ffmpeg.min.js" defer></script> -->
 
-		<script src="../examples/js/libs/draco/draco_encoder.js"></script>
+		<!-- <script src="../examples/js/libs/draco/draco_encoder.js"></script> -->
 
-		<link rel="stylesheet" href="js/libs/codemirror/codemirror.css">
-		<link rel="stylesheet" href="js/libs/codemirror/theme/monokai.css">
-		<script src="js/libs/codemirror/codemirror.js"></script>
-		<script src="js/libs/codemirror/mode/javascript.js"></script>
-		<script src="js/libs/codemirror/mode/glsl.js"></script>
+		<link rel="stylesheet" href="/static/assets/js/libs/codemirror/codemirror.css">
+		<link rel="stylesheet" href="/static/assets/js/libs/codemirror/theme/monokai.css">
+		<script src="/static/assets/js/libs/codemirror/codemirror.js"></script>
+		<script src="/static/assets/js/libs/codemirror/mode/javascript.js"></script>
+		<script src="/static/assets/js/libs/codemirror/mode/glsl.js"></script>
 
-		<script src="js/libs/esprima.js"></script>
-		<script src="js/libs/jsonlint.js"></script>
+		<!-- <script src="js/libs/esprima.js"></script> -->
+		<!-- <script src="/static/assets/js/libs/jsonlint.js"></script> -->
 
-		<link rel="stylesheet" href="js/libs/codemirror/addon/dialog.css">
-		<link rel="stylesheet" href="js/libs/codemirror/addon/show-hint.css">
-		<link rel="stylesheet" href="js/libs/codemirror/addon/tern.css">
+		<link rel="stylesheet" href="/static/assets/js/libs/codemirror/addon/dialog.css">
+		<link rel="stylesheet" href="/static/assets/js/libs/codemirror/addon/show-hint.css">
+		<link rel="stylesheet" href="/static/assets/js/libs/codemirror/addon/tern.css">
 
-		<script src="js/libs/codemirror/addon/dialog.js"></script>
-		<script src="js/libs/codemirror/addon/show-hint.js"></script>
-		<script src="js/libs/codemirror/addon/tern.js"></script>
-		<script src="js/libs/acorn/acorn.js"></script>
+		<script src="/static/assets/js/libs/codemirror/addon/dialog.js"></script>
+		<script src="/static/assets/js/libs/codemirror/addon/show-hint.js"></script>
+		<script src="/static/assets/js/libs/codemirror/addon/tern.js"></script>
+
+		<!-- <script src="js/libs/acorn/acorn.js"></script>
 		<script src="js/libs/acorn/acorn_loose.js"></script>
 		<script src="js/libs/acorn/walk.js"></script>
+		
 		<script src="js/libs/ternjs/polyfill.js"></script>
 		<script src="js/libs/ternjs/signal.js"></script>
 		<script src="js/libs/ternjs/tern.js"></script>
@@ -41,8 +43,9 @@
 		<script src="js/libs/ternjs/comment.js"></script>
 		<script src="js/libs/ternjs/infer.js"></script>
 		<script src="js/libs/ternjs/doc_comment.js"></script>
-		<script src="js/libs/tern-threejs/threejs.js"></script>
-		<script src="js/libs/signals.min.js"></script>
+		<script src="js/libs/tern-threejs/threejs.js"></script> -->
+		
+		<script src="/static/assets/js/libs/signals.min.js"></script>
 
 		<script type="module">
 
@@ -240,17 +243,17 @@
 
 			// ServiceWorker
 
-			if ( 'serviceWorker' in navigator ) {
+			// if ( 'serviceWorker' in navigator ) {
 
-				try {
+			// 	try {
 
-					navigator.serviceWorker.register( 'sw.js' );
+			// 		navigator.serviceWorker.register( 'sw.js' );
 
-				} catch ( error ) {
+			// 	} catch ( error ) {
 
-				}
+			// 	}
 
-			}
+			// }
 
 		</script>
 	</body>
