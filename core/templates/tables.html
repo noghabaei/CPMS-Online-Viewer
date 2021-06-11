@@ -135,7 +135,7 @@
 			//var result = "";
 			for(var i=0;i < elementIdTypeMapList.length;i++){
 				data.addRow([
-					elementIdTypeMapList[i].name.toString(),              // 'Task ID'
+					elementIdTypeMapList[i].id.toString(),              // 'Task ID'
 					elementIdTypeMapList[i].id.toString(),                 // 'Task Name'
 					new Date(2014, 2, 22),  // 'Start Date'
 					new Date(2014, 2, 24),    // 'End Date'
@@ -251,27 +251,26 @@
 				}
 				
 				function populateElements(mainObj) {
-					var temp =[];
 					mainObj.traverse(function (child) {
 						if (child.isMesh) {
 							let childId = getElementId(child);
 							let childType = getElementType(child);
 							let childName = child.name;
 							if (childId != null && childType != null) {
-								temp.push({
-									'id': childId,
+								elementIdTypeMapList.push({
+									'id': child.uuid,
 									'type': childType, 
 									'name': childName
 								});
 							}
 						}
 					});
-					var flags = [], l = temp.length, i;
-					for( i=0; i<l; i++) {
-						if( flags[temp[i].name]) continue;
-						flags[temp[i].name] = true;
-						elementIdTypeMapList.push(temp[i]);
-					}
+					// var flags = [], l = temp.length, i;
+					// for( i=0; i<l; i++) {
+					// 	if( flags[temp[i].name]) continue;
+					// 	flags[temp[i].name] = true;
+					// 	elementIdTypeMapList.push(temp[i]);
+					// }
 				}
 
 
