@@ -47,11 +47,12 @@
 		</div>
 	</div>
 
-	<div id="potreeContainer" style="height:60%;">
+	<div id="potreeContainer">
 		<canvas id="potreecanvasTable"></canvas>
 	</div>
 	<div id="chart_wrapper">
-		<div id="chart_div">Grantt Chart will be loaded here...</div>
+		<div class="gantt-target"></div>
+		<!-- <div id="chart_div">Grantt Chart will be loaded here...</div> -->
 	</div>
 	<div id = "scheduleInTable" class ="small">
 		<span>SCHEDULE</span>
@@ -73,92 +74,18 @@
 		</div>
 	</div>
 
-	<!--<button type="button" class="btn btn-secondary" style="position: relative; top:70px; left: 20px;">BIM</button>-->
-	<!--<button type="button" class="btn btn-secondary" style="position: relative; top:120px; left: -65px;">Scan</button>-->
-	
-    
-	<!-- </section> -->
-
-	<!-- </div> -->
-
-
-    <!-- <div class="container-fluid mt--7"> -->
-
-
-    <!-- </div> -->
-	
 {% load static %}
-	<!-- <script src="static/assets/potree/three.min.js"></script> -->
-	<!--<script src="/static/assets/fbx/three.js"></script> -->
-	<!--<script src="static/assets/potree/OrbitControls.js"></script> -->
-	<!--<script src="static/assets/potree/potree.js"></script>-->
-	<!--<script type="module" src="/static/assets/fbx/FBXLoader.js"></script>-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="/static/assets/js/frappe-gantt.min.js"></script>
 	<script type="module">
-
-		//
 		import '/static/assets/fbx/three.js';
 		import '/static/assets/fbx/three.module.js';
 		import '/static/assets/potree/three.min.js';
 		import '/static/assets/potree/OrbitControls.js';
 		import '/static/assets/potree/potree.js';
-		import * as EV from "/static/assets/js/element-view.js";
-		//import '/static/assets/fbx/FBXLoader.js';
 		var scene;
 		let elementIdTypeMapList = [];
-		google.charts.load('current', {'packages':['gantt']});
-		function daysToMilliseconds(days) {
-			return days * 24 * 60 * 60 * 1000;
-		}
-		function getWidth(){
-			var windowWidth = document.getElementById("chart_div").offsetWidth;
-			if(windowWidth <= 750){
-				return windowWidth;
-			}else{
-				return windowWidth - 250;
-			}
-		}
-		var data;
-		function drawChart() {
-			if (elementIdTypeMapList.length ==0){
-				return;
-			}
-	
-			data = new google.visualization.DataTable();
-			data.addColumn('string', 'Task ID');
-			data.addColumn('string', 'Task Name');
-			data.addColumn('date', 'Start Date');
-			data.addColumn('date', 'End Date');
-			data.addColumn('number', 'Duration');
-			data.addColumn('number', 'Percent Complete');
-			data.addColumn('string', 'Dependencies');
-			//var result = "";
-			for(var i=0;i < elementIdTypeMapList.length;i++){
-				data.addRow([
-					elementIdTypeMapList[i].id.toString(),              // 'Task ID'
-					elementIdTypeMapList[i].id.toString(),                 // 'Task Name'
-					new Date(2014, 2, 22),  // 'Start Date'
-					new Date(2014, 2, 24),    // 'End Date'
-					null,                     // 'Duration'
-					70,              // 'Percent Complete'
-					null                      // 'Dependencies'
-					]);
-			}
-			//data.addRows([result]);
-			var options = {
-				height: elementIdTypeMapList.length * 15 + 40 ,
-				width: getWidth(),
-				gantt: {
-					trackHeight: 15,
-					barCornerRadius: 10,
-					barHeight: 10
-				},
-			};
-	
-			var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
-	
-			chart.draw(data, options);
-		}
+		var tasks = [];
+		
 
 		document.body.onload = function()
 			{
@@ -183,7 +110,6 @@
 					preserveDrawingBuffer: false,
 					powerPreference: "high-performance"
 				});
-
 				scene.add(new THREE.AmbientLight(0x222222,5));
 
 				var controls = new THREE.OrbitControls(camera, canvas);
@@ -215,41 +141,26 @@
 						points.add(pointcloud);
 					});
 				}
-				
-				
-				
-				// function getElementType(element) {
-				// 	if (element == null || element.name == null || !validateElementName(element.name)) return null;
 
-				// 	var nameStringRegex = new RegExp("(^.*)_[0-9]*_Geometry$");
-				// 	var found = element.name.match(nameStringRegex);
-
-				// 	if (found == null || found.length === 0) return null;
-				// 	else return found[found.length - 1];
-				// }
-
-				// function getElementId(element) {
-				// 	if (element == null || element.name == null || !validateElementName(element.name)) return null;
-
-				// 	var nameStringRegex = new RegExp("^.*_([0-9]*)_Geometry$");
-				// 	var found = element.name.match(nameStringRegex);
-
-				// 	if (found == null || found.length === 0) return null;
-				// 	else return found[found.length - 1];
-				// }
-
-				// function validateElementName(nameString) {
-				// 	if (nameString == null || nameString.length === 0) return false;
-
-				// 	var nameStringRegex = new RegExp("^.*_[0-9]*_Geometry$");
-
-				// 	if (!nameStringRegex.test(nameString)) {
-				// 		console.log('Invalid namestring: ' + nameString);
-				// 	}
-
-				// 	return nameStringRegex.test(nameString);
-				// }
-				
+				function drawChart(){
+					var gantt_chart = new Gantt(".gantt-target", tasks, {
+						on_click: function (task) {
+							console.log(task);
+						},
+						on_date_change: function(task, start, end) {
+							console.log(task, start, end);
+						},
+						on_progress_change: function(task, progress) {
+							console.log(task, progress);
+						},
+						on_view_change: function(mode) {
+							console.log(mode);
+						},
+						view_mode: 'Week',
+						language: 'en',
+					});
+					console.log(gantt_chart);
+				}
 				function populateElements(mainObj) {
 					mainObj.traverse(function (child) {
 						if (child.isMesh) {
@@ -257,19 +168,16 @@
 							// let childType = getElementType(child);
 							// let childName = child.name;
 							if (child.uuid != null && child.name != null) {
-								elementIdTypeMapList.push({
+								tasks.push({
+									'start': '2018-10-08',
+									'end': '2018-10-30',
+									'name': child.uuid,
 									'id': child.uuid,
-									'name': child.name
+									'progress': 70
 								});
 							}
 						}
 					});
-					// var flags = [], l = temp.length, i;
-					// for( i=0; i<l; i++) {
-					// 	if( flags[temp[i].name]) continue;
-					// 	flags[temp[i].name] = true;
-					// 	elementIdTypeMapList.push(temp[i]);
-					// }
 				}
 
 
@@ -367,8 +275,8 @@
 
 				document.body.onresize = function()
 				{
-					renderer.setPixelRatio(window.devicePixelRatio +8);
-					drawChart(data);
+					renderer.setPixelRatio(window.devicePixelRatio + 8);
+					drawChart();
 				}
 				document.body.onresize();
 			};
