@@ -20738,7 +20738,7 @@ pre>code.highlight {
   width: 30%; 
   position:fixed; 
   right: 20%; 
-  bottom: 31%; 
+  bottom: 41%; 
   text-align: center; 
   font-weight: bold; 
   border-radius: 5px;
@@ -20822,10 +20822,22 @@ input:checked + .slider:before {
   bottom:0px; 
   overflow-y: scroll; 
   overflow-x: scroll; 
-  height:30%;
+  height:40%;
   width:100%;
 }
 
+#potreecanvasTable{
+  background: gray; 
+  position: fixed; 
+  width: 100%; 
+  height: 60%; 
+  left: 100px; 
+  top:0; 
+  z-index: -1;
+  cursor: grab; 
+  border:1px solid; 
+  display: block;
+}
 @media screen and (max-width: 749px) {
   #timeline {
     /* position: absolute; */
@@ -20842,8 +20854,21 @@ input:checked + .slider:before {
     bottom:0px; 
     overflow-y: scroll; 
     overflow-x: scroll; 
-    height:30%;
+    height:40%;
     width:100%;
+  }
+  
+  #potreecanvasTable{
+    background: gray; 
+    position: fixed; 
+    width: 100%; 
+    height: 60%; 
+    left: 0px; 
+    top:0; 
+    z-index: -1;
+    cursor: grab; 
+    border:1px solid; 
+    display: block;
   }
 }
 
@@ -20869,6 +20894,28 @@ input:checked + .slider:before {
   #timeline {
     /* position: absolute; */
     width: 12rem;
+  }
+  #chart_wrapper{
+    position:fixed;
+    left:0px; 
+    bottom:0px; 
+    overflow-y: scroll; 
+    overflow-x: scroll; 
+    height:40%;
+    width:100%;
+  }
+  
+  #potreecanvasTable{
+    background: gray; 
+    position: fixed; 
+    width: 100%; 
+    height: 60%; 
+    left: 0px; 
+    top:0; 
+    z-index: -1;
+    cursor: grab; 
+    border:1px solid; 
+    display: block;
   }
   
 }
