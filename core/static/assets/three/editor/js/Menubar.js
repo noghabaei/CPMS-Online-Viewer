@@ -8,6 +8,7 @@ import { MenubarView } from './Menubar.View.js';
 import { MenubarHelp } from './Menubar.Help.js';
 // import { MenubarPlay } from './Menubar.Play.js';
 import { MenubarStatus } from './Menubar.Status.js';
+import { MenubarLinks } from "./Menubar.Links.js";
 
 function Menubar( editor ) {
 
@@ -23,6 +24,8 @@ function Menubar( editor ) {
 	container.add( new MenubarHelp( editor ) );
 
 	container.add( new MenubarStatus( editor ) );
+
+	container.add( new MenubarLinks( editor ) );
 
 	return container;
 
