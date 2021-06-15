@@ -45,11 +45,11 @@ function MenubarFile( editor ) {
 		}
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	//
 
-	options.add( new UIHorizontalRule() );
+	// options.add( new UIHorizontalRule() );
 
 	// Import
 
@@ -397,7 +397,7 @@ function MenubarFile( editor ) {
 
 	//
 
-	options.add( new UIHorizontalRule() );
+	// options.add( new UIHorizontalRule() );
 
 	// Publish
 
@@ -481,7 +481,7 @@ function MenubarFile( editor ) {
 		} );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	//
 
