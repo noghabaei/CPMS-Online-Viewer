@@ -23,7 +23,8 @@ function MenubarHelp( editor ) {
 	option.setTextContent( strings.getKey( 'menubar/help/source_code' ) );
 	option.onClick( function () {
 
-		window.open( 'https://github.com/mrdoob/three.js/tree/master/editor', '_blank' );
+		// window.open( 'https://github.com/mrdoob/three.js/tree/master/editor', '_blank' );
+		window.open( 'https://github.com/mojtaba1995/CPMS-Online-Viewer', '_blank' );
 
 	} );
 	options.add( option );
@@ -52,7 +53,7 @@ function MenubarHelp( editor ) {
 		window.open( 'https://threejs.org', '_blank' );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	return container;
 
