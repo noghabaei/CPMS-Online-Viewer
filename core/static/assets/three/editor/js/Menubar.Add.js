@@ -33,11 +33,11 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	//
 
-	options.add( new UIHorizontalRule() );
+	// options.add( new UIHorizontalRule() );
 
 	// Box
 
@@ -53,7 +53,7 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	// Circle
 
@@ -69,7 +69,7 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	// Cylinder
 
@@ -85,7 +85,7 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	// Dodecahedron
 
@@ -101,7 +101,7 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	// Icosahedron
 
@@ -117,7 +117,7 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	// Lathe
 
@@ -147,7 +147,7 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	// Octahedron
 
@@ -163,7 +163,7 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	// Plane
 
@@ -180,7 +180,7 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	// Ring
 
@@ -196,7 +196,7 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	// Sphere
 
@@ -212,7 +212,7 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	// Sprite
 
@@ -227,7 +227,7 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, sprite ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	// Tetrahedron
 
@@ -243,7 +243,7 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	// Torus
 
@@ -259,7 +259,7 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	// TorusKnot
 
@@ -275,7 +275,7 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	// Tube
 
@@ -298,7 +298,7 @@ function MenubarAdd( editor ) {
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 
 	} );
-	options.add( option );
+	// options.add( option );
 
 	/*
 	// Teapot
@@ -331,7 +331,7 @@ function MenubarAdd( editor ) {
 
 	//
 
-	options.add( new UIHorizontalRule() );
+	// options.add( new UIHorizontalRule() );
 
 	// AmbientLight
 
