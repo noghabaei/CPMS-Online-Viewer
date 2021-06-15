@@ -17,8 +17,8 @@ import { SetScaleCommand } from './commands/SetScaleCommand.js';
 
 import { RoomEnvironment } from '/static/assets/three/examples/jsm/environments/RoomEnvironment.js';
 
-// import '/static/assets/potree/three.min.js';
-// import '/static/assets/potree/potree.js';
+import '/static/assets/potree/three.min.js';
+import '/static/assets/potree/potree.js';
 
 function Viewport( editor ) {
 
@@ -776,7 +776,7 @@ function Viewport( editor ) {
 
 			var object = scene.getObjectByName("objectName" + String(counter));
 			scene.remove(object);
-			// loadPointCloud2("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-198, -154, -16));
+			loadPointCloud2("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-198, -154, -16));
 		}
 
 		endTime = performance.now();
