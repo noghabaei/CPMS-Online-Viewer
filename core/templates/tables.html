@@ -75,12 +75,13 @@
 	</div>
 
 {% load static %}
-	<script src="/static/assets/js/frappe-gantt.min.js"></script>
+	<script src="/static/assets/js/frappe-gantt.js"></script>
 	<script type="module">
 		import '/static/assets/fbx/three.js';
 		import '/static/assets/fbx/three.module.js';
 		import '/static/assets/potree/three.min.js';
-		import '/static/assets/potree/OrbitControls.js';
+		//import '/static/assets/potree/OrbitControls.js';
+		import * as OC from '/static/assets/fbx/OrbitControls.js';
 		import '/static/assets/potree/potree.js';
 		var scene;
 		let elementIdTypeMapList = [];
@@ -96,7 +97,7 @@
 				var height = canvas.height;
 
 				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
-				camera.position.set(-200, 150, -200 );
+				camera.position.set(-180, 120, -150);
 
 				var renderer = new THREE.WebGLRenderer(
 				{
@@ -112,7 +113,7 @@
 				});
 				scene.add(new THREE.AmbientLight(0x222222,5));
 
-				var controls = new THREE.OrbitControls(camera, canvas);
+				var controls = new OC.OrbitControls(camera, canvas);
 				controls.autoRotate = false;
 				controls.update();
 
@@ -143,6 +144,7 @@
 				}
 
 				function drawChart(){
+					if(tasks.length === 0 ) return;
 					var gantt_chart = new Gantt(".gantt-target", tasks, {
 						on_click: function (task) {
 							console.log(task);
@@ -180,7 +182,8 @@
 					});
 				}
 
-
+				const light = new THREE.AmbientLight( 0x404040 ); // soft white light
+				scene.add( light );
 
 				const loader = new THREE.ObjectLoader();
 				loader.load(
@@ -193,6 +196,15 @@
 						// Add the loaded object to the scene
 						obj.position.set(-180, -100, 120);
 						obj.name = "BIM";
+						obj.traverse((node)=>{
+                            if(node.isMesh){
+                                node.material = new THREE.MeshBasicMaterial({color: "white"});
+                                node.material.transparent = true;
+                                node.material.opacity = 0.4;
+                                }
+                            });
+						// obj.translateY(35)
+						// obj.translateZ(-50);
 						scene.add( obj );
 						populateElements(obj);
 						drawChart();
@@ -228,6 +240,43 @@
 					}
 				}
 
+				timeline.addEventListener("input", function () {
+					if(timeline.value <=25){
+						scene.getObjectByName('BIM').traverse(function (node) {
+							if(node.isMesh){
+								node.material = new THREE.MeshBasicMaterial({color: "white"});
+                                node.material.transparent = true;
+                                node.material.opacity = 0.4;
+                            }
+                        });
+					}
+					else if(timeline.value>25 && timeline.value<=50){
+						scene.getObjectByName('BIM').traverse(function (node) {
+							if(node.isMesh){
+								node.material = new THREE.MeshBasicMaterial({color: "red"});
+                                node.material.transparent = true;
+                                node.material.opacity = 0.4;
+                            }
+                        });
+					}
+					else if(timeline.value>50 && timeline.value<=75){
+						scene.getObjectByName('BIM').traverse(function (node) {
+							if(node.isMesh){
+                                node.material = new THREE.MeshBasicMaterial({color: "green"});
+                                node.material.transparent = true;
+                                node.material.opacity = 0.4;
+                            }
+                        });
+					}
+					else if(timeline.value>75 && timeline.value<=100){
+						scene.getObjectByName('BIM').traverse(function (node) {
+							if(node.isMesh){
+                                node.material = new THREE.MeshBasicMaterial({color: "White"});
+                            }
+                        });
+					}
+				});
+
 				function loop()
 				{
 					controls.update();
@@ -237,38 +286,38 @@
 					requestAnimationFrame(loop);
 					
 
-					if(timeline.value<=34){
-						count3 = 0
-						count2 = 0;
-						count1 = count1 + 1;
-						if(count1 == 1){
-							var object = scene.getObjectByName("objectName" + String(counter));
-							scene.remove(object); 
-							loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-198, -154, -16));
-						}
-					}
-					if(timeline.value>34 && timeline.value<=67){
-						count3 = 0
-						count1 = 0;
-						count2 = count2 + 1;
-						if(count2 == 1){
-							var object = scene.getObjectByName("objectName" + String(counter));
-							scene.remove(object); 
-							loadPointCloud("https://mojtaba1995.github.io//clouds/cloud2/cloud.js", new THREE.Vector3(-210, -150, -17));
-						}
-						//
-					}
-					if(timeline.value>67){
-						count1 = 0;
-						count2 = 0
-						count3 = count3 + 1;
-						if(count3 == 1){
-							var object = scene.getObjectByName("objectName" + String(counter));
-							scene.remove(object); 
-							loadPointCloud("https://mojtaba1995.github.io//clouds/cloud3/cloud.js", new THREE.Vector3(-196.6, -159, -24));
-						}
-						//
-					}
+					// if(timeline.value<=34){
+					// 	count3 = 0
+					// 	count2 = 0;
+					// 	count1 = count1 + 1;
+					// 	if(count1 == 1){
+					// 		var object = scene.getObjectByName("objectName" + String(counter));
+					// 		scene.remove(object); 
+					// 		loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-198, -154, -16));
+					// 	}
+					// }
+					// if(timeline.value>34 && timeline.value<=67){
+					// 	count3 = 0
+					// 	count1 = 0;
+					// 	count2 = count2 + 1;
+					// 	if(count2 == 1){
+					// 		var object = scene.getObjectByName("objectName" + String(counter));
+					// 		scene.remove(object); 
+					// 		loadPointCloud("https://mojtaba1995.github.io//clouds/cloud2/cloud.js", new THREE.Vector3(-210, -150, -17));
+					// 	}
+					// 	//
+					// }
+					// if(timeline.value>67){
+					// 	count1 = 0;
+					// 	count2 = 0
+					// 	count3 = count3 + 1;
+					// 	if(count3 == 1){
+					// 		var object = scene.getObjectByName("objectName" + String(counter));
+					// 		scene.remove(object); 
+					// 		loadPointCloud("https://mojtaba1995.github.io//clouds/cloud3/cloud.js", new THREE.Vector3(-196.6, -159, -24));
+					// 	}
+					// 	//
+					// }
 					
 				};
 				loop();
