@@ -13,15 +13,16 @@ function getCenterPoint(mesh) {
 }
 
 function loadObjectInCanvas(objectTotLoad, canvasId, centerObjectForCPMS = true, showGrid = false, showAxes = false) {
-    // Create scene
-    let scene = new THREE.Scene();
-
     // Get required canvas
     let canvas = document.getElementById(canvasId);
 
     // Get canvas's current style to reapply it later
     let canvasBgColor = canvas.style.backgroundColor;
     let canvasBgImg = canvas.style.backgroundImage;
+
+    // Create scene
+    let scene = new THREE.Scene();
+    scene.background = new THREE.Color( canvasBgColor );
 
     // Create camera
     let camera = new THREE.PerspectiveCamera(
@@ -69,9 +70,6 @@ function loadObjectInCanvas(objectTotLoad, canvasId, centerObjectForCPMS = true,
     function animate() {
         requestAnimationFrame(animate);
         if (orbitControls != null) orbitControls.update();
-
-        canvas.style.backgroundColor = canvasBgColor;
-        canvas.style.backgroundImage = canvasBgImg;
 
         render();
     }
