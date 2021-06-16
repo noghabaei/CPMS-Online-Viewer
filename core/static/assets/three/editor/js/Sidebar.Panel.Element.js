@@ -1,28 +1,27 @@
 import * as THREE from '/static/assets/three/build/three.module.js';
 import * as EV from '/static/assets/js/element-view.js';
-import { UIBreak, UIButton, UICanvas, UIPanel, UIRow, UISelect, UIText } from "./libs/ui.js";
+import { UIButton, UICanvas, UIHorizontalRule, UIPanel, UIRow, UISelect, UIText } from "./libs/ui.js";
 
 function SidebarElementPanel( editor ) {
 
     var strings = editor.strings;
-
-    var elementScene, elementCamera, elementRenderer; 
 
     var container = new UIPanel();
 	container.setBorderTop( '0' );
 	container.setPaddingTop( '20px' );
 
     // compatibility check button
-    var buttonRow = new UIRow();
+    var elementViewButtonsRow = new UIRow();
     var compatibilityCheckButton = new UIButton( 'Compatibility Check' );   // EXTERNALIZE
     compatibilityCheckButton.setId( 'compat-btn' );
 
     compatibilityCheckButton.onClick( function( e ) {
         document.getElementById( 'view-mode-btn' ).style.display = 'block';
+        document.getElementById( 'compat-panel' ).style.display = 'block';
         e.target.style.display = 'none';
     } );
 
-    buttonRow.add( compatibilityCheckButton );
+    elementViewButtonsRow.add( compatibilityCheckButton );
     
     // View mode button
     var viewModeButton = new UIButton( 'View Mode' ); // EXTERNALIZE
@@ -31,12 +30,13 @@ function SidebarElementPanel( editor ) {
 
     viewModeButton.onClick( function( e ) {
         document.getElementById( 'compat-btn' ).style.display = 'block';
+        document.getElementById( 'compat-panel' ).style.display = 'none';
         e.target.style.display = 'none';
     } );
 
-    buttonRow.add( viewModeButton );
+    elementViewButtonsRow.add( viewModeButton );
 
-    container.add( buttonRow );
+    container.add( elementViewButtonsRow );
 
     // Elements dropdown
     var selectRow = new UIRow();
@@ -47,7 +47,6 @@ function SidebarElementPanel( editor ) {
     } );
     elementSelect.setWidth( '200px' );
     elementSelect.onChange( function( e ) {
-        // document.getElementById( 'element-info-text' )
         elementInfo.setValue( e.target.value );
 
         var geometry = new THREE.BoxGeometry( 1, 1, 1 );
@@ -61,19 +60,73 @@ function SidebarElementPanel( editor ) {
 
     // Info string
     var elementInfoRow = new UIRow();
-
 	var elementInfo = new UIText('').setId( 'element-info-text' );
 
-	elementInfoRow.add( new UIText( 'Info:' ).setWidth( '90px' ) );
+	elementInfoRow.add( new UIText( 'Element Info:' ).setWidth( '90px' ) );
 	elementInfoRow.add( elementInfo );
 
 	container.add( elementInfoRow );
 
-    // Canvas
-    var canvasRow = new UIRow();
+    // Element Canvas
+    var elementCanvasRow = new UIRow();
     var elementCanvas = new UICanvas( 'rgba(51,51,51,255)', '280px', '200px' )
                         .setId( 'element-canvas' );
-    container.add( elementCanvas );
+    elementCanvasRow.add( elementCanvas );
+    container.add( elementCanvasRow );
+
+    container.add( new UIHorizontalRule() );
+
+    // Compatibility Container
+    var compatibilityContainer = new UIPanel().setId( 'compat-panel' );
+    compatibilityContainer.setDisplay( 'none' );
+    compatibilityContainer.setMarginLeft( '-10px' );
+
+    // Bring Element and > Buttons
+    var compatibilityButtonsRow = new UIRow();
+    var bringElementButton = new UIButton( 'Bring Element' ); // EXTERNALIZE
+    var compatibilityButton2 = new UIButton( '>' ); // EXTERNALIZE
+    compatibilityButton2.setMarginLeft( '10px' );
+    compatibilityButtonsRow.add( bringElementButton );
+    compatibilityButtonsRow.add( compatibilityButton2 );
+    compatibilityContainer.add( compatibilityButtonsRow );
+
+    // Compatibility dropdown
+    var compatibilitySelectRow = new UIRow();
+    var compatibilitySelect = new UISelect().setOptions( {
+        '': 'No Elements Loaded',
+        'Test Object 1 Type': 'Object 1 ID',
+        'Test Object 2 Type': 'Object 2 ID'
+    } );
+    compatibilitySelect.setWidth( '200px' );
+    compatibilitySelect.onChange( function( e ) {
+        compatibilityInfo.setValue( e.target.value );
+
+        var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+        var material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+        var cube = new THREE.Mesh( geometry, material );
+        EV.loadElementObject( cube, false );
+
+    } );
+    compatibilitySelectRow.add( compatibilitySelect );
+    compatibilityContainer.add( compatibilitySelectRow );
+
+    // Info string
+    var compatibilityInfoRow = new UIRow();
+	var compatibilityInfo = new UIText('').setId( 'compatibility-info-text' );
+
+	compatibilityInfoRow.add( new UIText( 'Info:' ).setWidth( '90px' ) );
+	compatibilityInfoRow.add( compatibilityInfo );
+
+	compatibilityContainer.add( compatibilityInfoRow );
+
+    // Compatibility Canvas
+    var compatibilityCanvasRow = new UIRow();
+    var compatibilityCanvas = new UICanvas( 'rgba(51,51,51,255)', '280px', '200px' )
+                        .setId( 'compatibility-canvas' );
+    compatibilityCanvasRow.add( compatibilityCanvas );
+    compatibilityContainer.add( compatibilityCanvasRow );
+
+    container.add( compatibilityContainer );
 
     return container;
 }
