@@ -1,5 +1,5 @@
 import * as THREE from '/static/assets/three/build/three.module.js';
-import * as EV from '/static/assets/js/element-view.js';
+import * as ThreeUtils from '/static/assets/js/three-utils.js';
 import { UIButton, UICanvas, UIHorizontalRule, UIPanel, UIRow, UISelect, UIText } from "./libs/ui.js";
 
 function SidebarElementPanel( editor ) {
@@ -52,7 +52,8 @@ function SidebarElementPanel( editor ) {
         var geometry = new THREE.BoxGeometry( 1, 1, 1 );
         var material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
         var cube = new THREE.Mesh( geometry, material );
-        EV.loadElementObject( cube, false );
+        
+        ThreeUtils.loadObjectInCanvas( cube, 'element-canvas', false );
 
     } );
     selectRow.add( elementSelect );
@@ -104,7 +105,8 @@ function SidebarElementPanel( editor ) {
         var geometry = new THREE.BoxGeometry( 1, 1, 1 );
         var material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
         var cube = new THREE.Mesh( geometry, material );
-        EV.loadElementObject( cube, false );
+
+        ThreeUtils.loadObjectInCanvas( cube, 'compat-canvas', false );
 
     } );
     compatibilitySelectRow.add( compatibilitySelect );
@@ -122,7 +124,7 @@ function SidebarElementPanel( editor ) {
     // Compatibility Canvas
     var compatibilityCanvasRow = new UIRow();
     var compatibilityCanvas = new UICanvas( 'rgba(51,51,51,255)', '280px', '200px' )
-                        .setId( 'compatibility-canvas' );
+                        .setId( 'compat-canvas' );
     compatibilityCanvasRow.add( compatibilityCanvas );
     compatibilityContainer.add( compatibilityCanvasRow );
 
