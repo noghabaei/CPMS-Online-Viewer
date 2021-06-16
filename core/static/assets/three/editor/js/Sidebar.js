@@ -29,7 +29,7 @@ function Sidebar( editor ) {
 	container.addTab( 'project', strings.getKey( 'sidebar/project' ), project );
 	container.addTab( 'settings', strings.getKey( 'sidebar/settings' ), settings );
 	container.addTab( 'element-panel', 'Element View', elementPanel );
-	container.select( 'element-panel' );
+	container.select( 'scene' );
 
 	return container;
 
