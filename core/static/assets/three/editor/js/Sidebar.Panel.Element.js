@@ -77,10 +77,19 @@ function SidebarElementPanel( editor ) {
 
     container.add( new UIHorizontalRule() );
 
+
+
+
     // Compatibility Container
     var compatibilityContainer = new UIPanel().setId( 'compat-panel' );
     compatibilityContainer.setDisplay( 'none' );
     compatibilityContainer.setMarginLeft( '-10px' );
+
+    // Compatibility title
+    var compatibilityPanelTitle = new UIText( 'Compatibility View' )
+                                    .setFontSize( '20px' )
+                                    .setFontWeight( 'bold' );
+    compatibilityContainer.add( new UIRow().add( compatibilityPanelTitle ) );
 
     // Bring Element and > Buttons
     var compatibilityButtonsRow = new UIRow();
