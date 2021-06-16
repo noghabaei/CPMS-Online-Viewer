@@ -46,7 +46,9 @@ def pages(request):
 
 @login_required(login_url="/login/")
 def profile_page(request):
-    form = ProfileForm(request.POST or None)
+    user = User.objects.get(username = request.user.username)
+
+    form = ProfileForm(request.POST or get_profile_data_from_user(user))
 
     msg = None
 
@@ -59,14 +61,65 @@ def profile_page(request):
 
             #user = request.user
             
-            user = User.objects.get(username = request.user.username)
-            #request.user.profile.bio = bio
-            #request.user.profile.location = location
-            
             user.profile.bio = bio
             user.profile.location = location
+
+            user = populate_user_profile(user, form)
+
+            print('Saving USER:')
+            print(user)
+
             user.save()
          
    
 
-    return render(request, "profile.html", {"form": form, "msg" : msg})
+    return render(request, "profile.html", {"form": form, "msg": msg})
+
+def get_profile_data_from_user(user):
+    if not user: return None
+
+    formDataDict = dict()
+    formDataDict["username"] = user.username
+    formDataDict["email"] = user.email
+    formDataDict["firstName"] = user.first_name
+    formDataDict["lastName"] = user.last_name
+    formDataDict["address"] = user.profile.address
+    formDataDict["city"] = user.profile.city
+    formDataDict["country"] = user.profile.country
+    formDataDict["postalCode"] = user.profile.postalCode
+    formDataDict["aboutMe"] = user.profile.aboutMe
+
+    return formDataDict
+
+def populate_user_profile(user, profileForm):
+    if not user or not profileForm: return user
+
+    formDataDict = get_cleaned_profile_form_data(profileForm)
+
+    user.first_name = formDataDict['firstName']
+    user.last_name = formDataDict['lastName']
+
+    user.profile.address = formDataDict['address']
+    user.profile.city = formDataDict['city']
+    user.profile.country = formDataDict['country']
+    user.profile.postalCode = formDataDict['postalCode']
+    user.profile.aboutMe = formDataDict['aboutMe']
+
+    return user
+
+def get_cleaned_profile_form_data(profileForm):
+    dataDict = dict()
+
+    if not profileForm: return dataDict
+
+    dataDict["username"] = profileForm.cleaned_data["username"]
+    dataDict["email"] = profileForm.cleaned_data["email"]
+    dataDict["firstName"] = profileForm.cleaned_data["firstName"]
+    dataDict["lastName"] = profileForm.cleaned_data["lastName"]
+    dataDict["address"] = profileForm.cleaned_data["address"]
+    dataDict["city"] = profileForm.cleaned_data["city"]
+    dataDict["country"] = profileForm.cleaned_data["country"]
+    dataDict["postalCode"] = profileForm.cleaned_data["postalCode"]
+    dataDict["aboutMe"] = profileForm.cleaned_data["aboutMe"]
+
+    return dataDict
