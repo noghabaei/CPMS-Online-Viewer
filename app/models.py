@@ -14,6 +14,11 @@ class Profile(models.Model):
     bio = models.TextField(max_length=500, blank=True)
     location = models.CharField(max_length=30, blank=True)
     birth_date = models.DateField(null=True, blank=True)
+    address = models.CharField(null=True, max_length=200, blank=True)
+    city = models.CharField(null=True, max_length=100, blank=True)
+    country = models.CharField(null=True, max_length=100, blank=True)
+    postalCode = models.IntegerField(null=True, blank=True)
+    aboutMe = models.CharField(null=True, max_length=300, blank=True)
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
