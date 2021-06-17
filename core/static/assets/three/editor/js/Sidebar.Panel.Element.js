@@ -2,7 +2,7 @@ import * as THREE from '/static/assets/three/build/three.module.js';
 import * as ThreeUtils from '/static/assets/js/three-utils.js';
 import { UIButton, UICanvas, UIHorizontalRule, UIPanel, UIRow, UISelect, UIText } from "./libs/ui.js";
 import { SidebarCompatibilityPanel } from './Sidebar.Panel.Compatibility.js';
-
+import * as BIMUtils from "/static/assets/js/BIMUtils.js";
 
 function SidebarElementPanel( editor ) {
 
@@ -144,7 +144,28 @@ function SidebarElementPanel( editor ) {
     }
 
     function populateElementDropdown( BIMGroup ) {
-        
+        elementSelect.clear();
+
+        var children = BIMGroup.children;
+
+        for ( let i = 0; i < children.length; i++ ) {
+            let child = children[i];
+            let childId = BIMUtils.getElementId(child);
+            let childType = BIMUtils.getElementType(child);
+            let childName = child.name;
+
+            if (childId != null && childType != null) {
+                let optionObj = {
+                    "value": BIMUtils.getElementInfoFromTypeString( childType ),
+                    "text": childId,
+                    "attributes":[
+                        { "name": childName }
+                    ]
+                };
+
+                elementSelect.addOption( optionObj );
+            }
+        }
     }
 
     return container;
