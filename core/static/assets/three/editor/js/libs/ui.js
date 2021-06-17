@@ -354,6 +354,36 @@ class UISelect extends UIElement {
 
 	}
 
+	/*
+	optionObj = {
+		"value": <option-value>,
+		"text": <option-innerHTML>,
+		"attributes": [
+			{"attr1": "val1"}, 
+			{"attr1": "val1"}, 
+			...
+		]
+	}
+	*/
+	addOption(optionObj) {
+
+		const selected = this.dom.value;
+
+		const option = document.createElement('option');
+		option.value = optionObj.value;
+		option.innerHTML = optionObj.text;
+		
+		for ( let i = 0; i < optionObj.attributes.length; i++ ) {
+			let attributeMap = optionObj.attributes[i];
+			let attributeName = Object.keys( attributeMap )[0];
+			let attributeValue = attributeMap[ attributeName ];
+
+			option.setAttribute( attributeName , attributeValue );
+		}
+
+		this.dom.appendChild(option);
+	}
+
 	setOptions(options) {
 
 		const selected = this.dom.value;
