@@ -7,6 +7,7 @@ import { SidebarCompatibilityPanel } from './Sidebar.Panel.Compatibility.js';
 function SidebarElementPanel( editor ) {
 
     var strings = editor.strings;
+    var signals = editor.signals;
 
     var container = new UIPanel();
 	container.setBorderTop( '0' );
@@ -83,6 +84,68 @@ function SidebarElementPanel( editor ) {
     var compatibilityContainer = new SidebarCompatibilityPanel( editor );
 
     container.add( compatibilityContainer );
+
+    signals.sceneGraphChanged.add( refreshElementPanelUI );
+
+    function refreshElementPanelUI() {
+        var scene = editor.scene;
+
+        var BIMGroup = getBIMGroupFromScene( scene );
+        console.log("BIM Group:");
+        console.log(BIMGroup);
+
+        populateElementDropdown( BIMGroup );
+    }
+
+    function getBIMGroupFromScene( scene ) {
+        var BIMGroup = null;
+
+        // BIMGroup = getBIMGroupByUUId( scene );
+        BIMGroup = getBIMGroupByChildrenName( scene );
+
+        return BIMGroup;
+    }
+    
+    // The BIM Group in the scene has around 1949 children, 
+    // and each child (which is a Mesh) has a name ending in "_Geometry".
+    function getBIMGroupByChildrenName( scene ) {
+        var BIMGroup = null;
+
+        var children = scene.children;
+        for ( let i=0, l=children.length; i < l; i++ ) {
+            var objectsArray = children[i].children;
+            if ( objectsArray != null ) {
+                for ( let j=0, k=objectsArray.length; j < k; j++ ) {
+                    if ( objectsArray[j].name != null 
+                        && objectsArray[j].name.endsWith( '_Geometry' ) 
+                        && objectsArray[j].isMesh ) {
+                            return children[i];
+                        }
+                }
+            }
+        }
+    }
+
+    function getBIMGroupByUUId( scene ) {
+        //TODO externalize this string!!!!
+        const BIMGroupUUID = "C72D7B41-8227-4E77-B423-45CCF2FD6942";
+        
+        var BIMGroup = null;
+
+        var children = scene.children;
+        for ( let i = 0, l = children.length; i < l; i++ ) {
+            if ( children[i].uuid == BIMGroupUUID ) {
+                BIMGroup = children[i];
+                break;
+            }
+        }
+
+        return BIMGroup;
+    }
+
+    function populateElementDropdown( BIMGroup ) {
+        
+    }
 
     return container;
 }
