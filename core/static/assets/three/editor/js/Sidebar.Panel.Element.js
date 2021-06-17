@@ -1,4 +1,3 @@
-import * as THREE from '/static/assets/three/build/three.module.js';
 import * as ThreeUtils from '/static/assets/js/three-utils.js';
 import { UIButton, UICanvas, UIHorizontalRule, UIPanel, UIRow, UISelect, UIText } from "./libs/ui.js";
 import { SidebarCompatibilityPanel } from './Sidebar.Panel.Compatibility.js';
@@ -44,23 +43,30 @@ function SidebarElementPanel( editor ) {
     // Elements dropdown
     var selectRow = new UIRow();
     var elementSelect = new UISelect().setOptions( {
-        '': 'No Elements Loaded',
-        'Test Object 1 Type': 'Object 1 ID',
-        'Test Object 2 Type': 'Object 2 ID'
+        '': 'No Elements Loaded'
     } );
     elementSelect.setWidth( '200px' );
+
     elementSelect.onChange( function( e ) {
         elementInfo.setValue( e.target.value );
 
-        var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-        var material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
-        var cube = new THREE.Mesh( geometry, material );
+        var selectedOption = e.target.options[ e.target.selectedIndex ];
+
+        var elementToLoad = getElementToLoad( selectedOption.getAttribute( 'name' ) );
         
-        ThreeUtils.loadObjectInCanvas( cube, 'element-canvas', false );
+        if ( elementToLoad != null )
+            ThreeUtils.loadObjectInCanvas( elementToLoad, 'element-canvas', true
+                                        , true, true );
 
     } );
     selectRow.add( elementSelect );
     container.add( selectRow );
+
+    function getElementToLoad( elementName ) {
+        var BIMGroup = getBIMGroupByChildrenName( editor.scene );
+
+        return BIMGroup.getObjectByName( elementName );
+    }
 
     // Info string
     var elementInfoRow = new UIRow();
@@ -88,13 +94,8 @@ function SidebarElementPanel( editor ) {
     signals.sceneGraphChanged.add( refreshElementPanelUI );
 
     function refreshElementPanelUI() {
-        var scene = editor.scene;
 
-        var BIMGroup = getBIMGroupFromScene( scene );
-        console.log("BIM Group:");
-        console.log(BIMGroup);
-
-        populateElementDropdown( BIMGroup );
+        populateElementDropdown();
     }
 
     function getBIMGroupFromScene( scene ) {
@@ -119,11 +120,14 @@ function SidebarElementPanel( editor ) {
                     if ( objectsArray[j].name != null 
                         && objectsArray[j].name.endsWith( '_Geometry' ) 
                         && objectsArray[j].isMesh ) {
-                            return children[i];
+                            BIMGroup = children[i];
+                            break;
                         }
                 }
             }
         }
+
+        return BIMGroup;
     }
 
     function getBIMGroupByUUId( scene ) {
@@ -143,8 +147,38 @@ function SidebarElementPanel( editor ) {
         return BIMGroup;
     }
 
-    function populateElementDropdown( BIMGroup ) {
+    function populateElementDropdown() {
+        
+        var elementObjectsList = getElementObjectsList();
+
         elementSelect.clear();
+        elementSelect.addOption( {
+            "value": "",
+            "text": "",
+            "attributes":[]
+        } );
+
+        for ( let elementObj of elementObjectsList ) {
+            let optionObj = {
+                "value": BIMUtils.getElementInfoFromTypeString( elementObj.type ),
+                "text": elementObj.id,
+                "attributes":[
+                    { "name": elementObj.name }
+                ]
+            };
+
+            elementSelect.addOption( optionObj );
+        }
+    }
+
+    function getElementObjectsList() {
+        var elementsList = [];
+
+        var BIMGroup = getBIMGroupFromScene( editor.scene );
+        console.log("BIM Group:");
+        console.log(BIMGroup);
+
+        if (BIMGroup == null) return elementsList;
 
         var children = BIMGroup.children;
 
@@ -153,23 +187,28 @@ function SidebarElementPanel( editor ) {
             let childId = BIMUtils.getElementId(child);
             let childType = BIMUtils.getElementType(child);
             let childName = child.name;
-
+            
             if (childId != null && childType != null) {
-                let optionObj = {
-                    "value": BIMUtils.getElementInfoFromTypeString( childType ),
-                    "text": childId,
-                    "attributes":[
-                        { "name": childName }
-                    ]
+                let elementObj = {
+                    "type": BIMUtils.getElementInfoFromTypeString( childType ),
+                    "id": childId,
+                    "name": childName
                 };
 
-                elementSelect.addOption( optionObj );
+                elementsList.push( elementObj );
             }
+
         }
+
+        // sort objects in the list based on ID
+        elementsList.sort( (ele1, ele2) => {
+            return ele1.id.localeCompare(ele2.id);
+        });
+
+        return elementsList;
     }
 
     return container;
 }
-
 
 export { SidebarElementPanel };

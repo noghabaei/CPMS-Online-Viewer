@@ -12,7 +12,7 @@ function getCenterPoint(mesh) {
     return center;
 }
 
-function loadObjectInCanvas(objectTotLoad, canvasId, centerObjectForCPMS = true, showGrid = false, showAxes = false) {
+function loadObjectInCanvas(objectToLoad, canvasId, centerObjectForCPMS = true, showGrid = false, showAxes = false) {
     // Get required canvas
     let canvas = document.getElementById(canvasId);
 
@@ -55,17 +55,19 @@ function loadObjectInCanvas(objectTotLoad, canvasId, centerObjectForCPMS = true,
     }
 
     // Position and add object
-    let objectCenter = getCenterPoint(objectTotLoad);
+    let objectCenter = getCenterPoint(objectToLoad);
     if (centerObjectForCPMS) {
-        objectTotLoad.position.setX(-1 * objectCenter.x);
-        objectTotLoad.position.setZ(-1 * objectCenter.y);
-        objectTotLoad.position.setY(1 * objectCenter.z);
-        objectTotLoad.translateX(-180);
-        objectTotLoad.translateY(-120);
-        objectTotLoad.translateZ(-100);
+        objectToLoad.position.setX(-1 * objectCenter.x);
+        objectToLoad.position.setZ(-1 * objectCenter.y);
+        objectToLoad.position.setY(1 * objectCenter.z);
+        objectToLoad.translateX(-180);
+        objectToLoad.translateY(-120);
+        objectToLoad.translateZ(-100);
     }
 
-    scene.add(objectTotLoad);
+    scene.add(objectToLoad);
+    console.log( 'Loading object:' );
+    console.log( objectToLoad );
 
     function animate() {
         requestAnimationFrame(animate);
