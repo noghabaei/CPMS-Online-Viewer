@@ -55,8 +55,7 @@ function SidebarElementPanel( editor ) {
         var elementToLoad = getElementToLoad( selectedOption.getAttribute( 'name' ) );
         
         if ( elementToLoad != null )
-            ThreeUtils.loadObjectInCanvas( elementToLoad, 'element-canvas', true
-                                        , true, true );
+            ThreeUtils.loadObjectInCanvas( elementToLoad, 'element-canvas', true);
 
     } );
     selectRow.add( elementSelect );

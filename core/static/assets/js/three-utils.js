@@ -12,7 +12,14 @@ function getCenterPoint(mesh) {
     return center;
 }
 
-function loadObjectInCanvas(objectToLoad, canvasId, centerObjectForCPMS = true, showGrid = false, showAxes = false) {
+/*
+    displayWindow = 'editor' | 'view' ... 'editor' for canvases in panels in editor, 
+        'view' for canvases in panels in View page (index.html)
+*/
+function loadObjectInCanvas(objectToLoad, canvasId, centerObjectForCPMS = true
+    , displayWindow = 'editor'
+    , showGrid = false, showAxes = false) {
+
     // Get required canvas
     let canvas = document.getElementById(canvasId);
 
@@ -60,9 +67,11 @@ function loadObjectInCanvas(objectToLoad, canvasId, centerObjectForCPMS = true, 
         objectToLoad.position.setX(-1 * objectCenter.x);
         objectToLoad.position.setZ(-1 * objectCenter.y);
         objectToLoad.position.setY(1 * objectCenter.z);
-        objectToLoad.translateX(-180);
-        objectToLoad.translateY(-120);
-        objectToLoad.translateZ(-100);
+        if (displayWindow == 'view') {
+            objectToLoad.translateX(-180);
+            objectToLoad.translateY(-120);
+            objectToLoad.translateZ(-100);
+        }
     }
 
     scene.add(objectToLoad);
