@@ -111,6 +111,7 @@
 					preserveDrawingBuffer: false,
 					powerPreference: "high-performance"
 				});
+				renderer.sortObjects = false;
 				scene.add(new THREE.AmbientLight(0x222222,5));
 
 				var controls = new OC.OrbitControls(camera, canvas);
@@ -129,7 +130,9 @@
 						var points = new Potree.Group();
 						points.setPointBudget(500000);
 						points.name = "objectName" + String(counter);
-						
+						points.material.opacity = 1;
+						points.material.wireframe = true;
+						points.material.wireframeLinewidth = 0.01;
 						scene.add(points);
 	
 						var pointcloud = e.pointcloud;
@@ -166,9 +169,6 @@
 				function populateElements(mainObj) {
 					mainObj.traverse(function (child) {
 						if (child.isMesh) {
-							// let childId = getElementId(child);
-							// let childType = getElementType(child);
-							// let childName = child.name;
 							if (child.uuid != null && child.name != null) {
 								tasks.push({
 									'start': '2018-10-08',
@@ -185,6 +185,126 @@
 				const light = new THREE.AmbientLight( 0x404040 ); // soft white light
 				scene.add( light );
 
+				var lastTime = ( performance || Date ).now();
+				var count = 0;
+				function fpsUpdate() { 
+					var currentTime = ( performance || Date ).now();
+					// currentTime - lastTime is the number of milliseconds passed from last loop 
+					var fps = 1000 / (currentTime - lastTime);
+					lastTime = currentTime;
+					count += 1;
+					if(count == 30){
+						count = 0;
+						document.getElementById("frameRate").textContent = fps.toFixed(0);
+					}
+				}
+				var oldVal = 0;
+				var elemenCount = 0;
+				function timelineValChange(){
+					if (scene.getObjectByName('BIM') === undefined) return;	
+					if(timeline.value <=25){
+						if(oldVal < 25){
+							oldVal = timeline.value;
+							return;
+						}
+						scene.getObjectByName('BIM').traverse(function (node) {
+							if(node.isMesh){
+								node.material = new THREE.MeshBasicMaterial({color: "white"}); 
+								node.material.transparent = true;
+                                node.material.opacity = 0.4;
+                            }
+                        });
+					}
+					else if(timeline.value>25 && timeline.value<=50){
+						if(oldVal > 25 && oldVal <= 50){
+							oldVal = timeline.value;
+							return;
+						}
+						scene.getObjectByName('BIM').traverse(function (node) {
+							if(node.isMesh){
+								node.material = new THREE.MeshBasicMaterial({color: "red"});
+								node.material.transparent = true;
+                                node.material.opacity = 0.4;
+                            }
+                        });
+					}
+					else if(timeline.value>50 && timeline.value<=75){
+						if(oldVal > 50 && oldVal <= 75){
+							oldVal = timeline.value;
+							return;
+						}
+						scene.getObjectByName('BIM').traverse(function (node) {
+							if(node.isMesh){
+								node.material = new THREE.MeshBasicMaterial({color: "green"});
+								node.material.transparent = true;
+                                node.material.opacity = 0.4;
+								//node.material.depthTest = false;	 
+                            }
+                        });
+					}
+					else if(timeline.value>75 && timeline.value<=100){
+						if(oldVal > 75 && oldVal <= 100){
+							oldVal = timeline.value;
+							return;
+						}
+						scene.getObjectByName('BIM').traverse(function (node) {
+							if(node.isMesh){
+                                node.material = new THREE.MeshBasicMaterial({color: "White"});
+                            }
+                        });
+					}
+					oldVal = timeline.value;
+				}
+
+				// timeline.addEventListener("input", function () {
+				// 	timelineValChange();
+				// });
+
+				//var previous_value = -1;
+				var count1 = 0;
+				var count2 = 0;
+				var count3 = 0;
+				function loop()
+				{
+					if(timeline.value<=34){
+						count3 = 0
+						count2 = 0;
+						count1 = count1 + 1;
+						if(count1 == 1){
+							var object = scene.getObjectByName("objectName" + String(counter));
+							scene.remove(object);
+							loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-198, -154, -16));
+						}
+					}
+					if(timeline.value>34 && timeline.value<=67){
+						count3 = 0
+						count1 = 0;
+						count2 = count2 + 1;
+						if(count2 == 1){
+							var object = scene.getObjectByName("objectName" + String(counter));
+							scene.remove(object); 
+							loadPointCloud("https://mojtaba1995.github.io//clouds/cloud2/cloud.js", new THREE.Vector3(-210, -150, -17));
+						}
+						//
+					}
+					if(timeline.value>67){
+						count1 = 0;
+						count2 = 0
+						count3 = count3 + 1;
+						if(count3 == 1){
+							var object = scene.getObjectByName("objectName" + String(counter));
+							scene.remove(object); 
+							loadPointCloud("https://mojtaba1995.github.io//clouds/cloud3/cloud.js", new THREE.Vector3(-196.6, -159, -24));
+						}
+						//
+					}
+					timelineValChange();
+					controls.update();
+					renderer.render(scene, camera);
+					fpsUpdate();
+					requestAnimationFrame(loop);
+				};
+				loop();
 				const loader = new THREE.ObjectLoader();
 				loader.load(
 					// resource URL
@@ -196,11 +316,13 @@
 						// Add the loaded object to the scene
 						obj.position.set(-180, -100, 120);
 						obj.name = "BIM";
+						obj.renderOrder = 10;
 						obj.traverse((node)=>{
                             if(node.isMesh){
                                 node.material = new THREE.MeshBasicMaterial({color: "white"});
                                 node.material.transparent = true;
                                 node.material.opacity = 0.4;
+								node.material.depthTest = false;
                                 }
                             });
 						// obj.translateY(35)
@@ -220,107 +342,6 @@
 						console.error( 'An error happened' );
 					}
 				);
-
-				//var previous_value = -1;
-				var count1 = 0;
-				var count2 = 0;
-				var count3 = 0;
-
-				var lastTime = ( performance || Date ).now();
-				var count = 0;
-				function fpsUpdate() { 
-					var currentTime = ( performance || Date ).now();
-					// currentTime - lastTime is the number of milliseconds passed from last loop 
-					var fps = 1000 / (currentTime - lastTime);
-					lastTime = currentTime;
-					count += 1;
-					if(count == 30){
-						count = 0;
-						document.getElementById("frameRate").textContent = fps.toFixed(0);
-					}
-				}
-
-				timeline.addEventListener("input", function () {
-					if(timeline.value <=25){
-						scene.getObjectByName('BIM').traverse(function (node) {
-							if(node.isMesh){
-								node.material = new THREE.MeshBasicMaterial({color: "white"});
-                                node.material.transparent = true;
-                                node.material.opacity = 0.4;
-                            }
-                        });
-					}
-					else if(timeline.value>25 && timeline.value<=50){
-						scene.getObjectByName('BIM').traverse(function (node) {
-							if(node.isMesh){
-								node.material = new THREE.MeshBasicMaterial({color: "red"});
-                                node.material.transparent = true;
-                                node.material.opacity = 0.4;
-                            }
-                        });
-					}
-					else if(timeline.value>50 && timeline.value<=75){
-						scene.getObjectByName('BIM').traverse(function (node) {
-							if(node.isMesh){
-                                node.material = new THREE.MeshBasicMaterial({color: "green"});
-                                node.material.transparent = true;
-                                node.material.opacity = 0.4;
-                            }
-                        });
-					}
-					else if(timeline.value>75 && timeline.value<=100){
-						scene.getObjectByName('BIM').traverse(function (node) {
-							if(node.isMesh){
-                                node.material = new THREE.MeshBasicMaterial({color: "White"});
-                            }
-                        });
-					}
-				});
-
-				function loop()
-				{
-					controls.update();
-					renderer.render(scene, camera);
-					fpsUpdate();
-
-					requestAnimationFrame(loop);
-					
-
-					// if(timeline.value<=34){
-					// 	count3 = 0
-					// 	count2 = 0;
-					// 	count1 = count1 + 1;
-					// 	if(count1 == 1){
-					// 		var object = scene.getObjectByName("objectName" + String(counter));
-					// 		scene.remove(object); 
-					// 		loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-198, -154, -16));
-					// 	}
-					// }
-					// if(timeline.value>34 && timeline.value<=67){
-					// 	count3 = 0
-					// 	count1 = 0;
-					// 	count2 = count2 + 1;
-					// 	if(count2 == 1){
-					// 		var object = scene.getObjectByName("objectName" + String(counter));
-					// 		scene.remove(object); 
-					// 		loadPointCloud("https://mojtaba1995.github.io//clouds/cloud2/cloud.js", new THREE.Vector3(-210, -150, -17));
-					// 	}
-					// 	//
-					// }
-					// if(timeline.value>67){
-					// 	count1 = 0;
-					// 	count2 = 0
-					// 	count3 = count3 + 1;
-					// 	if(count3 == 1){
-					// 		var object = scene.getObjectByName("objectName" + String(counter));
-					// 		scene.remove(object); 
-					// 		loadPointCloud("https://mojtaba1995.github.io//clouds/cloud3/cloud.js", new THREE.Vector3(-196.6, -159, -24));
-					// 	}
-					// 	//
-					// }
-					
-				};
-				loop();
 
 				document.body.onresize = function()
 				{
