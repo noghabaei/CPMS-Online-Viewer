@@ -8,6 +8,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.conf import settings
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -19,7 +20,13 @@ class Profile(models.Model):
     country = models.CharField(null=True, max_length=100, blank=True)
     postalCode = models.IntegerField(null=True, blank=True)
     aboutMe = models.CharField(null=True, max_length=300, blank=True)
-    profilePicture = models.ImageField(null=True, blank=True, upload_to="profiles")
+    profilePicture = models.ImageField(default="default-profile.jpg", null=True, blank=True, upload_to="profiles")
+
+    @property
+    def profilePictureUrl(self):
+        if self.profilePicture:
+            return self.profilePicture.url
+        else: return settings.MEDIA_URL + "profiles/default-profile.jpg"
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
