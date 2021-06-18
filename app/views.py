@@ -48,12 +48,12 @@ def pages(request):
 def profile_page(request):
     user = User.objects.get(username = request.user.username)
 
-    form = ProfileForm(request.POST or get_profile_data_from_user(user))
+    form = ProfileForm(get_profile_data_from_user(user))
 
     msg = None
 
     if request.method == "POST":
-
+        form = ProfileForm(request.POST, request.FILES)
         if form.is_valid():
             bio = form.cleaned_data['bio']
             location = form.cleaned_data['location']
@@ -88,6 +88,9 @@ def get_profile_data_from_user(user):
     formDataDict["country"] = user.profile.country
     formDataDict["postalCode"] = user.profile.postalCode
     formDataDict["aboutMe"] = user.profile.aboutMe
+    
+    userProfilePicture = user.profile.profilePicture
+    formDataDict["profilePicture"] = user.profile.profilePicture
 
     return formDataDict
 
@@ -104,6 +107,7 @@ def populate_user_profile(user, profileForm):
     user.profile.country = formDataDict['country']
     user.profile.postalCode = formDataDict['postalCode']
     user.profile.aboutMe = formDataDict['aboutMe']
+    user.profile.profilePicture = formDataDict['profilePicture']
 
     return user
 
@@ -121,5 +125,6 @@ def get_cleaned_profile_form_data(profileForm):
     dataDict["country"] = profileForm.cleaned_data["country"]
     dataDict["postalCode"] = profileForm.cleaned_data["postalCode"]
     dataDict["aboutMe"] = profileForm.cleaned_data["aboutMe"]
+    dataDict["profilePicture"] = profileForm.cleaned_data["profilePicture"]
 
     return dataDict

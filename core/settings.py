@@ -128,6 +128,13 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'core/static'),
 )
+
+# DIR to store user uploaded media
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
+
+# URL to Serve MEDIA
+MEDIA_URL = '/media/'
+
 #############################################################
 #############################################################
 django_heroku.settings(locals())

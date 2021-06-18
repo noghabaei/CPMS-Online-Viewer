@@ -93,6 +93,9 @@ class ProfileForm(forms.Form):
             }
         )
     )
+    profilePicture = forms.ImageField(
+        required=False
+    )
     bio = forms.CharField(
         required=False,
         widget=forms.TextInput(
