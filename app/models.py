@@ -19,6 +19,7 @@ class Profile(models.Model):
     country = models.CharField(null=True, max_length=100, blank=True)
     postalCode = models.IntegerField(null=True, blank=True)
     aboutMe = models.CharField(null=True, max_length=300, blank=True)
+    profilePicture = models.ImageField(null=True, blank=True, upload_to="profiles")
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
