@@ -13,7 +13,7 @@ function SidebarCompatibilityPanel( editor ) {
 
 	// Compatibility Container
 	var compatibilityContainer = new UIPanel().setId('compat-panel');
-	compatibilityContainer.setDisplay('none');
+	// compatibilityContainer.setDisplay('none');
 	compatibilityContainer.setMarginLeft('-10px');
 
 	// Compatibility title

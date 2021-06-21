@@ -38,7 +38,7 @@ function SidebarElementPanel( editor ) {
 
     elementViewButtonsRow.add( viewModeButton );
 
-    container.add( elementViewButtonsRow );
+    // container.add( elementViewButtonsRow );
 
     // Elements dropdown
     var selectRow = new UIRow();
