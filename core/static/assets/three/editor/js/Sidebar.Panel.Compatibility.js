@@ -8,6 +8,7 @@ import {
 	UISelect,
 	UIText
 } from "./libs/ui.js";
+import { AddObjectCommand } from './commands/AddObjectCommand.js';
 
 function SidebarCompatibilityPanel( editor ) {
 
@@ -25,30 +26,75 @@ function SidebarCompatibilityPanel( editor ) {
 	// Bring Element and > Buttons
 	var compatibilityButtonsRow = new UIRow();
 	var bringElementButton = new UIButton('Bring Element'); // EXTERNALIZE
+	bringElementButton.onClick( function() {
+		var selectValue = document.getElementById( compatibilitySelect.getId() ).value;
+		// console.log( 'select value: '+ selectValue );
+
+		var mesh = getCompatObjectToLoad( selectValue, 'main' );
+
+		editor.execute( new AddObjectCommand( editor, mesh ) );
+	} );
+
+	function getCompatObjectToLoad(shapeToLoad, forScene = 'compat') {
+		var shapeGeometry = null;
+	
+		if (shapeToLoad == null) {
+			console.log('getCompatObjectToLoad: Null Input : Loading Cube by default');
+			shapeGeometry = forScene == 'main' ? new THREE.BoxGeometry(50, 50, 50) : new THREE.BoxGeometry(2, 2, 2);
+	
+		} else if (shapeToLoad.toLowerCase() == 'cube') {
+			shapeGeometry = forScene == 'main' ? new THREE.BoxGeometry(50, 50, 50) : new THREE.BoxGeometry(2, 2, 2);
+	
+		} else if (shapeToLoad.toLowerCase() == 'sphere') {
+			shapeGeometry = forScene == 'main' ? new THREE.SphereGeometry(20, 50, 50) : new THREE.SphereGeometry(1, 20, 20);
+	
+		} else if (shapeToLoad.toLowerCase() == 'cylinder') {
+			shapeGeometry = forScene == 'main' ? new THREE.CylinderGeometry(20, 20, 50, 50, 50) : new THREE.CylinderGeometry(1, 1, 5, 10, 10);
+	
+		} else {
+			shapeGeometry = forScene == 'main' ? new THREE.BoxGeometry(50, 50, 50) : new THREE.BoxGeometry(1, 1, 1);
+		}
+		console.log('Loading:');
+		console.log(shapeGeometry);
+	
+		var material = new THREE.MeshPhongMaterial({
+			color: 'white'
+		});
+	
+		var mesh = new THREE.Mesh(shapeGeometry, material);
+		return mesh;
+	}
+
 	var compatibilityButton2 = new UIButton('>'); // EXTERNALIZE
 	compatibilityButton2.setMarginLeft('10px');
+	
 	compatibilityButtonsRow.add(bringElementButton);
 	compatibilityButtonsRow.add(compatibilityButton2);
 	compatibilityContainer.add(compatibilityButtonsRow);
 
 	// Compatibility dropdown
 	var compatibilitySelectRow = new UIRow();
-	var compatibilitySelect = new UISelect().setOptions({
+	var compatibilitySelect = new UISelect().setId( "compat-select" ).setOptions({
 		'': 'No Elements Loaded',
-		'Test Object 1 Type': 'Object 1 ID',
-		'Test Object 2 Type': 'Object 2 ID'
+		'cube': 'Cube',
+		'sphere': 'Sphere',
+		'cylinder': 'Cylinder',
 	});
 	compatibilitySelect.setWidth('200px');
+
 	compatibilitySelect.onChange(function (e) {
 		compatibilityInfo.setValue(e.target.value);
 
-		var geometry = new THREE.BoxGeometry(1, 1, 1);
-		var material = new THREE.MeshBasicMaterial({
-			color: 0x00ff00
-		});
-		var cube = new THREE.Mesh(geometry, material);
+		// var geometry = new THREE.BoxGeometry(1, 1, 1);
+		// var material = new THREE.MeshBasicMaterial({
+		// 	color: 0x00ff00
+		// });
+		// var cubeMesh = new THREE.Mesh(geometry, material);
+		// cubeMesh.name = "Box";
 
-		ThreeUtils.loadObjectInCanvas(cube, 'compat-canvas', false);
+		var mesh = getCompatObjectToLoad( e.target.value, 'compat' );
+
+		ThreeUtils.loadObjectInCanvas(mesh, 'compat-canvas', false);
 
 	});
 	compatibilitySelectRow.add(compatibilitySelect);
