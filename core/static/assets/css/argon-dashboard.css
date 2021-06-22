@@ -20705,6 +20705,19 @@ pre>code.highlight {
   color: #FFFFFF;
   font-weight: bold;  
 }
+
+.informationSchedule{
+  margin-right: 3px;
+  float: right;
+  position: fixed;
+  border-radius: 5px;
+  z-index: 10;  
+  right: 0px;
+  top: 76px;
+  background-color: #3b3a3a;
+  color: #FFFFFF;
+  font-weight: bold;  
+}
 #controlInputs{
   background-color: #000000;
   border-radius: 5px;
@@ -20904,6 +20917,19 @@ input:checked + .slider:before {
     color: #FFFFFF;
     font-weight: bold;  
   }
+  .informationSchedule {
+    margin-top: 3px;
+    margin-right: 3px;
+    float: right;
+    position: fixed;
+    border-radius: 5px;
+    z-index: 10;  
+    right: 0px;
+    top: 76px;
+    background-color: #3b3a3a;
+    color: #FFFFFF;
+    font-weight: bold;  
+  }
 
   #schedule {
     transform: translateX(-50%);
@@ -20960,6 +20986,21 @@ input:checked + .slider:before {
     color: #FFFFFF;
     font-weight: bold;  
   }
+  .informationSchedule{
+    margin-top: 3px;
+    margin-right: 3px;
+    float: right;
+    position: fixed;
+    border-radius: 5px;
+    z-index: 10;  
+    right: 0px;
+    top: 70px;
+    background-color: #3b3a3a;
+    color: #FFFFFF;
+    font-weight: bold;  
+  }
+
+
 
   #timeline {
     width: 13rem;
