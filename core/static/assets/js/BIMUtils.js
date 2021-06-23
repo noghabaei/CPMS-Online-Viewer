@@ -40,24 +40,61 @@ function getElementInfoFromTypeString(elementTypeString, prefixInfo=false) {
 // The BIM Group in the scene has around 1949 children, 
 // and each child (which is a Mesh) has a name ending in "_Geometry".
 function getBIMGroupByChildrenName( scene ) {
-    var BIMGroup = null;
+    let BIMGroup = null;
 
     var children = scene.children;
-    for ( let i=0, l=children.length; i < l; i++ ) {
-        var objectsArray = children[i].children;
-        if ( objectsArray != null ) {
-            for ( let j=0, k=objectsArray.length; j < k; j++ ) {
-                if ( objectsArray[j].name != null 
-                    && objectsArray[j].name.endsWith( '_Geometry' ) 
-                    && objectsArray[j].isMesh ) {
-                        BIMGroup = children[i];
-                        break;
-                    }
-            }
+
+    var queue = [ scene ]
+    while ( queue.length > 0 ) {
+        var node = queue.shift();
+        if ( testForBimParent( node ) ) {
+            BIMGroup = node;
+            break;
+        }
+        
+        for ( let i=0; i<node.children.length; i++ ) {
+            queue.push( node.children[i] );
         }
     }
 
+    // for ( let i=0, l=children.length; i < l; i++ ) {
+        
+    // }
+
+    // for ( let i=0, l=children.length; i < l; i++ ) {
+    //     var objectsArray = children[i].children;
+    //     if ( objectsArray != null ) {
+    //         for ( let j=0, k=objectsArray.length; j < k; j++ ) {
+    //             if ( objectsArray[j].name != null 
+    //                 && objectsArray[j].name.endsWith( '_Geometry' ) 
+    //                 && objectsArray[j].isMesh ) {
+    //                     BIMGroup = children[i];
+    //                     break;
+    //                 }
+    //         }
+    //     }
+    // }
+
+    if ( BIMGroup == null ) {
+        BIMGroup = scene.children[0].children[2];
+    }
+
     return BIMGroup;
+}
+
+function testForBimParent( node ) {
+    var objectsArray = node.children;
+    if ( objectsArray != null ) {
+        for ( let j=0, k=objectsArray.length; j < k; j++ ) {
+            if ( objectsArray[j].name != null 
+                && objectsArray[j].name.endsWith( '_Geometry' ) 
+                && objectsArray[j].isMesh ) {
+                    return true;
+                }
+        }
+    }
+
+    return false;
 }
 
 function getBIMGroupByUUId( scene ) {

@@ -28,6 +28,9 @@ function SidebarControls(editor) {
         let checked = BIMCheckbox.getValue();
 
         var bimObject = BIMUTils.getBIMGroupByChildrenName( editor.scene );
+        if ( bimObject == null ) {
+            bimObject = editor.scene.children[0].children[2];
+        }
 
         if (checked) {
             bimObject.visible = true;

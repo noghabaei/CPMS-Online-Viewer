@@ -55,14 +55,14 @@ function SidebarElementPanel( editor ) {
         var elementToLoad = getElementToLoad( selectedOption.getAttribute( 'name' ) );
         
         if ( elementToLoad != null )
-            ThreeUtils.loadObjectInCanvas( elementToLoad, 'element-canvas', true);
+            ThreeUtils.loadObjectInCanvas( elementToLoad, 'element-canvas', true, 'view');
 
     } );
     selectRow.add( elementSelect );
     container.add( selectRow );
 
     function getElementToLoad( elementName ) {
-        var BIMGroup = getBIMGroupByChildrenName( editor.scene );
+        var BIMGroup = getBIMGroupFromScene( editor.scene );
 
         return BIMGroup.getObjectByName( elementName );
     }
@@ -93,15 +93,24 @@ function SidebarElementPanel( editor ) {
     signals.sceneGraphChanged.add( refreshElementPanelUI );
 
     function refreshElementPanelUI() {
-
+        console.log( 'Refreshing Element Panel' );
         populateElementDropdown();
     }
 
     function getBIMGroupFromScene( scene ) {
-        var BIMGroup = null;
+        let BIMGroup = null;
 
         // BIMGroup = getBIMGroupByUUId( scene );
-        BIMGroup = getBIMGroupByChildrenName( scene );
+        BIMGroup = BIMUtils.getBIMGroupByChildrenName( scene );
+
+        if ( BIMGroup == null ) {
+            // BIMGroup = scene.getObjectByName( "BIM" );
+            BIMGroup = scene.children[0].children[2];
+            // BIMUtils.getBIMGroupByChildrenName( scene );
+        }
+
+        console.log("BIM Group:");
+        console.log(BIMGroup);
 
         return BIMGroup;
     }
@@ -174,8 +183,6 @@ function SidebarElementPanel( editor ) {
         var elementsList = [];
 
         var BIMGroup = getBIMGroupFromScene( editor.scene );
-        console.log("BIM Group:");
-        console.log(BIMGroup);
 
         if (BIMGroup == null) return elementsList;
 
