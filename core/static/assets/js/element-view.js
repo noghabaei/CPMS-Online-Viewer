@@ -85,7 +85,7 @@ function populateElementsDropdown(mainObj) {
 
 }
 
-function loadElementObject(objectTotLoad) {
+function loadElementObject( objectTotLoad, centerObject=true ) {
     // Create scene
     let elementViewScene = new THREE.Scene();
 
@@ -122,13 +122,15 @@ function loadElementObject(objectTotLoad) {
     // elementViewScene.add(axesHelper);
 
     // Position and add object
-    let objectCenter = getCenterPoint(objectTotLoad);
-    objectTotLoad.position.setX(-1*objectCenter.x);
-    objectTotLoad.position.setZ(-1*objectCenter.y);
-    objectTotLoad.position.setY(1*objectCenter.z);
-    objectTotLoad.translateX(-180);
-    objectTotLoad.translateY(-120);
-    objectTotLoad.translateZ(-100);
+    let objectCenter = getCenterPoint( objectTotLoad );
+    if ( centerObject )  {
+        objectTotLoad.position.setX(-1*objectCenter.x);
+        objectTotLoad.position.setZ(-1*objectCenter.y);
+        objectTotLoad.position.setY(1*objectCenter.z);
+        objectTotLoad.translateX(-180);
+        objectTotLoad.translateY(-120);
+        objectTotLoad.translateZ(-100);
+    }
 
     elementViewScene.add(objectTotLoad);
 

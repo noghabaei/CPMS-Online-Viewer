@@ -279,13 +279,13 @@
 
 	WorkerManager.URLS = 
 	[
-		"/workers/BinaryDecoderWorker.js",
-		"/workers/LASLAZWorker.js",
-		"/workers/LASDecoderWorker.js",
-		"/workers/GreyhoundBinaryDecoderWorker.js",
-		"/workers/DEMWorker.js",
-		"/workers/EptLaszipDecoderWorker.js",
-		"/workers/EptBinaryDecoderWorker.js"
+		"/static/assets/potree/workers/BinaryDecoderWorker.js",
+		"/static/assets/potree/workers/LASLAZWorker.js",
+		"/static/assets/potree/workers/LASDecoderWorker.js",
+		"/static/assets/potree/workers/GreyhoundBinaryDecoderWorker.js",
+		"/static/assets/potree/workers/DEMWorker.js",
+		"/static/assets/potree/workers/EptLaszipDecoderWorker.js",
+		"/static/assets/potree/workers/EptBinaryDecoderWorker.js"
 	];
 
 	function getBasePath()
@@ -9417,7 +9417,7 @@ void main()
 	{
 		constructor()
 		{
-			super(new THREE.Geometry(), new THREE.MeshBasicMaterial({opacity:0.0, wireframe:false, transparent:true}));
+			super(new THREE.BufferGeometry(), new THREE.MeshBasicMaterial({opacity:0.0, wireframe:false, transparent:true}));
 
 			this.rotation.set(-Math.PI / 2, 0, 0);
 
