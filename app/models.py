@@ -11,6 +11,7 @@ from django.dispatch import receiver
 from django.conf import settings
 import os
 from uuid import uuid4
+from PIL import Image
 
 
 def profilePictureFilename(instance, filename):
@@ -36,6 +37,18 @@ class Profile(models.Model):
     postalCode = models.IntegerField(null=True, blank=True)
     aboutMe = models.CharField(null=True, max_length=300, blank=True)
     profilePicture = models.ImageField(default="default-profile.jpg", null=True, blank=True, upload_to=profilePictureFilename)
+
+    # Override the save method of the model
+    def save(self):
+        super().save()
+        if bool(self.profilePicture):
+            img = Image.open(self.profilePicture.path) # Open image
+            
+            # resize image
+            if img.height != 200 or img.width != 200:
+                output_size = (200, 200)
+                img = img.resize(output_size)
+                img.save(self.profilePicture.path) # Save it again and override the larger image
 
     @property
     def profilePictureUrl(self):
