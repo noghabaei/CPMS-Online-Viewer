@@ -61,7 +61,7 @@
 		</div>
 	</div>
 
-	<div class="information small">
+	<div class="informationSchedule small">
 		<div class ="text-center">INFORMATION</div>
 		<div id = "controlInputs">
 			<div>
@@ -84,9 +84,41 @@
 		import * as OC from '/static/assets/fbx/OrbitControls.js';
 		import '/static/assets/potree/potree.js';
 		var scene;
-		let elementIdTypeMapList = [];
 		var tasks = [];
-		
+		var startDate;
+		$(document).ready(function() {
+				$.ajax({
+					type: "GET",
+					url: "/static/assets/fbx/Schedule.csv",
+					dataType: "text",
+					success: function(data) {processData(data);}
+				});
+			});
+
+			function processData(allText) {
+				var allTextLines = allText.split(/\r\n|\n/);
+				var headers = allTextLines[0].split(',');
+				var lines = [];
+				for (var i=1; i<allTextLines.length; i++) {
+					var data = allTextLines[i].split(',');
+					if(i == 1 ) {
+						startDate = data[1];
+					}
+					if (data.length == headers.length) {
+						tasks.push({
+									'start': data[1],
+									'end': data[2],
+									'name':data[0],
+									'id': data[0],
+									'progress': data[3],
+									'dependencies' : data[4].replace(":",",")
+								});
+					}
+				}
+				console.log(tasks);
+			}
+
+					
 
 		document.body.onload = function()
 			{
@@ -132,7 +164,7 @@
 						points.name = "objectName" + String(counter);
 						points.material.opacity = 1;
 						points.material.wireframe = true;
-						points.material.wireframeLinewidth = 0.01;
+						//points.material.wireframeLinewidth = 0.01;
 						scene.add(points);
 	
 						var pointcloud = e.pointcloud;
@@ -166,21 +198,6 @@
 					});
 					console.log(gantt_chart);
 				}
-				function populateElements(mainObj) {
-					mainObj.traverse(function (child) {
-						if (child.isMesh) {
-							if (child.uuid != null && child.name != null) {
-								tasks.push({
-									'start': '2018-10-08',
-									'end': '2018-10-30',
-									'name': child.uuid,
-									'id': child.uuid,
-									'progress': 70
-								});
-							}
-						}
-					});
-				}
 
 				const light = new THREE.AmbientLight( 0x404040 ); // soft white light
 				scene.add( light );
@@ -198,69 +215,103 @@
 						document.getElementById("frameRate").textContent = fps.toFixed(0);
 					}
 				}
+
+				function getElementId(element) {
+					if (element == null || element.name == null || !validateElementName(element.name)) return null;
+
+					var nameStringRegex = new RegExp("^.*_([0-9]*)_Geometry$");
+					var found = element.name.match(nameStringRegex);
+
+					if (found == null || found.length === 0) return null;
+					else return found[found.length - 1];
+				}
+
+				function validateElementName(nameString) {
+					if (nameString == null || nameString.length === 0) return false;
+
+					var nameStringRegex = new RegExp("^.*_[0-9]*_Geometry$");
+
+					if (!nameStringRegex.test(nameString)) {
+						console.log('Invalid namestring: ' + nameString);
+					}
+
+					return nameStringRegex.test(nameString);
+				}
+
+				function differenceBetweenDates(value){
+					var date1 = new Date(startDate);
+					var date2 = new Date(value);
+					var Difference_In_Time = date2.getTime() - date1.getTime();
+					var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+					return Difference_In_Days;
+				}
+
+				function getCompletedElementsName(){
+					var completedElements = [];
+					for(var i =0;i<tasks.length;i++){
+						if(tasks[i]['progress']== "100"){
+							completedElements.push(tasks[i]['task']);
+						}
+					}
+					return completedElements;
+				}
+
+				function getInProgressElements(value){
+					var inprogressElements = [];
+					for(var i =0;i<tasks.length;i++){
+						if(parseInt(tasks[i]['progress']) < 100 && differenceBetweenDates(tasks[i]['start']) <= value && differenceBetweenDates(tasks[i]['end']) >= value){
+							inprogressElements.push(tasks[i]['task']);
+						}
+					}
+					return inprogressElements;
+				}
+
+				function getBehindSheduleElements(value){
+					var behindScheduleElements = [];
+					for(var i =0;i<tasks.length;i++){
+						if(parseInt(tasks[i]['progress']) < 100 && differenceBetweenDates(tasks[i]['end']) < value){
+							behindScheduleElements.push(tasks[i]['task']);
+						}
+					}
+					return behindScheduleElements;
+				}
+
 				var oldVal = 0;
 				var elemenCount = 0;
+
 				function timelineValChange(){
 					if (scene.getObjectByName('BIM') === undefined) return;	
-					if(timeline.value <=25){
-						if(oldVal < 25){
-							oldVal = timeline.value;
-							return;
-						}
-						scene.getObjectByName('BIM').traverse(function (node) {
-							if(node.isMesh){
+					if(oldVal == timeline.value)return;
+					var completedElements = getCompletedElementsName();
+					var inprogressElements = getInProgressElements(timeline.value);
+					var behindScheduleElements = getBehindSheduleElements(timeline.value);
+					console.log(completedElements);
+					var modelElements = [];
+					scene.getObjectByName('BIM').traverse(function (node) {
+						if(node.isMesh){
+							if( completedElements.includes( getElementId(node) )){
+								modelElements.push(node.name);
 								node.material = new THREE.MeshBasicMaterial({color: "white"}); 
-								node.material.transparent = true;
-                                node.material.opacity = 0.4;
-                            }
-                        });
-					}
-					else if(timeline.value>25 && timeline.value<=50){
-						if(oldVal > 25 && oldVal <= 50){
-							oldVal = timeline.value;
-							return;
-						}
-						scene.getObjectByName('BIM').traverse(function (node) {
-							if(node.isMesh){
-								node.material = new THREE.MeshBasicMaterial({color: "red"});
-								node.material.transparent = true;
-                                node.material.opacity = 0.4;
-                            }
-                        });
-					}
-					else if(timeline.value>50 && timeline.value<=75){
-						if(oldVal > 50 && oldVal <= 75){
-							oldVal = timeline.value;
-							return;
-						}
-						scene.getObjectByName('BIM').traverse(function (node) {
-							if(node.isMesh){
+							}
+							else if( inprogressElements.includes( getElementId(node) )){
 								node.material = new THREE.MeshBasicMaterial({color: "green"});
 								node.material.transparent = true;
-                                node.material.opacity = 0.4;
-								//node.material.depthTest = false;	 
+								node.material.opacity = 0.4;
+							}
+							else if( behindScheduleElements.includes(getElementId(node))){
+								node.material = new THREE.MeshBasicMaterial({color: "red"});
+								node.material.transparent = true;
+								node.material.opacity = 0.4;
+							}else{
+								node.material = new THREE.MeshBasicMaterial({color: "white"});
+								node.material.transparent = true;
+								node.material.opacity = 0.4;
+							}
                             }
                         });
-					}
-					else if(timeline.value>75 && timeline.value<=100){
-						if(oldVal > 75 && oldVal <= 100){
-							oldVal = timeline.value;
-							return;
-						}
-						scene.getObjectByName('BIM').traverse(function (node) {
-							if(node.isMesh){
-                                node.material = new THREE.MeshBasicMaterial({color: "White"});
-                            }
-                        });
-					}
 					oldVal = timeline.value;
 				}
 
-				// timeline.addEventListener("input", function () {
-				// 	timelineValChange();
-				// });
-
-				//var previous_value = -1;
 				var count1 = 0;
 				var count2 = 0;
 				var count3 = 0;
@@ -322,13 +373,9 @@
                                 node.material = new THREE.MeshBasicMaterial({color: "white"});
                                 node.material.transparent = true;
                                 node.material.opacity = 0.4;
-								node.material.depthTest = false;
                                 }
                             });
-						// obj.translateY(35)
-						// obj.translateZ(-50);
 						scene.add( obj );
-						populateElements(obj);
 						drawChart();
 						},
 
@@ -350,12 +397,11 @@
 				}
 				document.body.onresize();
 			};
-
+		
 		var bim = document.getElementById("bim");
         bim.addEventListener('change',function() {
             scene.getObjectByName("BIM").visible = !scene.getObjectByName("BIM").visible;
         });
-
 		</script>
 
 
