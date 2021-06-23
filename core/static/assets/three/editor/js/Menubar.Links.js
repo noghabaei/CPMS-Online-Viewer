@@ -11,13 +11,23 @@ function MenubarLinks( editor ) {
 
 	var title = new UIPanel();
 	title.setClass( 'title' );
+	title.setTextContent( 'View Mode' ); // Externalize String!
+	title.onClick( function () {
+
+        window.location.href = '/index.html';
+
+	} );
+	container.add( title );
+	
+	var title = new UIPanel();
+	title.setClass( 'title' );
 	title.setTextContent( 'Compatibility Mode' ); // Externalize String!
 	title.onClick( function () {
 
         window.location.href = '/compatibility.html';
 
 	} );
-	container.add( title );
+	// container.add( title );
 
     // Link to Settings Page
 	container.setClass( 'menu' );
@@ -30,7 +40,7 @@ function MenubarLinks( editor ) {
         window.location.href = '/icons.html';
 
 	} );
-	container.add( title );
+	// container.add( title );
 
     // Link to Profile Page
 	container.setClass( 'menu' );
@@ -43,7 +53,7 @@ function MenubarLinks( editor ) {
         window.location.href = '/profile.html';
 
 	} );
-	container.add( title );
+	// container.add( title );
 
     // Link to Schedule Page
 	container.setClass( 'menu' );
@@ -56,7 +66,7 @@ function MenubarLinks( editor ) {
         window.location.href = '/tables.html';
 
 	} );
-	container.add( title );
+	// container.add( title );
 
 	return container;
 }
