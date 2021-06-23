@@ -41,14 +41,14 @@ class Profile(models.Model):
     # Override the save method of the model
     def save(self):
         super().save()
-
-        img = Image.open(self.profilePicture.path) # Open image
-        
-        # resize image
-        if img.height != 200 or img.width != 200:
-            output_size = (200, 200)
-            img = img.resize(output_size)
-            img.save(self.profilePicture.path) # Save it again and override the larger image
+        if bool(self.profilePicture):
+            img = Image.open(self.profilePicture.path) # Open image
+            
+            # resize image
+            if img.height != 200 or img.width != 200:
+                output_size = (200, 200)
+                img = img.resize(output_size)
+                img.save(self.profilePicture.path) # Save it again and override the larger image
 
     @property
     def profilePictureUrl(self):
