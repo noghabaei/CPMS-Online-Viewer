@@ -51,7 +51,7 @@
 		<canvas id="potreecanvasTable"></canvas>
 	</div>
 	<div id="chart_wrapper">
-		<div class="gantt-target"></div>
+		<svg id="gantt-target"></svg>
 		<!-- <div id="chart_div">Grantt Chart will be loaded here...</div> -->
 	</div>
 	<div id = "scheduleInTable" class ="small">
@@ -126,9 +126,9 @@
 				var canvas = document.getElementById("potreecanvasTable");
 				var timeline = document.getElementById("timeline");
 				var width = canvas.width;
-				var height = canvas.height;
+				var height = canvas.height * 0.6;
 
-				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
+				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 750);
 				camera.position.set(-180, 120, -150);
 
 				var renderer = new THREE.WebGLRenderer(
@@ -180,7 +180,7 @@
 
 				function drawChart(){
 					if(tasks.length === 0 ) return;
-					var gantt_chart = new Gantt(".gantt-target", tasks, {
+					var gantt_chart = new Gantt("#gantt-target", tasks, {
 						on_click: function (task) {
 							console.log(task);
 						},
@@ -250,7 +250,7 @@
 					var completedElements = [];
 					for(var i =0;i<tasks.length;i++){
 						if(tasks[i]['progress']== "100"){
-							completedElements.push(tasks[i]['task']);
+							completedElements.push(tasks[i]['id']);
 						}
 					}
 					return completedElements;
@@ -260,7 +260,7 @@
 					var inprogressElements = [];
 					for(var i =0;i<tasks.length;i++){
 						if(parseInt(tasks[i]['progress']) < 100 && differenceBetweenDates(tasks[i]['start']) <= value && differenceBetweenDates(tasks[i]['end']) >= value){
-							inprogressElements.push(tasks[i]['task']);
+							inprogressElements.push(tasks[i]['id']);
 						}
 					}
 					return inprogressElements;
@@ -270,7 +270,7 @@
 					var behindScheduleElements = [];
 					for(var i =0;i<tasks.length;i++){
 						if(parseInt(tasks[i]['progress']) < 100 && differenceBetweenDates(tasks[i]['end']) < value){
-							behindScheduleElements.push(tasks[i]['task']);
+							behindScheduleElements.push(tasks[i]['id']);
 						}
 					}
 					return behindScheduleElements;
@@ -389,9 +389,11 @@
 						console.error( 'An error happened' );
 					}
 				);
-
+				var container;
 				document.body.onresize = function()
 				{
+					// container = document.getElementById('potreeContainer');
+					// renderer.setSize($(container).width()*, $(container).height());
 					renderer.setPixelRatio(window.devicePixelRatio + 8);
 					drawChart();
 				}
