@@ -17,9 +17,6 @@ import { SetScaleCommand } from './commands/SetScaleCommand.js';
 
 import { RoomEnvironment } from '/static/assets/three/examples/jsm/environments/RoomEnvironment.js';
 
-// import '/static/assets/potree/three.min.js';
-import * as Potree from '/static/assets/three/potree/potree.module.js';
-
 function Viewport( editor ) {
 
 	var signals = editor.signals;
@@ -779,41 +776,6 @@ function Viewport( editor ) {
 		endTime = performance.now();
 		editor.signals.sceneRendered.dispatch( endTime - startTime );
 
-	}
-
-	var counter = 1;
-	var object = scene.getObjectByName("objectName" + String(counter));
-	// scene.remove(object);
-	loadPointCloud2("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-198, -154, -16));
-
-	function loadPointCloud2(url, position)
-	{
-
-		Potree.loadPointCloud(url, "pointcloud", function(e)
-		{
-			var points = new Potree.Group();
-			points.setPointBudget(500000);
-			points.name = "objectName" + String(counter);
-			//points.material.opacity = 0.0;
-			//points.material.wireframe = false;
-			
-			scene.add(points);
-
-			var pointcloud = e.pointcloud;
-
-			if(position !== undefined)
-			{
-				pointcloud.position.copy(position);
-			}
-
-			var material = pointcloud.material;
-			material.size = 2;
-			material.pointColorType = Potree.PointColorType.RGB; //RGB | DEPTH | HEIGHT | POINT_INDEX | LOD | CLASSIFICATION
-			material.pointSizeType = Potree.PointSizeType.ADAPTIVE; //ADAPTIVE | FIXED
-			material.shape = Potree.PointShape.SQUARE; //CIRCLE | SQUARE
-
-			points.add(pointcloud);
-		});
 	}
 
 	return container;

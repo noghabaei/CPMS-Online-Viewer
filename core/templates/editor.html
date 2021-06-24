@@ -66,6 +66,8 @@
 			import { Resizer } from '/static/assets/three/editor/js/Resizer.js';
 			import { VRButton } from '/static/assets/three/examples/jsm/webxr/VRButton.js';
 
+			import * as Potree from '/static/assets/three/potree/potree.module.js';
+
 			window.URL = window.URL || window.webkitURL;
 			window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder;
 
@@ -260,6 +262,8 @@
 
 			// }
 			
+			var counter = 1;
+
 			// Load the BIM
 			const initLoader = new THREE.ObjectLoader();
 			initLoader.load( "/static/assets/fbx/scene.json",
@@ -269,6 +273,11 @@
 					// obj.children[2].name = "BIM";
 
 					editor.scene.add( obj );
+
+					var object = editor.scene.getObjectByName("objectName" + String(counter));
+					editor.scene.remove(object);
+					loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-198, -154, -16));
+
 					editor.signals.sceneGraphChanged.dispatch();
 				},
 				function ( xhr ) {
@@ -278,6 +287,36 @@
 					console.error( 'An error happened' );
 				}
 			);
+
+			function loadPointCloud(url, position) {
+				console.log( 'LOAD POINT CLOUD METHOD CALLED!' );
+
+				Potree.loadPointCloud(url, "pointcloud", function(e)
+				{
+					var points = new Potree.Group();
+					points.setPointBudget(500000);
+					points.name = "objectName" + String(counter);
+					//points.material.opacity = 0.0;
+					//points.material.wireframe = false;
+					
+					editor.scene.add(points);
+
+					var pointcloud = e.pointcloud;
+
+					if(position !== undefined)
+					{
+						pointcloud.position.copy(position);
+					}
+
+					var material = pointcloud.material;
+					material.size = 2;
+					material.pointColorType = Potree.PointColorType.RGB; //RGB | DEPTH | HEIGHT | POINT_INDEX | LOD | CLASSIFICATION
+					material.pointSizeType = Potree.PointSizeType.ADAPTIVE; //ADAPTIVE | FIXED
+					material.shape = Potree.PointShape.SQUARE; //CIRCLE | SQUARE
+
+					points.add(pointcloud);
+				});
+			}
 			
 		</script>
 	</body>
