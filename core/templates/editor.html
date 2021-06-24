@@ -262,21 +262,21 @@
 
 			// }
 			
+			// Load Point Clouds
 			var counter = 1;
+
+			var object = editor.scene.getObjectByName("objectName" + String(counter));
+			editor.scene.remove(object);
+			loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-198, -154, -16));
 
 			// Load the BIM
 			const initLoader = new THREE.ObjectLoader();
 			initLoader.load( "/static/assets/fbx/scene.json",
 				function ( obj ) {
-					// Add the loaded object to the scene
 					obj.position.set(-180, -100, 120);
-					// obj.children[2].name = "BIM";
+					obj.name = "BIM";
 
 					editor.scene.add( obj );
-
-					var object = editor.scene.getObjectByName("objectName" + String(counter));
-					editor.scene.remove(object);
-					loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-198, -154, -16));
 
 					editor.signals.sceneGraphChanged.dispatch();
 				},
@@ -296,8 +296,8 @@
 					var points = new Potree.Group();
 					points.setPointBudget(500000);
 					points.name = "objectName" + String(counter);
-					//points.material.opacity = 0.0;
-					//points.material.wireframe = false;
+					points.material.opacity = 0.0;
+					points.material.wireframe = false;
 					
 					editor.scene.add(points);
 
@@ -315,6 +315,8 @@
 					material.shape = Potree.PointShape.SQUARE; //CIRCLE | SQUARE
 
 					points.add(pointcloud);
+
+					// editor.signals.sceneGraphChanged.dispatch();
 				});
 			}
 			
