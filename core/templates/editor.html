@@ -66,9 +66,6 @@
 			import { Resizer } from '/static/assets/three/editor/js/Resizer.js';
 			import { VRButton } from '/static/assets/three/examples/jsm/webxr/VRButton.js';
 
-			// import '/static/assets/three/build/three.min.js';
-			// import '/static/assets/potree/potree.js'
-
 			window.URL = window.URL || window.webkitURL;
 			window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder;
 
@@ -265,84 +262,23 @@
 			
 			// Load the BIM
 			const initLoader = new THREE.ObjectLoader();
-			initLoader.load(
-				// resource URL
-				"/static/assets/fbx/scene.json",
-
-				// onLoad callback
-				// Here the loaded data is assumed to be an object
+			initLoader.load( "/static/assets/fbx/scene.json",
 				function ( obj ) {
 					// Add the loaded object to the scene
 					obj.position.set(-180, -100, 120);
 					// obj.children[2].name = "BIM";
 
-					// for (let i=0; i<obj.children.length; i++) {
-					// 	var objectsArray = obj.children[i].children;
-					// 	if ( objectsArray != null ) {
-					// 		for ( let j=0, k=objectsArray.length; j < k; j++ ) {
-					// 			if ( objectsArray[j].name != null 
-					// 				&& objectsArray[j].name.endsWith( '_Geometry' ) 
-					// 				&& objectsArray[j].isMesh ) {
-										
-					// 					// BIMGroup = children[i];
-
-					// 					obj.children[i].children[j].name = "BIM";
-
-					// 					break;
-					// 				}
-					// 		}
-					// 	}
-					// }
-					
 					editor.scene.add( obj );
 					editor.signals.sceneGraphChanged.dispatch();
 				},
-				// onProgress callback
 				function ( xhr ) {
 					console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
 				},
-
-				// onError callback
 				function ( err ) {
 					console.error( 'An error happened' );
 				}
 			);
 			
-			var counter = 1;
-			function loadPointCloud(url, position)
-			{
-
-				Potree.loadPointCloud(url, "pointcloud", function(e)
-				{
-					var points = new Potree.Group();
-					points.setPointBudget(500000);
-					points.name = "objectName" + String(counter);
-					//points.material.opacity = 0.0;
-					//points.material.wireframe = false;
-					
-					editor.scene.add(points);
-
-					var pointcloud = e.pointcloud;
-
-					if(position !== undefined)
-					{
-						pointcloud.position.copy(position);
-					}
-
-					var material = pointcloud.material;
-					material.size = 2;
-					material.pointColorType = Potree.PointColorType.RGB; //RGB | DEPTH | HEIGHT | POINT_INDEX | LOD | CLASSIFICATION
-					material.pointSizeType = Potree.PointSizeType.ADAPTIVE; //ADAPTIVE | FIXED
-					material.shape = Potree.PointShape.SQUARE; //CIRCLE | SQUARE
-
-					points.add(pointcloud);
-				});
-			}
-
-			// var object = editor.scene.getObjectByName("objectName" + String(counter));
-			// if ( object != null ) editor.scene.remove(object);
-			// loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-198, -154, -16));
-
 		</script>
 	</body>
 </html>
