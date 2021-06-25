@@ -20706,18 +20706,6 @@ pre>code.highlight {
   font-weight: bold;  
 }
 
-.informationSchedule{
-  margin-right: 3px;
-  float: right;
-  position: fixed;
-  border-radius: 5px;
-  z-index: 10;  
-  right: 0px;
-  top: 76px;
-  background-color: #3b3a3a;
-  color: #FFFFFF;
-  font-weight: bold;  
-}
 #controlInputs{
   background-color: #000000;
   border-radius: 5px;
@@ -20740,18 +20728,6 @@ pre>code.highlight {
   position:fixed; 
   right: 20%; 
   bottom:20px; 
-  text-align: center; 
-  font-weight: bold; 
-  border-radius: 5px;
-}
-
-#scheduleInTable{
-  background-color: #3b3a3a ;
-  color: #FFFFFF; 
-  width: 30%; 
-  position:fixed; 
-  right: 20%; 
-  bottom: 41%; 
   text-align: center; 
   font-weight: bold; 
   border-radius: 5px;
@@ -20829,66 +20805,6 @@ input:checked + .slider:before {
   z-index: 100;
 }
 
-/* ::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-::-webkit-scrollbar-thumb {
-  background: #888; 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-} */
-
-body {
-  overflow: scroll !important;
-}
-
-#gantt-target{
-  position:fixed;
-  left:250px ; 
-  bottom:0px; 
-  overflow: scroll; 
-  height:40%;
-  width:100%;
-  z-index: 12;
-} 
-svg{
-  overflow:scroll !important;
-}
-.gantt-container{
-  overflow: scroll !important;
-  height:101%;
-}
-
-#potreeContainer{
-  text-align:center;
-  background: gray; 
-  position:fixed;
-  left:0px; 
-  z-index: -1;
-  top:0px; 
-  height:60%;
-  width:100%;
-}
-
-#potreecanvasTable{
-  background: gray; 
-  position: relative; 
-  width: 100%; 
-  height: 100%; 
-  left: 150px; 
-  top:0; 
-  z-index: -1;
-  cursor: grab; 
-  display: block;
-}
-
 @media screen and (max-width: 749px) {
   #timeline {
     /* position: absolute; */
@@ -20899,69 +20815,10 @@ svg{
     transform: translateX(-90%);
   }
 
-  /* #chart_wrapper{
-    position:fixed;
-    left:0px; 
-    bottom:0px; 
-    overflow-y: scroll; 
-    overflow-x: scroll; 
-    height:40%;
-    width:100%;
-  } */
-
-  #gantt-target{
-    position:fixed;
-    left:0px ; 
-    bottom:0px; 
-    overflow: scroll; 
-    height:40%;
-    width:100%;
-  } 
-  svg{
-    overflow:scroll !important;
-  }
-  .gantt-container{
-    overflow: scroll !important;
-    height:101%;
-  }
-  
-  #potreecanvasTable{
-    background: gray; 
-    position: relative; 
-    width: 100%; 
-    height: 100%; 
-    left: 0px; 
-    z-index: -1;
-    cursor: grab; 
-    display: block;
-  }
-
-  #potreeContainer{
-    background: gray; 
-    position:fixed;
-    left:0px ; 
-    top:60px; 
-    height:60%;
-    width:100%;
-    text-align:center;
-  }
 }
 
 @media screen and (min-width: 550px) and (max-width: 765px) {
   .information {
-    margin-top: 3px;
-    margin-right: 3px;
-    float: right;
-    position: fixed;
-    border-radius: 5px;
-    z-index: 10;  
-    right: 0px;
-    top: 76px;
-    background-color: #3b3a3a;
-    color: #FFFFFF;
-    font-weight: bold;  
-  }
-  .informationSchedule {
     margin-top: 3px;
     margin-right: 3px;
     float: right;
@@ -20984,54 +20841,6 @@ svg{
     width: 12rem;
   }
   
-  /* #chart_wrapper{
-    position:fixed;
-    left:0px; 
-    bottom:0px; 
-    overflow-y: scroll; 
-    overflow-x: scroll; 
-    height:40%;
-    width:100%;
-  } */
-
-  #gantt-target{
-    position:fixed;
-    left:0px ; 
-    bottom:0px; 
-    overflow: scroll; 
-    height:40%;
-    width:100%;
-  } 
-  svg{
-    overflow:scroll !important;
-    height:100%;
-  }
-  .gantt-container{
-    overflow: scroll !important;
-    height:100%;
-  }
-  
-  #potreecanvasTable{
-    background: gray; 
-    position: relative; 
-    width: 100%; 
-    height: 100%; 
-    left: 0px; 
-    z-index: -1;
-    cursor: grab; 
-    display: block;
-  }
-
-  #potreeContainer{
-    background: gray; 
-    position:fixed;
-    left:0px ; 
-    top:60px; 
-    height:60%;
-    width:100%;
-    text-align:center;
-  }
-  
 }
 
 @media screen and (min-width:766px) and (max-width: 1036px) {
@@ -21048,22 +20857,7 @@ svg{
     color: #FFFFFF;
     font-weight: bold;  
   }
-  .informationSchedule{
-    margin-top: 3px;
-    margin-right: 3px;
-    float: right;
-    position: fixed;
-    border-radius: 5px;
-    z-index: 10;  
-    right: 0px;
-    top: 70px;
-    background-color: #3b3a3a;
-    color: #FFFFFF;
-    font-weight: bold;  
-  }
-
-
-
+  
   #timeline {
     width: 13rem;
   }
