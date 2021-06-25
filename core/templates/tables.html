@@ -30,6 +30,13 @@
 				  </label>
 				  <label>BIM</label>
 			</div>
+			<div class ="bimdiv">
+				<label class="switch">
+					<input type="checkbox" id ="pointCloud" checked>
+					<span class="slider round"></span>
+				  </label>
+				  <label>Point Cloud</label>
+			</div>
 			<div>
 				<label class="switch">
 					<input type="checkbox">
@@ -85,6 +92,7 @@
 		import * as OC from '/static/assets/fbx/OrbitControls.js';
 		import '/static/assets/potree/potree.js';
 		var scene;
+		var pcflag;
 		var tasks = [];
 		var startDate;
 		$(document).ready(function() {
@@ -350,6 +358,7 @@
 						}
 						//
 					}
+					
 					timelineValChange();
 					controls.update();
 					renderer.render(scene, camera);
@@ -401,6 +410,11 @@
 		var bim = document.getElementById("bim");
         bim.addEventListener('change',function() {
             scene.getObjectByName("BIM").visible = !scene.getObjectByName("BIM").visible;
+        });
+		var pointCloud = document.getElementById("pointCloud");
+        pointCloud.addEventListener('change',function() {
+			pcflag = !scene.getObjectByName("objectName1").visible;
+            scene.getObjectByName("objectName1").visible = !scene.getObjectByName("objectName1").visible;
         });
 		</script>
 
