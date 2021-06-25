@@ -46,14 +46,13 @@
 			</div> 
 		</div>
 	</div>
-
-	<div id="potreeContainer">
-		<canvas id="potreecanvasTable"></canvas>
+	<div>
+		<div id="potreeContainer">
+			<canvas id="potreecanvasTable"></canvas>
+		</div>
+		<div id="gantt-target"></div>
 	</div>
-	<div id="chart_wrapper">
-		<svg id="gantt-target"></svg>
-		<!-- <div id="chart_div">Grantt Chart will be loaded here...</div> -->
-	</div>
+	
 	<div id = "scheduleInTable" class ="small">
 		<span>SCHEDULE</span>
 		<div style="background-color: #000000 !important; border-radius: 5px;">
@@ -76,6 +75,8 @@
 
 {% load static %}
 	<script src="/static/assets/js/frappe-gantt.js"></script>
+	<script src="/static/assets/js/snap.svg-min.js"></script>
+	<script src="/static/assets/js/moment.js"></script>
 	<script type="module">
 		import '/static/assets/fbx/three.js';
 		import '/static/assets/fbx/three.module.js';

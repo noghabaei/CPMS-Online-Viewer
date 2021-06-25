@@ -20829,14 +20829,41 @@ input:checked + .slider:before {
   z-index: 100;
 }
 
-#chart_wrapper{
+/* ::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+} */
+
+body {
+  overflow: scroll !important;
+}
+
+#gantt-target{
   position:fixed;
   left:250px ; 
   bottom:0px; 
-  overflow-y: scroll; 
-  overflow-x: scroll; 
+  overflow: scroll; 
   height:40%;
   width:100%;
+  z-index: 12;
+} 
+svg{
+  overflow:scroll !important;
+}
+.gantt-container{
+  overflow: scroll !important;
+  height:101%;
 }
 
 #potreeContainer{
@@ -20872,7 +20899,7 @@ input:checked + .slider:before {
     transform: translateX(-90%);
   }
 
-  #chart_wrapper{
+  /* #chart_wrapper{
     position:fixed;
     left:0px; 
     bottom:0px; 
@@ -20880,6 +20907,22 @@ input:checked + .slider:before {
     overflow-x: scroll; 
     height:40%;
     width:100%;
+  } */
+
+  #gantt-target{
+    position:fixed;
+    left:0px ; 
+    bottom:0px; 
+    overflow: scroll; 
+    height:40%;
+    width:100%;
+  } 
+  svg{
+    overflow:scroll !important;
+  }
+  .gantt-container{
+    overflow: scroll !important;
+    height:101%;
   }
   
   #potreecanvasTable{
@@ -20940,7 +20983,8 @@ input:checked + .slider:before {
     /* position: absolute; */
     width: 12rem;
   }
-  #chart_wrapper{
+  
+  /* #chart_wrapper{
     position:fixed;
     left:0px; 
     bottom:0px; 
@@ -20948,6 +20992,23 @@ input:checked + .slider:before {
     overflow-x: scroll; 
     height:40%;
     width:100%;
+  } */
+
+  #gantt-target{
+    position:fixed;
+    left:0px ; 
+    bottom:0px; 
+    overflow: scroll; 
+    height:40%;
+    width:100%;
+  } 
+  svg{
+    overflow:scroll !important;
+    height:100%;
+  }
+  .gantt-container{
+    overflow: scroll !important;
+    height:100%;
   }
   
   #potreecanvasTable{
