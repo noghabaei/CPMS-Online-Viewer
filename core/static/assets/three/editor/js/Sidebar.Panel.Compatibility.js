@@ -32,6 +32,10 @@ function SidebarCompatibilityPanel( editor ) {
 
 		var mesh = getCompatObjectToLoad( selectValue, 'main' );
 
+		mesh.position.x = 140; 
+		mesh.position.y = 92;
+		mesh.position.z = 191;
+
 		editor.execute( new AddObjectCommand( editor, mesh ) );
 	} );
 
