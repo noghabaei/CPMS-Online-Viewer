@@ -25,7 +25,9 @@
                     <div class="col-lg-3 order-lg-2">
                         <div class="card-profile-image">
                             <a href="#update-profile-pic">
-                                <img src="{{ request.user.profile.profilePictureUrl }}" class="rounded-circle">
+                                <img src="data: image/png; base64, {{ request.user.profile.profilePictureUrl }}"
+                                style="width: 200px; height: 200px;"
+                                class="rounded-circle">
                             </a>
                         </div>
                     </div>
