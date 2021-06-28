@@ -92,7 +92,7 @@
 		import * as OC from '/static/assets/fbx/OrbitControls.js';
 		import '/static/assets/potree/potree.js';
 		var scene;
-		var pcflag;
+		var pcflag = true;
 		var tasks = [];
 		var startDate;
 		$(document).ready(function() {
@@ -171,7 +171,7 @@
 						var points = new Potree.Group();
 						points.setPointBudget(500000);
 						points.name = "objectName" + String(counter);
-						points.material.opacity = 1;
+						//points.material.opacity = 1;
 						points.material.wireframe = true;
 						//points.material.wireframeLinewidth = 0.01;
 						scene.add(points);
@@ -358,7 +358,9 @@
 						}
 						//
 					}
-					
+					if(scene.getObjectByName('objectName1') != undefined){
+						scene.getObjectByName('objectName1').visible = pcflag;
+					}
 					timelineValChange();
 					controls.update();
 					renderer.render(scene, camera);
@@ -405,17 +407,18 @@
 					renderer.setPixelRatio(window.devicePixelRatio + 8);
 				}
 				document.body.onresize();
+				var bim = document.getElementById("bim");
+				bim.addEventListener('change',function() {
+					scene.getObjectByName("BIM").visible = !scene.getObjectByName("BIM").visible;
+				});
+				var pointCloud = document.getElementById("pointCloud");
+				pointCloud.addEventListener('change',function() {
+					pcflag = !scene.getObjectByName("objectName1").visible;
+					scene.getObjectByName("objectName1").visible = !scene.getObjectByName("objectName1").visible;
+				});
 			};
 		
-		var bim = document.getElementById("bim");
-        bim.addEventListener('change',function() {
-            scene.getObjectByName("BIM").visible = !scene.getObjectByName("BIM").visible;
-        });
-		var pointCloud = document.getElementById("pointCloud");
-        pointCloud.addEventListener('change',function() {
-			pcflag = !scene.getObjectByName("objectName1").visible;
-            scene.getObjectByName("objectName1").visible = !scene.getObjectByName("objectName1").visible;
-        });
+		
 		</script>
 
 
