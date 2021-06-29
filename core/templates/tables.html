@@ -14,10 +14,10 @@
 		
 	<!--<canvas id="potreecanvas" style="background: gray;left: 0px;position: absolute; z-index: -1;cursor: grab;tabindex=0; border:1px solid;">-->
 	<!--</canvas>-->
-	<div class="control small" >
+	<div class="controlSchedule small" >
 		<div class ="text-center ">CONTROL</div>
 		<div id = "controlInputs">
-			<select class="custom-select-sm" id="day" data-size="4">
+			<select class="custom-select-sm" id="daySchedule" data-size="4">
 				<option>1</option>
 				<option>2</option>
 				<option>3</option>
@@ -29,6 +29,13 @@
 					<span class="slider round"></span>
 				  </label>
 				  <label>BIM</label>
+			</div>
+			<div class ="bimdiv">
+				<label class="switch">
+					<input type="checkbox" id ="pointCloud" checked>
+					<span class="slider round"></span>
+				  </label>
+				  <label>Point Cloud</label>
 			</div>
 			<div>
 				<label class="switch">
@@ -46,18 +53,17 @@
 			</div> 
 		</div>
 	</div>
-
-	<div id="potreeContainer">
-		<canvas id="potreecanvasTable"></canvas>
+	<div id="mainContainerSchedule">
+		<div id="potreeContainerSchedule">
+			<canvas id="potreecanvasSchedule"></canvas>
+		</div>
+		<div id="gantt-target"></div>
 	</div>
-	<div id="chart_wrapper">
-		<div class="gantt-target"></div>
-		<!-- <div id="chart_div">Grantt Chart will be loaded here...</div> -->
-	</div>
-	<div id = "scheduleInTable" class ="small">
+	
+	<div id = "timelineSchedule" class ="small">
 		<span>SCHEDULE</span>
 		<div style="background-color: #000000 !important; border-radius: 5px;">
-			<input id="timeline" type="range" style="transform: translateX(0%); width: 100%" value="0">
+			<input id="timelineScheduleInput" type="range" style="transform: translateX(0%); width: 100%" value="0">
 		</div>
 	</div>
 
@@ -76,6 +82,8 @@
 
 {% load static %}
 	<script src="/static/assets/js/frappe-gantt.js"></script>
+	<script src="/static/assets/js/snap.svg-min.js"></script>
+	<script src="/static/assets/js/moment.js"></script>
 	<script type="module">
 		import '/static/assets/fbx/three.js';
 		import '/static/assets/fbx/three.module.js';
@@ -84,6 +92,7 @@
 		import * as OC from '/static/assets/fbx/OrbitControls.js';
 		import '/static/assets/potree/potree.js';
 		var scene;
+		var pcflag = true;
 		var tasks = [];
 		var startDate;
 		$(document).ready(function() {
@@ -123,12 +132,12 @@
 		document.body.onload = function()
 			{
 				scene = new THREE.Scene();
-				var canvas = document.getElementById("potreecanvasTable");
-				var timeline = document.getElementById("timeline");
+				var canvas = document.getElementById("potreecanvasSchedule");
+				var timeline = document.getElementById("timelineScheduleInput");
 				var width = canvas.width;
-				var height = canvas.height;
+				var height = canvas.height * 0.6;
 
-				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
+				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 750);
 				camera.position.set(-180, 120, -150);
 
 				var renderer = new THREE.WebGLRenderer(
@@ -162,7 +171,7 @@
 						var points = new Potree.Group();
 						points.setPointBudget(500000);
 						points.name = "objectName" + String(counter);
-						points.material.opacity = 1;
+						//points.material.opacity = 1;
 						points.material.wireframe = true;
 						//points.material.wireframeLinewidth = 0.01;
 						scene.add(points);
@@ -180,7 +189,7 @@
 
 				function drawChart(){
 					if(tasks.length === 0 ) return;
-					var gantt_chart = new Gantt(".gantt-target", tasks, {
+					var gantt_chart = new Gantt("#gantt-target", tasks, {
 						on_click: function (task) {
 							console.log(task);
 						},
@@ -250,7 +259,7 @@
 					var completedElements = [];
 					for(var i =0;i<tasks.length;i++){
 						if(tasks[i]['progress']== "100"){
-							completedElements.push(tasks[i]['task']);
+							completedElements.push(tasks[i]['id']);
 						}
 					}
 					return completedElements;
@@ -260,7 +269,7 @@
 					var inprogressElements = [];
 					for(var i =0;i<tasks.length;i++){
 						if(parseInt(tasks[i]['progress']) < 100 && differenceBetweenDates(tasks[i]['start']) <= value && differenceBetweenDates(tasks[i]['end']) >= value){
-							inprogressElements.push(tasks[i]['task']);
+							inprogressElements.push(tasks[i]['id']);
 						}
 					}
 					return inprogressElements;
@@ -270,7 +279,7 @@
 					var behindScheduleElements = [];
 					for(var i =0;i<tasks.length;i++){
 						if(parseInt(tasks[i]['progress']) < 100 && differenceBetweenDates(tasks[i]['end']) < value){
-							behindScheduleElements.push(tasks[i]['task']);
+							behindScheduleElements.push(tasks[i]['id']);
 						}
 					}
 					return behindScheduleElements;
@@ -349,6 +358,9 @@
 						}
 						//
 					}
+					if(scene.getObjectByName('objectName1') != undefined){
+						scene.getObjectByName('objectName1').visible = pcflag;
+					}
 					timelineValChange();
 					controls.update();
 					renderer.render(scene, camera);
@@ -389,19 +401,24 @@
 						console.error( 'An error happened' );
 					}
 				);
-
+				var container;
 				document.body.onresize = function()
 				{
 					renderer.setPixelRatio(window.devicePixelRatio + 8);
-					drawChart();
 				}
 				document.body.onresize();
+				var bim = document.getElementById("bim");
+				bim.addEventListener('change',function() {
+					scene.getObjectByName("BIM").visible = !scene.getObjectByName("BIM").visible;
+				});
+				var pointCloud = document.getElementById("pointCloud");
+				pointCloud.addEventListener('change',function() {
+					pcflag = !scene.getObjectByName("objectName1").visible;
+					scene.getObjectByName("objectName1").visible = !scene.getObjectByName("objectName1").visible;
+				});
 			};
 		
-		var bim = document.getElementById("bim");
-        bim.addEventListener('change',function() {
-            scene.getObjectByName("BIM").visible = !scene.getObjectByName("BIM").visible;
-        });
+		
 		</script>
 
 
