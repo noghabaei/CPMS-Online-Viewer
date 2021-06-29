@@ -10,6 +10,7 @@ from django.http import HttpResponse
 from django import template
 from app.forms import ProfileForm
 from django.contrib.auth.models import User
+from app.models import Profile
 
 @login_required(login_url="/login/")
 def index(request):
@@ -55,24 +56,14 @@ def profile_page(request):
     if request.method == "POST":
         form = ProfileForm(request.POST, request.FILES)
         if form.is_valid():
-            bio = form.cleaned_data['bio']
-            location = form.cleaned_data['location']
-            msg = 'User is updated'
 
-            #user = request.user
-            
-            user.profile.bio = bio
-            user.profile.location = location
-
-            user = populate_user_profile(user, form)
+            user = populate_user_profile(user, form, request)
 
             print('Saving USER:')
             print(user)
 
             user.save()
          
-   
-
     return render(request, "profile.html", {"form": form, "msg": msg})
 
 def get_profile_data_from_user(user):
@@ -89,12 +80,11 @@ def get_profile_data_from_user(user):
     formDataDict["postalCode"] = user.profile.postalCode
     formDataDict["aboutMe"] = user.profile.aboutMe
     
-    userProfilePicture = user.profile.profilePicture
-    formDataDict["profilePicture"] = user.profile.profilePicture
+    formDataDict["profilePicture"] = user.profile.dbProfilePicture
 
     return formDataDict
 
-def populate_user_profile(user, profileForm):
+def populate_user_profile(user, profileForm, request):
     if not user or not profileForm: return user
 
     formDataDict = get_cleaned_profile_form_data(profileForm)
@@ -107,7 +97,9 @@ def populate_user_profile(user, profileForm):
     user.profile.country = formDataDict['country']
     user.profile.postalCode = formDataDict['postalCode']
     user.profile.aboutMe = formDataDict['aboutMe']
-    user.profile.profilePicture = formDataDict['profilePicture']
+
+    fileData = request.FILES['profilePicture'].file.read()
+    user.profile.dbProfilePicture = fileData
 
     return user
 
@@ -125,6 +117,5 @@ def get_cleaned_profile_form_data(profileForm):
     dataDict["country"] = profileForm.cleaned_data["country"]
     dataDict["postalCode"] = profileForm.cleaned_data["postalCode"]
     dataDict["aboutMe"] = profileForm.cleaned_data["aboutMe"]
-    dataDict["profilePicture"] = profileForm.cleaned_data["profilePicture"]
 
     return dataDict
