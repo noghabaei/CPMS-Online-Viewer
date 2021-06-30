@@ -1,500 +1,446 @@
-{% extends 'layouts/base.html' %}
-
-{% block title %} View {% endblock title %}
+{% extends 'layouts/base.html' %} {% block title %} View {% endblock title %}
 
 <!-- Specific CSS goes HERE -->
-{% block stylesheets %}{% endblock stylesheets %}
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
 
-{% block content %}
-
-    <!-- Header -->
-    <!-- <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8"> -->
-	
-	<!-- <section style= "height:500px;"> -->
-		
-	<canvas id="canvas1" style="background: gray;left: 0px;position: absolute; z-index: -1;cursor: grab;tabindex=0; border:1px solid;">
+<canvas id="canvas1" style="background: gray;left: 0px;position: absolute; z-index: -1;cursor: grab;tabindex=0; border:1px solid;">
 	</canvas>
-	<canvas id="canvas2" style="background: gray;left: 0px;position: absolute; left: 10px; z-index: -2;cursor: grab;tabindex=0; border:1px solid;">
+<canvas id="canvas2" style="background: gray;left: 0px;position: absolute; left: 10px; z-index: -2;cursor: grab;tabindex=0; border:1px solid;">
 	</canvas>
-	<input id="timeline" type="range" style=" width: 99%;background: transparent; position:relative; left:5px;" value="0">
-    </input>
-	<!-- </section> -->
+<input id="timeline" type="range" style=" width: 99%;background: transparent; position:relative; left:5px;" value="0">
+</input>
 
-	<!-- </div> -->
-
-
-    <!-- <div class="container-fluid mt--7"> -->
-
-
-    <!-- </div> -->
-	
 {% load static %}
-	<script src="static/assets/potree/three.min.js"></script>
-	<script src="static/assets/potree/OrbitControls.js"></script>
-	<script src="static/assets/potree/potree.js"></script>
-	<script>
-		document.body.onload = function()
-			{
-				//three.js
-				var scene = new THREE.Scene();
 
-				//var canvas = document.createElement("canvas");
-				var canvas1 = document.getElementById("canvas1");
-				var sidenav = document.getElementById("sidenav");
-				var timeline = document.getElementById("timeline");
-				
-				
-				var width = canvas1.width;
-				var height = canvas1.height;
-				
-				console.log(width);
-				console.log(height);
-				
-				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100000);
-				camera.position.set(-200, 150, -200 );
+<script src="static/assets/potree/three.min.js"></script>
+<script src="static/assets/potree/OrbitControls.js"></script>
+<script src="static/assets/potree/potree.js"></script>
 
-				var renderer = new THREE.WebGLRenderer(
-				{
-					canvas: canvas1,
-					alpha: true,
-					logarithmicDepthBuffer: true,
-					context: null,
-					precision: "highp",
-					premultipliedAlpha: true,
-					antialias: true,
-					preserveDrawingBuffer: false,
-					powerPreference: "high-performance"
-				});
-				
-				console.log(sidenav.style.width);
-				console.log(canvas1.height);
+<script>
+    var canvas1 = document.getElementById("canvas1");
+    var canvas2 = document.getElementById("canvas2");
+    var sidenav = document.getElementById("sidenav");
+    var timeline = document.getElementById("timeline");
 
-				scene.add(new THREE.AmbientLight(0x404040));
+    function getCamera(width, height) {
+        let camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100000);
+        camera.position.set(-200, 150, -200);
 
-				var controls = new THREE.OrbitControls(camera, canvas1);
-				controls.autoRotate = true;
-				controls.update();
+        return camera;
+    }
 
-				var raycaster = new THREE.Raycaster();
-				raycaster.params.Points.threshold = 1e-2;
-				var normalized = new THREE.Vector2();
+    function getRenderer(canvasObj) {
+        let renderer = new THREE.WebGLRenderer({
+            canvas: canvasObj,
+            alpha: true,
+            logarithmicDepthBuffer: true,
+            context: null,
+            precision: "highp",
+            premultipliedAlpha: true,
+            antialias: true,
+            preserveDrawingBuffer: false,
+            powerPreference: "high-performance"
+        });
 
-				canvas1.onmousemove = function(event)
-				{
-					normalized.set((event.clientX / canvas1.width) * 2 - 1, -(event.clientY / canvas1.height) * 2 + 1);
-					raycaster.setFromCamera(normalized, camera);
+        return renderer;
+    }
+
+    function getLights() {
+        return new THREE.AmbientLight(0x404040);
+    }
+
+    function getOrbitControls(camera, canvas) {
+        let controls = new THREE.OrbitControls(camera, canvas);
+        controls.autoRotate = false;
+
+        return controls;
+    }
+
+    function getRaycaster() {
+        let raycaster = new THREE.Raycaster();
+        raycaster.params.Points.threshold = 1e-2;
+
+        return raycaster;
+    }
+
+    function mouseMoveEvent(event, canvas, camera, raycaster) {
+        let normalized = new THREE.Vector2();
+
+        normalized.set((event.clientX / canvas.width) * 2 - 1, -(event.clientY / canvas.height) * 2 + 1);
+        raycaster.setFromCamera(normalized, camera);
+    }
+
+    function doubleClickEvent(event, raycaster, scene) {
+        let intesects = raycaster.intersectObject(scene, true);
+
+        if (intesects.length > 0) {
+            let geometry = new THREE.SphereBufferGeometry(0.1, 32, 32);
+            let material = new THREE.MeshBasicMaterial({
+                color: 0xAA4444
+            });
+            let sphere = new THREE.Mesh(geometry, material);
+            sphere.position.copy(intesects[0].point);
+
+            scene.add(sphere);
+        }
+    }
+
+    var counter = 1;
+
+    document.body.onload = function() {
+        var scene = new THREE.Scene();
+
+        var width = canvas1.width;
+        var height = canvas1.height;
+
+        let camera = getCamera(width, height);
+
+        let renderer = getRenderer(canvas1);
+
+        let sceneLight = getLights();
+        scene.add(sceneLight);
+
+        var controls = getOrbitControls(camera, canvas1);
+        controls.update();
+
+        let raycaster = getRaycaster();
+
+        canvas1.onmousemove = function(event) {
+            mouseMoveEvent(event, canvas1, camera, raycaster);
+        }
+
+        canvas1.ondblclick = function(event) {
+            doubleClickEvent(event, raycaster, scene);
+        }
+
+        Potree.Global.workerPath = "./static/assets/source";
+
+        var count1 = 0;
+        var count2 = 0;
+        var count3 = 0;
+
+		function loadPointCloud(url, position) {
+
+			Potree.loadPointCloud(url, "pointcloud", function(e) {
+				var points = new Potree.Group();
+				points.setPointBudget(500000);
+				points.name = "objectName" + String(counter);
+				scene.add(points);
+
+				var pointcloud = e.pointcloud;
+
+				if (position !== undefined) {
+					pointcloud.position.copy(position);
 				}
 
-				canvas1.ondblclick = function(event)
-				{
-					var intesects = raycaster.intersectObject(scene, true);
-					
-					
-					if(intesects.length > 0)
-					{
-						var geometry = new THREE.SphereBufferGeometry(0.1, 32, 32);
-						var material = new THREE.MeshBasicMaterial({color: 0xAA4444});
-						var sphere = new THREE.Mesh(geometry, material);
-						sphere.position.copy(intesects[0].point);
-						scene.add(sphere);
-					}
-				}
+				var material = pointcloud.material;
+				material.size = 2;
+				material.pointColorType = Potree.PointColorType.RGB; //RGB | DEPTH | HEIGHT | POINT_INDEX | LOD | CLASSIFICATION
+				material.pointSizeType = Potree.PointSizeType.ADAPTIVE; //ADAPTIVE | FIXED
+				material.shape = Potree.PointShape.SQUARE; //CIRCLE | SQUARE
 
-				Potree.Global.workerPath = "./static/assets/source";
-				
+				points.add(pointcloud);
+			});
+		}
 
-				
-				var counter = 1;
-				
-				function loadPointCloud(url, position)
-				{
+        function loop() {
+            controls.update();
+            renderer.render(scene, camera);
 
-					Potree.loadPointCloud(url, "pointcloud", function(e)
-					{
-						var points = new Potree.Group();
-						points.setPointBudget(500000);
-						points.name = "objectName" + String(counter);
-						//points.material.opacity = 0.0;
-						//points.material.wireframe = false;
-						
-						scene.add(points);
-	
-						var pointcloud = e.pointcloud;
+            requestAnimationFrame(loop);
 
-						if(position !== undefined)
-						{
-							pointcloud.position.copy(position);
-						}
+            if (timeline.value <= 34) {
+                count3 = 0
+                count2 = 0;
+                count1 = count1 + 1;
+                if (count1 == 1) {
+                    var object = scene.getObjectByName("objectName" + String(counter));
+                    scene.remove(object);
+                    //loadPC("clouds/cloud1/cloud.js");
+                    //console.log("log");
+                    loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-200, -150, -20));
+                }
+                //
+            }
+            if (timeline.value > 34 && timeline.value <= 67) {
+                count3 = 0
+                count1 = 0;
+                count2 = count2 + 1;
+                if (count2 == 1) {
+                    var object = scene.getObjectByName("objectName" + String(counter));
+                    scene.remove(object);
+                    //console.log("log");
+                    //loadPC("clouds/cloud2/cloud.js");
+                    loadPointCloud("https://mojtaba1995.github.io//clouds/cloud2/cloud.js", new THREE.Vector3(-200, -150, -20));
+                }
+                //
+            }
+            if (timeline.value > 67) {
+                count1 = 0;
+                count2 = 0
+                count3 = count3 + 1;
+                if (count3 == 1) {
+                    var object = scene.getObjectByName("objectName" + String(counter));
+                    scene.remove(object);
+                    //console.log("log");
+                    //loadPC("clouds/cloud2/cloud.js");
+                    loadPointCloud("https://mojtaba1995.github.io//clouds/cloud3/cloud.js", new THREE.Vector3(-200, -150, -20));
+                }
+                //
+            }
 
-						var material = pointcloud.material;
-						material.size = 2;
-						material.pointColorType = Potree.PointColorType.RGB; //RGB | DEPTH | HEIGHT | POINT_INDEX | LOD | CLASSIFICATION
-						material.pointSizeType = Potree.PointSizeType.ADAPTIVE; //ADAPTIVE | FIXED
-						material.shape = Potree.PointShape.SQUARE; //CIRCLE | SQUARE
+        }
+        loop();
 
-						points.add(pointcloud);
-					});
-				}
-				
-				
+        document.body.onresize = function() {
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+        }
 
-				
-				//var previous_value = -1;
-				var count1 = 0;
-				var count2 = 0;
-				var count3 = 0;
-				
-				function loop()
-				{
-					//cube.rotation.y += 0.01;
-					controls.update();
-					renderer.render(scene, camera);
+        function resizeCanvas1() {
+            var width = 0;
+            var height = 0;
+            if (window.innerWidth > 765) {
+                canvas1.style.width = (window.innerWidth - 250) + "px";
+                width = window.innerWidth - 250;
+                width = width / 2;
 
-					requestAnimationFrame(loop);
-					
+            } else {
+                canvas1.style.width = window.innerWidth + "px";
+                width = window.innerWidth;
+                width = width / 2;
+            }
+            // artifical delay so innerHeight is correct
+            setTimeout(function() {
+                canvas1.style.height = window.innerHeight + "px";
+                height = window.innerHeight;
+                renderer.setSize(width, height);
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+                timeline.style.top = window.innerHeight - 50 + "px";
+            }, 0);
 
-					if(timeline.value<=34){
-						count3 = 0
-						count2 = 0;
-						count1 = count1 + 1;
-						if(count1 == 1){
-							var object = scene.getObjectByName("objectName" + String(counter));
-							scene.remove(object); 
-							//loadPC("clouds/cloud1/cloud.js");
-							//console.log("log");
-							loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-200, -150, -20));
-						}
-						//
-					}
-					if(timeline.value>34 && timeline.value<=67){
-						count3 = 0
-						count1 = 0;
-						count2 = count2 + 1;
-						if(count2 == 1){
-							var object = scene.getObjectByName("objectName" + String(counter));
-							scene.remove(object); 
-							//console.log("log");
-							//loadPC("clouds/cloud2/cloud.js");
-							loadPointCloud("https://mojtaba1995.github.io//clouds/cloud2/cloud.js", new THREE.Vector3(-200, -150, -20));
-						}
-						//
-					}
-					if(timeline.value>67){
-						count1 = 0;
-						count2 = 0
-						count3 = count3 + 1;
-						if(count3 == 1){
-							var object = scene.getObjectByName("objectName" + String(counter));
-							scene.remove(object); 
-							//console.log("log");
-							//loadPC("clouds/cloud2/cloud.js");
-							loadPointCloud("https://mojtaba1995.github.io//clouds/cloud3/cloud.js", new THREE.Vector3(-200, -150, -20));
-						}
-						//
-					}
+        };
 
-				};
-				loop();
+        // Webkit/Blink will fire this on load, but Gecko doesn't.
+        // So we fire it manually...
+        resizeCanvas1();
+        // loadCanvas2();
 
-				//var width = window.innerWidth;
-				//var height = window.innerHeight;
-					
-				//renderer.setSize(width, height);
-				//camera.aspect = width / height;
-				//camera.updateProjectionMatrix();
+        window.onresize = function() {
+            resizeCanvas1();
+        }
+    };
 
-				document.body.onresize = function()
-				{
-					var width = window.innerWidth;
-					var height = window.innerHeight;
+	function loadCrossSection() {
 
-				}
-				<!-- document.body.onresize(); -->
-				
-				function resizeCanvas1() {
-					var width = 0;
-					var height = 0;
-					if (window.innerWidth >765){
-					canvas1.style.width = (window.innerWidth -250) + "px";
-					width = window.innerWidth -250;
-					width = width/2;
-					
-					}else{
-					canvas1.style.width = window.innerWidth  + "px";
-					width = window.innerWidth;
-					width = width/2;
-					}
-					// artifical delay so innerHeight is correct
-					setTimeout(function() {
-						canvas1.style.height = window.innerHeight  + "px";
-						height =  window.innerHeight;
-						renderer.setSize(width, height);
-						camera.aspect = width / height;
-						camera.updateProjectionMatrix();
-						timeline.style.top = window.innerHeight -50  + "px";
-					}, 0);
-					
+	}
+</script>
 
-					console.log(width);
-					console.log(height);
-					
-				};
+<script>
+    function loadCanvas2() {
+        //three.js
+        var scene = new THREE.Scene();
 
-				// Webkit/Blink will fire this on load, but Gecko doesn't.
-				//window.onresize = resizeCanvas1;
+        var width = canvas2.width;
+        var height = canvas2.height;
 
-				// So we fire it manually...
-				resizeCanvas1();
-				loadCanvas2();			
+        let camera = getCamera(width, height);
 
-				window.onresize = function()
-				{
-					resizeCanvas1();
-					//resizeCanvas2();
+        let renderer = getRenderer(canvas2);
 
-				}
-			};
-		</script>
+        scene.add(new THREE.AmbientLight(0x404040));
 
-	<script>
-		function loadCanvas2()
-			{
-				//three.js
-				var scene = new THREE.Scene();
+        var controls = new THREE.OrbitControls(camera, canvas2);
+        controls.autoRotate = true;
+        controls.update();
 
-				//var canvas = document.createElement("canvas");
-				var canvas2 = document.getElementById("canvas2");
-				var sidenav = document.getElementById("sidenav");
-				var timeline = document.getElementById("timeline");
-				
-				
-				var width = canvas2.width;
-				var height = canvas2.height;
-				
-				console.log(width);
-				console.log(height);
-				
-				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100000);
-				camera.position.set(-200, 150, -200 );
+        var raycaster = new THREE.Raycaster();
+        raycaster.params.Points.threshold = 1e-2;
+        var normalized = new THREE.Vector2();
 
-				var renderer = new THREE.WebGLRenderer(
-				{
-					canvas: canvas2,
-					alpha: true,
-					logarithmicDepthBuffer: true,
-					context: null,
-					precision: "highp",
-					premultipliedAlpha: true,
-					antialias: true,
-					preserveDrawingBuffer: false,
-					powerPreference: "high-performance"
-				});
-				
-				console.log(sidenav.style.width);
-				console.log(canvas2.height);
+        canvas2.onmousemove = function(event) {
+            normalized.set((event.clientX / canvas2.width) * 2 - 1, -(event.clientY / canvas2.height) * 2 + 1);
+            raycaster.setFromCamera(normalized, camera);
+        }
+
+        canvas2.ondblclick = function(event) {
+            var intesects = raycaster.intersectObject(scene, true);
 
 
-				scene.add(new THREE.AmbientLight(0x404040));
+            if (intesects.length > 0) {
+                var geometry = new THREE.SphereBufferGeometry(0.1, 32, 32);
+                var material = new THREE.MeshBasicMaterial({
+                    color: 0xAA4444
+                });
+                var sphere = new THREE.Mesh(geometry, material);
+                sphere.position.copy(intesects[0].point);
+                scene.add(sphere);
+            }
+        }
 
-				var controls = new THREE.OrbitControls(camera, canvas2);
-				controls.autoRotate = true;
-				controls.update();
+        Potree.Global.workerPath = "./static/assets/source";
 
-				var raycaster = new THREE.Raycaster();
-				raycaster.params.Points.threshold = 1e-2;
-				var normalized = new THREE.Vector2();
 
-				canvas2.onmousemove = function(event)
-				{
-					normalized.set((event.clientX / canvas2.width) * 2 - 1, -(event.clientY / canvas2.height) * 2 + 1);
-					raycaster.setFromCamera(normalized, camera);
-				}
+        var counter = 1;
 
-				canvas2.ondblclick = function(event)
-				{
-					var intesects = raycaster.intersectObject(scene, true);
-					
-					
-					if(intesects.length > 0)
-					{
-						var geometry = new THREE.SphereBufferGeometry(0.1, 32, 32);
-						var material = new THREE.MeshBasicMaterial({color: 0xAA4444});
-						var sphere = new THREE.Mesh(geometry, material);
-						sphere.position.copy(intesects[0].point);
-						scene.add(sphere);
-					}
-				}
+        function loadPointCloud(url, position) {
 
-				Potree.Global.workerPath = "./static/assets/source";
-				
+            Potree.loadPointCloud(url, "pointcloud", function(e) {
+                var points = new Potree.Group();
+                points.setPointBudget(500000);
+                points.name = "objectName" + String(counter);
+                //points.material.opacity = 0.0;
+                //points.material.wireframe = false;
 
-				var counter = 1;
-				
-				function loadPointCloud(url, position)
-				{
+                scene.add(points);
 
-					Potree.loadPointCloud(url, "pointcloud", function(e)
-					{
-						var points = new Potree.Group();
-						points.setPointBudget(500000);
-						points.name = "objectName" + String(counter);
-						//points.material.opacity = 0.0;
-						//points.material.wireframe = false;
-						
-						scene.add(points);
-	
-						var pointcloud = e.pointcloud;
+                var pointcloud = e.pointcloud;
 
-						if(position !== undefined)
-						{
-							pointcloud.position.copy(position);
-						}
+                if (position !== undefined) {
+                    pointcloud.position.copy(position);
+                }
 
-						var material = pointcloud.material;
-						material.size = 2;
-						material.pointColorType = Potree.PointColorType.RGB; //RGB | DEPTH | HEIGHT | POINT_INDEX | LOD | CLASSIFICATION
-						material.pointSizeType = Potree.PointSizeType.ADAPTIVE; //ADAPTIVE | FIXED
-						material.shape = Potree.PointShape.SQUARE; //CIRCLE | SQUARE
+                var material = pointcloud.material;
+                material.size = 2;
+                material.pointColorType = Potree.PointColorType.RGB; //RGB | DEPTH | HEIGHT | POINT_INDEX | LOD | CLASSIFICATION
+                material.pointSizeType = Potree.PointSizeType.ADAPTIVE; //ADAPTIVE | FIXED
+                material.shape = Potree.PointShape.SQUARE; //CIRCLE | SQUARE
 
-						points.add(pointcloud);
-					});
-				}
-				
-				
-				
-				function loadPC(s){
-					
-					var points = new Potree.Group();
-					points.name = "objectName" + String(counter);
-					points.setPointBudget(10000000)
-					scene.add(points);
-
-					Potree.loadPointCloud(s, name, function(data)
-					{
-						var pointcloud = data.pointcloud;
-						points.add(pointcloud);
-					});
-					//counter = counter+1;
-				}
-				
-				//var previous_value = -1;
-				var count1 = 0;
-				var count2 = 0;
-				var count3 = 0;
-				
-				function loop()
-				{
-					//cube.rotation.y += 0.01;
-					controls.update();
-					renderer.render(scene, camera);
-
-					requestAnimationFrame(loop);
-					
-
-					if(timeline.value<=34){
-						count3 = 0
-						count2 = 0;
-						count1 = count1 + 1;
-						if(count1 == 1){
-							var object = scene.getObjectByName("objectName" + String(counter));
-							scene.remove(object); 
-							//loadPC("clouds/cloud1/cloud.js");
-							//console.log("log");
-							loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-200, -150, -20));
-						}
-						//
-					}
-					if(timeline.value>34 && timeline.value<=67){
-						count3 = 0
-						count1 = 0;
-						count2 = count2 + 1;
-						if(count2 == 1){
-							var object = scene.getObjectByName("objectName" + String(counter));
-							scene.remove(object); 
-							//console.log("log");
-							//loadPC("clouds/cloud2/cloud.js");
-							loadPointCloud("https://mojtaba1995.github.io//clouds/cloud2/cloud.js", new THREE.Vector3(-200, -150, -20));
-						}
-						//
-					}
-					if(timeline.value>67){
-						count1 = 0;
-						count2 = 0
-						count3 = count3 + 1;
-						if(count3 == 1){
-							var object = scene.getObjectByName("objectName" + String(counter));
-							scene.remove(object); 
-							//console.log("log");
-							//loadPC("clouds/cloud2/cloud.js");
-							loadPointCloud("https://mojtaba1995.github.io//clouds/cloud3/cloud.js", new THREE.Vector3(-200, -150, -20));
-						}
-						//
-					}
-					
-
-				};
-				loop();
+                points.add(pointcloud);
+            });
+        }
 
 
 
-				// document.body.onresize = function()
-				// {
-				// 	var width = window.innerWidth;
-				// 	var height = window.innerHeight;
-					
-				// 	<!-- renderer.setSize(width, height); -->
-				// 	<!-- camera.aspect = width / height; -->
-				// 	<!-- camera.updateProjectionMatrix(); -->
-				// }
-				// <!-- document.body.onresize(); -->
-				
-				function resizeCanvas2() {
-					var width = 0;
-					var height = 0;
-					if (window.innerWidth >765){
-					canvas2.style.width = (window.innerWidth -250) + "px";
-					width = window.innerWidth -250;
-					width = width/2;
-					canvas2.style.left = width+"px";
-					}else{
-					canvas2.style.width = window.innerWidth  + "px";
-					width = window.innerWidth;
-					width = width/2;
-					canvas2.style.left = width+"px";
-					}
-					// artifical delay so innerHeight is correct
-					setTimeout(function() {
-						canvas2.style.height = window.innerHeight  + "px";
-						height =  window.innerHeight;
-						renderer.setSize(width, height);
-						camera.aspect = width / height;
-						camera.updateProjectionMatrix();
-						timeline.style.top = window.innerHeight -50  + "px";
-					}, 0);
-					
+        function loadPC(s) {
 
-					console.log(width);
-					console.log(height);
-					
-				};
+            var points = new Potree.Group();
+            points.name = "objectName" + String(counter);
+            points.setPointBudget(10000000)
+            scene.add(points);
 
-				// Webkit/Blink will fire this on load, but Gecko doesn't.
-				//window.onresize = resizeCanvas2;
+            Potree.loadPointCloud(s, name, function(data) {
+                var pointcloud = data.pointcloud;
+                points.add(pointcloud);
+            });
+            //counter = counter+1;
+        }
 
-				// So we fire it manually...
-				resizeCanvas2();	
-				window.onresize = function()
-				{
-					resizeCanvas2();
-					//resizeCanvas2();
+        //var previous_value = -1;
+        var count1 = 0;
+        var count2 = 0;
+        var count3 = 0;
 
-				}
+        function loop() {
+            //cube.rotation.y += 0.01;
+            controls.update();
+            renderer.render(scene, camera);
 
-				
-			};
-		</script>
+            requestAnimationFrame(loop);
+
+
+            if (timeline.value <= 34) {
+                count3 = 0
+                count2 = 0;
+                count1 = count1 + 1;
+                if (count1 == 1) {
+                    var object = scene.getObjectByName("objectName" + String(counter));
+                    scene.remove(object);
+                    //loadPC("clouds/cloud1/cloud.js");
+                    //console.log("log");
+                    loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-200, -150, -20));
+                }
+                //
+            }
+            if (timeline.value > 34 && timeline.value <= 67) {
+                count3 = 0
+                count1 = 0;
+                count2 = count2 + 1;
+                if (count2 == 1) {
+                    var object = scene.getObjectByName("objectName" + String(counter));
+                    scene.remove(object);
+                    //console.log("log");
+                    //loadPC("clouds/cloud2/cloud.js");
+                    loadPointCloud("https://mojtaba1995.github.io//clouds/cloud2/cloud.js", new THREE.Vector3(-200, -150, -20));
+                }
+                //
+            }
+            if (timeline.value > 67) {
+                count1 = 0;
+                count2 = 0
+                count3 = count3 + 1;
+                if (count3 == 1) {
+                    var object = scene.getObjectByName("objectName" + String(counter));
+                    scene.remove(object);
+                    //console.log("log");
+                    //loadPC("clouds/cloud2/cloud.js");
+                    loadPointCloud("https://mojtaba1995.github.io//clouds/cloud3/cloud.js", new THREE.Vector3(-200, -150, -20));
+                }
+                //
+            }
+
+
+        };
+        loop();
+
+
+
+        // document.body.onresize = function()
+        // {
+        // 	var width = window.innerWidth;
+        // 	var height = window.innerHeight;
+
+        // 	<!-- renderer.setSize(width, height); -->
+        // 	<!-- camera.aspect = width / height; -->
+        // 	<!-- camera.updateProjectionMatrix(); -->
+        // }
+        // <!-- document.body.onresize(); -->
+
+        function resizeCanvas2() {
+            var width = 0;
+            var height = 0;
+            if (window.innerWidth > 765) {
+                canvas2.style.width = (window.innerWidth - 250) + "px";
+                width = window.innerWidth - 250;
+                width = width / 2;
+                canvas2.style.left = width + "px";
+            } else {
+                canvas2.style.width = window.innerWidth + "px";
+                width = window.innerWidth;
+                width = width / 2;
+                canvas2.style.left = width + "px";
+            }
+            // artifical delay so innerHeight is correct
+            setTimeout(function() {
+                canvas2.style.height = window.innerHeight + "px";
+                height = window.innerHeight;
+                renderer.setSize(width, height);
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+                timeline.style.top = window.innerHeight - 50 + "px";
+            }, 0);
+
+
+            console.log(width);
+            console.log(height);
+
+        };
+
+        // Webkit/Blink will fire this on load, but Gecko doesn't.
+        //window.onresize = resizeCanvas2;
+
+        // So we fire it manually...
+        resizeCanvas2();
+        window.onresize = function() {
+            resizeCanvas2();
+            //resizeCanvas2();
+
+        }
+
+
+    };
+</script>
 
 
 {% endblock content %}
-
-
