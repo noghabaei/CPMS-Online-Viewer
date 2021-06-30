@@ -22,6 +22,8 @@
     var sidenav = document.getElementById("sidenav");
     var timeline = document.getElementById("timeline");
 
+	var cuttingPlaneOffset = 50;
+
     function getCamera(width, height) {
         let camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100000);
         camera.position.set(-200, 150, -200);
@@ -86,6 +88,20 @@
     }
 
     var counter = 1;
+
+	function rotateObject(object, degreeX=0, degreeY=0, degreeZ=0) {
+		object.rotateX(THREE.Math.degToRad(degreeX));
+		object.rotateY(THREE.Math.degToRad(degreeY));
+		object.rotateZ(THREE.Math.degToRad(degreeZ));
+	}
+
+	function getPlane(width=20, height=20) {
+		const geometry = new THREE.PlaneGeometry( width, height );
+		const material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+		const plane = new THREE.Mesh( geometry, material );
+		
+		return plane;
+	}
 
     document.body.onload = function() {
         var scene = new THREE.Scene();
@@ -190,7 +206,8 @@
             }
 
         }
-        loop();
+
+        
 
         document.body.onresize = function() {
             var width = window.innerWidth;
@@ -225,11 +242,19 @@
         // Webkit/Blink will fire this on load, but Gecko doesn't.
         // So we fire it manually...
         resizeCanvas1();
-        // loadCanvas2();
 
         window.onresize = function() {
             resizeCanvas1();
         }
+
+		// Add cutting plane to scene
+		let cuttingPlane = getPlane( 350, 350 );
+		rotateObject( cuttingPlane, 0, 90, 0);
+		cuttingPlane.translateZ( -100 );
+
+		scene.add( cuttingPlane );
+
+		loop();
     };
 
 	function loadCrossSection() {
