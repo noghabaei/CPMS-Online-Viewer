@@ -160,6 +160,20 @@
 
 		//import '/static/assets/fbx/FBXLoader.js';
 		var scene;
+		// $(document).ready(function() {
+		// 	$.ajax({
+		// 		method: 'GET',
+		// 		url: 'https://github.com/mojtaba1995/WebTest/tree/master/Images/2',
+		// 		dataType: 'jsonp', //change the datatype to 'jsonp' works in most cases
+		// 		success: (res) => {
+		// 			console.log("INSIDE DATA LOAD");
+		// 			console.log(res);
+		// 		},
+		// 		failure:(err)=>{
+		// 			console.log(err);
+		// 		}
+		// 	});
+		// });
 		document.body.onload = function()
 			{
 				//three.js
@@ -187,6 +201,7 @@
 				
 				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100000);
 				camera.position.set(-200, 150, -200 );
+
 
 				var renderer = new THREE.WebGLRenderer(
 				{
@@ -242,18 +257,6 @@
 				}
 
 				Potree.Global.workerPath = "./static/assets/source";
-				
-
-
-
-				//loadPointCloud("data/lion_takanawa_ept_laz/ept.json", new THREE.Vector3(-4, -4, 3.0));
-				//loadPointCloud("data/lion_takanawa_ept_bin/ept.json", new THREE.Vector3(-11, -4, 3.0));
-				//loadPointCloud("data/lion_takanawa/cloud.js", new THREE.Vector3(-2, -3, 0.0));
-				//loadPointCloud("data/lion_takanawa_las/cloud.js", new THREE.Vector3(3, -3, 0.0));
-				//loadPointCloud("data/lion_takanawa_laz/cloud.js", new THREE.Vector3(8, -3, 0.0));
-				//loadPointCloud("http://arena4d.uksouth.cloudapp.azure.com:8080/4e5059c4-f701-4a8f-8830-59e78a2c0816/BLK360 Sample.vpc");
-				//"http://5.9.65.151/mschuetz/potree/resources/pointclouds/faro/skatepark/cloud.js"
-				//"http://5.9.65.151/mschuetz/potree/resources/pointclouds/weiss/subseamanifold2/cloud.js"
 				
 				var counter = 1;
 				
@@ -376,15 +379,32 @@
 					}
 				);
 
+				//Create a texture loader so we can load our image file
+				var imgloader = new THREE.TextureLoader();
+
+				// Load an image file into a custom material
+				var material = new THREE.MeshLambertMaterial({
+				map: imgloader.load('https://mojtaba1995.github.io/WebTest/Images/2/1.jpg')
+				});
+
+				// create a plane geometry for the image with a width of 10
+				// and a height that preserves the image's aspect ratio
+				var geometry = new THREE.PlaneGeometry(100,100);
+
+				// combine our image geometry and material into a mesh
+				var mesh = new THREE.Mesh(geometry, material);
+
+				// set the position of the image mesh in the x,y,z dimensions
+				mesh.position.set(0,0,0)
+
+				// add the image to the scene
+				scene.add(mesh);
+
 				//var previous_value = -1;
 				var count1 = 0;
 				var count2 = 0;
 				var count3 = 0;
 
-				// const geometry = new THREE.BoxGeometry( 0, 0, 0 );
-				// const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
-				// const cube = new THREE.Mesh( geometry, material );
-				// scene.add( cube );
 				
 				function loop()
 				{
@@ -455,38 +475,11 @@
 					var height = canvas.clientHeight;
 					renderer.setSize(window.innerWidth, window.innerHeight);
 					
-					// if (window.innerWidth >765){
-					// canvas.style.width = window.innerWidth -250 + "px";
-					// width = window.innerWidth -250;
-					// }else{
-					// canvas.style.width = window.innerWidth  + "px";
-					// width = window.innerWidth;
-					// }
-					// artifical delay so innerHeight is correct
-					// setTimeout(function() {
-					// 	//canvas.style.height = window.innerHeight  + "px";
-					// 	//height =  window.innerHeight;
-					// 	renderer.setSize(width, height);
-					// 	camera.aspect = width / height;
-					// 	camera.updateProjectionMatrix();
-					// 	//timeline.style.top = window.innerHeight -50  + "px";
-					// }, 0);
-					
-
-					
 					console.log(width);
 					console.log(height);
 
-					//canvas.style.width = "100%";
-					//canvas.style.height = "100%";
 					
 				};
-
-
-				// Webkit/Blink will fire this on load, but Gecko doesn't.
-				//window.onresize = resizeCanvas;
-
-				// So we fire it manually...
 				resizeCanvas();
 				loadCanvas2();		
 
@@ -598,9 +591,6 @@
 				};
 				loop();
 
-				// Webkit/Blink will fire this on load, but Gecko doesn't.
-				//window.onresize = resizeCanvas2;
-
 				// So we fire it manually...
 				renderer_side = renderer;
 				camera_side = camera;
@@ -612,25 +602,10 @@
 		function resizeCanvas2(canvas, renderer, camera, timeline) {
 					var width =0;
 					var height = 0;
-					// if (window.innerWidth >765){
-					// canvas2.style.width = (window.innerWidth -250) + "px";
-					// width = window.innerWidth -250;
-					// width = width/2;
-					// canvas2.style.left = width+"px";
-					// }else{
-					// canvas2.style.width = window.innerWidth  + "px";
-					// width = window.innerWidth;
-					// width = width/2;
-					// canvas2.style.left = width+"px";
-					//}
-					// artifical delay so innerHeight is correct
 					setTimeout(function() {
-						//canvas2.style.height = window.innerHeight  + "px";
-						//height =  window.innerHeight;
 						renderer.setSize(width, height);
 						camera.aspect = width / height;
 						camera.updateProjectionMatrix();
-						//timeline.style.top = window.innerHeight -50  + "px";
 					}, 0);
 					
 
