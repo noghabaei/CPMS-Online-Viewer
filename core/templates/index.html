@@ -160,25 +160,13 @@
 
 		//import '/static/assets/fbx/FBXLoader.js';
 		var scene;
-		// $(document).ready(function() {
-		// 	$.ajax({
-		// 		method: 'GET',
-		// 		url: 'https://github.com/mojtaba1995/WebTest/tree/master/Images/2',
-		// 		dataType: 'jsonp', //change the datatype to 'jsonp' works in most cases
-		// 		success: (res) => {
-		// 			console.log("INSIDE DATA LOAD");
-		// 			console.log(res);
-		// 		},
-		// 		failure:(err)=>{
-		// 			console.log(err);
-		// 		}
-		// 	});
-		// });
 		document.body.onload = function()
 			{
 				//three.js
 				
 				scene = new THREE.Scene();
+				const axesHelper = new THREE.AxesHelper(500);
+				scene.add( axesHelper );
 
 				//var canvas = document.createElement("canvas");
 				var canvas = document.getElementById("potreecanvas");
@@ -200,7 +188,7 @@
 
 				
 				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100000);
-				camera.position.set(-200, 150, -200 );
+				camera.position.set(-200, 150, -200);
 
 
 				var renderer = new THREE.WebGLRenderer(
@@ -379,26 +367,80 @@
 					}
 				);
 
-				//Create a texture loader so we can load our image file
-				var imgloader = new THREE.TextureLoader();
+				var positions2 =[];
+				$(document).init(function() {
+						$.ajax({
+							type: "GET",
+							url: "/static/assets/fbx/2.csv",
+							dataType: "text",
+							success: function(data) {processData(data);},
+							complete:function(){loadImages();}
+						});
+					});
 
-				// Load an image file into a custom material
-				var material = new THREE.MeshLambertMaterial({
-				map: imgloader.load('https://mojtaba1995.github.io/WebTest/Images/2/1.jpg')
-				});
+				function processData(allText) {
+					var allTextLines = allText.split(/\r\n|\n/);
+					var headers = allTextLines[0].split(',');
+					for (var i=1; i<allTextLines.length; i++) {
+						var data = allTextLines[i].split(',');
+						if (data.length == headers.length) {
+							positions2.push({
+								'id': i,
+								'x': data[0],
+								'y': data[1],
+								'z': data[2],
+								'atX': data[3],
+								'atY': data[4],
+								'atZ' : data[5],
+								'f': data[6],
+								'upX':data[7],
+								'upY':data[8],
+								'upZ':data[9],
+								});
+							}
+						}
+						console.log(positions2);
+					}
+				function loadImages(){
+					for(var i =1;i <=377; i+=10){
+						//Create a texture loader so we can load our image file
+						var imgloader = new THREE.TextureLoader();
+						var url = 'https://mojtaba1995.github.io/WebTest/Images/2/'+i+'.jpg';
 
-				// create a plane geometry for the image with a width of 10
-				// and a height that preserves the image's aspect ratio
-				var geometry = new THREE.PlaneGeometry(100,100);
+						// Load an image file into a custom material
+						var material = new THREE.MeshBasicMaterial({
+						map: imgloader.load(url)
+						});
 
-				// combine our image geometry and material into a mesh
-				var mesh = new THREE.Mesh(geometry, material);
+						// create a plane geometry for the image with a width of 10
+						// and a height that preserves the image's aspect ratio
+						var geometry = new THREE.PlaneGeometry(100,100);
 
-				// set the position of the image mesh in the x,y,z dimensions
-				mesh.position.set(0,0,0)
+						// combine our image geometry and material into a mesh
+						var mesh = new THREE.Mesh(geometry, material);
 
-				// add the image to the scene
-				scene.add(mesh);
+						var pX = parseInt(positions2[i-1]['x'])+198;//-40;
+						var pY = parseInt(positions2[i-1]['y'])+154;//-110;
+						var pZ = parseInt(positions2[i-1]['z'])+16;//+30;
+						// set the position of the image mesh in the x,y,z dimensions
+						mesh.position.set(pX,pY,pZ);
+						mesh.up = new THREE.Vector3(positions2[i-1]['upX'], positions2[i-1]['upY'], positions2[i-1]['upZ']);
+						mesh.lookAt = new THREE.Vector3(positions2[i-1]['atX'],positions2[i-1]['atY'],positions2[i-1]['atZ']);
+						
+						//-200, 150, -200
+						//mesh.rotateY(-180);
+						// mesh.rotateY(-100);
+						// mesh.rotateZ(120);
+						// mesh.translateX(198);
+						// mesh.translateY(154);
+						// mesh.translateZ(16);
+
+						// add the image to the scene
+						scene.add(mesh);
+					}
+				
+				}
+				
 
 				//var previous_value = -1;
 				var count1 = 0;
