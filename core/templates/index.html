@@ -161,12 +161,10 @@
 				
 				var width = canvas.width;
 				var height = canvas.height;
-
 				
 				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100000);
 				camera.position.set(-200, 150, -200 );
-
-
+				
 				var renderer = new THREE.WebGLRenderer(
 				{
 					canvas: canvas,
@@ -179,6 +177,10 @@
 					preserveDrawingBuffer: false,
 					powerPreference: "high-performance"
 				});
+
+				var transformControl1 = new TransformControls( camera, renderer.domElement ), 
+				transformControl2 = new TransformControls( camera, renderer.domElement ), 
+				transformControl3 = new TransformControls( camera, renderer.domElement );
 
 				scene.add(new THREE.AmbientLight(0x222222,5));
 
@@ -272,6 +274,7 @@
 				}
 
 				const loader = new THREE.ObjectLoader();
+				let mainObj = null;
 				loader.load(
 					// resource URL
 					"/static/assets/fbx/scene.json",
@@ -285,66 +288,9 @@
 						
 						scene.add( obj );
 
+						mainObj = obj;
+
 						EV.populateElementsDropdown(obj);
-						
-						$("#element-panel-select").change(() => {
-							let selectedOptionIndex = $("#element-panel-select").prop('selectedIndex');
-							let selectedOptionName = $("#element-panel-select")[0].options[selectedOptionIndex].getAttribute('name');
-							console.log('Selected option name: '+ selectedOptionName);
-
-							let selectedElementTypeString = $("#element-panel-select").val();
-							EV.setElementInfo(selectedElementTypeString);
-
-							var selectedchildObj = obj.getObjectByName(selectedOptionName);
-							console.log(selectedchildObj);
-							EV.loadElementObject(selectedchildObj);
-						});
-
-						$(document.body).on('click', '#compat-modal-bring-btn',  () => {
-							let selectedOptionVal = $("#compat-panel-select").val();
-							if (selectedOptionVal != null && selectedOptionVal.length > 0) {
-								let shapeToLoad = CV.getCompatObjectToLoad(selectedOptionVal, 'main');
-								
-								const loadedShapeAxesHelper = new THREE.AxesHelper(5);
-								shapeToLoad.add(loadedShapeAxesHelper);
-
-								shapeToLoad.position.set(-100, 100, 100);
-								scene.add(shapeToLoad);
-
-								let transformControl1 = new TransformControls( camera, renderer.domElement );
-								transformControl1.addEventListener( 'change', loop );
-								transformControl1.addEventListener( 'dragging-changed', function ( event ) {
-									controls.enabled = ! event.value;
-									transformControl2 = ! event.value;
-									transformControl3 = ! event.value;
-								} );
-								transformControl1.setMode( 'translate' );
-								transformControl1.attach( shapeToLoad );
-								scene.add( transformControl1 );
-
-								let transformControl2 = new TransformControls( camera, renderer.domElement );
-								transformControl2.addEventListener( 'change', loop );
-								transformControl2.addEventListener( 'dragging-changed', function ( event ) {
-									controls.enabled = ! event.value;
-									transformControl1 = ! event.value;
-									transformControl3 = ! event.value;
-								} );
-								transformControl2.setMode( 'rotate' );
-								transformControl2.attach( shapeToLoad );
-								scene.add( transformControl2 );
-
-								let transformControl3 = new TransformControls( camera, renderer.domElement );
-								transformControl3.addEventListener( 'change', loop );
-								transformControl3.addEventListener( 'dragging-changed', function ( event ) {
-									controls.enabled = ! event.value;
-									transformControl2 = ! event.value;
-									transformControl1 = ! event.value;
-								} );
-								transformControl3.setMode( 'scale' );
-								transformControl3.attach( shapeToLoad );
-								scene.add( transformControl3 );
-							}
-						});
 					},
 
 					// onProgress callback
@@ -357,6 +303,65 @@
 						console.error( 'An error happened' );
 					}
 				);
+
+				$("#element-panel-select").change(() => {
+					let selectedOptionIndex = $("#element-panel-select").prop('selectedIndex');
+					let selectedOptionName = $("#element-panel-select")[0].options[selectedOptionIndex].getAttribute('name');
+					console.log('Selected option name: '+ selectedOptionName);
+
+					let selectedElementTypeString = $("#element-panel-select").val();
+					EV.setElementInfo(selectedElementTypeString);
+
+					var selectedchildObj = mainObj.getObjectByName(selectedOptionName);
+					console.log(selectedchildObj);
+					EV.loadElementObject(selectedchildObj);
+				});
+				
+				$(document.body).on('click', '#compat-modal-bring-btn',  () => {
+					let selectedOptionVal = $("#compat-panel-select").val();
+					if (selectedOptionVal != null && selectedOptionVal.length > 0) {
+						let shapeToLoad = CV.getCompatObjectToLoad(selectedOptionVal, 'main');
+						
+						const loadedShapeAxesHelper = new THREE.AxesHelper(5);
+						shapeToLoad.add(loadedShapeAxesHelper);
+
+						shapeToLoad.position.set(-100, 100, 100);
+						scene.add(shapeToLoad);
+
+						transformControl1.detach();
+						transformControl1.attach( shapeToLoad );
+						transformControl1.addEventListener( 'change', loop );
+						transformControl1.addEventListener( 'dragging-changed', function ( event ) {
+							controls.enabled = ! event.value;
+							transformControl2 = ! event.value;
+							transformControl3 = ! event.value;
+						} );
+						transformControl1.setMode( 'translate' );
+						scene.add( transformControl1 );
+
+						transformControl2.detach();
+						transformControl2.attach( shapeToLoad );
+						transformControl2.addEventListener( 'change', loop );
+						transformControl2.addEventListener( 'dragging-changed', function ( event ) {
+							controls.enabled = ! event.value;
+							transformControl1 = ! event.value;
+							transformControl3 = ! event.value;
+						} );
+						transformControl2.setMode( 'rotate' );
+						scene.add( transformControl2 );
+
+						transformControl3.detach();
+						transformControl3.attach( shapeToLoad );
+						transformControl3.addEventListener( 'change', loop );
+						transformControl3.addEventListener( 'dragging-changed', function ( event ) {
+							controls.enabled = ! event.value;
+							transformControl2 = ! event.value;
+							transformControl1 = ! event.value;
+						} );
+						transformControl3.setMode( 'scale' );
+						scene.add( transformControl3 );
+					}
+				});
 
 				//Create a texture loader so we can load our image file
 				var imgloader = new THREE.TextureLoader();
