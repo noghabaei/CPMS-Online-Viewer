@@ -10,11 +10,7 @@
 	<div class="control small" >
 		<div class ="text-center ">CONTROL</div>
 		<div id = "controlInputs">
-			<select class="custom-select-sm" id="day" data-size="4">
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
+			<select class="custom-select-sm" id="select-2d-image" data-size="4">
 			</select>
 			<div class ="bimdiv">
 				<label class="switch">
@@ -150,10 +146,11 @@
 		// import '/static/assets/three/build/three.module.js';
 
 		var scene;
-
 		document.body.onload = function()
 			{				
 				scene = new THREE.Scene();
+				const axesHelper = new THREE.AxesHelper(500);
+				scene.add( axesHelper );
 
 				var canvas = document.getElementById("potreecanvas");
 				var sidenav = document.getElementById("sidenav");
@@ -163,8 +160,8 @@
 				var height = canvas.height;
 				
 				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100000);
-				camera.position.set(-200, 150, -200 );
-				
+        camera.position.set(-200, 150, -200);
+      
 				var renderer = new THREE.WebGLRenderer(
 				{
 					canvas: canvas,
@@ -303,7 +300,117 @@
 						console.error( 'An error happened' );
 					}
 				);
+				var positions2 =[];
+				var folder = 0;
+				function load2dImageDropdown(folderNumber){
+					folder = folderNumber;
+					positions2 = [];
+					$.ajax({
+						type: "GET",
+						url: "/static/assets/fbx/"+ folder +".csv",
+						dataType: "text",
+						success: function(data) {processData(data);},
+						complete:function(){loadElements2dImageDropdown();}
+					});
 
+					function processData(allText) {
+						var allTextLines = allText.split(/\r\n|\n/);
+						var headers = allTextLines[0].split(',');
+						for (var i=1; i<allTextLines.length; i++) {
+							var data = allTextLines[i].split(',');
+							if (data.length == headers.length) {
+								positions2.push({
+									'id': i,
+									'x': data[0],
+									'y': data[1],
+									'z': data[2],
+									'atX': data[3],
+									'atY': data[4],
+									'atZ': data[5],
+									'f': data[6],
+									'upX':data[7],
+									'upY':data[8],
+									'upZ':data[9],
+									});
+								}
+							}
+							console.log(positions2);
+						}
+					}
+				
+				
+					function loadElements2dImageDropdown(){
+            $('#select-2d-image').empty();
+						$.each(positions2, function (index, obj) {
+							let dropdownOption = $('<option></option>')
+													.attr('value', obj.id).attr('name', obj.id).text(obj.id);
+            $('#select-2d-image').append(dropdownOption);
+						});
+            
+          var pcX = 0;
+					var pcY = 0;
+					var pcZ = 0;
+					if(folder ==2){
+						pcX = 198;
+						pcY = 154;
+						pcZ = 16;
+
+					}else if(folder==3){
+						pcX = 210;
+						pcY = 150;
+						pcZ = 17;
+					}else if(folder==4){
+						pcX = 196.6;
+						pcY = 159;
+						pcZ = 24;
+					}
+
+
+					for(var i =1;i <=1; i++){
+						//Create a texture loader so we can load our image file
+						var imgloader = new THREE.TextureLoader();
+						var url = 'https://mojtaba1995.github.io/WebTest/Images/'+folder+'/'+i+'.jpg';
+
+						// Load an image file into a custom material
+						var material = new THREE.MeshBasicMaterial({ map: imgloader.load(url)});
+
+						// create a plane geometry for the image with a width of 10
+						// and a height that preserves the image's aspect ratio
+						var geometry = new THREE.PlaneGeometry(100,100);
+
+						// combine our image geometry and material into a mesh
+						var mesh = new THREE.Mesh(geometry, material);
+						
+
+						var pX = parseFloat(positions2[i-1]['x'])+pcX;
+						var pY = parseFloat(positions2[i-1]['y'])+pcY;
+						var pZ = parseFloat(positions2[i-1]['z'])+pcZ;
+						var upX = parseFloat(positions2[i-1]['upX']);//-40;
+						var upY = parseFloat(positions2[i-1]['upY']);//-110;
+						var upZ = parseFloat(positions2[i-1]['upZ']);//+30;
+						var atX = parseFloat(positions2[i-1]['atX']);//-40;
+						var atY = parseFloat(positions2[i-1]['atY']);//-110;
+						var atZ = parseFloat(positions2[i-1]['atZ']);//+30;
+						// set the position of the image mesh in the x,y,z dimensions
+						mesh.position.set(pX,pY,pZ);
+						mesh.up = new THREE.Vector3(upX,upY,upZ);
+						mesh.lookAt = new THREE.Vector3(atX,atY,atZ);
+							
+						//-200, 150, -200
+						mesh.rotateY(-180);
+						// mesh.rotateY(-100);
+						// mesh.rotateZ(120);
+						// mesh.translateX(198);
+						// mesh.translateY(154);
+						// mesh.translateZ(16);
+
+						// add the image to the scene
+						scene.add(mesh);
+					}
+				}
+				
+
+            
 				$("#element-panel-select").change(() => {
 					let selectedOptionIndex = $("#element-panel-select").prop('selectedIndex');
 					let selectedOptionName = $("#element-panel-select")[0].options[selectedOptionIndex].getAttribute('name');
@@ -363,27 +470,7 @@
 					}
 				});
 
-				//Create a texture loader so we can load our image file
-				var imgloader = new THREE.TextureLoader();
-
-				// Load an image file into a custom material
-				var material = new THREE.MeshLambertMaterial({
-				map: imgloader.load('https://mojtaba1995.github.io/WebTest/Images/2/1.jpg')
-				});
-
-				// create a plane geometry for the image with a width of 10
-				// and a height that preserves the image's aspect ratio
-				var geometry = new THREE.PlaneGeometry(100,100);
-
-				// combine our image geometry and material into a mesh
-				var mesh = new THREE.Mesh(geometry, material);
-
-				// set the position of the image mesh in the x,y,z dimensions
-				mesh.position.set(0,0,0)
-
-				// add the image to the scene
-				scene.add(mesh);
-
+					
 				//var previous_value = -1;
 				var count1 = 0;
 				var count2 = 0;
@@ -407,6 +494,7 @@
 							var object = scene.getObjectByName("objectName" + String(counter));
 							scene.remove(object);
 							loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-198, -154, -16));
+							load2dImageDropdown(2);
 						}
 						//
 					}
@@ -418,6 +506,7 @@
 							var object = scene.getObjectByName("objectName" + String(counter));
 							scene.remove(object); 
 							loadPointCloud("https://mojtaba1995.github.io//clouds/cloud2/cloud.js", new THREE.Vector3(-210, -150, -17));
+							load2dImageDropdown(3);
 						}
 						//
 					}
@@ -429,6 +518,7 @@
 							var object = scene.getObjectByName("objectName" + String(counter));
 							scene.remove(object); 
 							loadPointCloud("https://mojtaba1995.github.io//clouds/cloud3/cloud.js", new THREE.Vector3(-196.6, -159, -24));
+							load2dImageDropdown(4);
 						}
 						
 					}
