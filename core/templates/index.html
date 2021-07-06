@@ -122,7 +122,7 @@
 	
 	<!-- <script src="/static/assets/three/build/three.js"></script> -->
 
-	<script src="/static/assets/three/potree-main/libs/proj4/proj4.js"></script>
+	<!-- <script src="/static/assets/three/potree-main/libs/proj4/proj4.js"></script> -->
 
 	<script type="module">
 
@@ -160,7 +160,7 @@
 				var height = canvas.height;
 				
 				var camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100000);
-        camera.position.set(-200, 150, -200);
+        		camera.position.set(-200, 150, -200);
       
 				var renderer = new THREE.WebGLRenderer(
 				{
@@ -340,14 +340,14 @@
 				
 				
 					function loadElements2dImageDropdown(){
-            $('#select-2d-image').empty();
+            			$('#select-2d-image').empty();
 						$.each(positions2, function (index, obj) {
-							let dropdownOption = $('<option></option>')
+						let dropdownOption = $('<option></option>')
 													.attr('value', obj.id).attr('name', obj.id).text(obj.id);
-            $('#select-2d-image').append(dropdownOption);
+            			$('#select-2d-image').append(dropdownOption);
 						});
             
-          var pcX = 0;
+          			var pcX = 0;
 					var pcY = 0;
 					var pcZ = 0;
 					if(folder ==2){
@@ -470,6 +470,19 @@
 					}
 				});
 
+				var lastTime = ( performance || Date ).now();
+				var count = 0;
+				function fpsUpdate() { 
+					var currentTime = ( performance || Date ).now();
+					// currentTime - lastTime is the number of milliseconds passed from last loop 
+					var fps = 1000 / (currentTime - lastTime);
+					lastTime = currentTime;
+					count += 1;
+					if(count == 30){
+						count = 0;
+						document.getElementById("frameRate").textContent = fps.toFixed(0);
+					}
+				}
 					
 				//var previous_value = -1;
 				var count1 = 0;
@@ -522,6 +535,7 @@
 						}
 						
 					}
+					fpsUpdate();
 				};
 				loop();
 				
@@ -539,14 +553,8 @@
 				document.body.onresize = function()
 				{
 					resizeCanvas();
-					resizeCanvas2(canvas_side, renderer_side, camera_side, timeline);
-
 				}
 			};
-
-			var camera_side;
-			var renderer_side;
-			var canvas_side;
 
 			var bim = document.getElementById("bim");
 			bim.addEventListener('change',function() {
