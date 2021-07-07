@@ -176,35 +176,12 @@
 				});
 
 				var transformControl1 = new TransformControls( camera, renderer.domElement );
-				// transformControl2 = new TransformControls( camera, renderer.domElement ), 
-				// transformControl3 = new TransformControls( camera, renderer.domElement );
 
 				transformControl1.addEventListener( 'change', loop );
 				transformControl1.addEventListener( 'dragging-changed', function ( event ) {
 					controls.enabled = ! event.value;
-					// transformControl2 = ! event.value;
-					// transformControl3 = ! event.value;
 				} );
-				transformControl1.setMode( 'translate' );
 				scene.add( transformControl1 );
-
-				// transformControl2.addEventListener( 'change', loop );
-				// transformControl2.addEventListener( 'dragging-changed', function ( event ) {
-				// 	controls.enabled = ! event.value;
-				// 	transformControl1 = ! event.value;
-				// 	transformControl3 = ! event.value;
-				// } );
-				// transformControl2.setMode( 'rotate' );
-				// scene.add( transformControl2 );
-
-				// transformControl3.addEventListener( 'change', loop );
-				// transformControl3.addEventListener( 'dragging-changed', function ( event ) {
-				// 	controls.enabled = ! event.value;
-				// 	transformControl2 = ! event.value;
-				// 	transformControl1 = ! event.value;
-				// } );
-				// transformControl3.setMode( 'scale' );
-				// scene.add( transformControl3 );
 
 				scene.add(new THREE.AmbientLight(0x222222,5));
 
@@ -212,7 +189,9 @@
 				controls.autoRotate = false;
 				controls.update();
 
-				var raycaster = new THREE.Raycaster();
+				const raycaster = new THREE.Raycaster();
+				const mouse = new THREE.Vector2();
+
 				raycaster.params.Points.threshold = 1e-2;
 				var normalized = new THREE.Vector2();
 
@@ -220,21 +199,6 @@
 				{
 					normalized.set((event.clientX / canvas.width) * 2 - 1, -(event.clientY / canvas.height) * 2 + 1);
 					raycaster.setFromCamera(normalized, camera);
-				}
-
-				canvas.ondblclick = function(event)
-				{
-					var intesects = raycaster.intersectObject(scene, true);
-					
-					
-					if(intesects.length > 0)
-					{
-						var geometry = new THREE.SphereBufferGeometry(0.1, 32, 32);
-						var material = new THREE.MeshBasicMaterial({color: 0xAA4444});
-						var sphere = new THREE.Mesh(geometry, material);
-						sphere.position.copy(intesects[0].point);
-						scene.add(sphere);
-					}
 				}
 
 				Potree.Global.workerPath = "./static/assets/source";
@@ -435,9 +399,7 @@
 						scene.add(mesh);
 					}
 				}
-				
-
-            
+			
 				$("#element-panel-select").change(() => {
 					let selectedOptionIndex = $("#element-panel-select").prop('selectedIndex');
 					let selectedOptionName = $("#element-panel-select")[0].options[selectedOptionIndex].getAttribute('name');
@@ -461,17 +423,37 @@
 
 						shapeToLoad.position.set(-100, 100, 100);
 						scene.add(shapeToLoad);
-
-						// transformControl1.detach();
+						
 						transformControl1.attach( shapeToLoad );
-						
 
-						// // transformControl2.detach();
-						// transformControl2.attach( shapeToLoad );
-						
+						// 0: translate, 1: rotate, 2: scale, 3: detach
+						let transformControlMode = 0;
 
-						// // transformControl3.detach();
-						// transformControl3.attach( shapeToLoad );
+						canvas.ondblclick = function(event)
+						{
+							var intesects = raycaster.intersectObject(shapeToLoad, false);
+							
+							if(intesects.length > 0) {
+								
+								transformControl1.attach( shapeToLoad );
+
+								transformControlMode = (transformControlMode + 1) % 4;
+								
+								switch( transformControlMode ) {
+									case 1:
+										transformControl1.setMode( "rotate" );
+										break;
+									case 2:
+										transformControl1.setMode( "scale" );
+										break;
+									case 3:
+										transformControl1.detach();
+										break;
+									default:
+										transformControl1.setMode( "translate" );
+								}
+							}
+						}
 						
 					}
 				});
@@ -495,6 +477,7 @@
 				var count2 = 0;
 				var count3 = 0;
 
+				var intersects = null;
 				
 				function loop()
 				{
