@@ -429,6 +429,8 @@
 						// 0: translate, 1: rotate, 2: scale, 3: detach
 						let transformControlMode = 0;
 
+						alert("Double click on object to change transform mode/switch off controls.");
+
 						canvas.ondblclick = function(event)
 						{
 							var intesects = raycaster.intersectObject(shapeToLoad, false);
