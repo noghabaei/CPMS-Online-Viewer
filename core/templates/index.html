@@ -175,9 +175,36 @@
 					powerPreference: "high-performance"
 				});
 
-				var transformControl1 = new TransformControls( camera, renderer.domElement ), 
-				transformControl2 = new TransformControls( camera, renderer.domElement ), 
-				transformControl3 = new TransformControls( camera, renderer.domElement );
+				var transformControl1 = new TransformControls( camera, renderer.domElement );
+				// transformControl2 = new TransformControls( camera, renderer.domElement ), 
+				// transformControl3 = new TransformControls( camera, renderer.domElement );
+
+				transformControl1.addEventListener( 'change', loop );
+				transformControl1.addEventListener( 'dragging-changed', function ( event ) {
+					controls.enabled = ! event.value;
+					// transformControl2 = ! event.value;
+					// transformControl3 = ! event.value;
+				} );
+				transformControl1.setMode( 'translate' );
+				scene.add( transformControl1 );
+
+				// transformControl2.addEventListener( 'change', loop );
+				// transformControl2.addEventListener( 'dragging-changed', function ( event ) {
+				// 	controls.enabled = ! event.value;
+				// 	transformControl1 = ! event.value;
+				// 	transformControl3 = ! event.value;
+				// } );
+				// transformControl2.setMode( 'rotate' );
+				// scene.add( transformControl2 );
+
+				// transformControl3.addEventListener( 'change', loop );
+				// transformControl3.addEventListener( 'dragging-changed', function ( event ) {
+				// 	controls.enabled = ! event.value;
+				// 	transformControl2 = ! event.value;
+				// 	transformControl1 = ! event.value;
+				// } );
+				// transformControl3.setMode( 'scale' );
+				// scene.add( transformControl3 );
 
 				scene.add(new THREE.AmbientLight(0x222222,5));
 
@@ -435,38 +462,17 @@
 						shapeToLoad.position.set(-100, 100, 100);
 						scene.add(shapeToLoad);
 
-						transformControl1.detach();
+						// transformControl1.detach();
 						transformControl1.attach( shapeToLoad );
-						transformControl1.addEventListener( 'change', loop );
-						transformControl1.addEventListener( 'dragging-changed', function ( event ) {
-							controls.enabled = ! event.value;
-							transformControl2 = ! event.value;
-							transformControl3 = ! event.value;
-						} );
-						transformControl1.setMode( 'translate' );
-						scene.add( transformControl1 );
+						
 
-						transformControl2.detach();
-						transformControl2.attach( shapeToLoad );
-						transformControl2.addEventListener( 'change', loop );
-						transformControl2.addEventListener( 'dragging-changed', function ( event ) {
-							controls.enabled = ! event.value;
-							transformControl1 = ! event.value;
-							transformControl3 = ! event.value;
-						} );
-						transformControl2.setMode( 'rotate' );
-						scene.add( transformControl2 );
+						// // transformControl2.detach();
+						// transformControl2.attach( shapeToLoad );
+						
 
-						transformControl3.detach();
-						transformControl3.attach( shapeToLoad );
-						transformControl3.addEventListener( 'change', loop );
-						transformControl3.addEventListener( 'dragging-changed', function ( event ) {
-							controls.enabled = ! event.value;
-							transformControl2 = ! event.value;
-							transformControl1 = ! event.value;
-						} );
-						transformControl3.setMode( 'scale' );
-						scene.add( transformControl3 );
+						// // transformControl3.detach();
+						// transformControl3.attach( shapeToLoad );
+						
 					}
 				});
 
