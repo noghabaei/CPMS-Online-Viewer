@@ -236,21 +236,6 @@
 					});
 				}
 				
-				function loadPC(s){
-					
-					var points = new Potree.Group();
-					points.name = "objectName" + String(counter);
-					points.setPointBudget(10000000)
-					scene.add(points);
-
-					Potree.loadPointCloud(s, name, function(data)
-					{
-						var pointcloud = data.pointcloud;
-						points.add(pointcloud);
-					});
-					//counter = counter+1;
-				}
-				
 				function getCenterPoint(mesh) {
 					var geometry = mesh.geometry;
 					geometry.computeBoundingBox();
@@ -291,6 +276,7 @@
 						console.error( 'An error happened' );
 					}
 				);
+
 				var positions2 =[];
 				var folder = 0;
 				function load2dImageDropdown(folderNumber){
@@ -481,14 +467,9 @@
 
 				var intersects = null;
 				
-				function loop()
-				{
-					//cube.rotation.y += 0.01;
+				function animate() {
+					requestAnimationFrame(animate);
 					controls.update();
-					renderer.render(scene, camera);
-
-					requestAnimationFrame(loop);
-					
 
 					if(timeline.value<=34){
 						count3 = 0
@@ -500,7 +481,6 @@
 							loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", new THREE.Vector3(-198, -154, -16));
 							load2dImageDropdown(2);
 						}
-						//
 					}
 					if(timeline.value>34 && timeline.value<=67){
 						count3 = 0
@@ -512,7 +492,6 @@
 							loadPointCloud("https://mojtaba1995.github.io//clouds/cloud2/cloud.js", new THREE.Vector3(-210, -150, -17));
 							load2dImageDropdown(3);
 						}
-						//
 					}
 					if(timeline.value>67){
 						count1 = 0;
@@ -524,11 +503,18 @@
 							loadPointCloud("https://mojtaba1995.github.io//clouds/cloud3/cloud.js", new THREE.Vector3(-196.6, -159, -24));
 							load2dImageDropdown(4);
 						}
-						
 					}
 					fpsUpdate();
+
+					loop();
+				}
+
+				function loop()
+				{
+					renderer.render(scene, camera);	
 				};
-				loop();
+				// loop();
+				animate();
 				
 				function resizeCanvas() {
 					var width = canvas.clientWidth;
