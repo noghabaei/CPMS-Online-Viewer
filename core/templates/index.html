@@ -248,34 +248,28 @@
 
 				const loader = new THREE.ObjectLoader();
 				let mainObj = null;
-				loader.load(
-					// resource URL
-					"/static/assets/fbx/scene.json",
 
-					// onLoad callback
-					// Here the loaded data is assumed to be an object
-					function ( obj ) {
-						// Add the loaded object to the scene
-						obj.position.set(-180, -100, 120);
-						obj.name = "BIM";
-						
-						scene.add( obj );
+				function loadMainObj( obj ) {
+					// Add the loaded object to the scene
+					obj.position.set(-180, -100, 120);
+					obj.name = "BIM";
+					
+					scene.add( obj );
 
-						mainObj = obj;
+					mainObj = obj;
 
-						EV.populateElementsDropdown(obj);
-					},
+					EV.populateElementsDropdown(obj);
+				}
 
-					// onProgress callback
-					function ( xhr ) {
-						console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
-					},
+				function mainObjLoadingProgress( xhr ) {
+					console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+				}
 
-					// onError callback
-					function ( err ) {
-						console.error( 'An error happened' );
-					}
-				);
+				function mainObjLoadingError( err ) {
+					console.error( 'An error happened' );
+				}
+ 
+				loader.load( "/static/assets/fbx/scene.json", obj => loadMainObj( obj ), xhr => mainObjLoadingProgress( xhr ), err => mainObjLoadingError( err ) );
 
 				var positions2 =[];
 				var folder = 0;
