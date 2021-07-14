@@ -136,7 +136,7 @@
 		import * as OC from '/static/assets/fbx/OrbitControls-r110.js';
 		import { TransformControls } from '/static/assets/fbx/TransformControls-r110.js';
 		
-		import '/static/assets/potree/potree.js';
+		import '/static/assets/potree/potree.js';	// Potree 1.6
 		// import '/static/assets/three/potree-main/build/potree/potree.js';
 
 		import * as EV from "/static/assets/js/element-view.js";
@@ -506,8 +506,8 @@
 				function loop()
 				{
 					renderer.render(scene, camera);	
-				};
-				// loop();
+				}
+
 				animate();
 				
 				function resizeCanvas() {
