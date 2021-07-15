@@ -1,13 +1,5 @@
 import * as OC from '/static/assets/fbx/OrbitControls.js';
-
-$("#compat-panel-select").change(() => {
-    let selectedOptionVal = $("#compat-panel-select").val();
-
-    let infoPrefix = "Info:";
-    $("#compat-info-span").text(infoPrefix + " " + selectedOptionVal);
-
-    loadCompatibilityCanvas(selectedOptionVal);
-});
+import { loadPointCloud } from "/static/assets/js/three-utils.js";
 
 function loadCompatibilityCanvas(shapeToLoad) {
     if (shapeToLoad == null || shapeToLoad.length === 0) {
@@ -61,6 +53,50 @@ function loadCompatibilityCanvas(shapeToLoad) {
     animateCompatScene();
 }
 
+function getCompatObjectToLoad2(shapeToLoad, forScene = 'compat') {
+
+    return new Promise( (resolve, reject) => {
+        
+        if (shapeToLoad.toLowerCase() == 'bar') {
+
+            loadPointCloud( '/static/assets/pointclouds/bar/cloud.js' )
+                .then( resolve )
+                .catch( reject );
+
+        } else {
+            var shapeGeometry = null;
+
+            if (shapeToLoad == null) {
+                console.log('getCompatObjectToLoad: Null Input : Loading Cube by default');
+                shapeGeometry = forScene == 'main' ? new THREE.BoxGeometry(50, 50, 50) : new THREE.BoxGeometry(2, 2, 2);
+
+            } else if (shapeToLoad.toLowerCase() == 'cube') {
+                shapeGeometry = forScene == 'main' ? new THREE.BoxGeometry(50, 50, 50) : new THREE.BoxGeometry(2, 2, 2);
+
+            } else if (shapeToLoad.toLowerCase() == 'sphere') {
+                shapeGeometry = forScene == 'main' ? new THREE.SphereGeometry(20, 50, 50) : new THREE.SphereGeometry(1, 20, 20);
+
+            } else if (shapeToLoad.toLowerCase() == 'cylinder') {
+                shapeGeometry = forScene == 'main' ? new THREE.CylinderGeometry(20, 20, 50, 50, 50) : new THREE.CylinderGeometry(1, 1, 5, 10, 10);
+
+            } else {
+                shapeGeometry = forScene == 'main' ? new THREE.BoxGeometry(50, 50, 50) : new THREE.BoxGeometry(1, 1, 1);
+            }
+            console.log('Loading:');
+            console.log(shapeGeometry);
+
+            var material = new THREE.MeshPhongMaterial({
+                color: 'white'
+            });
+
+            var mesh = new THREE.Mesh(shapeGeometry, material);
+            
+            resolve( mesh );
+        }
+        
+    } );
+}
+
 function getCompatObjectToLoad(shapeToLoad, forScene = 'compat') {
     var shapeGeometry = null;
 
@@ -92,5 +128,6 @@ function getCompatObjectToLoad(shapeToLoad, forScene = 'compat') {
 }
 
 export {
-    getCompatObjectToLoad
+    getCompatObjectToLoad, 
+    getCompatObjectToLoad2
 };
