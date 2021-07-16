@@ -11,15 +11,11 @@ class CompatibilityPanel extends Panel {
     bringElementButton;
     #infoStringPrefix = "Info: ";
     #initiallyHidden = true;
+    #showAxesHelper = false;
+    #showGridHelper = false;
 
     #compatScene;
-    // #compatRenderer = new THREE.WebGLRenderer({
-    //                         canvas: this.canvas[0],
-    //                         antialias: true
-    //                     });;
-    // #compatCamera = new THREE.PerspectiveCamera(60, $(this.canvas[0]).width() / $(this.canvas[0]).height(), 0.1, 2000);
-    // #compatControls = new OrbitControls(this.#compatCamera, this.#compatRenderer.domElement);
-
+    
     signals = {
         selectedPointCloudChanged: new signals.Signal(),
         bringElementButtonClicked: new signals.Signal()
@@ -218,6 +214,7 @@ class CompatibilityPanel extends Panel {
 
         let compatCanvas = this.canvas[0];
         const compatCamera = new THREE.PerspectiveCamera(60, $(compatCanvas).width() / $(compatCanvas).height(), 0.1, 2000);
+        compatCamera.translateY(-10);
         compatCamera.translateZ(25);
 
         let ambientLight = new THREE.AmbientLight('white', 1.5);
@@ -225,11 +222,19 @@ class CompatibilityPanel extends Panel {
         let sceneLight = hemisphereLight;
         compatScene.add(sceneLight);
 
-        const gridHelper = new THREE.GridHelper(10, 10);
-        compatScene.add(gridHelper);
+        if ( this.#showGridHelper ) {
 
-        const axesHelper = new THREE.AxesHelper(5);
-        compatScene.add(axesHelper);
+            const gridHelper = new THREE.GridHelper(10, 10);
+            compatScene.add(gridHelper);
+
+        }
+
+        if ( this.#showAxesHelper ) {
+
+            const axesHelper = new THREE.AxesHelper(5);
+            compatScene.add(axesHelper);
+
+        }
 
         const compatObjRenderer = new THREE.WebGLRenderer({
             canvas: compatCanvas,
