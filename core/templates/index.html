@@ -225,8 +225,8 @@
 						var points = new Potree.Group();
 						points.setPointBudget(500000);
 						points.name = "objectName" + String(counter);
-						//points.material.opacity = 0.0;
-						//points.material.wireframe = false;
+						points.material.opacity = 0.0;
+						points.material.wireframe = false;
 						
 						scene.add(points);
 	
@@ -422,8 +422,10 @@
 
 					} else {
 
-						scene.add(shapeToLoad);
-							
+						// let pointCloud = scene.getObjectByName( "objectName" + String(counter) );
+						// pointCloud.add( shapeToLoad );
+						scene.add( shapeToLoad );
+
 						transformControl1.attach( shapeToLoad );
 
 						// 0: translate, 1: rotate, 2: scale, 3: detach

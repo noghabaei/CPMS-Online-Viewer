@@ -8,18 +8,19 @@ function loadPointCloud(url, position) {
         try {
 
             Potree.loadPointCloud(url, "pointcloud", function (e) {
+
                 var points = new Potree.Group();
                 points.setPointBudget(500000);
                 points.name = "pc";
                 //points.material.opacity = 0.0;
                 //points.material.wireframe = false;
-
+                
                 // scene.add(points);
 
                 var pointcloud = e.pointcloud;
 
-                if (position !== undefined) {
-                    pointcloud.position.copy(position);
+                if ( position !== undefined ) {
+                    pointcloud.position.copy( position );
                 }
 
                 var material = pointcloud.material;
@@ -28,12 +29,13 @@ function loadPointCloud(url, position) {
                 material.pointSizeType = Potree.PointSizeType.ADAPTIVE; //ADAPTIVE | FIXED
                 material.shape = Potree.PointShape.SQUARE; //CIRCLE | SQUARE
 
-                points.add(pointcloud);
+                points.add( pointcloud );
 
-                resolve(points);
+                resolve( points );
             });
 
         } catch (err) {
+
             reject(err);
         }
 
