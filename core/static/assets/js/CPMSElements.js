@@ -116,11 +116,77 @@ class Panel extends CPMSElement {
     }
 }
 
+class IncreaseButton extends CPMSElement {
 
+    constructor() {
+
+        super();
+
+        super.setElement( this.createNewIncreaseButton() );
+
+    }
+
+    setOnClick( fn ) {
+
+        this.element.on( 'click', fn );
+
+    }
+
+    clearOnClick() {
+
+        this.element.off();
+
+    }
+
+    createNewIncreaseButton() {
+
+        let button = $( '<button></button>' );
+        button.text( '>' );
+
+        return button;
+
+    }
+
+}
+
+class DecreaseButton extends CPMSElement {
+
+    constructor() {
+
+        super();
+
+        super.setElement( this.createNewDecreaseButton() );
+
+    }
+
+    setOnClick( fn ) {
+
+        this.element.on( 'click', fn );
+
+    }
+
+    clearOnClick() {
+
+        this.element.off();
+
+    }
+
+    createNewDecreaseButton() {
+
+        let button = $( '<button></button>' );
+        button.text( '<' );
+
+        return button;
+
+    }
+
+}
 
 export {
     CPMSElement,
     Panel,
     PanelHeader,
-    PanelContent
+    PanelContent,
+    IncreaseButton,
+    DecreaseButton
 };

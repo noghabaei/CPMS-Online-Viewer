@@ -1,7 +1,73 @@
 import "/static/assets/potree/three.min.js";
 import { OrbitControls } from "/static/assets/fbx/OrbitControls-r110.js";
 import { loadPointCloud } from "/static/assets/js/three-utils.js";
-import { Panel } from "./CPMSElements.js";
+import { Panel, IncreaseButton, DecreaseButton } from "./CPMSElements.js";
+
+class TransformPanel extends Panel {
+
+    shapeToTransform;
+
+    constructor( panelHeaderText="MODULE CONTROL" ) {
+        super();
+
+        this.setId( 'transform-panel' );
+
+        this.panelHeader.setPanelHeaderText( panelHeaderText );
+
+        this.panelContent.appendElement( this.appendTranslationRows() );
+
+        this.panelContent.appendElement( this.appendRotationRows() );
+    }
+
+    appendTranslationRows() {
+
+        let translateRows = $( '<div id="translate"></div>' );
+
+        translateRows.append( this.createTranslateRow( 'Px' ) );
+        translateRows.append( this.createTranslateRow( 'Py' ) );
+        translateRows.append( this.createTranslateRow( 'Pz' ) );
+
+        translateRows.append( this.createTranslateRow( 'Rx' ) );
+        translateRows.append( this.createTranslateRow( 'Ry' ) );
+        translateRows.append( this.createTranslateRow( 'Rz' ) );
+
+        return translateRows;
+
+    }
+
+    createTranslateRow( rowLabel, rowId='' ) {
+
+        let row = $( '<div></div>' );
+
+        if ( rowId != null && rowId.length !== 0 ) {
+
+            row.attr( 'id', rowId );
+
+        }
+
+        if ( rowLabel == null || rowLabel.length === 0 ) {
+
+            rowLabel = 'Translate Row';
+
+        }
+
+        row.append( `<span>${rowLabel}</span>` );
+
+        let decreaseButton = new DecreaseButton();
+        row.append( decreaseButton.getElement() );
+
+        let increaseButton = new IncreaseButton();
+        row.append( increaseButton.getElement() );
+
+        return row;
+
+    }
+
+    appendRotationRows() {
+
+    }
+
+}
 
 class CompatibilityPanel extends Panel {
 
@@ -353,4 +419,4 @@ class CompatibilityPanel extends Panel {
     }
 }
 
-export { CompatibilityPanel };
+export { CompatibilityPanel, TransformPanel };

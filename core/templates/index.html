@@ -112,7 +112,7 @@
 		import * as EV from "/static/assets/js/element-view.js";
 		import * as CV from "/static/assets/js/compat-view.js";
 		
-		import { CompatibilityPanel } from "/static/assets/js/CompatibilityPanel.js";
+		import { CompatibilityPanel, TransformPanel } from "/static/assets/js/CompatibilityPanel.js";
 
 		// import '/static/assets/three/build/three.js';
 		// import '/static/assets/three/build/three.module.js';
@@ -413,6 +413,8 @@
 
 					document.addEventListener("keyup", setupTransformControls);
 
+					addTransformPanel();
+
 				}
 
 				function setupTransformControls(event) {
@@ -432,6 +434,14 @@
 						case 82:
 							transformControl1.detach();
 					}
+				}
+
+				function addTransformPanel() {
+
+					let transformPanel = new TransformPanel();
+
+					$("#element-view-panel").after( transformPanel.getElement() );
+
 				}
 
 
