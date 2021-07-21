@@ -37,7 +37,7 @@ class TransformPanel extends Panel {
 
     createTransformRow( rowLabel, axis='x', rowId='', rowType='translate' ) {
 
-        let row = $( '<div></div>' );
+        let row = $( '<div class="transform-row"></div>' );
 
         if ( rowId != null && rowId.length !== 0 ) {
 
@@ -56,6 +56,7 @@ class TransformPanel extends Panel {
         let decreaseButton = new DecreaseButton();
         decreaseButton.signals.decreaseTransformButtonPressed.add( () => this.startTranslation( axis, false ) );
         decreaseButton.signals.decreaseTransformButtonReleased.add( () => this.stopTranslation() );
+        decreaseButton.addStyleProperty( 'margin', '0 1em' );
         row.append( decreaseButton.getElement() );
 
         let increaseButton = new IncreaseButton( rowType, axis );

@@ -28,6 +28,10 @@ class CPMSElement {
     getClass() {
         return this.element.attr("class");
     }
+
+    addStyleProperty( style, value ) {
+        this.element.css( style, value );
+    }
 }
 
 class PanelHeader extends CPMSElement {
