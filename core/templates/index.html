@@ -436,9 +436,12 @@
 					}
 				}
 
+
+				var transformPanel = new TransformPanel();
+
 				function addTransformPanel( shapeToTransform ) {
 
-					let transformPanel = new TransformPanel( shapeToTransform );
+					transformPanel.attach( shapeToTransform );
 
 					$("#element-view-panel").after( transformPanel.getElement() );
 
