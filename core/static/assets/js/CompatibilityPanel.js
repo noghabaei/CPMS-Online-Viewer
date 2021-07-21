@@ -7,35 +7,35 @@ class TransformPanel extends Panel {
 
     shapeToTransform;
 
-    constructor( panelHeaderText="MODULE CONTROL" ) {
+    constructor( shapeToTransform=null, panelHeaderText="MODULE CONTROL" ) {
         super();
+
+        this.shapeToTransform = shapeToTransform;
 
         this.setId( 'transform-panel' );
 
         this.panelHeader.setPanelHeaderText( panelHeaderText );
 
-        this.panelContent.appendElement( this.appendTranslationRows() );
-
-        this.panelContent.appendElement( this.appendRotationRows() );
+        this.panelContent.appendElement( this.addTransformRows() );
     }
 
-    appendTranslationRows() {
+    addTransformRows() {
 
-        let translateRows = $( '<div id="translate"></div>' );
+        let transformRows = $( '<div id="translate"></div>' );
 
-        translateRows.append( this.createTranslateRow( 'Px' ) );
-        translateRows.append( this.createTranslateRow( 'Py' ) );
-        translateRows.append( this.createTranslateRow( 'Pz' ) );
+        transformRows.append( this.createTransformRow( 'Px', 'x' ) );
+        transformRows.append( this.createTransformRow( 'Py', 'y' ) );
+        transformRows.append( this.createTransformRow( 'Pz', 'z' ) );
 
-        translateRows.append( this.createTranslateRow( 'Rx' ) );
-        translateRows.append( this.createTranslateRow( 'Ry' ) );
-        translateRows.append( this.createTranslateRow( 'Rz' ) );
+        transformRows.append( this.createTransformRow( 'Rx' ) );
+        transformRows.append( this.createTransformRow( 'Ry' ) );
+        transformRows.append( this.createTransformRow( 'Rz' ) );
 
-        return translateRows;
+        return transformRows;
 
     }
 
-    createTranslateRow( rowLabel, rowId='' ) {
+    createTransformRow( rowLabel, axis='x', rowId='', rowType='translate' ) {
 
         let row = $( '<div></div>' );
 
@@ -54,16 +54,76 @@ class TransformPanel extends Panel {
         row.append( `<span>${rowLabel}</span>` );
 
         let decreaseButton = new DecreaseButton();
+        decreaseButton.signals.decreaseTransformButtonPressed.add( () => this.startTranslation( axis, false ) );
+        decreaseButton.signals.decreaseTransformButtonReleased.add( () => this.stopTranslation() );
         row.append( decreaseButton.getElement() );
 
-        let increaseButton = new IncreaseButton();
+        let increaseButton = new IncreaseButton( rowType, axis );
+        increaseButton.signals.increaseTransformButtonPressed.add( () => this.startTranslation( axis, true ) );
+        increaseButton.signals.increaseTransformButtonReleased.add( () => this.stopTranslation() );
         row.append( increaseButton.getElement() );
 
         return row;
 
     }
 
-    appendRotationRows() {
+    #translationIntervalId = null;
+
+    startTranslation(axis='x', increase=true, step=0.5) {
+
+        if ( this.#translationIntervalId === -1 )
+            this.#translationIntervalId = setInterval( () => this.translateObject(axis, increase, step), 100);
+
+    }
+
+    stopTranslation() {
+
+        if ( this.#translationIntervalId != -1 ) {
+            clearInterval( this.#translationIntervalId );
+            this.#translationIntervalId = -1;
+        }
+
+    }
+
+    translateObject(axis, increase=true, step=0.5) {
+
+        axis = axis.toLowerCase();
+
+        let translateStep = step;
+        if ( ! increase ) translateStep = -translateStep;
+
+        switch ( axis ) {
+            case 'x':
+                this.shapeToTransform.translateX( translateStep );
+                // this.shapeToTransform.position.x += translateStep;
+                break;
+            
+            case 'z':
+                this.shapeToTransform.translateY( translateStep );
+                // this.shapeToTransform.position.y -= translateStep;
+                break;
+
+            case 'y':
+                this.shapeToTransform.translateZ( translateStep );
+                // this.shapeToTransform.position.z -= translateStep;
+                break;
+        
+            default:
+                break;
+        }
+
+
+    } 
+
+    attach( objectToTransform ) {
+
+        this.shapeToTransform = objectToTransform;
+
+    }
+
+    detach() {
+
+        this.shapeToTransform = null;
 
     }
 

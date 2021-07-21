@@ -1,4 +1,4 @@
-/* General panel properties start */
+  /* General panel properties start */
 
 .panel {
     position: fixed;
@@ -78,6 +78,12 @@
 
 /* Compat panel properties end */
 
+
+#transform-panel {
+    right: 5px;
+    top: 90px;
+    float: right;
+}
 
 /* Canvas properties start */
 

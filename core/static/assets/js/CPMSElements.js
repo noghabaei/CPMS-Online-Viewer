@@ -118,30 +118,34 @@ class Panel extends CPMSElement {
 
 class IncreaseButton extends CPMSElement {
 
-    constructor() {
+    transformType;
+    axis;
+
+    signals = {
+        increaseTransformButtonPressed: new signals.Signal(),
+        increaseTransformButtonReleased: new signals.Signal()
+    }
+
+    constructor( transformType='translate', axis='x' ) {
 
         super();
 
-        super.setElement( this.createNewIncreaseButton() );
+        super.setElement(this.createNewIncreaseButton());
 
-    }
+        this.transformType = transformType;
 
-    setOnClick( fn ) {
+        this.axis = axis;
 
-        this.element.on( 'click', fn );
+        this.element.mousedown( () => this.signals.increaseTransformButtonPressed.dispatch( transformType, axis ) );
 
-    }
-
-    clearOnClick() {
-
-        this.element.off();
-
+        this.element.mouseup( () => this.signals.increaseTransformButtonReleased.dispatch() );
+        
     }
 
     createNewIncreaseButton() {
 
-        let button = $( '<button></button>' );
-        button.text( '>' );
+        let button = $('<button></button>');
+        button.text('>');
 
         return button;
 
@@ -151,30 +155,34 @@ class IncreaseButton extends CPMSElement {
 
 class DecreaseButton extends CPMSElement {
 
-    constructor() {
+    transformType;
+    axis;
+
+    signals = {
+        decreaseTransformButtonPressed: new signals.Signal(),
+        decreaseTransformButtonReleased: new signals.Signal()
+    }
+
+    constructor( transformType='translate', axis='x' ) {
 
         super();
 
-        super.setElement( this.createNewDecreaseButton() );
+        super.setElement(this.createNewDecreaseButton());
 
-    }
+        this.transformType = transformType;
 
-    setOnClick( fn ) {
+        this.axis = axis;
 
-        this.element.on( 'click', fn );
+        this.element.mousedown( () => this.signals.decreaseTransformButtonPressed.dispatch( transformType, axis ) );
 
-    }
-
-    clearOnClick() {
-
-        this.element.off();
+        this.element.mouseup( () => this.signals.decreaseTransformButtonReleased.dispatch() );
 
     }
 
     createNewDecreaseButton() {
 
-        let button = $( '<button></button>' );
-        button.text( '<' );
+        let button = $('<button></button>');
+        button.text('<');
 
         return button;
 

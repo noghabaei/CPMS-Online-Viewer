@@ -413,7 +413,7 @@
 
 					document.addEventListener("keyup", setupTransformControls);
 
-					// addTransformPanel();
+					addTransformPanel( bringElementShape );
 
 				}
 
@@ -436,9 +436,9 @@
 					}
 				}
 
-				function addTransformPanel() {
+				function addTransformPanel( shapeToTransform ) {
 
-					let transformPanel = new TransformPanel();
+					let transformPanel = new TransformPanel( shapeToTransform );
 
 					$("#element-view-panel").after( transformPanel.getElement() );
 
