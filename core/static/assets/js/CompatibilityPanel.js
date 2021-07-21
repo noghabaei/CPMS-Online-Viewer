@@ -95,17 +95,14 @@ class TransformPanel extends Panel {
         switch ( axis ) {
             case 'x':
                 this.shapeToTransform.translateX( translateStep );
-                // this.shapeToTransform.position.x += translateStep;
                 break;
             
             case 'z':
                 this.shapeToTransform.translateY( translateStep );
-                // this.shapeToTransform.position.y -= translateStep;
                 break;
 
             case 'y':
                 this.shapeToTransform.translateZ( translateStep );
-                // this.shapeToTransform.position.z -= translateStep;
                 break;
         
             default:
