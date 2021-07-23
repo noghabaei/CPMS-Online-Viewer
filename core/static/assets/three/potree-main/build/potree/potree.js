@@ -87829,7 +87829,7 @@ ENDSEC
 
 				if ($(domElement).find('#potree_quick_buttons').length === 0) {
 					let potreeMap = $(`
-					<div id="potree_quick_buttons" class="quick_buttons_container" style="">
+					<div id="potree_quick_buttons" class="quick_buttons_container" style="bottom: 50px;">
 					</div>
 				`);
 
