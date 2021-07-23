@@ -46,14 +46,14 @@ export class Sidebar{
 
 	init(){
 
-		this.initAccordion();
-		this.initAppearance();
-		this.initToolbar();
+		// this.initAccordion();
+		// this.initAppearance();
+		// this.initToolbar();
 		this.initScene();
-		this.initNavigation();
-		this.initFilters();
+		// this.initNavigation();
+		// this.initFilters();
 		this.initClippingTool();
-		this.initSettings();
+		// this.initSettings();
 		
 		$('#potree_version_number').html(Potree.version.major + "." + Potree.version.minor + Potree.version.suffix);
 	}
