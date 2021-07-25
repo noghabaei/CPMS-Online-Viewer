@@ -1,7 +1,183 @@
 import "/static/assets/potree/three.min.js";
 import { OrbitControls } from "/static/assets/fbx/OrbitControls-r110.js";
-import { loadPointCloud } from "/static/assets/js/three-utils.js";
-import { Panel } from "./CPMSElements.js";
+import { loadPointCloud, degToRad } from "/static/assets/js/three-utils.js";
+import { Panel, IncreaseButton, DecreaseButton } from "./CPMSElements.js";
+
+class TransformPanel extends Panel {
+
+    shapeToTransform;
+
+    constructor( shapeToTransform=null, panelHeaderText="MODULE CONTROL" ) {
+        super();
+
+        this.shapeToTransform = shapeToTransform;
+
+        this.setId( 'transform-panel' );
+
+        this.panelHeader.setPanelHeaderText( panelHeaderText );
+
+        this.panelContent.appendElement( this.addTransformRows() );
+    }
+
+    addTransformRows() {
+
+        let transformRows = $( '<div id="translate"></div>' );
+
+        transformRows.append( this.createTransformRow( 'Px', 'x', 'translate' ) );
+        transformRows.append( this.createTransformRow( 'Py', 'y', 'translate' ) );
+        transformRows.append( this.createTransformRow( 'Pz', 'z', 'translate' ) );
+
+        transformRows.append( this.createTransformRow( 'Rx', 'x', 'rotate' ) );
+        transformRows.append( this.createTransformRow( 'Ry', 'y', 'rotate' ) );
+        transformRows.append( this.createTransformRow( 'Rz', 'z', 'rotate' ) );
+
+        return transformRows;
+
+    }
+
+    createTransformRow( rowLabel, axis='x', rowType='translate', rowId='' ) {
+
+        let row = $( '<div class="transform-row"></div>' );
+
+        if ( rowId != null && rowId.length !== 0 ) {
+
+            row.attr( 'id', rowId );
+
+        }
+
+        if ( rowLabel == null || rowLabel.length === 0 ) {
+
+            rowLabel = 'Transform Row';
+
+        }
+
+        row.append( `<span>${rowLabel}</span>` );
+
+        let decreaseButton = new DecreaseButton();
+        decreaseButton.addStyleProperty( 'margin', '0 1em' );
+
+        if ( rowType.toLocaleLowerCase() === 'rotate' ) {
+            decreaseButton.signals.decreaseTransformButtonPressed.add( () => this.startRotation( axis, false ) );
+            decreaseButton.signals.decreaseTransformButtonReleased.add( () => this.stopRotation() );
+        } else {
+            decreaseButton.signals.decreaseTransformButtonPressed.add( () => this.startTranslation( axis, false ) );
+            decreaseButton.signals.decreaseTransformButtonReleased.add( () => this.stopTranslation() );
+        }
+        
+        row.append( decreaseButton.getElement() );
+
+
+        let increaseButton = new IncreaseButton( rowType, axis );
+        
+        if ( rowType.toLocaleLowerCase() === 'rotate' ) {
+            increaseButton.signals.increaseTransformButtonPressed.add( () => this.startRotation( axis, true ) );
+            increaseButton.signals.increaseTransformButtonReleased.add( () => this.stopRotation() );
+        } else {
+            increaseButton.signals.increaseTransformButtonPressed.add( () => this.startTranslation( axis, true ) );
+            increaseButton.signals.increaseTransformButtonReleased.add( () => this.stopTranslation() );
+        }
+
+        row.append( increaseButton.getElement() );
+
+        return row;
+
+    }
+
+    #transformIntervalId = null;
+
+    startRotation(axis, increase=true, angle=2) {
+        if ( this.#transformIntervalId === -1 )
+            this.#transformIntervalId = setInterval( () => this.rotateObject(axis, increase, angle), 100);
+    }
+
+    stopRotation() {
+        if ( this.#transformIntervalId != -1 ) {
+            clearInterval( this.#transformIntervalId );
+            this.#transformIntervalId = -1;
+        }
+    }
+
+    rotateObject(axis, increase=true, angle=2) {
+
+        let rotateAngle = angle != null ? degToRad( angle ) : degToRad( 2 );
+
+        if ( !increase ) rotateAngle = - rotateAngle;
+
+        switch (axis.toLocaleLowerCase()) {
+            case 'x':
+                this.shapeToTransform.rotateX( rotateAngle );
+                break;
+            
+            case 'z':
+                this.shapeToTransform.rotateY( rotateAngle );
+                break;
+
+            case 'y':
+                this.shapeToTransform.rotateZ( rotateAngle );
+                break;
+        
+            default:
+                break;
+        }
+
+    }
+
+    startTranslation(axis='x', increase=true, step=0.5) {
+
+        if ( this.#transformIntervalId === -1 )
+            this.#transformIntervalId = setInterval( () => this.translateObject(axis, increase, step), 100);
+
+    }
+
+    stopTranslation() {
+
+        if ( this.#transformIntervalId != -1 ) {
+            clearInterval( this.#transformIntervalId );
+            this.#transformIntervalId = -1;
+        }
+
+    }
+
+    translateObject(axis, increase=true, step=0.5) {
+
+        axis = axis.toLowerCase();
+
+        let translateStep = step;
+        if ( ! increase ) translateStep = -translateStep;
+
+        switch ( axis ) {
+            case 'x':
+                this.shapeToTransform.translateX( translateStep );
+                break;
+            
+            case 'z':
+                this.shapeToTransform.translateY( translateStep );
+                break;
+
+            case 'y':
+                this.shapeToTransform.translateZ( translateStep );
+                break;
+        
+            default:
+                break;
+        }
+
+
+    } 
+
+    attach( objectToTransform ) {
+
+        this.shapeToTransform = objectToTransform;
+
+    }
+
+    detach() {
+
+        this.shapeToTransform = null;
+
+    }
+
+}
 
 class CompatibilityPanel extends Panel {
 
@@ -353,4 +529,4 @@ class CompatibilityPanel extends Panel {
     }
 }
 
-export { CompatibilityPanel };
+export { CompatibilityPanel, TransformPanel };
