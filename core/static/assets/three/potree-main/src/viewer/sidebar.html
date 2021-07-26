@@ -1,7 +1,9 @@
 
 <div id="sidebar_root" class="">
+
 	<div id="sidebar_header">
-		<span id="potree_branding" class="potree_sidebar_brand">
+		
+		<!-- <span id="potree_branding" class="potree_sidebar_brand">
 			<a href="http://potree.org" target="_blank">potree.org</a> 
 			<span style="margin: 0px 3px; color: #9AA1A4"> - </span> 
 			<a href="https://github.com/potree/potree" target="_blank">github</a>
@@ -10,15 +12,17 @@
 			<span style="flex-grow: 1"></span>
 			<span id="potree_version_number" style="color: #9AA1A4; font-size: 80%; font-weight: 100"></span>
 		</span>
-		<div id="potree_languages" style="font-family:arial;"></div>
+		<div id="potree_languages" style="font-family:arial;"></div> -->
+
 	</div>
+	
 	<div> 
 
 	<div id="potree_menu" class="accordion">
 
 		
 		<!-- APPEARANCE -->
-		<h3 id="menu_appearance"><span data-i18n="tb.rendering_opt"></span></h3>
+		<!-- <h3 id="menu_appearance"><span data-i18n="tb.rendering_opt"></span></h3>
 		<div>
 			<ul class="pv-menu-list">
 				<li><span data-i18n="appearance.nb_max_pts"></span>: <span id="lblPointBudget"></span> <div id="sldPointBudget"></div></li>
@@ -57,13 +61,16 @@
 				<li><label><input id="set_freeze" type="checkbox" /><span data-i18n="appearance.freeze"></span></label></li>
 			</ul>
 			
-		</div>
+		</div> -->
 		
 		<!-- TOOLS -->
-		<h3 id="menu_tools"><span data-i18n="tb.tools_opt"></span></h3>
+		<h3 id="menu_tools">
+			<!-- <span data-i18n="tb.tools_opt"></span> -->
+			<span>Clipping Tools</span>
+		</h3>
 		<div class="pv-menu-list">
 
-			<div class="divider"><span>Measurement</span></div>
+			<!-- <div class="divider"><span>Measurement</span></div>
 
 			<li id="tools"></li>
 
@@ -72,7 +79,7 @@
 					<option id="measurement_options_show_yes" value="SHOW">Show</option>
 					<option id="measurement_options_show_no" value="HIDE">Hide</option>
 				</selectgroup>
-			</li>
+			</li> -->
 
 			<div class="divider"><span>Clipping</span></div>
 
@@ -94,16 +101,16 @@
 				</selectgroup>
 			</li>
 			
-			<div class="divider"><span>Navigation</span></div>
+			<!-- <div class="divider"><span>Navigation</span></div>
 
 			<li id="navigation"></li>
 
-			<li><span data-i18n="appearance.move_speed"></span>: <span id="lblMoveSpeed"></span><div id="sldMoveSpeed"></div></li>
+			<li><span data-i18n="appearance.move_speed"></span>: <span id="lblMoveSpeed"></span><div id="sldMoveSpeed"></div></li> -->
 		</div>
 
 		<!-- SCENE -->
-		<h3 id="menu_scene"><span data-i18n="tb.scene_opt"></span></h3>
-		<div class="pv-menu-list">
+		<h3 hidden id="menu_scene"><span data-i18n="tb.scene_opt"></span></h3>
+		<div hidden class="pv-menu-list">
 
 			<div id="scene_export"></div>
 
@@ -117,7 +124,7 @@
 		</div>
 
 		<!-- Classification -->
-		<h3 id="menu_filters"><span data-i18n="tb.filters_opt"></span></h3>
+		<!-- <h3 id="menu_filters"><span data-i18n="tb.filters_opt"></span></h3>
 		<div>
 
 			<div class="divider"><span>Classification</span></div>
@@ -163,10 +170,10 @@
 				</ul>
 
 			</div>
-		</div>
+		</div> -->
 		
 		<!-- ABOUT -->
-		<h3 id="menu_about"><span data-i18n="tb.about_opt"></span></h3>
+		<!-- <h3 id="menu_about"><span data-i18n="tb.about_opt"></span></h3>
 		<div>
 			<ul class="pv-menu-list">
 				<li><a href="http://potree.org" target="_blank">Potree</a> is a viewer for large point cloud / LIDAR data sets, developed at the Vienna University of Technology. 
@@ -252,7 +259,7 @@ Thanks to all the companies and institutions funding Potree:
 
 			
 			</ul>
-		</div>
+		</div> -->
 
 	</div>
 

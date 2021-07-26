@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -15,10 +15,22 @@
 	<link rel="stylesheet" type="text/css" href="/static/assets/three/potree-main/libs/jstree/themes/mixed/style.css">
 </head>
 
-<body>
-	<script src="/static/assets/three/potree-main/libs/jquery/jquery-3.1.1.min.js"></script>
-	<script src="/static/assets/three/potree-main/libs/spectrum/spectrum.js"></script>
-	<script src="/static/assets/three/potree-main/libs/jquery-ui/jquery-ui.min.js"></script>
+<body> -->
+
+	{% extends 'layouts/base.html' %}
+
+	{% block stylesheets %}
+		<link rel="stylesheet" type="text/css" href="/static/assets/three/potree-main/build/potree/potree.css">
+		<link rel="stylesheet" type="text/css" href="/static/assets/three/potree-main/libs/jquery-ui/jquery-ui.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/assets/three/potree-main/libs/openlayers3/ol.css">
+		<link rel="stylesheet" type="text/css" href="/static/assets/three/potree-main/libs/spectrum/spectrum.css">
+		<link rel="stylesheet" type="text/css" href="/static/assets/three/potree-main/libs/jstree/themes/mixed/style.css">
+	{% endblock stylesheets %}
+
+	{% block content %}
+	<!-- <script src="/static/assets/three/potree-main/libs/jquery/jquery-3.1.1.min.js"></script> -->
+	<!-- <script src="/static/assets/three/potree-main/libs/spectrum/spectrum.js"></script> -->
+	<!-- <script src="/static/assets/three/potree-main/libs/jquery-ui/jquery-ui.min.js"></script> -->
 	
 	
 	<script src="/static/assets/three/potree-main/libs/other/BinaryHeap.js"></script>
@@ -34,8 +46,9 @@
 	<!-- INCLUDE ADDITIONAL DEPENDENCIES HERE -->
 	<!-- INCLUDE SETTINGS HERE -->
 	
-	<div class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; ">
-		<div id="potree_render_area" style=""></div>
+	<div class="potree_container" style="position: absolute; width: 100%; height: 100vh; left: 0px; top: 0px; z-index: 0;">
+	<!-- <div class="potree_container"> -->
+		<div id="potree_render_area"></div>
 		<div id="potree_sidebar_container"> </div>
 	</div>
 	
@@ -50,12 +63,12 @@
 		viewer.setPointBudget(1_000_000);
 		viewer.loadSettingsFromURL();
 		
-		viewer.setDescription("Compatibility Mode</br>Go back to: <a href='/index.html'>View Mode</a>");
+		// viewer.setDescription("Compatibility Mode</br>Go back to: <a href='/index.html'>View Mode</a>");
 		
 		viewer.loadGUI(() => {
 			viewer.setLanguage('en');
 			$("#menu_appearance").next().show();
-			//viewer.toggleSidebar();
+			viewer.toggleSidebar();
 		});
 		
 		// Lion
@@ -70,7 +83,7 @@
 		});
 		
 	</script>
+	{% endblock content %}
 	
-	
-  </body>
-</html>
+  <!-- </body>
+</html> -->

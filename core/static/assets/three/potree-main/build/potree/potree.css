@@ -134,7 +134,8 @@
 #potree_quick_buttons{
 	position: absolute;
 	left: 4px;
-	top: 4px; 
+	/* top: 4px;  */
+	bottom: 50px;
 	width: 10px; 
 	height: 10px; 
 	z-index: 10000;
