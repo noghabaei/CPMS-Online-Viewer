@@ -1,6 +1,47 @@
 import * as THREE from '/static/assets/three/build/three.module.js';
 import * as OC from '/static/assets/three/examples/jsm/controls/OrbitControls.js';
 
+function loadPointCloud(url, position) {
+
+    return new Promise((resolve, reject) => {
+
+        try {
+
+            Potree.loadPointCloud(url, "pointcloud", function (e) {
+
+                var points = new Potree.Group();
+                points.setPointBudget(500000);
+                points.name = "pc";
+                //points.material.opacity = 0.0;
+                //points.material.wireframe = false;
+                
+                // scene.add(points);
+
+                var pointcloud = e.pointcloud;
+
+                if ( position !== undefined ) {
+                    pointcloud.position.copy( position );
+                }
+
+                var material = pointcloud.material;
+                material.size = 2;
+                material.pointColorType = Potree.PointColorType.RGB; //RGB | DEPTH | HEIGHT | POINT_INDEX | LOD | CLASSIFICATION
+                material.pointSizeType = Potree.PointSizeType.ADAPTIVE; //ADAPTIVE | FIXED
+                material.shape = Potree.PointShape.SQUARE; //CIRCLE | SQUARE
+
+                points.add( pointcloud );
+
+                resolve( points );
+            });
+
+        } catch (err) {
+
+            reject(err);
+        }
+
+    });
+}
+
 function getCenterPoint(mesh) {
     var geometry = mesh.geometry;
     geometry.computeBoundingBox();
@@ -16,9 +57,7 @@ function getCenterPoint(mesh) {
     displayWindow = 'editor' | 'view' ... 'editor' for canvases in panels in editor, 
         'view' for canvases in panels in View page (index.html)
 */
-function loadObjectInCanvas(objectToLoad, canvasId, centerObjectForCPMS = true
-    , displayWindow = 'editor'
-    , showGrid = false, showAxes = false) {
+function loadObjectInCanvas(objectToLoad, canvasId, centerObjectForCPMS = true, displayWindow = 'editor', showGrid = false, showAxes = false) {
 
     // Get required canvas
     let canvas = document.getElementById(canvasId);
@@ -29,7 +68,7 @@ function loadObjectInCanvas(objectToLoad, canvasId, centerObjectForCPMS = true
 
     // Create scene
     let scene = new THREE.Scene();
-    scene.background = new THREE.Color( canvasBgColor );
+    scene.background = new THREE.Color(canvasBgColor);
 
     // Create camera
     let camera = new THREE.PerspectiveCamera(
@@ -75,8 +114,8 @@ function loadObjectInCanvas(objectToLoad, canvasId, centerObjectForCPMS = true
     }
 
     scene.add(objectToLoad);
-    console.log( 'Loading object:' );
-    console.log( objectToLoad );
+    console.log('Loading object:');
+    console.log(objectToLoad);
 
     function animate() {
         requestAnimationFrame(animate);
@@ -86,15 +125,26 @@ function loadObjectInCanvas(objectToLoad, canvasId, centerObjectForCPMS = true
     }
 
     function render() {
-        
+
         renderer.render(scene, camera);
-        
+
     }
 
     animate();
 }
 
+function degToRad( degrees ) {
+    return degrees * Math.PI / 180;
+}
+
+function radToDeg( radians ) {
+    return radians * 180 / Math.PI;
+}
+
 export {
-    loadObjectInCanvas, 
-    getCenterPoint
+    loadObjectInCanvas,
+    getCenterPoint,
+    loadPointCloud,
+    degToRad,
+    radToDeg
 };

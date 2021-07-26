@@ -1,232 +1,1859 @@
 ID,Start date ,End date ,Progress,dependencies
-5523509,2021-05-27,2021-06-02,100,
-6862985,2021-05-27,2021-06-02,50,
-7357183,2021-05-27,2021-06-02,50,
-8073744,2021-05-27,2021-06-02,50,
-5520365,2021-05-27,2021-06-02,50,
-5439234,2021-05-27,2021-06-02,50,
-3219189,2021-05-27,2021-06-02,50,
-9019571,2021-05-27,2021-06-02,50,
-4892941,2021-05-27,2021-06-02,50,
-4357455,2021-05-27,2021-06-02,50,
-7233120,2021-05-27,2021-06-02,50,
-7760403,2021-05-27,2021-06-02,50,
-7432672,2021-05-27,2021-06-02,50,
-7567696,2021-05-27,2021-06-02,50,
-6494555,2021-05-27,2021-06-02,50,
-3217413,2021-05-27,2021-06-02,50,
-6557699,2021-05-27,2021-06-02,50,
-5126407,2021-05-27,2021-06-02,50,
-5126252,2021-05-27,2021-06-02,50,
-5126085,2021-05-27,2021-06-02,50,
-5120667,2021-05-27,2021-06-02,50,
-3227328,2021-05-27,2021-06-02,50,
-5125957,2021-05-27,2021-06-02,50,
-6624635,2021-05-27,2021-06-02,50,
-3225946,2021-06-03,2021-06-09,50,6624635
-3226054,2021-06-03,2021-06-09,50,6624635
-6265022,2021-06-03,2021-06-09,50,6624635
-6244255,2021-06-03,2021-06-09,50,6624635
-6243834,2021-06-03,2021-06-09,50,6624635
-6244345,2021-06-03,2021-06-09,50,6624635
-3337743,2021-06-03,2021-06-09,50,6624635
-6102150,2021-06-03,2021-06-09,50,6624635
-4943408,2021-06-03,2021-06-09,50,6624635
-5238105,2021-06-03,2021-06-09,50,6624635
-5538545,2021-06-03,2021-06-09,50,6624635
-6923661,2021-06-03,2021-06-09,50,6624635
-8486175,2021-06-03,2021-06-09,50,6624635
-3239681,2021-06-03,2021-06-09,50,6624635
-3239473,2021-06-03,2021-06-09,50,6624635
-3239229,2021-06-03,2021-06-09,50,6624635
-2693530,2021-06-03,2021-06-09,50,6624635
-6862985,2021-06-03,2021-06-09,50,6624635
-3225048,2021-06-03,2021-06-09,50,6624635
-3023876,2021-06-03,2021-06-09,50,6624635
-5186431,2021-06-03,2021-06-09,50,6624635
-5186452,2021-06-03,2021-06-09,50,6624635
-1959931,2021-06-03,2021-06-09,50,6624635
-5885711,2021-06-03,2021-06-09,50,6624635
-3023876,2021-06-03,2021-06-09,50,6624635
-5186431,2021-06-03,2021-06-09,50,6624635
-3331683,2021-06-10,2021-06-16,50,5186431
-5129609,2021-06-10,2021-06-16,50,5186431
-6524691,2021-06-10,2021-06-16,50,5186431
-5064197,2021-06-10,2021-06-16,50,5186431
-3227328,2021-06-10,2021-06-16,50,5186431
-3222372,2021-06-10,2021-06-16,50,5186431
-5725025,2021-06-10,2021-06-16,50,5186431
-5448647,2021-06-10,2021-06-16,50,5186431
-3235229,2021-06-10,2021-06-16,50,5186431
-3092443,2021-06-10,2021-06-16,50,5186431
-3239874,2021-06-10,2021-06-16,50,5186431
-7726262,2021-06-10,2021-06-16,50,5186431
-5064197,2021-06-10,2021-06-16,50,5186431
-6779141,2021-06-10,2021-06-16,50,5186431
-4891438,2021-06-10,2021-06-16,50,5186431
-3222158,2021-06-10,2021-06-16,50,5186431
-5036944,2021-06-10,2021-06-16,50,5186431
-5229031,2021-06-10,2021-06-16,50,5186431
-1940991,2021-06-10,2021-06-16,50,5186431
-4457040,2021-06-10,2021-06-16,50,5186431
-6265023,2021-06-10,2021-06-16,50,5186431
-2962298,2021-06-10,2021-06-16,50,5186431
-3023943,2021-06-17,2021-06-23,50,6524691
-1926064,2021-06-17,2021-06-23,50,6524691
-2962206,2021-06-17,2021-06-23,50,6524691
-2962281,2021-06-17,2021-06-23,50,6524691
-3023743,2021-06-17,2021-06-23,50,6524691
-3023745,2021-06-17,2021-06-23,50,6524691
-3023748,2021-06-17,2021-06-23,50,6524691
-2888336,2021-06-17,2021-06-23,50,2962281
-3023736,2021-06-17,2021-06-23,50,2962281
-3024728,2021-06-17,2021-06-23,50,2962281
-3119977,2021-06-17,2021-06-23,50,2962281
-3119974,2021-06-17,2021-06-23,50,2962281
-3023752,2021-06-17,2021-06-23,50,2962281
-3025070,2021-06-17,2021-06-23,50,3024728
-3090158,2021-06-17,2021-06-23,50,3024728
-3090085,2021-06-17,2021-06-23,50,3024728
-2150870,2021-06-17,2021-06-23,50,3024728
-2150893,2021-06-17,2021-06-23,50,3024728
-1913527,2021-06-24,2021-06-30,50,3090158
-2888336,2021-06-24,2021-06-30,50,3090158
-1926106,2021-06-24,2021-06-30,50,3090158
-5441313,2021-06-24,2021-06-30,50,3090158
-1926084,2021-06-24,2021-06-30,50,3090158
-3097702,2021-06-24,2021-06-30,50,3090158
-2150871,2021-06-24,2021-06-30,50,3090158
-1921675,2021-06-24,2021-06-30,50,3090158
-2705490,2021-06-24,2021-06-30,50,3090158
-2574368,2021-06-24,2021-06-30,50,3090158
-2701649,2021-06-24,2021-06-30,50,3090158
-2574033,2021-06-24,2021-06-30,50,3090158
-2796877,2021-07-01,2021-07-07,50,2705490
-2574264,2021-07-01,2021-07-07,50,2705490
-6524268,2021-07-01,2021-07-07,50,2705490
-3121666,2021-07-01,2021-07-07,50,2705490
-6077730,2021-07-01,2021-07-07,50,2705490
-8013111,2021-07-01,2021-07-07,50,2705490
-5860410,2021-07-01,2021-07-07,50,2705490
-3117166,2021-07-01,2021-07-07,50,2705490
-7689543,2021-07-01,2021-07-07,50,2705490
-5234746,2021-07-01,2021-07-07,50,2705490
-5039619,2021-07-01,2021-07-07,50,2705490
-5441313,2021-07-01,2021-07-07,50,2705490
-3023748,2021-07-08,2021-07-14,50,5441313
-3127713,2021-07-08,2021-07-14,50,5441313
-3100002,2021-07-08,2021-07-14,50,5441313
-3128029,2021-07-08,2021-07-14,50,5441313
-1904133,2021-07-08,2021-07-14,50,5441313
-5039619,2021-07-08,2021-07-14,50,5441313
-6524537,2021-07-08,2021-07-14,50,5441313
-3022153,2021-07-08,2021-07-14,50,5441313
-2962281,2021-07-08,2021-07-14,50,5441313
-3023463,2021-07-08,2021-07-14,50,5441313
-8065738,2021-07-08,2021-07-14,50,5441313
-2962206,2021-07-08,2021-07-14,50,5441313
-6533284,2021-07-08,2021-07-14,50,5441313
-6534227,2021-07-08,2021-07-14,50,5441313
-8125804,2021-07-08,2021-07-14,50,5441313
-3118590,2021-07-08,2021-07-14,50,5441313
-3554235,2021-07-08,2021-07-14,50,5441313
-3119768,2021-07-08,2021-07-14,50,5441313
-6524691,2021-07-08,2021-07-14,50,5441313
-8013106,2021-07-08,2021-07-14,50,5441313
-8013112,2021-07-08,2021-07-14,50,5441313
-8014447,2021-07-08,2021-07-14,50,5441313
-8013108,2021-07-08,2021-07-14,50,5441313
-5441313,2021-07-08,2021-07-14,50,5441313
-1923586,2021-07-08,2021-07-14,50,5441313
-5234746,2021-07-08,2021-07-14,50,5441313
-9928557,2021-07-08,2021-07-14,50,5441313
-5591892,2021-07-08,2021-07-14,50,5441313
-4892103,2021-07-08,2021-07-14,50,5441313
-5703934,2021-07-08,2021-07-14,50,5441313
-5701280,2021-07-15,2021-07-21,50,5703934
-3554316,2021-07-15,2021-07-21,50,5703934
-5426972,2021-07-15,2021-07-21,50,5703934
-3099203,2021-07-15,2021-07-21,50,5703934
-3022834,2021-07-15,2021-07-21,50,5703934
-5441313,2021-07-15,2021-07-21,50,5703934
-8013114,2021-07-15,2021-07-21,50,5703934
-8013113,2021-07-15,2021-07-21,50,5703934
-3024788,2021-07-15,2021-07-21,50,5703934
-8014287,2021-07-15,2021-07-21,50,5703934
-3024937,2021-07-15,2021-07-21,50,5703934
-8013107,2021-07-15,2021-07-21,50,5703934
-3023041,2021-07-15,2021-07-21,50,5703934
-3118844,2021-07-15,2021-07-21,50,5703934
-3022915,2021-07-15,2021-07-21,50,5703934
-3118744,2021-07-15,2021-07-21,50,5703934
-8040737,2021-07-22,2021-07-28,50,3118744
-4948702,2021-07-22,2021-07-28,50,3118744
-4948704,2021-07-22,2021-07-28,50,3118744
-4948708,2021-07-22,2021-07-28,50,3118744
-4948704,2021-07-22,2021-07-28,50,3118744
-4948712,2021-07-22,2021-07-28,50,3118744
-4948714,2021-07-22,2021-07-28,50,3118744
-2888336,2021-07-22,2021-07-28,50,3118744
-3105705,2021-07-22,2021-07-28,50,3118744
-3119975,2021-07-22,2021-07-28,50,3118744
-3119977,2021-07-22,2021-07-28,50,3118744
-4548687,2021-07-22,2021-07-28,50,3118744
-6077998,2021-07-22,2021-07-28,50,3118744
-2585819,2021-07-22,2021-07-28,50,3118744
-5067067,2021-07-22,2021-07-28,50,3118744
-3024937,2021-07-22,2021-07-28,50,3118744
-5441797,2021-07-22,2021-07-28,50,3118744
-5067067,2021-07-22,2021-07-28,50,3118744
-5441797,2021-07-22,2021-07-28,50,3118744
-5332919,2021-07-22,2021-07-28,50,3118744
-3025071,2021-07-22,2021-07-28,50,3118744
-3025073,2021-07-22,2021-07-28,50,3118744
-5067067,2021-07-22,2021-07-28,50,3118744
-3023745,2021-07-22,2021-07-28,50,3118744
-3102324,2021-07-22,2021-07-28,50,3118744
-3102233,2021-07-22,2021-07-28,50,3118744
-3023764,2021-07-22,2021-07-28,50,3118744
-3088555,2021-07-22,2021-07-28,50,3118744
-6524268,2021-07-22,2021-07-28,50,3118744
-1922699,2021-07-22,2021-07-28,50,3118744
-6076675,2021-07-22,2021-07-28,50,3118744
-3023744,2021-07-22,2021-07-28,50,3118744
-3102374,2021-07-22,2021-07-28,50,3118744
-3102277,2021-07-22,2021-07-28,50,3118744
-5704694,2021-07-22,2021-07-28,50,3118744
-6917819,2021-07-29,2021-08-04,50,5704694
-2574264,2021-07-29,2021-08-04,50,5704694
-5427471,2021-07-29,2021-08-04,50,5704694
-2701649,2021-07-29,2021-08-04,50,5704694
-4457690,2021-07-29,2021-08-04,50,5704694
-7969977,2021-07-29,2021-08-04,50,5704694
-5846933,2021-07-29,2021-08-04,50,5704694
-5845040,2021-07-29,2021-08-04,50,5704694
-5845149,2021-07-29,2021-08-04,50,5704694
-5843162,2021-07-29,2021-08-04,50,5704694
-5842232,2021-07-29,2021-08-04,50,5704694
-5842362,2021-07-29,2021-08-04,50,5704694
-5842499,2021-07-29,2021-08-04,50,5704694
-5842575,2021-07-29,2021-08-04,50,5704694
-5844969,2021-07-29,2021-08-04,50,5704694
-5842678,2021-07-29,2021-08-04,50,5704694
-5844882,2021-07-29,2021-08-04,50,5704694
-5843404,2021-07-29,2021-08-04,50,5704694
-2593816,2021-08-05,2021-08-11,50,5843404
-3641505,2021-08-05,2021-08-11,50,5843404
-4456641,2021-08-05,2021-08-11,50,5843404
-8013110,2021-08-05,2021-08-11,50,5843404
-8014305,2021-08-05,2021-08-11,50,5843404
-8013648,2021-08-05,2021-08-11,50,5843404
-8024486,2021-08-05,2021-08-11,50,5843404
-2791479,2021-08-05,2021-08-11,50,5843404
-3587730,2021-08-05,2021-08-11,50,5843404
-3629858,2021-08-05,2021-08-11,50,5843404
-2150893,2021-08-05,2021-08-11,50,5843404
-7689543,2021-08-05,2021-08-11,50,5843404
-8125715,2021-08-05,2021-08-11,50,5843404
-3694036,2021-08-05,2021-08-11,50,5843404
-3693985,2021-08-05,2021-08-11,50,5843404
-3693924,2021-08-05,2021-08-11,50,5843404
-3694064,2021-08-05,2021-08-11,50,5843404
-8013110,2021-08-05,2021-08-11,50,5843404
+"Basic Wall Brick Site Wall 8"" - Landscape [3222234] Geometry",2021-07-05,2021-07-12,100,
+"Basic Wall Brick Site Wall 8"" - Landscape [3222334] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Paving - Courtyard [3222372] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Paving - Courtyard [3227328] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Paving - Courtyard [3231261] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Paving - Courtyard [3233499] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Paving - Courtyard [3234587] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Paving - Courtyard [3235229] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Paving - Courtyard [3236864] Geometry",2021-07-05,2021-07-12,50,
+Precast Stair Stair [5455790]_[5455793] Geometry,2021-07-05,2021-07-12,50,
+"Basic Wall Brick Site Wall 8"" - Landscape [3221874] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall Brick Site Wall 8"" - Landscape [3222158] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall Brick Site Wall 8"" - Landscape [3229553] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall Brick Site Wall 8"" - Landscape [3229658] Geometry",2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [3217204] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [3217413] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [3220088] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [3226054] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [6244305] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [6244345] Geometry,2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Steps [3224972] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Steps [3225048] Geometry",2021-07-05,2021-07-12,50,
+"Monolithic Run 3/4"" Nosing [5455793] Geometry",2021-07-05,2021-07-12,50,
+Basic Wall F-E-Brick on CIP Retaining @ Service Yard [2693530] Geometry,2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 18"" [4892092] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 24"" [4891269] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 24"" [4891300] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 24"" [4891366] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 24"" [4891438] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 24"" [4897552] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [5120667] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [6671868] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [5432750] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [6612753] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [6779141] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [6800305] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [6833278] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [6833393] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [6833421] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [6833467] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [7833965] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 20"" Concrete [5121497] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 20"" Concrete [6103147] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 20"" Concrete [6534783] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 20"" Concrete [7335799] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Shearwall - 18"" Concrete [6612632] Geometry",2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x40 [5127155] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P32x48 [5126085] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P32x48 [5126407] Geometry,2021-07-05,2021-07-12,50,
+Floor Bioretention Beds [3230452] Geometry,2021-07-05,2021-07-12,50,
+Floor Bioretention Beds [3230744] Geometry,2021-07-05,2021-07-12,50,
+Floor Bioretention Beds [3239473] Geometry,2021-07-05,2021-07-12,50,
+Floor Bioretention Beds [4619642] Geometry,2021-07-05,2021-07-12,50,
+"Floor E- 6"" Concrete Paving [3331683] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete walkway [3239874] Geometry",2021-07-05,2021-07-12,50,
+"Floor F-Slab on Grade - 5"" [5064197] Geometry",2021-07-05,2021-07-12,50,
+"Floor F-Slab on Grade - 5"" [5725025] Geometry",2021-07-05,2021-07-12,50,
+"Floor F-Slab on Grade - 6"" [5129609] Geometry",2021-07-05,2021-07-12,50,
+"Floor F-Slab on Grade - 6"" [7726262] Geometry",2021-07-05,2021-07-12,50,
+"Floor F-Slab on Grade - 6"" [9990217] Geometry",2021-07-05,2021-07-12,50,
+"Floor F-Slab on Grade - 16"" [6862985] Geometry",2021-07-05,2021-07-12,50,
+Floor Misc Landscape [3239229] Geometry,2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 6"" Concrete [6565845] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 6"" Concrete [6565965] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 6"" Concrete [6923862] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 6"" Concrete [6928401] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 6"" Concrete [6930172] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 6"" Concrete [6930872] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 6"" Concrete [6931366] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 6"" Concrete [7574421] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 6"" Concrete [7574636] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Shearwall - 16"" Concrete [6566159] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Shearwall - 16"" Concrete [6566246] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Shearwall - 16"" Concrete [6928711] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Shearwall - 16"" Concrete [6929054] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall Brick Site Wall 8"" - Landscape [3718991] Geometry",2021-07-05,2021-07-12,50,
+Basic Wall F-E-Brick on CIP Retaining @ Service Yard [2693525] Geometry,2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 16"" Concrete [6925755] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 16"" Concrete [6927325] Geometry",2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [3216277] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [3216986] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [3219189] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [3219484] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [6244255] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [6265022] Geometry,2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 12"" - utility [3229222] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 12"" - utility [3229496] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 12"" - utility [3237967] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 12"" - utility [3238034] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 12"" - utility [3238054] Geometry",2021-07-05,2021-07-12,50,
+Floor Bioretention Beds [3239681] Geometry,2021-07-05,2021-07-12,50,
+"Floor E-1'-0"" Concrete Site Step [6414507] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Paving - Courtyard [3221613] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Paving - Courtyard [3230237] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Steps [3224265] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Steps [3224989] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Steps [3225006] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Steps [3225029] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall Brick Site Wall 8"" - Landscape [4061716] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall Brick Site Wall 8"" - Landscape [4061717] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [7268169] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [8611442] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [8611569] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [6783635] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [6784974] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [7432672] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [7546151] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [7546556] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [8083264] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Shearwall - 18"" Concrete [6783615] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Shearwall - 18"" Concrete [6783648] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Shearwall - 18"" Concrete [6783668] Geometry",2021-07-05,2021-07-12,50,
+F-Concrete-Pier P28x28 [5126578] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x30 [5126910] Geometry,2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x20x20 (4) 3/4""_ AR 3/S-632 [6370789]_[8655000] Geometry",2021-07-05,2021-07-12,50,
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-9"" W x 12"" T [7726294] Geometry",2021-07-05,2021-07-12,50,
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-9"" W x 12"" T [7726298] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-E-6"" CFMF backup insulated [4590758] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-E-6"" CFMF backup insulated [4590823] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF @ BIORETENTION [2944135] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [4547685] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR1-Brick on 8"" CFMF [4545399] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR1-Brick on 8"" CFMF [4545478] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 20"" [2965290] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 20"" [2965732] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 20"" [2966961] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 20"" [3060827] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 20"" [4513982] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 24"" [4892941] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA MP1-CMP on 3.625"" CFMF (no ins)-Anodized [2294787] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA MP1-CMP on 3.625"" CFMF (no ins)-Anodized [2294858] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA MP1-CMP on 3.625"" CFMF (no ins",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 7"" Concrete [5229746] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 7"" Concrete [6822514] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 7"" Concrete [6822591] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 7"" Concrete [6822684] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 7"" Concrete [6822809] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [5227710] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [5439072] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [5439169] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [5439234] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [5439301] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [5538175] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [6640113] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [7251531] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [7251629] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [7271115] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [7314159] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [7314200] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [7314251] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [7599685] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [8073744] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [8125615] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [8418227] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [6554773] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [6779375] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [7524822] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [7728367] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [7732795] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [7732926] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [7733044] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [7733126] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [8125661] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 10"" Concrete [5224780] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 10"" Concrete [5224795] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 10"" Concrete [6827656] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 10"" Concrete [6827732] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 10"" Concrete [6828446] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 10"" Concrete [7714380] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 10"" Concrete [8528979] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 10"" Concrete [8529100] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 10"" Concrete [8529250] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 10"" Concrete [8529375] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 11"" Concrete [5715347] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 11"" Concrete [5716545] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 11"" Concrete [6554527] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [7731552] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [7760403] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 14"" Concrete [8044859] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [5714132] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [6553971] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [7523463] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [7706593] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [7728814] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [7729387] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 20"" Concrete [5715066] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 24"" Concrete [7348705] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 34"" Concrete [7326597] Geometry",2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [3110736] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [3218336] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [3225946] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [4546961] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [4547092] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [6241993] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [6243834] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-S-CIP 1' Boardform front [6265023] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P1 [5522622] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P1 [6625049] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P1 [7348486] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P1 [8409096] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P1 [8409524] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P22 3/4x28 [5812415] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P28 1/4x24 [5520384] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P28 1/4x24 [6624635] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30_5/8x36 [5522365] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x30 [5185982] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x36 [5763139] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x38 [5523836] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x38 [6624842] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x51 [5520365] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P32x32 [5126252] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P32x32 [6908173] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P32x32 [7729638]_[8107003] Geometry,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 1,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 2,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 3,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 5,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 6,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 7,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 8,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 9,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 10,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 11,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 12,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 13,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 14,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 15,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 16,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 17,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 18,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 19,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 20,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 21,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 22,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 25,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 26,2021-07-05,2021-07-12,50,
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 27,2021-07-05,2021-07-12,50,
+F-HSS Round-Column HSS12.75x.500 [6207474]_[6522169] Geometry,2021-07-05,2021-07-12,50,
+F-HSS Square-Column HSS8x8x1/4 [5622950]_[7962455] Geometry,2021-07-05,2021-07-12,50,
+F-HSS Square-Column HSS8x8x5/16 [5321904] Geometry,2021-07-05,2021-07-12,50,
+F-HSS Square-Post HSS5 1/2x5 1/2x3/8 [6224090]_[9543189] Geometry,2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-4 Bolt BPL1.5x22x22 (4) 1""_ AR 5/S-632 [6945192]_[7960537] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-4 Bolt BPL2x20x20 (4) 1""_ AR 4/S-632 [7069028]_[7962464] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-4 Bolt BPL2x20x20 (4) 1""_ AR 4/S-632 [7069028]_[7962464] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-4 Bolt BPL2x20x26 (4) 1""_ AR 8/S-633 [7071915]_[7961357] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-4 Bolt BPL2x20x26 (4) 1""_ AR 8/S-633 [7072074]_[7961358] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-4 Bolt BPL2x22x22 (4) 1 1/4""_ AR 4/S-632 [6947012]_[7473769] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-6 Bolt BPL2x20x28 (6) 1""_ AR 2/S-633 [7070064]_[7070183] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-6 Bolt BPL2x20x28 (6) 1""_ AR 2/S-633 [7070316]_[7070320] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-6 Bolt BPL2x22x38 (6) 1""_ AR 3/S-633 [6945775]_[7960267] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x15x15 (4) 3/4""_ AR 2/S-632 [6381616]_[6382099] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x15x15 (4) 3/4""_ AR 2/S-632 [6381616]_[6382099] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x20x20 (4) 3/4""_ AR 3/S-632 [6371228]_[7103448] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x20x20 (4) 3/4""_ AR 3/S-632 [6373216]_[6373327] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x20x20 (4) 3/4""_ AR 3/S-632 [6373216]_[6373327] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x20x20 (4) 3/4""_ AR 3/S-632 [6373216]_[6373327] Geometry 2",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x22x22 (4) 1""_ AR 4/S-632 [6387735]_[7236381] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x22x22 (4) 1""_ AR 4/S-632 [6387849]_[6388113] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x22x22 (4) 1""_ AR 5/S-632 [6370123]_[7960658] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x22x22 (4) 3/4""_ AR 3/S-632 [6371826]_[7961278] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x23x23 (4) 1""_ AR 4/S-632 [6388278]_[7960584] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/4x15x15 (4) 3/4""_ AR 2/S-632 [6377217]_[6624828] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/4x15x15 (4) 3/4""_ AR 2/S-632 [6382336]_[6384511] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/4x15x15 (4) 3/4""_ AR 2/S-632 [6382336]_[6384511] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/4x15x15 (4) 3/4""_ AR 2/S-632 [6382336]_[6384511] Geometry 2",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/4x20x20 (4) 3/4""_ AR 3/S-632 [6372314]_[8106947] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/4x22x22 (4) 1""_ AR 4/S-632 [6389546]_[9086454] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/4x22x22 (4) 3/4""_ AR 3/S-632 [6370297]_[6370557] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 3/4x20x20 (4) 1""_ AR 4/S-632 [6381231]_[7960683] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1x14x14 (4) 3/4""_ AR 2/S-632 [6377653]_[6377758] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1x14x14 (4) 3/4""_ AR 2/S-632 [6378583]_[6380488] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1x14x14 (4) 3/4""_ AR 2/S-632 [6378583]_[6380488] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1x16x16 (4) 3/4""_ AR 3/S-632 [6379357]_[7046370] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL2x23x23 (4) 1""_ AR 4/S-632 [6385126]_[7960461] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL2x23x23 (4) 1""_ AR 4/S-632 [6385126]_[7960461] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL2x23x23 (4) 1""_ AR 4/S-632 [6385126]_[7960461] Geometry 2",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL2x23x23 (4) 1""_ AR 4/S-632 [6385126]_[7960461] Geometry 4",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL2x23x23 (4) 1""_ AR 4/S-632 [6385126]_[7960461] Geometry 5",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL2x23x23 (4) 1""_ AR 4/S-632 [6385645]_[7962437] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL2x23x23 (4) 1""_ AR 4/S-632 [6385645]_[7962437] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL3/4x14x14 (4) 3/4""_ AR 2/S-632 [6377870]_[6378302] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL3/4x14x14 (4) 3/4""_ AR 2/S-632 [6377870]_[6378302] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL3/4x15x15 (4) 3/4""_ AR 2/S-632 [6376976]_[9467777] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL3/4x16x16 (4) 3/4""_ AR 3/S-632 [6389732]_[7962452] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL3/4x18x18 (4) 3/4""_ AR 1/S-632 [6368619]_[6717661] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL3/4x20x20 (4) 3/4""_ AR 3/S-632 [6522055]_[6522162] Geometry",2021-07-05,2021-07-12,50,
+Floor Bioretention Beds [6242044] Geometry,2021-07-05,2021-07-12,50,
+Floor Bioretention Beds [6392471] Geometry,2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Paving - Courtyard [3221235] Geometry",2021-07-05,2021-07-12,50,
+"Floor E-6"" Concrete Paving - Courtyard [3221599] Geometry",2021-07-05,2021-07-12,50,
+"Floor F-Raised Pad - 4"" [7535754] Geometry",2021-07-05,2021-07-12,50,
+"Floor F-Raised Pad - 4"" [7535783] Geometry",2021-07-05,2021-07-12,50,
+"Floor F-Slab on Grade - 5"" [8410668] Geometry",2021-07-05,2021-07-12,50,
+"Floor F-Slab on Grade - 6"" [8567045] Geometry",2021-07-05,2021-07-12,50,
+"Floor F-Slab on Grade - 18"" [7567696] Geometry",2021-07-05,2021-07-12,50,
+"Floor F-Slab on Grade - 18"" [7591438] Geometry",2021-07-05,2021-07-12,50,
+"Floor F-Slab on Grade - 24"" [7590225] Geometry",2021-07-05,2021-07-12,50,
+"Floor F-Slab on Grade - 24"" [7591064] Geometry",2021-07-05,2021-07-12,50,
+Floor Metal Panel Sill @ Vestibule [7096847] Geometry,2021-07-05,2021-07-12,50,
+Floors 1 Floors 1 [8112159]_[8112157] Geometry,2021-07-05,2021-07-12,50,
+Main vestibule-south termination Main vestibule-south termination [3019611]_[3019609] Geometry,2021-07-05,2021-07-12,50,
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-0"" W x 5"" T [8412555] Geometry",2021-07-05,2021-07-12,50,
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-0"" W x 5"" T [8412558] Geometry",2021-07-05,2021-07-12,50,
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-0"" W x 5"" T [8412560] Geometry",2021-07-05,2021-07-12,50,
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-0"" W x 5"" T [8412563] Geometry",2021-07-05,2021-07-12,50,
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-5"" W x 12"" T [9990867] Geometry",2021-07-05,2021-07-12,50,
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-8"" W x 12"" T [5957996] Geometry",2021-07-05,2021-07-12,50,
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-8"" W x 12"" T [7357183] Geometry",2021-07-05,2021-07-12,50,
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-8"" W x 12"" T [7359362] Geometry",2021-07-05,2021-07-12,50,
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-8"" W x 12"" T [8125602] Geometry",2021-07-05,2021-07-12,50,
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-8"" W x 12"" T [9297440] Geometry",2021-07-05,2021-07-12,50,
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-12"" W x 24"" T [5919043] Geometry",2021-07-05,2021-07-12,50,
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 2-6"" W x 12"" T [8567371] Geometry",2021-07-05,2021-07-12,50,
+"square column-chamfered edge 36"" x 36""",2021-07-05,2021-07-12,50,
+Stair Plinth Treads Stair Plinth Treads [10190875]_[10190873] Geometry,2021-07-05,2021-07-12,50,
+Wall Sweep Brick Movement Joint-Vert [4837264] Geometry,2021-07-05,2021-07-12,50,
+Wall Sweep Brick Movement Joint-Vert [4837265] Geometry,2021-07-05,2021-07-12,50,
+Wall Sweep Brick Movement Joint-Vert [4837270] Geometry,2021-07-05,2021-07-12,50,
+Wall Sweep Brick Movement Joint-Vert [4837271] Geometry,2021-07-05,2021-07-12,50,
+Wall Sweep Brick Movement Joint-Vert [4837272] Geometry,2021-07-05,2021-07-12,50,
+Wall Sweep Brick Movement Joint-Vert [4837273] Geometry,2021-07-05,2021-07-12,50,
+Wall Sweep Brick Movement Joint-Vert [4959101] Geometry,2021-07-05,2021-07-12,50,
+Wall Sweep Cast Stone Sill [4514774] Geometry,2021-07-05,2021-07-12,50,
+Wall Sweep Cast Stone Sill [4548404] Geometry,2021-07-05,2021-07-12,50,
+"Basic Wall F-E-6"" CFMF backup insulated [3091391] Geometry",2021-07-05,2021-07-12,50,
+Basic Wall F-E-Brick on CIP Retaining [2160243] Geometry,2021-07-05,2021-07-12,50,
+Basic Wall F-E-Brick on CIP Retaining [2160282] Geometry,2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 18"" [4892441] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 20"" [1944510] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 20"" [2154543] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR2-Brick on CIP - 20"" [2154544] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA BR3-Brick on 8"" CMU [2114934] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA CM2-CMU on CIP - 20"" [1944640] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA CM3-4"" CMU on 8"" CMU [6401205] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1926064] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 6"" Concrete [6565228] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 6"" Concrete [6923661] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 6"" Concrete [6924120] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 6"" Concrete [6925491] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [5225457] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [5227678] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [5227695] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [5449742] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [5449757] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [5758316] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [6298302] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [6298522] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [6298590] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [6492448] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [6594628] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [6594747] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [6595265] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [6595280] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [6595295] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [7233114] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [7233120] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [7247443] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [7500777] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [7500867] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [7517157] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [7521175] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [8014241] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [8021864] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [8021905] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [8093662] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 8"" Concrete [8360325] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [5943328] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [6542008] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [7106964] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [7194913] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [7582300] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [7950950] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [7951080] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [8396762] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [8490934] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [8614769] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [9376091] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 9"" Concrete [9410709] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 11"" Concrete [5238619] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 11"" Concrete [5538593] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 11"" Concrete [6104462] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [5225342] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [5225442] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [5432780] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [5757727] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [5757741] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [5758126] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [5758149] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [6067935] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [6494364] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [6643350] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [6643762] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [6643961] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [6800986] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [7269235] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [8012989] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [8461040] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [8461106] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [8486175] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 12"" Concrete [9933303] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 15"" Concrete [6804295] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 15"" Concrete [6841649] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 15"" Concrete [7693034] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [5225868] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [5719599] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [6472830] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [6800806] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [7241708] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [8489128] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [8490059] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 18"" Concrete [8614597] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 20"" Concrete [5125002] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 20"" Concrete [5239659] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 20"" Concrete [7335607] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 20"" Concrete [8394514] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 24"" Concrete [6804596] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 24"" Concrete [7692806] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-Foundation - 24"" Concrete [8399321] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 8"" - utility [3495666] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 8"" - utility [3495667] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 8"" - utility [3495668] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 8"" - utility [4357412] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 8"" - utility [4357455] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 8"" - utility [4357494] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 8"" - utility [4357633] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 8"" - utility [4357685] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 8"" - utility [4357720] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 8"" - utility [4895404] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 8"" - utility [4987308] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 8"" - utility [4987378] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 12"" - utility [2518049] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 12"" - utility [3238135] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 12"" - utility [3238202] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 12"" - utility [3238291] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 12"" - utility [3238398] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall F-S-CIP retaining 12"" - utility [3238649] Geometry",2021-07-05,2021-07-12,50,
+Cast-In-Place Stair Stair [3495637]_[3495638] Geometry,2021-07-05,2021-07-12,50,
+Cast-In-Place Stair Stair [4249729]_[4249996] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P1 [6373537] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P1 [8409090] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P20 [6300894] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P20 [6301080] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P20 [6301179] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P20x22 [6506272] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P24.5x20 [6592364] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P28x33 [5156631] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x30 [5186492] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x30 [5522105] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x30 [5522267] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x30 [5522314] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x30 [5523509] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x30 [5764078] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x30 [5764224] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x30 [5764325] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x30 [5764380] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x30 [9019571] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x37 [4943408] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P30x40 [5186452] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P32x44 [5762201] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P32x44 [5762236] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P33x85 [5157277] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P34 [5520426] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P40x44 [5186431] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P40x44 [5186471] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier P51x24 [5523327] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier PF [5468564] Geometry,2021-07-05,2021-07-12,50,
+F-Concrete-Pier PG [5521264] Geometry,2021-07-05,2021-07-12,50,
+F-HSS Square-Post HSS5x5x1/2 [5885298]_[8143721] Geometry,2021-07-05,2021-07-12,50,
+F-HSS Square-Post HSS5x5x1/2 [5885597] Geometry,2021-07-05,2021-07-12,50,
+F-HSS Square-Post HSS5x5x1/2 [5885711] Geometry,2021-07-05,2021-07-12,50,
+F-HSS Square-Post HSS5x5x1/2 [5885856] Geometry,2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-4 Bolt BPL1 1/4x20x20 (4) 3/4""_ AR 4/S-632 [6380167]_[7058572] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-4 Bolt BPL1 1/4x20x20 (4) 3/4""_ AR 4/S-632 [6380167]_[7058572] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-4 Bolt BPL1.5x20x20 (4) 1""_ AR 5/S-632 [7070905]_[7070996] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-4 Bolt BPL1.5x20x20 (4) 1""_ AR 5/S-632 [7070905]_[7070996] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-4 Bolt BPL1.5x20x20 (4) 1""_ AR 5/S-632 [7070905]_[7070996] Geometry 2",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-4 Bolt BPL1.75x20x20 (4) 1""_ AR 4/S-632 [6950227]_[7394388] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-4 Bolt BPL2x20x20 (4) 1""_ AR 5/S-632 [7073646]_[7962888] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-4 Bolt BPL2x20x26 (4) 1""_ AR 7/S-633 [7068561]_[7960696] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-4 Bolt BPL2x20x26 (4) 1""_ AR 8/S-633 [7072575]_[7962848] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-6 Bolt BPL2.5x20x36 (6) 1.5""_ AR 6/S-633 [6949826]_[7960891] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-6 Bolt BPL2.5x20x36 (6) 1.5""_ AR 6/S-633 [6949826]_[7960891] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-6 Bolt BPL2.5x22x34 (6) 1""_ AR 1/S-633 [6948287]_[7960795] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-6 Bolt BPL2.5x22x34 (6) 1""_ AR 1/S-633 [6948287]_[7960795] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-6 Bolt BPL2x20x34 (6) 1""_ AR 3/S-633 [7074087]_[7074445] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Frame-6 Bolt BPL2x20x34 (6) 1""_ AR 3/S-633 [7074087]_[7074445] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x20x20 (4) 1""_ AR 4/S-632 [6383241]_[7961346] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x20x20 (4) 1""_ AR 4/S-632 [6383241]_[7961346] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x20x20 (4) 3/4""_ AR 3/S-632 [6369346]_[6374708] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x20x20 (4) 3/4""_ AR 3/S-632 [6369346]_[6374708] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x20x20 (4) 3/4""_ AR 3/S-632 [6373334]_[6373476] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/4x15x15 (4) 3/4""_ AR 2/S-632 [6382336]_[6384511] Geometry 3",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/4x15x15 (4) 3/4""_ AR 2/S-632 [6382336]_[6384511] Geometry 4",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/4x15x15 (4) 3/4""_ AR 2/S-632 [6383436]_[7435230] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/4x20x20 (4) 3/4""_ AR 3/S-632 [6375456]_[7223814] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 3/4x17x17 (4) 3/4""_ AR 2/S-632 [6384785]_[6385101] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 3/4x17x17 (4) 3/4""_ AR 2/S-632 [6384785]_[6385101] Geometry 1",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1x14x14 (4) 3/4""_ AR 2/S-632 [6379612]_[7394435] Geometry",2021-07-05,2021-07-12,50,
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1x16x16 (4) 3/4""_ AR 3/S-632 [6373759]_[7961460] Geometry",2021-07-05,2021-07-12,50,
+"Basic Wall Brick Site Wall 8"" - Landscape [3718910] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall Brick Site Wall 8"" - Landscape [3719053] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [6612513] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [6779714] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [6783630] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [6783658] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [6832120] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [6832175] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [6833570] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [6834883] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [6835085] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [6835185] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [6835301] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [6835414] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [7264161] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [7335335] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 11"" Concrete [5718579] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 12"" Concrete [5906687] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 18"" Concrete [5222546] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 18"" Concrete [5222561] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 18"" Concrete [6612887] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 18"" Concrete [6613165] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 18"" Concrete [6613873] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 18"" Concrete [6834391] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 20"" Concrete [5120719] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 20"" Concrete [6534441] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 20"" Concrete [6787475] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 20"" Concrete [7547100] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 20"" Concrete [7548160] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 32"" Concrete [7263592] Geometry",2021-07-13,2021-07-20,25,5885856
+F-Concrete-Pier P30x30 [5125957] Geometry,2021-07-13,2021-07-20,25,5885856
+F-Concrete-Pier P30x31 [5126705] Geometry,2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Frame-4 Bolt BPL2x22x22 (4) 1.25""_ AR 5/S-632 [6946914]_[7960592] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Frame-6 Bolt BPL2x22x38 (6) 1""_ AR 3/S-633 [6945815]_[7960268] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Frame-8 Bolt BPL3x34x36 (8) 1.25""_ AR 5/S633 [6947529]_[8004687] Geometry 1",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x20x20 (4) 3/4""_ AR 3/S-632 [6368159]_[6392734] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x20x20 (4) 3/4""_ AR 3/S-632 [6369346]_[6374708] Geometry 2",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/4x20x20 (4) 3/4""_ AR 4/S-632 [6739804]_[6968595] Geometry 1",2021-07-13,2021-07-20,25,5885856
+"Floor F-Raised Pad - 4"" [7535349] Geometry",2021-07-13,2021-07-20,25,5885856
+"Floor F-Raised Pad - 4"" [7535376] Geometry",2021-07-13,2021-07-20,25,5885856
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-8"" W x 12"" T [7335493] Geometry",2021-07-13,2021-07-20,25,5885856
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-9"" W x 12"" T [6857410] Geometry",2021-07-13,2021-07-20,25,5885856
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-9"" W x 12"" T [6975975] Geometry",2021-07-13,2021-07-20,25,5885856
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-32"" W x 12"" T [7376728] Geometry",2021-07-13,2021-07-20,25,5885856
+Basic Wall F-E-Brick on CIP Retaining @ Service Yard [2343156] Geometry,2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [2962281] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR2-Brick on CIP - 20"" [2962206] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 6"" Concrete [6924620] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 11"" Concrete [6102150] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 16"" Concrete [6565585] Geometry",2021-07-13,2021-07-20,25,5885856
+F-Concrete-Pier P30x40 [5127352] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS12x12x1/2 [4943378] Geometry,2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR2-Brick on CIP - 20"" [1902912] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR2-Brick on CIP - 24"" [1903098] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR3-Brick on 8"" CMU [1959931] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR3-Brick on 8"" CMU [1992971] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [5238105] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 11"" Concrete [5307199] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 12"" Concrete [5538545] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 12"" Concrete [5757775] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 18"" Concrete [5222516] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 18"" Concrete [5222531] Geometry",2021-07-13,2021-07-20,25,5885856
+Basic Wall Z-WALL_FOR_ANALYSIS [3023724] Geometry,2021-07-13,2021-07-20,25,5885856
+Basic Wall Z-WALL_FOR_ANALYSIS [3023876] Geometry,2021-07-13,2021-07-20,25,5885856
+F-Concrete-Pier P30x37 [4943392] Geometry,2021-07-13,2021-07-20,25,5885856
+"F-Round-column-cover 30"" [2569209]_[4332601] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Round-column-cover 30"" [2569209]_[4332601] Geometry 2",2021-07-13,2021-07-20,25,5885856
+"F-Round-column-cover 30"" [2569209]_[4332601] Geometry 3",2021-07-13,2021-07-20,25,5885856
+"F-Round-column-cover 30"" [2705458] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Round-column-cover 30"" [2705468]_[4332650] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Round-column-cover 30"" [2705468]_[4332650] Geometry 1",2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x120 [4943789] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x132 [4941760]_[8004679] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x211 [5264383]_[7601101] Geometry 1,2021-07-13,2021-07-20,25,5885856
+"Round column cover-precast 30"" [3495659]_[5457846] Geometry",2021-07-13,2021-07-20,25,5885856
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-12"" W x 12"" T [6557731] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR1-2HR Brick on 6"" CFMF [2323893] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [2145797] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [2962298] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [4545662] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [4871613] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [4871735] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR2-Brick on CIP - 20"" [2962335] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR2-Brick on CIP - 24"" [4891166] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR2-Brick on CIP - 24"" [4891205] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [6831907] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [6831970] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 9"" Concrete [6832063] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 11"" Concrete [5234746] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 11"" Concrete [6533284] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 11"" Concrete [6534227] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 12"" Concrete [5757843] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 12"" Concrete [5757898] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 12"" Concrete [7122250] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 12"" Concrete [7122494] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 12"" Concrete [7314647] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 18"" Concrete [6614372] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 18"" Concrete [6614467] Geometry",2021-07-13,2021-07-20,25,5885856
+Basic Wall F-S-CIP 1' Boardform front [3220311] Geometry,2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-S-CIP retaining 12"" - utility [2288412] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-S-CIP retaining 12"" - utility [3700152] Geometry",2021-07-13,2021-07-20,25,5885856
+F-Concrete-Pier P30x30 [5127533] Geometry,2021-07-13,2021-07-20,25,5885856
+F-Concrete-Pier P30x30 [5458140] Geometry,2021-07-13,2021-07-20,25,5885856
+F-Concrete-Pier P30x30 [5521671] Geometry,2021-07-13,2021-07-20,25,5885856
+F-Concrete-Pier P30x30 [5521827] Geometry,2021-07-13,2021-07-20,25,5885856
+F-Concrete-Pier P32x50 [5128021] Geometry,2021-07-13,2021-07-20,25,5885856
+F-Concrete-Pier P32x50 [5128223] Geometry,2021-07-13,2021-07-20,25,5885856
+F-Concrete-Pier P54x71 [5520016] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS12x12x1/2 [4942186]_[7267911] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS12x12x1/2 [4942190]_[8655027] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS12x12x1/2 [4942746]_[6367892] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS14x14x1/2 [4941743]_[6945932] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS14x14x1/2 [4942754]_[7960637] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS14x14x1/2 [5069898]_[6370761] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS14x14x5/8 [4941741]_[6945899] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS14x14x5/8 [4941741]_[6945899] Geometry 1,2021-07-13,2021-07-20,25,5885856
+"F-Round-column-cover 30"" [2569209]_[4332601] Geometry 1",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Frame-4 Bolt BPL1.5x22x22 (4) 1""_ AR 5/S-632 [6949503]_[7960541] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Frame-8 Bolt BPL2.5x30x30 (8) 1.25""_ AR 9/S-632 [6949437]_[7960486] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Frame-8 Bolt BPL2.5x30x30 (8) 1.25""_ AR 9/S-632 [6949570]_[7960568] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Frame-8 Bolt BPL3x34x36 (8) 1.25""_ AR 5/S633 [6947529]_[8004687] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/4x20x20 (4) 3/4""_ AR 3/S-632 [6369945]_[6370032] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/4x20x20 (4) 3/4""_ AR 4/S-632 [6739804]_[6968595] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Gravity-4 Bolt BPL2x23x23 (4) 1""_ AR 4/S-632 [6385126]_[7960461] Geometry 3",2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x53 [5292942]_[9467774] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x65 [5053207]_[7994923] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x79 [4942399]_[6382144] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x87 [4944176]_[7070611] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x87 [4944885]_[5149106] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x99 [4942204]_[7104193] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x99 [4942204]_[7104193] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x99 [4942373]_[6385059] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x109 [4942196]_[7104192] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x109 [4942196]_[7104192] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x120 [4942379]_[6389421] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x132 [4941760]_[8004679] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x132 [4942377]_[6948619] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x176 [4941752]_[7601542] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x176 [4941752]_[7601542] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x176 [4941752]_[7601542] Geometry 2,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x176 [4941752]_[7601542] Geometry 3,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x176 [5761619]_[6389274] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x193 [5293029]_[7403590] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x211 [5264383]_[7601101] Geometry,2021-07-13,2021-07-20,25,5885856
+"Floor E-1'-0"" Concrete Site Step [3220505] Geometry",2021-07-13,2021-07-20,25,5885856
+"Floor E-6"" Concrete Paving - Courtyard [3221627] Geometry",2021-07-13,2021-07-20,25,5885856
+"Floor F-Slab on Grade - 12"" [6557699] Geometry",2021-07-13,2021-07-20,25,5885856
+"Round column cover-precast 30"" [3495658] Geometry",2021-07-13,2021-07-20,25,5885856
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-12"" W x 12"" T [6557752] Geometry",2021-07-13,2021-07-20,25,5885856
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 1-12"" W x 12"" T [7119198] Geometry",2021-07-13,2021-07-20,25,5885856
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 2-24"" W x 18"" T [6830184] Geometry",2021-07-13,2021-07-20,25,5885856
+"Slab Edge F-Slab Edge-Concrete Thickened-Slope 1 to 2-24"" W x 18"" T [7760878] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [4519204] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [4548494] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 11"" Concrete [6229401] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 11"" Concrete [6539642] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 12"" Concrete [5908796] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 12"" Concrete [7314993] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 12"" Concrete [7546016] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 20"" Concrete [6539297] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 20"" Concrete [6539855] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 20"" Concrete [6540475] Geometry",2021-07-13,2021-07-20,25,5885856
+F-Concrete-Pier P1 [6373924] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 4,2021-07-13,2021-07-20,25,5885856
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 23,2021-07-13,2021-07-20,25,5885856
+F-HSS Rectangular-Post HSS4x2x5/16 [7335881]_[7701973] Geometry 24,2021-07-13,2021-07-20,25,5885856
+F-HSS Rectangular-Post HSS4x2x5/16 [9019460]_[9019469] Geometry,2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Frame-4 Bolt BPL2x20x26 (4) 1""_ AR 7/S-633 [7068557]_[7960695] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Frame-6 Bolt BPL2.25x20x30 (6) 1""_ AR 3/S-633 [6946299]_[7961034] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Frame-6 Bolt BPL2.25x20x30 (6) 1""_ AR 3/S-633 [6946299]_[7961034] Geometry 1",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/2x20x20 (4) 3/4""_ AR 3/S-632 [6372777]_[6372898] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1 1/4x20x20 (4) 3/4""_ AR 3/S-632 [6374300]_[6374445] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Gravity-4 Bolt BPL1x16x16 (4) 3/4""_ AR 5/S-632 [6374104]_[7962387] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Gravity-4 Bolt BPL2x22x22 (4) 3/4""_ AR 1/S-632 [6389074]_[6389419] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Steel-Baseplate-Gravity-4 Bolt BPL2x22x22 (4) 3/4""_ AR 1/S-632 [6389074]_[6389419] Geometry 1",2021-07-13,2021-07-20,25,5885856
+"Wall Sweep 6"" straight TZ-1 [4619080] Geometry",2021-07-13,2021-07-20,25,5885856
+Wall Sweep Brick Movement Joint-Vert [4837276] Geometry,2021-07-13,2021-07-20,25,5885856
+Wall Sweep Brick Movement Joint-Vert [4837278] Geometry,2021-07-13,2021-07-20,25,5885856
+Wall Sweep Brick Movement Joint-Vert [4837279] Geometry,2021-07-13,2021-07-20,25,5885856
+Wall Sweep Brick Movement Joint-Vert [4837280] Geometry,2021-07-13,2021-07-20,25,5885856
+Wall Sweep Brick Movement Joint-Vert [4837296] Geometry,2021-07-13,2021-07-20,25,5885856
+Wall Sweep Brick Movement Joint-Vert [4837297] Geometry,2021-07-13,2021-07-20,25,5885856
+Wall Sweep Cast Stone Sill [4548744] Geometry,2021-07-13,2021-07-20,25,5885856
+Wall Sweep Cast Stone Sill [7424561] Geometry,2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-E-6"" CFMF backup insulated [4959106] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR1-2HR Brick on 6"" CFMF [2153419] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [5591892] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR2-Brick on CIP - 20"" [5591894] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [3127963] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 15"" Concrete [5229031] Geometry",2021-07-13,2021-07-20,25,5885856
+Basic Wall Z-WALL_FOR_ANALYSIS [3023722] Geometry,2021-07-13,2021-07-20,25,5885856
+Basic Wall Z-WALL_FOR_ANALYSIS [3023943] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Rectangular-Post HSS12x4x3/8 [8021711]_[9691557] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS12x12x1/2 [4942186]_[7267911] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS12x12x1/2 [4943370]_[7071153] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS12x12x1/2 [4943370]_[7071153] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS12x12x1/2 [4943370]_[7071153] Geometry 2,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS12x12x1/2 [4943386]_[6345881] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS12x12x1/2 [4943404]_[6374576] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS14x14x5/8 [4942750]_[6949694] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS14x14x5/8 [4942752]_[8425060] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Post HSS4x4x1/4 [6222805]_[9541176] Geometry 1,2021-07-13,2021-07-20,25,5885856
+"F-Round-column-cover 30"" [2568882] Geometry",2021-07-13,2021-07-20,25,5885856
+"F-Round-column-cover 30"" [2705490] Geometry",2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x40 [5623018]_[6344237] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x40 [5623018]_[6344237] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x53 [4942395]_[6384530] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x53 [4942395]_[6384530] Geometry 2,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x65 [4942389]_[6384515] Geometry 2,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x65 [5053209]_[5517667] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x87 [4942381]_[6382102] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x136 [4943799]_[7069518] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x90 [4942383]_[6950398] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x132 [4942744]_[7960617] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x159 [4943791] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x159 [4943793] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W16x77 [5623208] Geometry,2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR3-Brick on 8"" CMU [1960099] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA BR3-Brick on 8"" CMU [4457040] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [8125804] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 11"" Concrete [6229391] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 11"" Concrete [6787859] Geometry",2021-07-13,2021-07-20,25,5885856
+Basic Wall Z-WALL_FOR_ANALYSIS [3023725] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Rectangular-Post HSS12x6x3/8 [8021704]_[9681300] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Rectangular-Post HSS12x6x3/8 [8021717]_[9691027] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS8x8x3/8 [6309875]_[7961456] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS8x8x3/8 [6309875]_[7961456] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS12x12x1/2 [4943402]_[6346005] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS12x12x1/2 [4945944]_[7046299] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS14x14x1/2 [4941743]_[6945932] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS14x14x5/8 [4942748]_[7965717] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Post HSS5x5x1/4 [6223437]_[9541264] Geometry,2021-07-13,2021-07-20,25,5885856
+"F-Round-column-cover 30"" [2569638] Geometry",2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x40 [4942397]_[6380536] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x40 [5053205]_[6377808] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x40 [5053205]_[6377808] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x53 [4942403]_[7255766] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x65 [4942389]_[6384515] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x87 [4942387]_[7394406] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x120 [4943382]_[7072094] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x120 [4943382]_[7072094] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x90 [4943807]_[9086803] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x109 [4942200]_[6385058] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x120 [4943795] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x132 [4942377]_[6948619] Geometry,2021-07-13,2021-07-20,25,5885856
+Wall Sweep Brick Movement Joint-Vert [4837285] Geometry,2021-07-13,2021-07-20,25,5885856
+Wall Sweep Brick Movement Joint-Vert [4837286] Geometry,2021-07-13,2021-07-20,25,5885856
+Wall Sweep Brick Movement Joint-Vert [4837287] Geometry,2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-50"" panel [1925292] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 11"" Concrete [6672142] Geometry",2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-Foundation - 15"" Concrete [8399707] Geometry",2021-07-13,2021-07-20,25,5885856
+Basic Wall Z-WALL_FOR_ANALYSIS [3023723] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS12x12x1/2 [5464630]_[9024417] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS12x12x5/8 [4942194]_[7961036] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Column HSS14x14x1/2 [5069937]_[6371931] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Post HSS4x4x1/4 [6222805]_[9541176] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Post HSS5 1/2x5 1/2x3/8 [9543049]_[9543069] Geometry,2021-07-13,2021-07-20,25,5885856
+F-HSS Square-Post HSS5x5x1/4 [6223437]_[9541264] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x53 [4942395]_[6384530] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x65 [4942389]_[6384515] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x79 [4942401]_[6384615] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x87 [4942381]_[6382102] Geometry 1,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W12x87 [4944176]_[7070611] Geometry,2021-07-13,2021-07-20,25,5885856
+F-W Shapes-Column W14x90 [4942383]_[6950398] Geometry,2021-07-13,2021-07-20,25,5885856
+Wall Sweep Brick Movement Joint-Vert [4837298] Geometry,2021-07-13,2021-07-20,25,5885856
+"Basic Wall F-E-6"" CFMF backup [3092443] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-6"" CFMF backup [6074878] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-6"" CFMF backup insulated [4294977] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA MP1-CMP on 3.625"" CFMF (no ins)-Anodized [1940991] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA MP1-CMP on 3.625"" CFMF (no ins)-Anodized [1940992] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA TC1-Terracotta on 8"" CFMF-44"" panel [3127826] Geometry",2021-07-21,2021-07-28,20,4837298
+Basic Wall Z-WALL_FOR_ANALYSIS [3021982] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Column HSS12x12x5/16 [4943426] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS5x5x1/2 [5885786] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS5x5x1/2 [5885967] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS6x6x3/8 [5792166] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS8x8x3/8 [7037446] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS8x8x3/8 [7037963] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS8x8x3/8 [7037965] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS8x8x3/8 [7037967] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS8x8x3/8 [7037969] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS8x8x3/8 [7037971] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS8x8x3/8 [7037973] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS8x8x3/8 [7037975] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS8x8x3/8 [7037977] Geometry,2021-07-21,2021-07-28,20,4837298
+"F-Steel-Baseplate-Frame-4 Bolt BPL2x20x26 (4) 1""_ AR 8/S-633 [7072575]_[7962848] Geometry",2021-07-21,2021-07-28,20,4837298
+"Floor F-Metal Roof Deck - 1 1/2"" [6206160] Geometry",2021-07-21,2021-07-28,20,4837298
+Floor Terracotta Sill [3513568] Geometry,2021-07-21,2021-07-28,20,4837298
+Floor Terracotta Sill [3516658] Geometry,2021-07-21,2021-07-28,20,4837298
+Floor Terracotta Sill [3518584] Geometry,2021-07-21,2021-07-28,20,4837298
+Wall Sweep Brick Movement Joint-Vert [4837340] Geometry,2021-07-21,2021-07-28,20,4837298
+Wall Sweep Brick Movement Joint-Vert [4837348] Geometry,2021-07-21,2021-07-28,20,4837298
+Wall Sweep Brick Relief [4835811] Geometry,2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-6"" CFMF backup [2260195] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-6"" CFMF backup insulated [8014683] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-8"" CFMF backup insulated [3045118] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-8"" CFMF backup insulated [8013873] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [1913527] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA MP1-CMP on 8"" CFMF-Anodized [8013875] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA MP1-CMP on 8"" CFMF-Pewter [2965850] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA MP1-CMP on 8"" CFMF-Pewter [8013668] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1921696] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-Foundation - 11"" Concrete [6540119] Geometry",2021-07-21,2021-07-28,20,4837298
+Basic Wall Z-WALL_FOR_ANALYSIS [3022067] Geometry,2021-07-21,2021-07-28,20,4837298
+Basic Wall Z-WALL_FOR_ANALYSIS [3022153] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Column HSS12x12x1/2 [4941739] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Column HSS12x12x1/2 [4943420]_[7759222] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Column HSS12x12x1/2 [4943422]_[7759223] Geometry,2021-07-21,2021-07-28,20,4837298
+F-W Shapes-Column W12x136 [4943799]_[7069518] Geometry,2021-07-21,2021-07-28,20,4837298
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5036944] Geometry",2021-07-21,2021-07-28,20,4837298
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [8065738] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-6"" CFMF backup insulated [2372197] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA BR3-Brick on 8"" CMU [5498636] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1923586] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [2150873] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [3098408] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [3119536] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [3119768] Geometry",2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Column HSS12x12x1/2 [4942202]_[6372923] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Column HSS12x12x5/8 [4942194]_[7961036] Geometry,2021-07-21,2021-07-28,20,4837298
+F-W Shapes-Column W12x40 [5053211]_[7394461] Geometry,2021-07-21,2021-07-28,20,4837298
+F-W Shapes-Column W12x87 [6098750]_[7073318] Geometry,2021-07-21,2021-07-28,20,4837298
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5703934] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-6"" CFMF backup [2245107] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-6"" CFMF backup insulated [3020900] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-6"" CFMF backup insulated [3021012] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-6"" CFMF backup insulated [3093510] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-6"" CFMF backup insulated [3118500] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-6"" CFMF backup insulated [3118590] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-6"" CFMF backup insulated [3118844] Geometry",2021-07-21,2021-07-28,20,4837298
+Basic Wall Z-WALL_FOR_ANALYSIS [3022277] Geometry,2021-07-21,2021-07-28,20,4837298
+Basic Wall Z-WALL_FOR_ANALYSIS [3022551] Geometry,2021-07-21,2021-07-28,20,4837298
+Basic Wall Z-WALL_FOR_ANALYSIS [3022619] Geometry,2021-07-21,2021-07-28,20,4837298
+Basic Wall Z-WALL_FOR_ANALYSIS [3022744] Geometry,2021-07-21,2021-07-28,20,4837298
+Basic Wall Z-WALL_FOR_ANALYSIS [3022834] Geometry,2021-07-21,2021-07-28,20,4837298
+Basic Wall Z-WALL_FOR_ANALYSIS [3023463] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Column HSS12x12x1/2 - AESS [4942738]_[8448297] Geometry 1,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Column HSS12x12x1/2 - AESS [4942738]_[8448297] Geometry 2,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Column HSS12x12x1/2 [4941762]_[8448296] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Column HSS12x12x1/2 [4941762]_[8448296] Geometry 1,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Column HSS12x12x1/2 [4941762]_[8448296] Geometry 2,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS4x4x1/4 [9540968]_[9541329] Geometry 1,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS5 1/2x5 1/2x3/8 [6223748]_[7047019] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS5x5x1/4 [9541211]_[9541408] Geometry 1,2021-07-21,2021-07-28,20,4837298
+"F-Steel-Baseplate-Gravity-4 Bolt-Beam BPL2.25x16x26 (8) 3/4""_ BOLTS 15/S-511 [7430558]_[8448275] Geometry",2021-07-21,2021-07-28,20,4837298
+"F-Steel-Baseplate-Gravity-4 Bolt-Beam BPL2.25x16x26 (8) 3/4""_ BOLTS 15/S-511 [7430558]_[8448275] Geometry 1",2021-07-21,2021-07-28,20,4837298
+"F-Steel-Baseplate-Gravity-4 Bolt-Beam BPL2.25x16x26 (8) 3/4""_ BOLTS 15/S-511 [7430558]_[8448275] Geometry 2",2021-07-21,2021-07-28,20,4837298
+"F-Steel-Baseplate-Gravity-4 Bolt-Beam BPL2.25x16x26 (8) 3/4""_ BOLTS 15/S-511 [7430558]_[8448275] Geometry 3",2021-07-21,2021-07-28,20,4837298
+"F-Steel-Baseplate-Gravity-4 Bolt-Beam BPL2.25x16x26 (8) 3/4""_ BOLTS 15/S-511 [7430558]_[8448275] Geometry 4",2021-07-21,2021-07-28,20,4837298
+"F-Steel-Baseplate-Gravity-4 Bolt-Beam BPL2.25x16x26 (8) 3/4""_ BOLTS 15/S-511 [7430558]_[8448275] Geometry 5",2021-07-21,2021-07-28,20,4837298
+"F-Steel-Baseplate-Gravity-4 Bolt-Beam BPL2.25x16x26 (8) 3/4""_ BOLTS 15/S-511 [7430558]_[8448275] Geometry 6",2021-07-21,2021-07-28,20,4837298
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5700912] Geometry",2021-07-21,2021-07-28,20,4837298
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5701280] Geometry",2021-07-21,2021-07-28,20,4837298
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [6524691] Geometry",2021-07-21,2021-07-28,20,4837298
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 7 3/4"" Total [9928557] Geometry",2021-07-21,2021-07-28,20,4837298
+Floor Terracotta Sill [3532941] Geometry,2021-07-21,2021-07-28,20,4837298
+Floor Terracotta Sill [3536110] Geometry,2021-07-21,2021-07-28,20,4837298
+Floor Terracotta Sill [3554212] Geometry,2021-07-21,2021-07-28,20,4837298
+Floor Terracotta Sill [3554235] Geometry,2021-07-21,2021-07-28,20,4837298
+Wall Sweep Brick Movement Joint-Vert [4837274] Geometry,2021-07-21,2021-07-28,20,4837298
+Wall Sweep Brick Movement Joint-Vert [4837282] Geometry,2021-07-21,2021-07-28,20,4837298
+Wall Sweep Brick Movement Joint-Vert [4837283] Geometry,2021-07-21,2021-07-28,20,4837298
+Wall Sweep Brick Movement Joint-Vert [4837284] Geometry,2021-07-21,2021-07-28,20,4837298
+Wall Sweep Brick Movement Joint-Vert [4837295] Geometry,2021-07-21,2021-07-28,20,4837298
+Wall Sweep Brick Relief [4836032] Geometry,2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-6"" CFMF backup [3118651] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-6"" CFMF backup [3118884] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1923609] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [2888336] Geometry",2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [2888356] Geometry",2021-07-21,2021-07-28,20,4837298
+Basic Wall Z-WALL_FOR_ANALYSIS [3022915] Geometry,2021-07-21,2021-07-28,20,4837298
+Basic Wall Z-WALL_FOR_ANALYSIS [3023041] Geometry,2021-07-21,2021-07-28,20,4837298
+Basic Wall Z-WALL_FOR_ANALYSIS [3023086] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Column HSS12x12x1/2 - AESS [4942738]_[8448297] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS4x4x1/4 [9540968]_[9541329] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS5x5x1/4 [9541211]_[9541408] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS6x6x3/8 POST [6668992]_[8434975] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS6x6x3/8 POST [6669950]_[8248433] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS12x12x3/8 [7335272]_[7335289] Geometry,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS12x12x3/8 [7335272]_[7335289] Geometry 1,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS12x12x3/8 [7335272]_[7335289] Geometry 2,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS12x12x3/8 [7335272]_[7335289] Geometry 3,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS12x12x3/8 [7335272]_[7335289] Geometry 4,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS12x12x3/8 [7335272]_[7335289] Geometry 5,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS12x12x3/8 [7335272]_[7335289] Geometry 6,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS12x12x3/8 [7335272]_[7335289] Geometry 7,2021-07-21,2021-07-28,20,4837298
+F-HSS Square-Post HSS12x12x3/8 [7335272]_[7335289] Geometry 8,2021-07-21,2021-07-28,20,4837298
+"F-Steel-Baseplate-Frame-8 Bolt BPL2x20x38 (8) 1.25""_ AR 4/S633 [6948839]_[8059021] Geometry",2021-07-21,2021-07-28,20,4837298
+"F-Steel-Baseplate-Frame-8 Bolt BPL2x20x38 (8) 1.25""_ AR 4/S633 [6948839]_[8059021] Geometry 1",2021-07-21,2021-07-28,20,4837298
+F-W Shapes-Column W12x65 [4942798]_[6968780] Geometry 1,2021-07-21,2021-07-28,20,4837298
+F-W Shapes-Column W12x87 [6098750]_[7073318] Geometry 1,2021-07-21,2021-07-28,20,4837298
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5815370] Geometry",2021-07-21,2021-07-28,20,4837298
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 7 1/2"" Total [5426972] Geometry",2021-07-21,2021-07-28,20,4837298
+Floor Terracotta Sill [3554316] Geometry,2021-07-21,2021-07-28,20,4837298
+Floor Terracotta Sill [3724359] Geometry,2021-07-21,2021-07-28,20,4837298
+Wall Sweep Brick Relief [4892103] Geometry,2021-07-21,2021-07-28,20,4837298
+"Basic Wall F-E-6"" CFMF [5508676] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF [5508895] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [3092585] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [3100002] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [3100085] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [3100401] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [2570705] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3087743] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3117910] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3118985] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [4445479] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [4445609] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [4445610] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [4452334] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [4452335] Geometry",2021-07-29,2021-08-05,18,4892103
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [8013106] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [8013107] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [8013108] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall F-EWA MP1-CMP on CFMF-Pewter [4665770] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall F-EWA MP1-CMP on CFMF-Pewter [8013112] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall F-EWA MP1-CMP on CFMF-Pewter [8013113] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall F-EWA MP1-CMP on CFMF-Pewter [8013114] Geometry,2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1926084] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1926104] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1926106] Geometry",2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3022202] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3022371] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023364] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023735] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023736] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023737] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3024728] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Column HSS12x12x1/2 [4943418]_[7759221] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Column HSS12x12x5/16 [4953426]_[7074761] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 [5794008] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS8x8x3/8 [7038094] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS8x8x3/8 [7038096] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS8x8x3/8 [7038098] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS8x8x3/8 [7038100] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS8x8x3/8 [7038102] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS8x8x3/8 [7038104] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS8x8x3/8 [7038106] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS8x8x3/8 [7038108] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS8x8x3/8 [7038110] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335218]_[7335235] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335218]_[7335235] Geometry 1,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335218]_[7335235] Geometry 2,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335218]_[7335235] Geometry 3,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335218]_[7335235] Geometry 4,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335218]_[7335235] Geometry 5,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335218]_[7335235] Geometry 6,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335218]_[7335235] Geometry 7,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335218]_[7335235] Geometry 8,2021-07-29,2021-08-05,18,4892103
+F-W Shapes-Column W12x120 [5464551]_[6949173] Geometry,2021-07-29,2021-08-05,18,4892103
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5039619] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5704936] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [8107661] Geometry",2021-07-29,2021-08-05,18,4892103
+Floor Metal Panel Sill [8014279] Geometry,2021-07-29,2021-08-05,18,4892103
+Floor Metal Panel Sill [8014287] Geometry,2021-07-29,2021-08-05,18,4892103
+Floor Metal Panel Sill [8014447] Geometry,2021-07-29,2021-08-05,18,4892103
+Wall Sweep Brick Relief [4835819] Geometry,2021-07-29,2021-08-05,18,4892103
+Wall Sweep Brick Relief [4892104] Geometry,2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF [5513276] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [1989551] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [3092823] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [3099203] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [3099261] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [3102104] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [3102277] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [3118744] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [6077305] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [1988979] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [1989118] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3087162] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3087388] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3093586] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3118094] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3118121] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3118207] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3118226] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3118359] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3119268] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3119327] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3119394] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3531803] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [6077728] Geometry",2021-07-29,2021-08-05,18,4892103
+Basic Wall F-E-CMP screen wall-Anodized [3554867] Geometry,2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-60"" panel [8013164] Geometry",2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023516] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023739] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023747] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023748] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023749] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3024937] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS4x4x1/4 [9541030]_[9541475] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS4x4x1/4 [9541030]_[9541475] Geometry 1,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS5 1/2x5 1/2x3/8 [6223921]_[7047020] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS5x5x1/4 [9541386]_[9541580] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS5x5x1/4 [9541386]_[9541580] Geometry 1,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS5x5x1/4 [10009336]_[10009521] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS5x5x1/4 [10009336]_[10009521] Geometry 1,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS5x5x1/4 [10009336]_[10009521] Geometry 2,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS5x5x1/4 [10009336]_[10009521] Geometry 3,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS5x5x1/4 [10009336]_[10009521] Geometry 4,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS5x5x1/4 [10009336]_[10009521] Geometry 5,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [5796942] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [5797193] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6671558]_[7047022] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6671558]_[7047022] Geometry 1,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739736]_[9485132] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739736]_[9485132] Geometry 1,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739736]_[9485132] Geometry 2,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739736]_[9485132] Geometry 3,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739736]_[9485132] Geometry 4,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739736]_[9485132] Geometry 5,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739736]_[9485132] Geometry 6,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739736]_[9485132] Geometry 7,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739736]_[9485132] Geometry 8,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739771]_[9484857] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739771]_[9484857] Geometry 1,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739771]_[9484857] Geometry 2,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739771]_[9484857] Geometry 3,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739771]_[9484857] Geometry 4,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739771]_[9484857] Geometry 5,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739771]_[9484857] Geometry 6,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739771]_[9484857] Geometry 7,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6739771]_[9484857] Geometry 8,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6756262]_[9485680] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6756262]_[9485680] Geometry 1,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6756262]_[9485680] Geometry 2,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6756262]_[9485680] Geometry 7,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6756262]_[9485680] Geometry 8,2021-07-29,2021-08-05,18,4892103
+"F-Steel-Baseplate-Post-4 Bolt BPL3/8x6x10 (4) 1/2""_ ADHESIVE AR [10012365]_[10012410] Geometry",2021-07-29,2021-08-05,18,4892103
+"F-Steel-Baseplate-Post-4 Bolt BPL3/8x6x10 (4) 1/2""_ ADHESIVE AR [10012365]_[10012410] Geometry 1",2021-07-29,2021-08-05,18,4892103
+"F-Steel-Baseplate-Post-4 Bolt BPL3/8x6x10 (4) 1/2""_ ADHESIVE AR [10012365]_[10012410] Geometry 2",2021-07-29,2021-08-05,18,4892103
+"F-Steel-Baseplate-Post-4 Bolt BPL3/8x6x10 (4) 1/2""_ ADHESIVE AR [10012365]_[10012410] Geometry 3",2021-07-29,2021-08-05,18,4892103
+"F-Steel-Baseplate-Post-4 Bolt BPL3/8x6x10 (4) 1/2""_ ADHESIVE AR [10012365]_[10012410] Geometry 4",2021-07-29,2021-08-05,18,4892103
+"F-Steel-Baseplate-Post-4 Bolt BPL3/8x6x10 (4) 1/2""_ ADHESIVE AR [10012365]_[10012410] Geometry 5",2021-07-29,2021-08-05,18,4892103
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5441313] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [8031642] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [8108020] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 7 1/2"" Total [5427471] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 7 3/4"" Total [8040737] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-Curb - 0'-4"" [7255946] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-Raised Pad - 4"" [7255832] Geometry",2021-07-29,2021-08-05,18,4892103
+Wall Sweep Brick Relief [4836033] Geometry,2021-07-29,2021-08-05,18,4892103
+Wall Sweep Brick Relief [4836034] Geometry,2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF [5513275] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [1989399] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [3102374] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [3121815] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [3121936] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [6076675] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup [6076677] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [2678315] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3089557] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3104109] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3104142] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3120360] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3120396] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [3247354] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [4452239] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-6"" CFMF backup insulated [4452270] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1926105] Geometry",2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023740] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023741] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023742] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023743] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023744] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023745] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3023746] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3024788] Geometry,2021-07-29,2021-08-05,18,4892103
+Basic Wall Z-WALL_FOR_ANALYSIS [3024883] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6756262]_[9485680] Geometry 3,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6756262]_[9485680] Geometry 4,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6756262]_[9485680] Geometry 5,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS6x6x3/8 POST [6756262]_[9485680] Geometry 6,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335236]_[7335253] Geometry,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335236]_[7335253] Geometry 1,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335236]_[7335253] Geometry 2,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335236]_[7335253] Geometry 3,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335236]_[7335253] Geometry 4,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335236]_[7335253] Geometry 5,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335236]_[7335253] Geometry 6,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335236]_[7335253] Geometry 7,2021-07-29,2021-08-05,18,4892103
+F-HSS Square-Post HSS12x12x3/8 [7335236]_[7335253] Geometry 8,2021-07-29,2021-08-05,18,4892103
+"F-Steel-Baseplate-Gravity-4 Bolt-Beam BPL.75x9x18 (4) 3/4""_ HS BOLTS 13/S-502 [8449034]_[8449137] Geometry",2021-07-29,2021-08-05,18,4892103
+F-W Shapes-Column W12x79 [5352390]_[7432132] Geometry,2021-07-29,2021-08-05,18,4892103
+F-W Shapes-Column W12x120 [5464551]_[6949173] Geometry 1,2021-07-29,2021-08-05,18,4892103
+F-W Shapes-Column W14x68 [4950430] Geometry,2021-07-29,2021-08-05,18,4892103
+F-W Shapes-Column W14x68 [4951685] Geometry,2021-07-29,2021-08-05,18,4892103
+F-W Shapes-Column W14x68 [5119520] Geometry,2021-07-29,2021-08-05,18,4892103
+F-W Shapes-Column W14x68 [5119581] Geometry,2021-07-29,2021-08-05,18,4892103
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5441797] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5704625] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5705065] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [6524537] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-Curb - 0'-4"" [7255896] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-Curb - 0'-4"" [7255909] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-Curb - 0'-4"" [7255928] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-Raised Pad - 4"" [7255810] Geometry",2021-07-29,2021-08-05,18,4892103
+"Floor F-Raised Pad - 4"" [7255819] Geometry",2021-07-29,2021-08-05,18,4892103
+"Basic Wall F-E-2.5"" CFMF+GYP [7608671] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-2.5"" CFMF+GYP [7712220] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF [5513279] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF [5513280] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup [2428539] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup [3092587] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup [3102233] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup [3102324] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup [3121666] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup [3540173] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup [6074963] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup [6077730] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup [6077998] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [2150952] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [2677616] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [2678023] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [2678050] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [2678316] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [2678317] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3088555] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3088598] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3092926] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3092958] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3101567] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3103917] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3104969] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3105043] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3105173] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3105430] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3105670] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3105705] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3106929] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3120464] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3120588] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3120660] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3120690] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3120903] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3121176] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3121253] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3121310] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3121352] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3122082] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3122244] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3531481] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3538288] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [3555135] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [4384439] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [4450842] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [4450870] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [4451090] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [4451771] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [4451809] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [4452338] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [4452339] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [8013067] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [8013068] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [8013165] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [8013166] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [8013252] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [8013253] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup insulated [8118432] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA BR1-2HR Brick on 6"" CFMF (double gyp) [1912152] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA BR1-2HR Brick on 6"" CFMF (double gyp) [1920242] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA BR1-2HR Brick on 6"" CFMF (double gyp) [2396043] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA BR1-2HR Brick on 6"" CFMF [2150869] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA BR1-2HR Brick on 6"" CFMF [2150872] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [1904133] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [2150870] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [2150871] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [4548502] Geometry",2021-08-06,2021-08-13,15,7255819
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [2796675] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [8013105] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [8013109] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [8013874] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [8014662] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [8014676] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall F-EWA MP1-CMP on CFMF-Pewter [8013115] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall F-EWA MP1-CMP on CFMF-Pewter [8013116] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall F-EWA MP1-CMP on CFMF-Pewter [8013117] Geometry,2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1921675] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1921716] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1921717] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1922699] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1922721] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1922725] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1923607] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [1923612] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [2150892] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [2150911] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [2428373] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [2435672] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [3090158] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [3097702] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [3119631] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [3119974] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [3119975] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [3119976] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [3119977] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [3127713] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [3128029] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-50"" panel [3090085] Geometry",2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-EWA TC1-Terracotta on 8"" CFMF-50"" panel [2150893] Geometry",2021-08-06,2021-08-13,15,7255819
+Basic Wall Z-WALL_FOR_ANALYSIS [3023751] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall Z-WALL_FOR_ANALYSIS [3023752] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall Z-WALL_FOR_ANALYSIS [3023760] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall Z-WALL_FOR_ANALYSIS [3023763] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall Z-WALL_FOR_ANALYSIS [3023764] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall Z-WALL_FOR_ANALYSIS [3023765] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall Z-WALL_FOR_ANALYSIS [3025070] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall Z-WALL_FOR_ANALYSIS [3025071] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall Z-WALL_FOR_ANALYSIS [3025072] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall Z-WALL_FOR_ANALYSIS [3025073] Geometry,2021-08-06,2021-08-13,15,7255819
+Basic Wall Z-WALL_FOR_ANALYSIS [3025776] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Rectangular-Post HSS6x3x5/16 [8958981]_[9668158] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Rectangular-Post HSS6x3x5/16 [8959214]_[9668159] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS8x8x3/8 [6361425]_[8453895] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS8x8x3/8 [6361425]_[8453895] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 - AESS [4948724]_[7474376] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 - AESS [4948724]_[7474376] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 - AESS [4948724]_[7474376] Geometry 2,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4948700]_[5628779] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4948700]_[5628779] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4948700]_[5628779] Geometry 2,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4948712] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4948714] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4948720]_[5849862] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4948746]_[5709488] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4948746]_[5709488] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4948746]_[5709488] Geometry 2,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4953370]_[7074646] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4953370]_[7074646] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4953370]_[7074646] Geometry 2,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4953370]_[7074646] Geometry 3,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4953370]_[7074646] Geometry 4,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4953370]_[7074646] Geometry 5,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4953370]_[7074646] Geometry 6,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4953370]_[7074646] Geometry 7,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4953370]_[7074646] Geometry 8,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4953370]_[7074646] Geometry 9,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4953370]_[7074646] Geometry 10,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4953370]_[7074646] Geometry 11,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [4953370]_[7074646] Geometry 12,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x1/2 [5464632]_[9024418] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x5/8 [4948716]_[6907877] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x5/8 [4948716]_[6907877] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS12x12x5/16 [4953414]_[7074760] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS14x14x1/2 [4948704] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS14x14x1/2 [4948708] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS14x14x1/2 [4948774] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS14x14x1/2 [5070042]_[7074683] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS14x14x1/2 [5070042]_[7074683] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS14x14x5/8 [4948702] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS14x14x5/8 [4948706] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS14x14x5/8 [4948768] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS14x14x5/8 [4948770] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Column HSS14x14x5/8 [4948772] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Post HSS4x4x1/4 [9541137]_[9541651] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Post HSS4x4x1/4 [9541137]_[9541651] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Post HSS5 1/2x5 1/2x3/8 [6223927]_[9735451] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Post HSS5x5x1/4 [9541531]_[9735439] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Post HSS5x5x1/4 [9541531]_[9735439] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Post HSS6x6x3/8 [7032677] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Post HSS6x6x3/8 POST [5807392]_[9485751] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Post HSS6x6x3/8 POST [6671603]_[7047023] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Post HSS6x6x3/8 POST [6671603]_[7047023] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Post HSS8x8x3/8 [7039770] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Post HSS8x8x3/8 [7039772] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Post HSS8x8x3/8 [7039774] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Post HSS8x8x3/8 [7039776] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Post HSS8x8x3/8 [7039778] Geometry,2021-08-06,2021-08-13,15,7255819
+F-HSS Square-Post HSS8x8x3/8 [7039780] Geometry,2021-08-06,2021-08-13,15,7255819
+"F-Steel-Baseplate-Gravity-4 Bolt-Beam BPL.75x9x18 (4) 3/4""_ HS BOLTS 13/S-502 [8449034]_[8449137] Geometry 1",2021-08-06,2021-08-13,15,7255819
+"F-Steel-Baseplate-Gravity-4 Bolt-Beam BPL.75x9x18 (4) 3/4""_ HS BOLTS 13/S-502 [8449428]_[8449545] Geometry",2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x40 [4952439]_[5846333] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x40 [4952439]_[5846333] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x40 [4952439]_[5846333] Geometry 2,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x40 [4952439]_[5846333] Geometry 3,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x40 [4952439]_[5846333] Geometry 4,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x40 [5502764]_[8449564] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x45 [4949208]_[5454901] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x45 [4949208]_[5454901] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x45 [4949210]_[7924788] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x45 [5733705]_[9478355] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x45 [5733705]_[9478355] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x53 [4948778]_[5352290] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x53 [4948778]_[5352290] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x53 [4948784]_[8453886] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x53 [4948784]_[8453886] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x53 [4948784]_[8453886] Geometry 2,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x53 [4949718]_[6335693] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x53 [4949718]_[6335693] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x53 [4949718]_[6335693] Geometry 2,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x53 [4949718]_[6335693] Geometry 3,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x53 [4949718]_[6335693] Geometry 4,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x53 [4949718]_[6335693] Geometry 5,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x58 [4950032]_[7074751] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x58 [4950032]_[7074751] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x65 [4943396]_[7058573] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x65 [4943396]_[7058573] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x65 [4948752]_[6334334] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x65 [4949383]_[8408716] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x65 [4949383]_[8408716] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x65 [4953396]_[8417617] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x65 [4953396]_[8417617] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x87 [4952760]_[7071611] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x87 [4952760]_[7071611] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x87 [4953392]_[7073315] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x87 [4953392]_[7073315] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x120 [4949557]_[7074617] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x120 [4949557]_[7074617] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x120 [5464526]_[8408723] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W12x120 [5464705]_[9484397] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x61 [4948740]_[6330804] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x68 [4948722]_[7960207] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x68 [4948722]_[7960207] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x68 [4948762]_[5849863] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x68 [4951724]_[6363854] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x68 [5332919] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x68 [5333236] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x68 [5333598] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x68 [5333624] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x74 [4948734]_[5709209] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x74 [4948734]_[5709209] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x74 [4948734]_[5709209] Geometry 2,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x74 [4948736] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x74 [4948742]_[8453860] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x74 [4948742]_[8453860] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x82 [4948730]_[6908514] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x82 [4948738]_[8953830] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x82 [4948738]_[8953830] Geometry 1,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x90 [4948780]_[8414990] Geometry,2021-08-06,2021-08-13,15,7255819
+F-W Shapes-Column W14x90 [4948782]_[8414998] Geometry,2021-08-06,2021-08-13,15,7255819
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5067067] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5687733] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5704694] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [6524268] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [8030748] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5553211] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-Curb - 0'-4"" [7255881] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-Curb - 0'-4"" [7255959] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-Curb - 0'-4"" [7255973] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-Curb - 0'-4"" [7255992] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-Curb - 0'-7 5/8"" [7924861] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-Raised Pad - 4"" [7255782] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-Raised Pad - 4"" [7255797] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-Raised Pad - 4"" [7255841] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-Raised Pad - 4"" [7255850] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-Raised Pad - 4"" [7255863] Geometry",2021-08-06,2021-08-13,15,7255819
+"Floor F-Raised Pad - 4"" [7255872] Geometry",2021-08-06,2021-08-13,15,7255819
+Floor Terracotta Sill [3523773] Geometry,2021-08-06,2021-08-13,15,7255819
+Floor Terracotta Sill [3529671] Geometry,2021-08-06,2021-08-13,15,7255819
+Wall Sweep Brick Movement Joint-Vert [4837230] Geometry,2021-08-06,2021-08-13,15,7255819
+Wall Sweep Brick Movement Joint-Vert [4837344] Geometry,2021-08-06,2021-08-13,15,7255819
+Wall Sweep Brick Movement Joint-Vert [4837345] Geometry,2021-08-06,2021-08-13,15,7255819
+Wall Sweep Brick Movement Joint-Vert [4837368] Geometry,2021-08-06,2021-08-13,15,7255819
+Wall Sweep Brick Movement Joint-Vert [4837369] Geometry,2021-08-06,2021-08-13,15,7255819
+Wall Sweep Brick Movement Joint-Vert [4897278] Geometry,2021-08-06,2021-08-13,15,7255819
+Wall Sweep Brick Movement Joint-Vert [4897642] Geometry,2021-08-06,2021-08-13,15,7255819
+Wall Sweep Brick Relief [4835820] Geometry,2021-08-06,2021-08-13,15,7255819
+Wall Sweep Brick Relief [4835823] Geometry,2021-08-06,2021-08-13,15,7255819
+"Basic Wall F-E-6"" CFMF backup [2585733] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF backup [2585819] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF backup [2791479] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF backup [2830974] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF backup [3587697] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF backup [5550622] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF backup insulated [3535607] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF backup insulated [4453639] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF backup insulated [6077824] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF backup insulated [8013884] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF roof curb insulated [3693924] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF roof curb insulated [3693985] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF roof curb insulated [3694036] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF roof curb insulated [3694064] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF roof curb insulated [4456420] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF roof curb insulated [4456641] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF roof curb insulated [5506204] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF roof curb insulated [5506207] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF roof curb insulated [5506215] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-E-6"" CFMF roof curb insulated [7969977] Geometry",2021-08-16,2021-08-23,12,4835823
+Basic Wall F-E-CMP screen wall-Pewter [2796877] Geometry,2021-08-16,2021-08-23,12,4835823
+Basic Wall F-E-CMP screen wall-Pewter [2796938] Geometry,2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [1947113] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [1947159] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [1961678] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [2574264] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [2574368] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [2574873] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA BR1-Brick on 6"" CFMF [4548687] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA MP1-CMP on 8"" CFMF-Pewter [4334988] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA MP1-CMP on 8"" CFMF-Pewter [8014305] Geometry",2021-08-16,2021-08-23,12,4835823
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [2574033] Geometry,2021-08-16,2021-08-23,12,4835823
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [2574668] Geometry,2021-08-16,2021-08-23,12,4835823
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [2580623] Geometry,2021-08-16,2021-08-23,12,4835823
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [2701649] Geometry,2021-08-16,2021-08-23,12,4835823
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [3693576] Geometry,2021-08-16,2021-08-23,12,4835823
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [3693621] Geometry,2021-08-16,2021-08-23,12,4835823
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [3693657] Geometry,2021-08-16,2021-08-23,12,4835823
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [8013110] Geometry,2021-08-16,2021-08-23,12,4835823
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [8013111] Geometry,2021-08-16,2021-08-23,12,4835823
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [8013648] Geometry,2021-08-16,2021-08-23,12,4835823
+Basic Wall F-EWA MP1-CMP on CFMF-Anodized [8024486] Geometry,2021-08-16,2021-08-23,12,4835823
+Basic Wall F-EWA MP1-CMP on CFMF-Pewter [2580494] Geometry,2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA MP2-CMP on 14"" CIP Concrete [2593927] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA MP2-CMP on 14"" CIP Concrete [2602469] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA MP2-CMP on 14"" CIP Concrete [3112347] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA MP3-CMP on 8"" CMU-Anodized [2573967] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA MP3-CMP on 8"" CMU-Anodized [2574737] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [2435764] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [3117166] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [4453666] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-44"" panel [8125715] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA TC1-Terracotta on 6"" CFMF-50"" panel [3128056] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-EWA TC1-Terracotta on 8"" CFMF-44"" panel [3128057] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5841093] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5841162] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5841287] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5841392] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5841465] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5842232] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5842362] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5842499] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5842575] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5842678] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5843162] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5843221] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5843332] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5843367] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5843404] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5843527] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5843654] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5843733] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5843812] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5843901] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5844056] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5844172] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5844281] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5844625] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5844882] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5844969] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5845040] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5845149] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall F-Greenhouse - 14"" Concrete [5854081] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-12"" [2593885] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-12"" [2594280] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-12"" [2594328] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-12"" [7330296] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-14"" [2593816] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-14"" [2594170] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-14"" [2594211] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-14"" [2594239] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-14"" [2594444] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-14"" [2595230] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-14"" [2595261] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-14"" [2595435] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-14"" [2595458] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-14"" [3112237] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-14"" [3248102] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-14"" [3540900] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-14"" [3541131] Geometry",2021-08-16,2021-08-23,12,4835823
+"Basic Wall Z-CURB-14"" [3556608] Geometry",2021-08-16,2021-08-23,12,4835823
+F-16929-Weather Station Pole F-16929-Weather Station Pole [7746795]_[7748320] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Rectangular-Column HSS8x6x1/4 [6134524]_[7543756] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Rectangular-Post HSS6x3x1/4 [9473267]_[9474147] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Rectangular-Post HSS6x3x1/4 [9473267]_[9474147] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-HSS Rectangular-Post HSS6x4x1/4 [6134623] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Rectangular-Post HSS6x4x1/4 [6134630] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Rectangular-Post HSS6x4x1/4 [6134632] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Rectangular-Post HSS6x4x1/4 [6134636] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Rectangular-Post HSS6x4x1/4 [6134638] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Rectangular-Post HSS6x4x1/4 [7409636]_[7663670] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Rectangular-Post HSS6x4x1/4 [7409636]_[7663670] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-HSS Rectangular-Post HSS6x4x1/4 [8704244] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Round-Post HSS3x.188 [8063158]_[8063618] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Round-Post HSS3x.188 [8063158]_[8063618] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-HSS Round-Post HSS3x.188 [8063158]_[8063618] Geometry 2,2021-08-16,2021-08-23,12,4835823
+F-HSS Round-Post HSS3x.188 [8063158]_[8063618] Geometry 3,2021-08-16,2021-08-23,12,4835823
+F-HSS Round-Post HSS3x.188 [8063158]_[8063618] Geometry 4,2021-08-16,2021-08-23,12,4835823
+F-HSS Round-Post HSS3x.188 [8063158]_[8063618] Geometry 5,2021-08-16,2021-08-23,12,4835823
+F-HSS Round-Post HSS3x.188 [8063158]_[8063618] Geometry 6,2021-08-16,2021-08-23,12,4835823
+F-HSS Round-Post HSS3x.188 [8063158]_[8063618] Geometry 7,2021-08-16,2021-08-23,12,4835823
+F-HSS Round-Post HSS3x.188 [8063158]_[8063618] Geometry 8,2021-08-16,2021-08-23,12,4835823
+F-HSS Round-Post HSS3x.188 [8063158]_[8063618] Geometry 9,2021-08-16,2021-08-23,12,4835823
+F-HSS Round-Post HSS3x.188 [8063158]_[8063618] Geometry 10,2021-08-16,2021-08-23,12,4835823
+F-HSS Round-Post HSS3x.188 [8063158]_[8063618] Geometry 11,2021-08-16,2021-08-23,12,4835823
+F-HSS Round-Post HSS3x.188 [8063158]_[8063618] Geometry 12,2021-08-16,2021-08-23,12,4835823
+F-HSS Round-Post HSS3x.188 [8063158]_[8063618] Geometry 13,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 2,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 3,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 4,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 5,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 6,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 7,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 8,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 9,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 10,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 11,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 12,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 13,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 14,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 15,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 16,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 17,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 18,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 19,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 20,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 21,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 22,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 23,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 24,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 25,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 26,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 27,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 28,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 29,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 30,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 31,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 32,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 33,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 34,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 35,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 36,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 37,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 38,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 39,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 40,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 41,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 42,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 43,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 44,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 45,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 46,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 47,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 48,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 49,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 50,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 51,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 52,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 53,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 54,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 55,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 56,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 57,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 58,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 59,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 60,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 61,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 62,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 63,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 64,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 65,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 66,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 67,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 68,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 69,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 70,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 71,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 72,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 73,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 74,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 75,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [2596083]_[2718001] Geometry 76,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x1/4 [6134532]_[7497056] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 2,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 3,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 4,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 5,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 6,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 7,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 8,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 9,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 10,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 11,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 12,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 13,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 14,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 15,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 16,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 17,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 18,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 19,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 20,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 21,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 22,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 23,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 24,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 25,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 26,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 27,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 28,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 29,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 30,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 31,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 32,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 33,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 34,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 35,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 (Greenhouse framing) [6107800]_[8782232] Geometry 36,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 [8453900]_[8453906] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS8x8x3/8 [8453900]_[8453906] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS12x12x1/2 [4953687]_[6333375] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS12x12x5/8 [4953683]_[6907878] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Column HSS12x12x5/8 [4953683]_[6907878] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 2,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 3,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 4,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 5,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 6,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 7,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 8,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 9,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 10,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 11,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 12,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 13,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 14,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 15,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 16,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 17,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 18,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 19,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 20,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 21,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 22,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 23,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 24,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 25,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 26,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/2 [7047053]_[7047198] Geometry 27,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 2,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 3,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 4,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 5,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 6,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 7,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 8,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 9,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 10,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 11,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 12,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 13,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 14,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 15,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 16,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 17,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 18,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS4x4x1/8 [2724052]_[2725424] Geometry 19,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x1/4 [8843901]_[8844318] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x1/4 [8843901]_[8844318] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x1/4 [8843901]_[8844318] Geometry 2,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x1/4 [8843901]_[8844318] Geometry 3,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x1/4 [8843901]_[8844318] Geometry 4,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x1/4 [8843901]_[8844318] Geometry 5,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x1/4 [8843901]_[8844318] Geometry 6,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x1/4 [8843901]_[8844318] Geometry 7,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x5/16 [8728939]_[8729150] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x5/16 [8728939]_[8729150] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x5/16 [8728939]_[8729150] Geometry 2,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x5/16 [8728939]_[8729150] Geometry 3,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x5/16 [8728939]_[8729150] Geometry 4,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x5/16 [8728939]_[8729150] Geometry 5,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x5/16 [8728939]_[8729150] Geometry 6,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x5/16 [8728939]_[8729150] Geometry 7,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x5/16 [8728939]_[8729150] Geometry 8,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x5/16 [8728939]_[8729150] Geometry 9,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x5/16 [8728939]_[8729150] Geometry 10,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS5x5x5/16 [8728939]_[8729150] Geometry 11,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS6x6x1/4 [7456540]_[7459477] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS6x6x3/8 [7039594] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS6x6x3/8 POST [6757700]_[9358457] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS6x6x3/8 POST [6757700]_[9358457] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS6x6x3/8 POST [6757700]_[9358457] Geometry 2,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS6x6x3/8 POST [6757700]_[9358457] Geometry 3,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS6x6x3/8 POST [6757700]_[9358457] Geometry 4,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS6x6x3/8 POST [6757700]_[9358457] Geometry 5,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS6x6x3/8 POST [6757700]_[9358457] Geometry 6,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS6x6x3/8 POST [6757700]_[9358457] Geometry 7,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS6x6x3/8 POST [6757700]_[9358457] Geometry 8,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS6x6x3/8 POST [6757700]_[9358457] Geometry 9,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS6x6x3/8 POST [6757700]_[9358457] Geometry 10,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS6x6x3/8 POST [6757700]_[9358457] Geometry 11,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 2,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 3,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 4,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 5,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 6,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 7,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 8,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 9,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 10,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 11,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 12,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 13,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 14,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 15,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 16,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 17,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 18,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 19,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 20,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 21,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 22,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 23,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 24,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 25,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 26,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 27,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 28,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 29,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 30,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 31,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 32,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 33,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 34,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 35,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 36,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS7x7x1/2 [6108409]_[7047008] Geometry 37,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS8x8x3/8 [7039764] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS8x8x3/8 [7039766] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS8x8x3/8 [7039768] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS8x8x3/8 [7042638] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS8x8x3/8 [7042640] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS8x8x3/8 [7042642] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS8x8x3/8 [7042644] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS8x8x3/8 [7042646] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS8x8x3/8 [7042648] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS8x8x3/8 [7042650] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS8x8x3/8 [7042652] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS8x8x3/8 [7042654] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS8x8x3/8 [7043231] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS8x8x3/8 [7043284] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS8x8x3/8 [7043294] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS12x12x3/8 [7335254]_[7520874] Geometry,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS12x12x3/8 [7335254]_[7520874] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS12x12x3/8 [7335254]_[7520874] Geometry 2,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS12x12x3/8 [7335254]_[7520874] Geometry 3,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS12x12x3/8 [7335254]_[7520874] Geometry 4,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS12x12x3/8 [7335254]_[7520874] Geometry 5,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS12x12x3/8 [7335254]_[7520874] Geometry 6,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS12x12x3/8 [7335254]_[7520874] Geometry 7,2021-08-16,2021-08-23,12,4835823
+F-HSS Square-Post HSS12x12x3/8 [7335254]_[7520874] Geometry 8,2021-08-16,2021-08-23,12,4835823
+F-L Unequal Angles-Column L4x3x1/4 [3541670]_[3566972] Geometry,2021-08-16,2021-08-23,12,4835823
+F-L Unequal Angles-Column L4x3x1/4 [3541670]_[3566972] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-L Unequal Angles-Column L4x3x1/4 [3541673]_[3566973] Geometry,2021-08-16,2021-08-23,12,4835823
+F-L Unequal Angles-Column L4x3x1/4 [3541673]_[3566973] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-Pipe Column PIPE 3 STD (POST) [9457957]_[9484151] Geometry,2021-08-16,2021-08-23,12,4835823
+"F-Steel-Baseplate-Gravity-4 Bolt-Beam BPL.75x9x18 (4) 3/4""_ HS BOLTS 13/S-502 [8449428]_[8449545] Geometry 1",2021-08-16,2021-08-23,12,4835823
+"F-Steel-Baseplate-Gravity-4 Bolt-Beam BPL.75x9x18 (4) 3/4""_ HS BOLTS 13/S-502 [8453928]_[8454113] Geometry",2021-08-16,2021-08-23,12,4835823
+"F-Steel-Baseplate-Gravity-4 Bolt-Beam BPL.75x9x18 (4) 3/4""_ HS BOLTS 13/S-502 [8453928]_[8454113] Geometry 1",2021-08-16,2021-08-23,12,4835823
+F-W Shapes-Column W12x40 [5502764]_[8449564] Geometry,2021-08-16,2021-08-23,12,4835823
+F-W Shapes-Column W12x40 [5502922]_[8454187] Geometry,2021-08-16,2021-08-23,12,4835823
+F-W Shapes-Column W12x40 [5502922]_[8454187] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-W Shapes-Column W12x40 [5504812]_[9484421] Geometry,2021-08-16,2021-08-23,12,4835823
+F-W Shapes-Column W12x53 [8453890]_[8453894] Geometry,2021-08-16,2021-08-23,12,4835823
+F-W Shapes-Column W12x53 [8453890]_[8453894] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-W Shapes-Column W12x53 [8453890]_[8453894] Geometry 2,2021-08-16,2021-08-23,12,4835823
+F-W Shapes-Column W14x43 [4953697]_[5850005] Geometry,2021-08-16,2021-08-23,12,4835823
+F-W Shapes-Column W14x43 [4953697]_[5850005] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-W Shapes-Column W14x43 [4953709]_[5850006] Geometry,2021-08-16,2021-08-23,12,4835823
+F-W Shapes-Column W14x74 [8453861]_[8453868] Geometry,2021-08-16,2021-08-23,12,4835823
+F-W Shapes-Column W14x74 [8453875]_[8453882] Geometry,2021-08-16,2021-08-23,12,4835823
+F-W Shapes-Column W14x82 [8953693]_[8953840] Geometry,2021-08-16,2021-08-23,12,4835823
+F-W Shapes-Column W14x82 [8953693]_[8953840] Geometry 1,2021-08-16,2021-08-23,12,4835823
+F-WT Shapes-Column WT3x7.5 (HANGER) [9463347]_[9484157] Geometry,2021-08-16,2021-08-23,12,4835823
+"Floor 4"" Concrete Housekeeping pad [3723825] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor 6"" Concrete Housekeeping pad [3626998] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor 6"" Concrete Housekeeping pad [3670831] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor 6"" Concrete Housekeeping pad [3670958] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor 6"" Concrete Housekeeping pad [3671079] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor 6"" Concrete Housekeeping pad [3723649] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor 6"" Concrete Housekeeping pad [3723707] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor 6"" Concrete Housekeeping pad [3723721] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor 6"" Concrete Housekeeping pad [3723737] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor 6"" Concrete Housekeeping pad [3723753] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor 6"" Concrete Housekeeping pad [3723779] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor 6"" Concrete Housekeeping pad [3723841] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor 6"" Concrete Housekeeping pad [3723855] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor 6"" Concrete Housekeeping pad [3723871] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor 6"" Concrete Housekeeping pad [3981892] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-1/2"" NW Concrete on 2"" Composite Metal Deck - 2 1/2"" Total [7398373] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5073933] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5688448] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [5846933] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [7040071] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [9839627] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [9839854] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [9841749] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-4 1/2"" NW Concrete on 2"" Composite Metal Deck - 6 1/2"" Total [9856337] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5553412] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5851290] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5851869] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5851926] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5851997] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5852209] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5852884] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5854714] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5854971] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5855150] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5855166] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5855281] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5855330] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5860410] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-6"" NW Concrete on 2"" Composite Metal Deck - 8"" Total [5861791] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Concrete Topping Slab - 3"" [7304982] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Concrete Topping Slab - 3"" [7304991] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Concrete Topping Slab - 3"" [7305000] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Concrete Topping Slab - 3"" [7305009] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Concrete Topping Slab - 3"" [7305018] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Concrete Topping Slab - 3"" [7305027] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Concrete Topping Slab - 3"" [7305041] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Concrete Topping Slab - 3"" [7305050] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Concrete Topping Slab - 3"" [7305068] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Concrete Topping Slab - 3"" [7305077] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Concrete Topping Slab - 3"" [7305086] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Concrete Topping Slab - 3"" [7470121] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Concrete Topping Slab - 5"" [7297391] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Concrete Topping Slab - 5"" [7297402] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Concrete Topping Slab - 5"" [7297411] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Curb - 0'-6"" [6915908] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Curb - 0'-6"" [6920352] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Curb - 0'-8"" [6917427] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Curb - 0'-8"" [6917656] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Curb - 0'-8"" [6920899] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Curb - 17"" [6917819] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Metal Roof Deck - 1 1/2"" [5067164] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Metal Roof Deck - 1 1/2"" [5068588] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Metal Roof Deck - 1 1/2"" [5430041] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Metal Roof Deck - 1 1/2"" [5442454] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Metal Roof Deck - 1 1/2"" [5498661] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Metal Roof Deck - 1 1/2"" [5648487] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Metal Roof Deck - 1 1/2"" [5685048] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Metal Roof Deck - 1 1/2"" [5685411] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Metal Roof Deck - 1 1/2"" [5748813] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Metal Roof Deck - 1 1/2"" [9777488] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Metal Roof Deck - 1 1/2"" [9788563] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Raised Pad - 8"" [7412326] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Raised Pad - 8"" [7412374] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Raised Pad - 8"" [7412414] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Raised Pad - 8"" [7412501] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Raised Pad - 8"" [7412631] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Raised Pad - 8"" [7412663] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Raised Pad - 8"" [7412684] Geometry",2021-08-16,2021-08-23,12,4835823
+"Floor F-Raised Pad - 8"" [8594454] Geometry",2021-08-16,2021-08-23,12,4835823
+Floor Terracotta Sill [3555966] Geometry,2021-08-16,2021-08-23,12,4835823
+Floor Terracotta Sill [3576787] Geometry,2021-08-16,2021-08-23,12,4835823
+"Floor TS2 - 3"" Topping Slab on Sloped Structure [3619474] Geometry",2021-08-16,2021-08-23,12,4835823
+Wall Sweep Brick Movement Joint-Vert [5520553] Geometry,2021-08-16,2021-08-23,12,4835823
+Wall Sweep Brick Relief [4835824] Geometry,2021-08-16,2021-08-23,12,4835823
+Wall Sweep Brick Relief [4836035] Geometry,2021-08-16,2021-08-23,12,4835823
+Wall Sweep Brick Relief [4892106] Geometry,2021-08-16,2021-08-23,12,4835823

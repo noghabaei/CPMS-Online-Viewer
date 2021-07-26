@@ -60,38 +60,8 @@
 		</div>
 	</div>
 
-	<!-- Compatibility Panel -->
-	<div id="compat-panel" class="panel small">
-		<div class="panel-header">
-			<div class ="text-center">COMPATIBILITY VIEW</div>
-		</div>
-		<div class="panel-content" id="compat-panel-content">
-			<div id="compat-panel-buttons">
-				<button id="compat-modal-bring-btn" class="btn btn-light btn-sm">Bring Element</button>
-				<button id="compat-modal-symbol-btn" class="btn btn-light btn-sm">></button>
-			</div>
-			<div id="compat-panel-dropdown">
-				<select class="custom-select-sm" id="compat-panel-select" data-size="4">
-					<option value="">No Option Selected</option>
-					<option value="sphere">Sphere</option>
-					<option value="cube">Cube</option>
-					<option value="cylinder">Cylinder</option>
-				</select>
-			</div>
-			<div class="dropdown-element-info-div" id="compat-panel-info">
-				<span id="compat-info-span">Info: </span>
-			</div>
-			<div id="compat-panel-canvas">
-				<canvas class="subcanvas" id="compat-canvas"></canvas>
-			</div>
-		</div>
-	</div>
-
 	<canvas id="potreecanvas" style="background: gray; position: fixed; width: 100%; height: 100%; left: 0; top:0; z-index: -1;cursor: grab; border:1px solid; display: block;">
 	</canvas>
-
-	<!-- <canvas id="bimcanvas" style=" background: gray; height: 20%; width: 300px; position:fixed; margin-left: 1em;; bottom:20px; z-index: 0; border:1px black solid;">
-	</canvas> -->
 
 	<div id = "schedule" class ="small" style="width: fit-content;">
 		<span>SCHEDULE</span>
@@ -136,18 +106,29 @@
 		import * as OC from '/static/assets/fbx/OrbitControls-r110.js';
 		import { TransformControls } from '/static/assets/fbx/TransformControls-r110.js';
 		
-		import '/static/assets/potree/potree.js';
+		import '/static/assets/potree/potree.js';	// Potree 1.6
 		// import '/static/assets/three/potree-main/build/potree/potree.js';
 
 		import * as EV from "/static/assets/js/element-view.js";
 		import * as CV from "/static/assets/js/compat-view.js";
 		
+		import { CompatibilityPanel, TransformPanel } from "/static/assets/js/CompatibilityPanel.js";
+
 		// import '/static/assets/three/build/three.js';
 		// import '/static/assets/three/build/three.module.js';
 
 		var scene;
 		document.body.onload = function()
-			{				
+			{	
+				let compatibilityPanel = new CompatibilityPanel();
+				$("#element-view-panel").after( compatibilityPanel.getElement() );
+
+				// $("#compat-panel-select").change( () => {
+					
+				// 	compatibilityPanel.signals.selectedPointCloudChanged.dispatch();
+
+				// });
+
 				scene = new THREE.Scene();
 				const axesHelper = new THREE.AxesHelper(500);
 				scene.add( axesHelper );
@@ -214,8 +195,8 @@
 						var points = new Potree.Group();
 						points.setPointBudget(500000);
 						points.name = "objectName" + String(counter);
-						//points.material.opacity = 0.0;
-						//points.material.wireframe = false;
+						points.material.opacity = 0.0;
+						points.material.wireframe = false;
 						
 						scene.add(points);
 	
@@ -248,34 +229,28 @@
 
 				const loader = new THREE.ObjectLoader();
 				let mainObj = null;
-				loader.load(
-					// resource URL
-					"/static/assets/fbx/scene.json",
 
-					// onLoad callback
-					// Here the loaded data is assumed to be an object
-					function ( obj ) {
-						// Add the loaded object to the scene
-						obj.position.set(-180, -100, 120);
-						obj.name = "BIM";
-						
-						scene.add( obj );
+				function loadMainObj( obj ) {
+					// Add the loaded object to the scene
+					obj.position.set(-180, -100, 120);
+					obj.name = "BIM";
+					
+					scene.add( obj );
 
-						mainObj = obj;
+					mainObj = obj;
 
-						EV.populateElementsDropdown(obj);
-					},
+					EV.populateElementsDropdown(obj);
+				}
 
-					// onProgress callback
-					function ( xhr ) {
-						console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
-					},
+				function mainObjLoadingProgress( xhr ) {
+					console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+				}
 
-					// onError callback
-					function ( err ) {
-						console.error( 'An error happened' );
-					}
-				);
+				function mainObjLoadingError( err ) {
+					console.error( 'An error happened' );
+				}
+ 
+				loader.load( "/static/assets/fbx/scene.json", obj => loadMainObj( obj ), xhr => mainObjLoadingProgress( xhr ), err => mainObjLoadingError( err ) );
 
 				var positions2 =[];
 				var folder = 0;
@@ -399,52 +374,79 @@
 					EV.loadElementObject(selectedchildObj);
 				});
 				
-				$(document.body).on('click', '#compat-modal-bring-btn',  () => {
-					let selectedOptionVal = $("#compat-panel-select").val();
-					if (selectedOptionVal != null && selectedOptionVal.length > 0) {
-						let shapeToLoad = CV.getCompatObjectToLoad(selectedOptionVal, 'main');
-						
-						const loadedShapeAxesHelper = new THREE.AxesHelper(5);
-						shapeToLoad.add(loadedShapeAxesHelper);
 
-						shapeToLoad.position.set(-100, 100, 100);
-						scene.add(shapeToLoad);
-						
-						transformControl1.attach( shapeToLoad );
+				compatibilityPanel.signals.bringElementButtonClicked.add( () => compatibilityPanel.getSelectedPointCloud().then( loadSelectedMesh ).catch( errorAlert ) );
 
-						// 0: translate, 1: rotate, 2: scale, 3: detach
-						let transformControlMode = 0;
+				function errorAlert( error ) { 
 
-						alert("Double click on object to change transform mode/switch off controls.");
+					console.error( error );
+					alert('Invalid Compatibility Point Cloud Selection.'); 
 
-						canvas.ondblclick = function(event)
-						{
-							var intesects = raycaster.intersectObject(shapeToLoad, false);
-							
-							if(intesects.length > 0) {
-								
-								transformControl1.attach( shapeToLoad );
+				}
 
-								transformControlMode = (transformControlMode + 1) % 4;
-								
-								switch( transformControlMode ) {
-									case 1:
-										transformControl1.setMode( "rotate" );
-										break;
-									case 2:
-										transformControl1.setMode( "scale" );
-										break;
-									case 3:
-										transformControl1.detach();
-										break;
-									default:
-										transformControl1.setMode( "translate" );
-								}
-							}
-						}
-						
+
+
+				var bringElementShape = null;
+
+				function loadSelectedMesh( shapeToLoad ) {
+
+					if ( shapeToLoad == null ) {
+
+						alert ( 'Select a point cloud in Compatibility Panel first!' );
+
+					} else {
+
+						scene.add( shapeToLoad );
+
+						bringElementShape = shapeToLoad;
+
+						attachTransformControls( shapeToLoad );
+
 					}
-				});
+				}
+
+				function attachTransformControls( shapeToLoad ) {
+
+					transformControl1.attach( shapeToLoad );
+
+					alert("Q = Translate, W = Rotate, E = Scale, R = Disable controls.");
+
+					document.addEventListener("keyup", setupTransformControls);
+
+					addTransformPanel( bringElementShape );
+
+				}
+
+				function setupTransformControls(event) {
+
+					transformControl1.attach( bringElementShape );
+
+					switch( event.keyCode ) {
+						case 81:
+							transformControl1.setMode( "translate" );
+							break;
+						case 87:
+							transformControl1.setMode( "rotate" );
+							break;
+						case 69:
+							transformControl1.setMode( "scale" );
+							break;
+						case 82:
+							transformControl1.detach();
+					}
+				}
+
+
+				var transformPanel = new TransformPanel();
+
+				function addTransformPanel( shapeToTransform ) {
+
+					transformPanel.attach( shapeToTransform );
+
+					$("#element-view-panel").after( transformPanel.getElement() );
+
+				}
+
 
 				var lastTime = ( performance || Date ).now();
 				var count = 0;
@@ -512,8 +514,8 @@
 				function loop()
 				{
 					renderer.render(scene, camera);	
-				};
-				// loop();
+				}
+
 				animate();
 				
 				function resizeCanvas() {
