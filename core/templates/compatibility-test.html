@@ -48,7 +48,9 @@
 	
 	<div class="potree_container" style="position: absolute; width: 100%; height: 100vh; left: 0px; top: 0px; z-index: 0;">
 	<!-- <div class="potree_container"> -->
-		<div id="potree_render_area"></div>
+		<div id="potree_render_area">
+			<input id="timeline" type="range" style="position: fixed; z-index: 3; bottom: 20px; margin-left: 100px;" value="0">
+		</div>
 		<div id="potree_sidebar_container"> </div>
 	</div>
 	
@@ -65,10 +67,101 @@
 		
 		// viewer.setDescription("Compatibility Mode</br>Go back to: <a href='/index.html'>View Mode</a>");
 		
+		// function clearScene( scene ) {
+			
+		// 	scene.remove(scene.getObjectByName('cpms'));
+
+		// 	// scene = new THREE.Scene();
+
+		// 	// scene.addPointCloud( null );
+
+		// 	// while(scene.children.length > 0){ 
+		// 	// 	scene.remove(scene.children[0]); 
+		// 	// }
+		// }
+
+		var loadCount = [1, 0, 0];
+
 		viewer.loadGUI(() => {
 			viewer.setLanguage('en');
 			$("#menu_appearance").next().show();
 			viewer.toggleSidebar();
+
+			var timeline = document.getElementById("timeline");
+
+			timeline.addEventListener( 'change', (event) => {
+				let scheduleDay = timeline.value;
+
+				if ( scheduleDay <= 34 ) {
+
+					loadCount[0]++;
+					loadCount[1] = 0;
+					loadCount[2] = 0;
+
+					// alert('<34');
+					if (loadCount[0] === 1) {
+						Potree.loadPointCloud("https://mojtaba1995.github.io/clouds/cloud1/cloud.js", "cpms", function(e){
+						
+							viewer.scene.clearScene();
+
+							viewer.scene.addPointCloud(e.pointcloud);
+							
+							let material = e.pointcloud.material;
+							material.size = 1;
+							material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
+							
+							viewer.fitToScreen();
+						});
+					}
+					
+				} else if ( scheduleDay > 34 && scheduleDay <= 67 ) {
+
+					loadCount[0] = 0;
+					loadCount[1]++;
+					loadCount[2] = 0;
+
+					// alert('34 - 67');
+					if (loadCount[1] === 1) {
+						Potree.loadPointCloud("https://mojtaba1995.github.io/clouds/cloud2/cloud.js", "cpms", function(e){
+						
+							viewer.scene.clearScene();
+
+							viewer.scene.addPointCloud(e.pointcloud);
+							
+							let material = e.pointcloud.material;
+							material.size = 1;
+							material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
+							
+							viewer.fitToScreen();
+						});
+					}
+					
+
+				} else {
+
+					loadCount[0] = 0;
+					loadCount[1] = 0;
+					loadCount[2]++;
+					
+					// alert('>67');
+
+					if (loadCount[2] === 1) {
+						Potree.loadPointCloud("https://mojtaba1995.github.io/clouds/cloud3/cloud.js", "cpms", function(e){
+							// clearScene( viewer.scene );
+							viewer.scene.clearScene();
+							
+							viewer.scene.addPointCloud(e.pointcloud);
+							
+							let material = e.pointcloud.material;
+							material.size = 1;
+							material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
+							
+							viewer.fitToScreen();
+						});	
+					}
+					
+				}
+			} );
 		});
 		
 		// Lion

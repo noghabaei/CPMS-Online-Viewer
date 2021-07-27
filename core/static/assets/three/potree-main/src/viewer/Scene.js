@@ -434,4 +434,12 @@ export class Scene extends EventDispatcher{
 	removeAnnotation(annotationToRemove) {
 		this.annotations.remove(annotationToRemove);
 	}
+
+	clearScene() {
+
+		let loadedPc = this.scenePointCloud.getObjectByName('cpms');
+		// console.log( loadedPc );
+
+		this.scenePointCloud.remove( loadedPc );
+	}
 };
