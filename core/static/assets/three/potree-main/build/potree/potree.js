@@ -71630,6 +71630,14 @@ void main() {
 		removeAnnotation(annotationToRemove) {
 			this.annotations.remove(annotationToRemove);
 		}
+
+		clearScene() {
+
+			let loadedPc = this.scenePointCloud.getObjectByName('cpms');
+			// console.log( loadedPc );
+
+			this.scenePointCloud.remove( loadedPc );
+		}
 	};
 
 	// http://epsg.io/
@@ -79012,6 +79020,7 @@ ENDSEC
 			this.volumeTool = viewer.volumeTool;
 
 			this.dom = $("#sidebar_root");
+
 		}
 
 		createToolIcon(icon, title, callback){
