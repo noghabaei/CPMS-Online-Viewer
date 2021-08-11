@@ -122,8 +122,9 @@
 						startDate = data[1];
 					}
 					if (data.length == headers.length) {
-						var id = getElementIdbyName(data[0]);;
-						tasks.push({
+						var id = getElementIdbyName(data[0]);
+						if(tasks.find(el => el.id === id)==undefined){
+							tasks.push({
 									'start': data[1],
 									'end': data[2],
 									'name':id,
@@ -131,6 +132,8 @@
 									'progress': data[3],
 									'dependencies' : data[4].replace(":",",")
 								});
+
+						}
 					}
 				}
 				console.log(tasks);
