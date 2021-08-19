@@ -1,6 +1,7 @@
 # CPMS Online Viewer
 
-Live App: http://cpms-viewer.herokuapp.com/
+Live App: 
+<a href="http://cpms-viewer.herokuapp.com/" target="_blank">http://cpms-viewer.herokuapp.com/</a>
 
 Application to enable loading, viewing and modifying 3-D generated construction models and point clouds on the Web using only front-end technology stack. Major functionalities of the application include:
 - Dynamic construction schedule viewer
