@@ -1,6 +1,10 @@
 import * as OC from '/static/assets/fbx/OrbitControls.js';
 import { loadPointCloud } from "/static/assets/js/three-utils.js";
 
+// ************
+// DEPRECATED FILE !!!! 
+// Please refer to CompatibilityPanel.js classes and methods related to Compatibility Panel class
+
 function loadCompatibilityCanvas(shapeToLoad) {
     if (shapeToLoad == null || shapeToLoad.length === 0) {
         return;

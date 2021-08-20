@@ -1,5 +1,8 @@
 import * as OC from '/static/assets/fbx/OrbitControls.js';
 
+// Methods used in the Element panel loading and operation workflow
+
+// Get type string of a BIM element, given a valid element name.
 function getElementType(element) {
     if (element == null || element.name == null || !validateElementName(element.name)) return null;
 
@@ -10,6 +13,7 @@ function getElementType(element) {
     else return found[found.length - 1];
 }
 
+// Get ID string of a BIM element, given a valid element name.
 function getElementId(element) {
     if (element == null || element.name == null || !validateElementName(element.name)) return null;
 
@@ -20,6 +24,7 @@ function getElementId(element) {
     else return found[found.length - 1];
 }
 
+// Validate that the BIM element name is of the form '<description>_[ID]_Geometry' string using RegEx
 function validateElementName(nameString) {
     if (nameString == null || nameString.length === 0) return false;
 
@@ -32,11 +37,13 @@ function validateElementName(nameString) {
     return nameStringRegex.test(nameString);
 }
 
+// Populates the info field with the input string in the element Panel 
 function setElementInfo(elementTypeString) {
     let infoString = getElementInfoFromTypeString(elementTypeString, true);
     $('#element-info-span').text(infoString);
 }
 
+// Helper method for setElementInfo()
 function getElementInfoFromTypeString(elementTypeString, prefixInfo) {
     if (elementTypeString == null) return null;
 
@@ -44,6 +51,8 @@ function getElementInfoFromTypeString(elementTypeString, prefixInfo) {
     return prefixInfo ? 'Info: ' + infoString : infoString;
 }
 
+// Main method used to populate the Element Panel dropdown.
+// Calls the above methods to create options in the Element Panel dropdown, setting value to Element Type and name attribute to Element Name.
 function populateElementsDropdown(mainObj) {
     let elementIdTypeMapList = [];
 
@@ -85,6 +94,8 @@ function populateElementsDropdown(mainObj) {
 
 }
 
+// Load the passed object in the Element Panel canvas.
+// centerObject = Apply CPMS transformations to center the object in the canvas.
 function loadElementObject( objectTotLoad, centerObject=true ) {
     // Create scene
     let elementViewScene = new THREE.Scene();
@@ -149,7 +160,7 @@ function loadElementObject( objectTotLoad, centerObject=true ) {
     animate();
 }
 
-// Move this to a util module
+// Get center of a THREE.Mesh object. Returns THREE.Vector3
 function getCenterPoint(mesh) {
     var geometry = mesh.geometry;
     geometry.computeBoundingBox();

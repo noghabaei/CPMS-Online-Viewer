@@ -1,3 +1,4 @@
+// Fundamental class for every element created in application.
 class CPMSElement {
     element;
 
@@ -34,6 +35,7 @@ class CPMSElement {
     }
 }
 
+// Represents a customizable Panel Header. E.g. Element Panel header, Compatibility Panel header
 class PanelHeader extends CPMSElement {
 
     mainDiv;
@@ -65,6 +67,7 @@ class PanelHeader extends CPMSElement {
 
 }
 
+// Represents a customizable Panel Body. E.g. Element Panel, Compatibility Panel
 class PanelContent extends CPMSElement {
 
     constructor() {
@@ -84,6 +87,7 @@ class PanelContent extends CPMSElement {
 
 }
 
+// Represents a UI Panel. Contains PanelHeader and PanelContent 
 class Panel extends CPMSElement {
 
     panelHeader;
@@ -120,6 +124,7 @@ class Panel extends CPMSElement {
     }
 }
 
+// Button used to increase transform value in Transform Panel.
 class IncreaseButton extends CPMSElement {
 
     transformType;
@@ -157,6 +162,8 @@ class IncreaseButton extends CPMSElement {
 
 }
 
+
+// Button used to decrease transform value in Transform Panel.
 class DecreaseButton extends CPMSElement {
 
     transformType;

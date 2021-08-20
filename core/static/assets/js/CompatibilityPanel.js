@@ -3,6 +3,9 @@ import { OrbitControls } from "/static/assets/fbx/OrbitControls-r110.js";
 import { loadPointCloud, degToRad } from "/static/assets/js/three-utils.js";
 import { Panel, IncreaseButton, DecreaseButton } from "./CPMSElements.js";
 
+
+// Transform Panel that is shown when Compatibility Panel - Bring Element button is bringElementButtonClicked.
+// Presents a pair of increase and decrease buttons for each of the 3 transforms for the loaded point cloud.
 class TransformPanel extends Panel {
 
     shapeToTransform;
@@ -179,6 +182,8 @@ class TransformPanel extends Panel {
 
 }
 
+
+// Class representing the Compatibility Panel on the View Mode page.
 class CompatibilityPanel extends Panel {
 
     comaptibilitySelectDropdown;
@@ -193,7 +198,10 @@ class CompatibilityPanel extends Panel {
     #compatScene;
     
     signals = {
+
+        // Signal fired when a new point cloud is selected in the dropdown.
         selectedPointCloudChanged: new signals.Signal(),
+        
         bringElementButtonClicked: new signals.Signal()
     }
 
@@ -275,6 +283,8 @@ class CompatibilityPanel extends Panel {
 
     }
 
+    // Get the selected point cloud name from the drop down and call method to get the point cloud data from appropriate URL.
+    // Returns the point cloud data.
     getSelectedPointCloud() {
 
         return new Promise( (resolve, reject) => {
@@ -288,6 +298,7 @@ class CompatibilityPanel extends Panel {
         } );
     }
 
+    // Signal listener
     onSelectedPoinCloudChanged() {
 
         let newValue = this.comaptibilitySelectDropdown.val();
@@ -303,6 +314,7 @@ class CompatibilityPanel extends Panel {
 
     }
 
+    // Method to get the actual point cloud data based on the name of the input point cloud
     getCompatObjectToLoad( shapeToLoad ) {
 
         return new Promise( (resolve, reject) => {
@@ -326,6 +338,9 @@ class CompatibilityPanel extends Panel {
                     .catch( reject );
 
             } else {
+                // Deprecated options for loading randon shaped for testing.
+                // Flow will not reach here now.
+
                 var shapeGeometry = null;
 
                 if (shapeToLoad.toLowerCase() == 'cube') {
@@ -357,6 +372,7 @@ class CompatibilityPanel extends Panel {
         } );
     }
 
+    // Clear the Compatibility Panel canvas.
     clearScene() {
 
         if ( this.#compatScene != null ) {
@@ -436,12 +452,15 @@ class CompatibilityPanel extends Panel {
         animateCompatScene();
     }
 
+
+    // Populate the Info field in Compatibility canvas.
     setInfoString(text) {
 
         this.infoStringSpan.text(this.#infoStringPrefix + text);
 
     }
 
+    // Create Compatibility Canvas point cloud dropdown
     createComaptibilityDropdown() {
         let selectDiv = $("<div></div>");
         selectDiv.attr("id", "compat-panel-dropdown");
@@ -467,6 +486,8 @@ class CompatibilityPanel extends Panel {
         return selectDiv;
     }
 
+
+    // Create Compatibility Canvas info div
     createCompatibilityInfoRow() {
         let infoDiv = $("<div></div>");
         infoDiv.addClass("dropdown-element-info-div");
@@ -483,6 +504,7 @@ class CompatibilityPanel extends Panel {
         return infoDiv;
     }
 
+    // Create Compatibility Canvas canvas element
     createCompatibilityCanvas() {
         let canvasDiv = $("<div></div>");
         canvasDiv.attr("id", "compat-panel-canvas");
@@ -498,6 +520,7 @@ class CompatibilityPanel extends Panel {
         return canvasDiv;
     }
 
+    // Create Compatibility Canvas buttons i.e. Bring Element and > button
     createCompatibilityButtonsRow() {
         let element = $("<div></div>");
         element.attr("id", "compat-panel-buttons");
