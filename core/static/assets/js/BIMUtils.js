@@ -1,3 +1,6 @@
+// Utility File for CPMS application
+
+// Get type string of a BIM element, given a valid element name.
 function getElementType( element ) {
     if (element == null || element.name == null || !validateElementName(element.name)) return null;
 
@@ -8,6 +11,7 @@ function getElementType( element ) {
     else return found[found.length - 1];
 }
 
+// Get ID string of a BIM element, given a valid element name.
 function getElementId(element) {
     if (element == null || element.name == null || !validateElementName(element.name)) return null;
 
@@ -18,6 +22,7 @@ function getElementId(element) {
     else return found[found.length - 1];
 }
 
+// Validate that the BIM element name is of the form '<description>_[ID]_Geometry' string using RegEx
 function validateElementName(nameString) {
     if (nameString == null || nameString.length === 0) return false;
 
@@ -30,6 +35,7 @@ function validateElementName(nameString) {
     return nameStringRegex.test(nameString);
 }
 
+// Helper method for setElementInfo()
 function getElementInfoFromTypeString(elementTypeString, prefixInfo=false) {
     if (elementTypeString == null) return null;
 
@@ -82,6 +88,9 @@ function getBIMGroupByChildrenName( scene ) {
     return BIMGroup;
 }
 
+// Test if the current node is a parent node for the BIM elements. 
+// The BIM elements each have a name that ends with '_Geometry'.
+//TODO: Use a better test.
 function testForBimParent( node ) {
     var objectsArray = node.children;
     if ( objectsArray != null ) {
@@ -97,6 +106,9 @@ function testForBimParent( node ) {
     return false;
 }
 
+
+// DEPRECATED. 
+// Faulty logic. Do not use.
 function getBIMGroupByUUId( scene ) {
     //TODO externalize this string!!!!
     const BIMGroupUUID = "C72D7B41-8227-4E77-B423-45CCF2FD6942";
