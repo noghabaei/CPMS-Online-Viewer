@@ -66,6 +66,7 @@ def profile_page(request):
          
     return render(request, "profile.html", {"form": form, "msg": msg})
 
+# Helper method to extract user details for the profile form on Profile Settings page.
 def get_profile_data_from_user(user):
     if not user: return None
 
@@ -84,6 +85,7 @@ def get_profile_data_from_user(user):
 
     return formDataDict
 
+# Helper method to populate the instance of the passed user using the request and profileForm data.
 def populate_user_profile(user, profileForm, request):
     if not user or not profileForm: return user
 
@@ -98,11 +100,13 @@ def populate_user_profile(user, profileForm, request):
     user.profile.postalCode = formDataDict['postalCode']
     user.profile.aboutMe = formDataDict['aboutMe']
 
+    # Picture is a file. Use file read APIs.
     fileData = request.FILES['profilePicture'].file.read()
     user.profile.dbProfilePicture = fileData
 
     return user
 
+# Helper method to clean the profile form data
 def get_cleaned_profile_form_data(profileForm):
     dataDict = dict()
 

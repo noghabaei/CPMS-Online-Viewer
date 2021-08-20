@@ -1,6 +1,8 @@
 import * as THREE from '/static/assets/three/build/three.module.js';
 import * as OC from '/static/assets/three/examples/jsm/controls/OrbitControls.js';
 
+// Async function to load point cloud data from a URL.
+// Returns a Promise.
 function loadPointCloud(url, position) {
 
     return new Promise((resolve, reject) => {
@@ -22,7 +24,8 @@ function loadPointCloud(url, position) {
                 if ( position !== undefined ) {
                     pointcloud.position.copy( position );
                 }
-
+                
+                // Below code does notwork with new version of POtree
                 var material = pointcloud.material;
                 material.size = 2;
                 material.pointColorType = Potree.PointColorType.RGB; //RGB | DEPTH | HEIGHT | POINT_INDEX | LOD | CLASSIFICATION
@@ -42,6 +45,7 @@ function loadPointCloud(url, position) {
     });
 }
 
+// Get center point of a THREE.Mesh object
 function getCenterPoint(mesh) {
     var geometry = mesh.geometry;
     geometry.computeBoundingBox();
@@ -53,10 +57,13 @@ function getCenterPoint(mesh) {
     return center;
 }
 
-/*
-    displayWindow = 'editor' | 'view' ... 'editor' for canvases in panels in editor, 
-        'view' for canvases in panels in View page (index.html)
-*/
+// Utility method to load objects in main or smaller canvases in Element/Compatibility panels.
+// objectToLoad = pass the object to be loaded in the canvas
+// canvasId = HTML id of the canvas to be used
+// centerObjectForCPMS = apply CPMS transformations to center the object (transformations present in index.html )
+// displayWindow = editor | view. Always pass view unless working with deprecated editor code
+// showGrid = show the grid on load
+// showAxes = show coordinate axes on load
 function loadObjectInCanvas(objectToLoad, canvasId, centerObjectForCPMS = true, displayWindow = 'editor', showGrid = false, showAxes = false) {
 
     // Get required canvas

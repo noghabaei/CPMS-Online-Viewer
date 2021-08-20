@@ -30,6 +30,8 @@ class Profile(models.Model):
     def save(self, *args, **kwargs):
         super().save()
 
+    # The image is encoded before storing in database.
+    # Decode it before returning to the front-end.
     @property
     def profilePictureUrl(self):
         if self.dbProfilePicture and len(self.dbProfilePicture):
@@ -46,4 +48,3 @@ def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
 
 # Create your models here.
-
