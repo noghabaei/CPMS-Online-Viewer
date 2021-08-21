@@ -48,6 +48,10 @@ class PanelHeader extends CPMSElement {
         super.setElement(this.createPanelHeader(panelHeaderText));
     }
 
+    /**
+     * Create Panel Header
+     * @param  {string} panelHeaderText Panel Title String
+     */
     createPanelHeader(panelHeaderText) {
         this.mainDiv = $("<div></div>");
         this.mainDiv.addClass("panel-header");
@@ -61,6 +65,7 @@ class PanelHeader extends CPMSElement {
         return this.mainDiv;
     }
 
+    // helper method
     setPanelHeaderText(panelHeaderText) {
         this.headerDiv.text(panelHeaderText);
     }

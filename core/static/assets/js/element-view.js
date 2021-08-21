@@ -2,7 +2,10 @@ import * as OC from '/static/assets/fbx/OrbitControls.js';
 
 // Methods used in the Element panel loading and operation workflow
 
-// Get type string of a BIM element, given a valid element name.
+/**
+ * Get type string of a BIM element, given a valid element name.
+ * @param  {*} element 
+ */
 function getElementType(element) {
     if (element == null || element.name == null || !validateElementName(element.name)) return null;
 
@@ -13,7 +16,10 @@ function getElementType(element) {
     else return found[found.length - 1];
 }
 
-// Get ID string of a BIM element, given a valid element name.
+/**
+ * Get ID string of a BIM element, given a valid element name.
+ * @param  {*} element
+ */
 function getElementId(element) {
     if (element == null || element.name == null || !validateElementName(element.name)) return null;
 
@@ -24,7 +30,11 @@ function getElementId(element) {
     else return found[found.length - 1];
 }
 
-// Validate that the BIM element name is of the form '<description>_[ID]_Geometry' string using RegEx
+
+/**
+ * Validate that the BIM element name is of the form '<description>_[ID]_Geometry' string using RegEx
+ * @param  {string} nameString
+ */
 function validateElementName(nameString) {
     if (nameString == null || nameString.length === 0) return false;
 
@@ -37,13 +47,23 @@ function validateElementName(nameString) {
     return nameStringRegex.test(nameString);
 }
 
-// Populates the info field with the input string in the element Panel 
+
+/**
+ * Populates the info field with the input string in the element Panel 
+ * @param  {string} elementTypeString
+ */
 function setElementInfo(elementTypeString) {
     let infoString = getElementInfoFromTypeString(elementTypeString, true);
     $('#element-info-span').text(infoString);
 }
 
-// Helper method for setElementInfo()
+
+/**
+ * Helper method for setElementInfo()
+ * @param  {string} elementTypeString
+ * @param  {boolean} prefixInfo Append "Info: " to resulting Info Type String 
+ * @return {string} Information type string for the element
+ */
 function getElementInfoFromTypeString(elementTypeString, prefixInfo) {
     if (elementTypeString == null) return null;
 
@@ -51,8 +71,12 @@ function getElementInfoFromTypeString(elementTypeString, prefixInfo) {
     return prefixInfo ? 'Info: ' + infoString : infoString;
 }
 
-// Main method used to populate the Element Panel dropdown.
-// Calls the above methods to create options in the Element Panel dropdown, setting value to Element Type and name attribute to Element Name.
+
+/**
+ * Main method used to populate the Element Panel dropdown.
+ * Calls the above methods to create options in the Element Panel dropdown, setting value to Element Type and name attribute to Element Name.
+ * @param  {THREE.Model} mainObj Main BIM Model
+ */
 function populateElementsDropdown(mainObj) {
     let elementIdTypeMapList = [];
 
@@ -94,8 +118,12 @@ function populateElementsDropdown(mainObj) {
 
 }
 
-// Load the passed object in the Element Panel canvas.
-// centerObject = Apply CPMS transformations to center the object in the canvas.
+
+/**
+ * Load the passed object in the Element Panel canvas.
+ * @param  {THREE.Model} objectTotLoad Selected BIM element in dropdown
+ * @param  {boolean} centerObject=true Apply CPMS transformations to center the object in the canvas.
+ */
 function loadElementObject( objectTotLoad, centerObject=true ) {
     // Create scene
     let elementViewScene = new THREE.Scene();
@@ -161,6 +189,9 @@ function loadElementObject( objectTotLoad, centerObject=true ) {
 }
 
 // Get center of a THREE.Mesh object. Returns THREE.Vector3
+/**
+ * @param  {THREE.Mesh} mesh
+ */
 function getCenterPoint(mesh) {
     var geometry = mesh.geometry;
     geometry.computeBoundingBox();

@@ -1,6 +1,10 @@
 // Utility File for CPMS application
 
-// Get type string of a BIM element, given a valid element name.
+
+/**
+ * Get type string of a BIM element, given a valid BIM element JS object.
+ * @param  {*} element
+ */
 function getElementType( element ) {
     if (element == null || element.name == null || !validateElementName(element.name)) return null;
 
@@ -11,7 +15,11 @@ function getElementType( element ) {
     else return found[found.length - 1];
 }
 
-// Get ID string of a BIM element, given a valid element name.
+
+/**
+ * Get ID string of a BIM element, given a valid BIM element JS object.
+ * @param  {*} element
+ */
 function getElementId(element) {
     if (element == null || element.name == null || !validateElementName(element.name)) return null;
 
@@ -22,7 +30,11 @@ function getElementId(element) {
     else return found[found.length - 1];
 }
 
-// Validate that the BIM element name is of the form '<description>_[ID]_Geometry' string using RegEx
+
+/**
+ * Validate that the BIM element name is of the form '<description>_[ID]_Geometry' string using RegEx
+ * @param  {string} nameString
+ */
 function validateElementName(nameString) {
     if (nameString == null || nameString.length === 0) return false;
 
@@ -35,7 +47,13 @@ function validateElementName(nameString) {
     return nameStringRegex.test(nameString);
 }
 
-// Helper method for setElementInfo()
+
+/**
+ * Helper method for setElementInfo()
+ * @param  {string} elementTypeString Element Type String
+ * @param  {boolean} prefixInfo=false Append Info: to resulting string if true
+ * @return {string} Element Info String
+ */
 function getElementInfoFromTypeString(elementTypeString, prefixInfo=false) {
     if (elementTypeString == null) return null;
 
@@ -43,8 +61,11 @@ function getElementInfoFromTypeString(elementTypeString, prefixInfo=false) {
     return prefixInfo ? 'Info: ' + infoString : infoString;
 }
 
-// The BIM Group in the scene has around 1949 children, 
-// and each child (which is a Mesh) has a name ending in "_Geometry".
+/**
+ * The BIM Group in the scene has around 1949 children, and each child (which is a Mesh) has a name ending in "_Geometry".
+ * @param  {THREE.Scene} scene
+ * @return {Object} Parent JS object containing the BIM elements.
+ */
 function getBIMGroupByChildrenName( scene ) {
     let BIMGroup = null;
 

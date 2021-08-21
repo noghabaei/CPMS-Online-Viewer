@@ -37,7 +37,12 @@ class TransformPanel extends Panel {
         return transformRows;
 
     }
-
+    /**
+     * @param  {string} rowLabel
+     * @param  {string} axis='x'
+     * @param  {string} rowType='translate'
+     * @param  {string} rowId=''
+     */
     createTransformRow( rowLabel, axis='x', rowType='translate', rowId='' ) {
 
         let row = $( '<div class="transform-row"></div>' );
@@ -87,7 +92,12 @@ class TransformPanel extends Panel {
     }
 
     #transformIntervalId = null;
-
+    /**
+     * Method to rotate the current object.
+     * @param  {string} axis Rotation axis
+     * @param  {boolean} increase=true Rotation direction
+     * @param  {number} angle=2 Rotation angle
+     */
     startRotation(axis, increase=true, angle=2) {
         if ( this.#transformIntervalId === -1 )
             this.#transformIntervalId = setInterval( () => this.rotateObject(axis, increase, angle), 100);
@@ -99,7 +109,12 @@ class TransformPanel extends Panel {
             this.#transformIntervalId = -1;
         }
     }
-
+    /**
+     * Helper method for startRotation
+     * @param  {} axis
+     * @param  {} increase=true
+     * @param  {} angle=2
+     */
     rotateObject(axis, increase=true, angle=2) {
 
         let rotateAngle = angle != null ? degToRad( angle ) : degToRad( 2 );
@@ -124,14 +139,21 @@ class TransformPanel extends Panel {
         }
 
     }
-
+    /**
+     * Method to translate the current object.
+     * @param  {string} axis='x' Translation axis
+     * @param  {boolean} increase=true Translation direction
+     * @param  {number} step=0.5 Translation measure
+     */
     startTranslation(axis='x', increase=true, step=0.5) {
 
         if ( this.#transformIntervalId === -1 )
             this.#transformIntervalId = setInterval( () => this.translateObject(axis, increase, step), 100);
 
     }
-
+    /**
+     * Method to stop translation.
+     */
     stopTranslation() {
 
         if ( this.#transformIntervalId != -1 ) {
@@ -140,7 +162,12 @@ class TransformPanel extends Panel {
         }
 
     }
-
+    /**
+     * Helper method for startTranslation()
+     * @param  {} axis
+     * @param  {} increase=true
+     * @param  {} step=0.5
+     */
     translateObject(axis, increase=true, step=0.5) {
 
         axis = axis.toLowerCase();
@@ -167,13 +194,18 @@ class TransformPanel extends Panel {
 
 
     } 
-
+    /**
+     * Attach transform controls to input object.
+     * @param  {THREE.Object3D} objectToTransform
+     */
     attach( objectToTransform ) {
 
         this.shapeToTransform = objectToTransform;
 
     }
-
+    /**
+     * Detach transform controls from current object.
+     */
     detach() {
 
         this.shapeToTransform = null;
@@ -283,8 +315,11 @@ class CompatibilityPanel extends Panel {
 
     }
 
-    // Get the selected point cloud name from the drop down and call method to get the point cloud data from appropriate URL.
-    // Returns the point cloud data.
+    
+    /**
+     * Get the selected point cloud name from the drop down and call method to get the point cloud data from appropriate URL.
+     * Returns the point cloud data.
+     */
     getSelectedPointCloud() {
 
         return new Promise( (resolve, reject) => {
@@ -314,7 +349,11 @@ class CompatibilityPanel extends Panel {
 
     }
 
-    // Method to get the actual point cloud data based on the name of the input point cloud
+    
+    /**
+     * Method to get the actual point cloud data based on the name of the input point cloud
+     * @param  {string} shapeToLoad point cloud name
+     */
     getCompatObjectToLoad( shapeToLoad ) {
 
         return new Promise( (resolve, reject) => {
@@ -389,7 +428,10 @@ class CompatibilityPanel extends Panel {
         }
 
     }
-
+    /**
+     * Load the Comapt Panel canvas with given point cloud
+     * @param  {THREE.Object3D} shapeToLoad Point cloud to Load
+     */
     loadCompatibilityCanvas(shapeToLoad) {
         if (shapeToLoad == null || shapeToLoad.length === 0) {
             return;

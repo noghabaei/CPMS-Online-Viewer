@@ -1,8 +1,12 @@
 import * as THREE from '/static/assets/three/build/three.module.js';
 import * as OC from '/static/assets/three/examples/jsm/controls/OrbitControls.js';
 
-// Async function to load point cloud data from a URL.
-// Returns a Promise.
+/**
+ * Async function to load point cloud data from a URL. Returns a Promise.
+ * @param  {string} url Point CLoud URL
+ * @param  {THREE.Vector3} position Point Cloud Position vector
+ * @return {Promise} POint cloud data
+ */
 function loadPointCloud(url, position) {
 
     return new Promise((resolve, reject) => {
@@ -57,13 +61,16 @@ function getCenterPoint(mesh) {
     return center;
 }
 
-// Utility method to load objects in main or smaller canvases in Element/Compatibility panels.
-// objectToLoad = pass the object to be loaded in the canvas
-// canvasId = HTML id of the canvas to be used
-// centerObjectForCPMS = apply CPMS transformations to center the object (transformations present in index.html )
-// displayWindow = editor | view. Always pass view unless working with deprecated editor code
-// showGrid = show the grid on load
-// showAxes = show coordinate axes on load
+
+/**
+ * // Utility method to load objects in main or smaller canvases in Element/Compatibility panels.
+ * @param  {THREE.Object3D} objectToLoad pass the object to be loaded in the canvas
+ * @param  {string} canvasId HTML id of the canvas to be used 
+ * @param  {boolean} centerObjectForCPMS=true apply CPMS transformations to center the object (transformations present in index.html )
+ * @param  {string} displayWindow='editor' editor | view. Always pass view unless working with deprecated editor code
+ * @param  {boolean} showGrid=false show the grid on load
+ * @param  {boolean} showAxes=false show coordinate axes on load
+ */
 function loadObjectInCanvas(objectToLoad, canvasId, centerObjectForCPMS = true, displayWindow = 'editor', showGrid = false, showAxes = false) {
 
     // Get required canvas
@@ -139,11 +146,17 @@ function loadObjectInCanvas(objectToLoad, canvasId, centerObjectForCPMS = true, 
 
     animate();
 }
-
+/**
+ * Convert degrees to radians.
+ * @param  {number} degrees
+ */
 function degToRad( degrees ) {
     return degrees * Math.PI / 180;
 }
-
+/**
+ * COnvert radians to degrees.
+ * @param  {number} radians
+ */
 function radToDeg( radians ) {
     return radians * 180 / Math.PI;
 }
