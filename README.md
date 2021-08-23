@@ -344,6 +344,23 @@ class ProfileForm(forms.Form):
 </br>
 </br>
 
+## Testing
+### UI and Testing 
+UI and JavaScript testing is done using the Katalon Studio framework.
+
+UI Testing Repository: https://github.com/cterse/cpms-ui-testing
+
+### Backend Python Testing
+The default unit testing module `unittest` is used to perform Unit testing for the Django app.
+
+**Tests File:** test_views.py, tests.py
+
+**How to run:** Run the command `python manage.py test`. Django automatically detects and runs file named ‘test_*’ and functions named ‘test_*’ when the command python manage.py test is run.
+
+Python Example Unit Test:
+
+<img src="./res/python-test.png"></img>
+
 ## Team
 [Mojtaba Noghabaei](https://github.com/mojtaba1995) </br>
 [Chinmay Terse](https://github.com/cterse) </br>
