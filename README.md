@@ -185,7 +185,7 @@ pcflag = !scene.getObjectByName("objectName1").visible;
 Displays Frame rate per second value continuously</br>
 
 
-**index.html Control Panel Code:**
+**index.html Information Panel Code:**
 ```javascript
 //description: Calculating FPS to display in information pannel
 var lastTime = ( performance || Date ).now();
@@ -390,6 +390,96 @@ class ProfileForm(forms.Form):
 ```
 
 ![Profile Page](./res/profile.png)
+
+</br>
+</br>
+
+### **Schedule Page**
+| Feature | Source Code File |
+| -------------- | ---------- |
+| Schedule viewer | core/templates/tables.html |
+| Gantt chart | core/templates/tables.html |
+
+
+#### **Schedule:**
+The Schedule page  displays the schedule of the construction site by changing the colour of the elements based on their state </br>
+Initially bim will be transparent white, as we move the schedule range inprogress elements will be showing using green colour, behind the schedule elements will be shown in red and completed elements will be opaque.
+
+**tables.html Schedule viewer Code:**
+```javascript
+//description: changes the opacity of the elements based on their progress.
+function timelineValChange(){
+	if (scene.getObjectByName('BIM') === undefined) return;	
+	if(oldVal == timeline.value)return;
+	var completedElements = getCompletedElementsName();
+	var inprogressElements = getInProgressElements(timeline.value);
+	var behindScheduleElements = getBehindSheduleElements(timeline.value);
+	console.log(completedElements);
+	var modelElements = [];
+	scene.getObjectByName('BIM').traverse(function (node) {
+		if(node.isMesh){
+			if( completedElements.includes( getElementId(node) )){
+				modelElements.push(node.name);
+				node.material = new THREE.MeshBasicMaterial({color: "white"}); 
+			}
+			else if( inprogressElements.includes( getElementId(node) )){
+				node.material = new THREE.MeshBasicMaterial({color: "green"});
+				node.material.transparent = true;
+				node.material.opacity = 0.4;
+				}
+			else if( behindScheduleElements.includes(getElementId(node))){
+			    node.material = new THREE.MeshBasicMaterial({color: "red"});
+				node.material.transparent = true;
+				node.material.opacity = 0.4;
+			}else{
+				node.material = new THREE.MeshBasicMaterial({color: "white"});
+				node.material.transparent = true;
+				node.material.opacity = 0.4;
+				}
+             }
+            });
+		oldVal = timeline.value;
+	}
+```
+
+![Schedule View](./res/schedule_page.png)
+
+</br>
+</br>
+
+#### **gantt chart:**
+The Schedule page  displays the gantt chart of the construction. Tasks will have task ID , percentage completed and also the link between ctrical paths between each task</br>
+
+
+**tables.html Schedule viewer Code:**
+```javascript
+
+//description: in built function to draw the gantt chart from frappiee gantt chart
+//input: tasks which has different subtasks and its schedule
+//output: draws a gantt chart in the div id #gantt-target
+function drawChart(){
+	if(tasks.length === 0 ) return;
+	var gantt_chart = new Gantt("#gantt-target", tasks, {
+		on_click: function (task) {
+		console.log(task);
+		},
+		on_date_change: function(task, start, end) {
+			console.log(task, start, end);
+		},
+		on_progress_change: function(task, progress) {
+		    console.log(task, progress);
+		},
+		on_view_change: function(mode) {
+			console.log(mode);
+		},
+		view_mode: 'Week',
+		language: 'en',
+		});
+	console.log(gantt_chart);
+}
+```
+
+![Gantt chart](./res/gantt_chart.png)
 
 </br>
 </br>

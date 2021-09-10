@@ -447,7 +447,7 @@
 
 				}
 
-
+				//description: Calculating FPS to display in information pannel
 				var lastTime = ( performance || Date ).now();
 				var count = 0;
 				function fpsUpdate() { 
@@ -534,7 +534,8 @@
 					resizeCanvas();
 				}
 			};
-
+			
+			//description: function to hide and unhide the bim based on the checkbox value
 			var bim = document.getElementById("bim");
 			bim.addEventListener('change',function() {
 				scene.getObjectByName("BIM").visible = !scene.getObjectByName("BIM").visible;
