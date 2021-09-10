@@ -64,6 +64,8 @@ python manage.py runserver
 | BIM Load | core/templates/index.html |
 | Point Cloud Load | core/templates/index.html |
 | Element View Panel | core/templates/index.html |
+| Control Panel | core/templates/index.html |
+| Information Panel | core/templates/index.html |
 | Compatibility Panel | core/static/assets/js/CompatibilityPanel.js |
 | Transform Panel | core/static/assets/js/CompatibilityPanel.js |
 
@@ -155,6 +157,54 @@ $("#element-panel-select").change(() => {
 ```
 
 ![Element Panel](./res/element_panel.jpg)
+
+#### **Control Panel:**
+The Control panel displays diffrent checkboxes to enable and disable diffrent elements.</br>
+BIM checkbox enables and diables the BIM </br>
+Point cloud check box enables and disables the point cloud.
+
+**index.html Control Panel Code:**
+```javascript
+//description: function to hide and unhide the bim based on the checkbox value
+var bim = document.getElementById("bim");
+bim.addEventListener('change',function() {
+	scene.getObjectByName("BIM").visible = !scene.getObjectByName("BIM").visible;
+});
+
+//description: function to hide and unhide the point cloud based on the checkbox value
+var pointCloud = document.getElementById("pointCloud");
+pointCloud.addEventListener('change',function() {
+pcflag = !scene.getObjectByName("objectName1").visible;
+    scene.getObjectByName("objectName1").visible = !scene.getObjectByName("objectName1").visible;
+});
+```
+
+![Control Panel](./res/control_panel.png)
+
+#### **Information Panel:**
+Displays Frame rate per second value continuously</br>
+
+
+**index.html Control Panel Code:**
+```javascript
+//description: Calculating FPS to display in information pannel
+var lastTime = ( performance || Date ).now();
+var count = 0;
+function fpsUpdate() { 
+	var currentTime = ( performance || Date ).now();
+	// currentTime - lastTime is the number of milliseconds passed from last loop 
+	var fps = 1000 / (currentTime - lastTime);
+	lastTime = currentTime;
+	count += 1;
+	f(count == 30){
+		count = 0;
+		document.getElementById("frameRate").textContent = fps.toFixed(0);
+	}
+}
+```
+
+![Information Panel](./res/information_panel.png)
+
 
 #### **Compatibility Mode Panel:**
 The Compatibility Mode panel loads at startup and offers a dropdown list of all point clouds corresponding BIM elements.</br>

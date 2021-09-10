@@ -95,6 +95,10 @@
 		var pcflag = true;
 		var tasks = [];
 		var startDate;
+
+		//description: reading the schedule from schedule.csv and fill tasks array in the format needed to draw gantt chart
+		//input: tasks and sub tasks from csv
+		//ouput: tasks array fillled
 		$(document).ready(function() {
 				$.ajax({
 					type: "GET",
@@ -194,6 +198,9 @@
 					});
 				}
 
+				//description: in built function to draw the gantt chart from frappiee gantt chart
+				//input: tasks which has different subtasks and its schedule
+				//output: draws a gantt chart in the div id #gantt-target
 				function drawChart(){
 					if(tasks.length === 0 ) return;
 					var gantt_chart = new Gantt("#gantt-target", tasks, {
@@ -218,6 +225,7 @@
 				const light = new THREE.AmbientLight( 0x404040 ); // soft white light
 				scene.add( light );
 
+				//description: Calculating FPS to display in information pannel
 				var lastTime = ( performance || Date ).now();
 				var count = 0;
 				function fpsUpdate() { 
@@ -232,6 +240,9 @@
 					}
 				}
 
+				//description: to check whether element with particular Id is present or not.
+				//input: element ID 
+				//output: element found or not
 				function getElementId(element) {
 					if (element == null || element.name == null || !validateElementName(element.name)) return null;
 
@@ -242,6 +253,9 @@
 					else return found[found.length - 1];
 				}
 
+				//description: returns element ID alone eliminating other string present in ID 
+				//input: string 
+				//output: only element id without other string in it
 				function validateElementName(nameString) {
 					if (nameString == null || nameString.length === 0) return false;
 
@@ -254,6 +268,9 @@
 					return nameStringRegex.test(nameString);
 				}
 
+				//description: function to find the difference between dates 
+				//input: date and start date 
+				//output: difference between start date and given date
 				function differenceBetweenDates(value){
 					var date1 = new Date(startDate);
 					var date2 = new Date(value);
@@ -262,6 +279,9 @@
 					return Difference_In_Days;
 				}
 
+				//description: function which returns array of completed elements
+				//input: tasks array
+				//output: completed elements array
 				function getCompletedElementsName(){
 					var completedElements = [];
 					for(var i =0;i<tasks.length;i++){
@@ -272,6 +292,9 @@
 					return completedElements;
 				}
 
+				//description: function which returns array of inprogress elements
+				//input: tasks array
+				//output: inprogress elements array
 				function getInProgressElements(value){
 					var inprogressElements = [];
 					for(var i =0;i<tasks.length;i++){
@@ -282,6 +305,9 @@
 					return inprogressElements;
 				}
 
+				//description: function which returns array of behind the schedule elements
+				//input: tasks array
+				//output: behind the schedule elements array
 				function getBehindSheduleElements(value){
 					var behindScheduleElements = [];
 					for(var i =0;i<tasks.length;i++){
@@ -295,6 +321,7 @@
 				var oldVal = 0;
 				var elemenCount = 0;
 
+				//description: changes the opacity of the elements based on their progress.
 				function timelineValChange(){
 					if (scene.getObjectByName('BIM') === undefined) return;	
 					if(oldVal == timeline.value)return;
@@ -414,10 +441,14 @@
 					renderer.setPixelRatio(window.devicePixelRatio + 8);
 				}
 				document.body.onresize();
+
+				//description: function to hide and unhide the bim based on the checkbox value
 				var bim = document.getElementById("bim");
 				bim.addEventListener('change',function() {
 					scene.getObjectByName("BIM").visible = !scene.getObjectByName("BIM").visible;
 				});
+
+				//description: function to hide and unhide the point cloud based on the checkbox value
 				var pointCloud = document.getElementById("pointCloud");
 				pointCloud.addEventListener('change',function() {
 					pcflag = !scene.getObjectByName("objectName1").visible;
