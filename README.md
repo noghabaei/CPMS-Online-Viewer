@@ -403,7 +403,7 @@ class ProfileForm(forms.Form):
 
 #### **Schedule:**
 The Schedule page  displays the schedule of the construction site by changing the colour of the elements based on their state </br>
-Initially bim will be transparent white, as we move the schedule range inprogress elements will be showing using green colour, behind the schedule elements will be shown in red and completed elements will be opaque.
+Initially bim will be transparent white(0.4 transparency), as we move the schedule range inprogress elements will be shown in green colour, behind the schedule elements will be shown in red and completed elements will be opaque white.
 
 **tables.html Schedule viewer Code:**
 ```javascript
@@ -418,20 +418,24 @@ function timelineValChange(){
 	var modelElements = [];
 	scene.getObjectByName('BIM').traverse(function (node) {
 		if(node.isMesh){
+            //to display elements in transparent white at first
 			if( completedElements.includes( getElementId(node) )){
 				modelElements.push(node.name);
 				node.material = new THREE.MeshBasicMaterial({color: "white"}); 
 			}
+            //to display completed elements in green
 			else if( inprogressElements.includes( getElementId(node) )){
 				node.material = new THREE.MeshBasicMaterial({color: "green"});
 				node.material.transparent = true;
 				node.material.opacity = 0.4;
 				}
+            //to display behind the schedule elements in red
 			else if( behindScheduleElements.includes(getElementId(node))){
 			    node.material = new THREE.MeshBasicMaterial({color: "red"});
 				node.material.transparent = true;
 				node.material.opacity = 0.4;
-			}else{
+			}// to display completed elements in solid white.
+            else{
 				node.material = new THREE.MeshBasicMaterial({color: "white"});
 				node.material.transparent = true;
 				node.material.opacity = 0.4;
@@ -448,10 +452,10 @@ function timelineValChange(){
 </br>
 
 #### **gantt chart:**
-The Schedule page  displays the gantt chart of the construction. Tasks will have task ID , percentage completed and also the link between ctrical paths between each task</br>
+The Schedule page  displays the gantt chart of the construction site.Each element of the construction is considered as single tasks. Tasks will have task ID(which is loaded from schedule.json) , percentage completed and also the link between critical paths between each task. This schedule of the single element can be found in schedule.csv and the corresponding elements are loaded from the csv</br>
 
 
-**tables.html Schedule viewer Code:**
+**tables.html Gantt Chart Code:**
 ```javascript
 
 //description: in built function to draw the gantt chart from frappiee gantt chart
@@ -461,7 +465,7 @@ function drawChart(){
 	if(tasks.length === 0 ) return;
 	var gantt_chart = new Gantt("#gantt-target", tasks, {
 		on_click: function (task) {
-		console.log(task);
+		    console.log(task);
 		},
 		on_date_change: function(task, start, end) {
 			console.log(task, start, end);

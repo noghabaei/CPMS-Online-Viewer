@@ -96,7 +96,7 @@
 		var tasks = [];
 		var startDate;
 
-		//description: reading the schedule from schedule.csv and fill tasks array in the format needed to draw gantt chart
+		//description: reading the schedule from core/static/assests/fbx/schedule.csv and fill tasks array in the format needed to draw gantt chart
 		//input: tasks and sub tasks from csv
 		//ouput: tasks array fillled
 		$(document).ready(function() {
@@ -115,7 +115,7 @@
 				if (found == null || found.length === 0) return null;
 				else return found[found.length - 1];
 			}
-
+			// to format the data from CSV to required format as per the frappie gant chart
 			function processData(allText) {
 				var allTextLines = allText.split(/\r\n|\n/);
 				var headers = allTextLines[0].split(',');
@@ -321,7 +321,7 @@
 				var oldVal = 0;
 				var elemenCount = 0;
 
-				//description: changes the opacity of the elements based on their progress.
+				//description: changes the opacity of the elements based on their progress on page load.
 				function timelineValChange(){
 					if (scene.getObjectByName('BIM') === undefined) return;	
 					if(oldVal == timeline.value)return;
@@ -332,20 +332,24 @@
 					var modelElements = [];
 					scene.getObjectByName('BIM').traverse(function (node) {
 						if(node.isMesh){
+							//to display elements in transparent white at first
 							if( completedElements.includes( getElementId(node) )){
 								modelElements.push(node.name);
 								node.material = new THREE.MeshBasicMaterial({color: "white"}); 
 							}
+							//to display completed elements in green
 							else if( inprogressElements.includes( getElementId(node) )){
 								node.material = new THREE.MeshBasicMaterial({color: "green"});
 								node.material.transparent = true;
 								node.material.opacity = 0.4;
 							}
+							//to display behind the schedule elements in red
 							else if( behindScheduleElements.includes(getElementId(node))){
 								node.material = new THREE.MeshBasicMaterial({color: "red"});
 								node.material.transparent = true;
 								node.material.opacity = 0.4;
-							}else{
+							}// to display completed elements in solid white.
+							else{
 								node.material = new THREE.MeshBasicMaterial({color: "white"});
 								node.material.transparent = true;
 								node.material.opacity = 0.4;

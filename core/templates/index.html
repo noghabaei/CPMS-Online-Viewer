@@ -251,7 +251,7 @@
 				}
  
 				loader.load( "/static/assets/fbx/scene.json", obj => loadMainObj( obj ), xhr => mainObjLoadingProgress( xhr ), err => mainObjLoadingError( err ) );
-
+				//Function to load position of the images from the csv files according to the point cloud
 				var positions2 =[];
 				var folder = 0;
 				function load2dImageDropdown(folderNumber){
@@ -290,7 +290,7 @@
 						}
 					}
 				
-				
+					//populating the dropdrown with the image numbers
 					function loadElements2dImageDropdown(){
             			$('#select-2d-image').empty();
 						$.each(positions2, function (index, obj) {
@@ -317,7 +317,8 @@
 						pcZ = 24;
 					}
 
-
+					//displaying 2d images alligned with the point cloud
+					
 					for(var i =1;i <=1; i++){
 						//Create a texture loader so we can load our image file
 						var imgloader = new THREE.TextureLoader();
